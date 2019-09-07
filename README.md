@@ -23,8 +23,3 @@ Things you may want to cover:
 
 
 * ...
-
-github slack test
-github slack test 2
-githus slack test 3
-github slack test 4
