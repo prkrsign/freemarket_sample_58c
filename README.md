@@ -24,5 +24,9 @@ Things you may want to cover:
 * ...
 
 github slack test
+<<<<<<< HEAD
 
 yatabe
+=======
+github slack test 2
+>>>>>>> 964bb87cc6ed196fb083b538ae8959567e44bcca
