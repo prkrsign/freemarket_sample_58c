@@ -25,6 +25,12 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
+# Capistranoが起動した際に、環境変数を指定する
+set :default_env, {
+  USERNAME: ENV["BASIC_AUTH_USER"],
+  PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+}
+
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
