@@ -1,12 +1,12 @@
 .footer-menu {
   background-color:rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
+  color: #fff;
   padding: 0px 20px 10px;
-  height: 380px;
+  height: 360px;
   }
 
 .menu {
-  width: 1020px;
+  width: 950px;
   margin: 0 auto;
   display: flex;
   height: 310px;
@@ -14,19 +14,19 @@
 
 .menu1 {
   margin-top: 18px;
-  width: 420px;
+  width: 250px;
   height: 300px;
-  padding-right: 40px;
+  padding-right: 10px;
   &__title {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
   &__contents {
     margin: 16px 0px 0px;
     height: 16px;
     &__name {
       box-sizing: border-box;
-      font-size: 12px;
+      font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
       text-decoration: none;
@@ -53,19 +53,19 @@
 
 .menu2 {
   margin-top: 18px;
-  width: 470px;
+  width: 250px;
   height: 300px;
-  padding-right: 40px;
+  padding-right: 10px;
   &__title {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
   &__contents {
     margin: 16px 0px 0px;
     height: 16px;
     &__name {
       box-sizing: border-box;
-      font-size: 12px;
+      font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
       text-decoration: none;
@@ -76,22 +76,22 @@
 
 .menu3 {
   margin-top: 18px;
-  padding-right: 40px;
-  width: 780px;
+  padding-right: 10px;
+  width: 500px;
   height: 300px;
   &__title {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
   &__contents {
     display: flex;
     &__1 {
-      margin: 20px 0px 0px;
+      margin: 23px 0px 0px;
       padding-right: 10px;
       &__name {
         box-sizing: border-box;
-        margin-bottom: 14px;
-        font-size: 12px;
+        margin-bottom: 17px;
+        font-size: 10px;
         font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
         opacity: 0.7;
         text-decoration: none;
@@ -99,12 +99,12 @@
       }
     }
     &__2 {
-      margin: 20px 0px 0px;
+      margin: 23px 0px 0px;
       padding-left: 10px;
       &__name {
         box-sizing: border-box;
-        margin-bottom: 14px;
-        font-size: 12px;
+        margin-bottom: 17px;
+        font-size: 10px;
         font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
         opacity: 0.7;
         text-decoration: none;
@@ -117,18 +117,18 @@
 .menu4 {
   margin-top: 18px;
   width: 200px;
-  padding-right: 40px;
+  padding-right: 10px;
   height: 300px;
   &__title {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
   &__contents {
     margin: 16px 0px 0px;
     height: 16px;
     &__name {
       box-sizing: border-box;
-      font-size: 12px;
+      font-size: 10px;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
       opacity: 0.7;
       text-decoration: none;
@@ -139,7 +139,7 @@
 
 .buttom {
   width: 1020px;
-  margin: 30px auto 20px;
+  margin: 10px auto 20px;
   align-items: center;
   display: flex;
   &__contents {
@@ -147,17 +147,17 @@
     vertical-align: middle;
     text-decoration: none;
     &__btn {
+      padding-left: 17px;
       height: 32px;
-      width: 124px;
+      width: 120px;
       vertical-align: middle;  
     }
     &__name {
       display: inline-block;
       height: 12.5px;
       line-height: 12.5px;
-      width: 750px;
+      width: 650px;
       text-align: center;
-      padding-left: 15px;
       vertical-align: middle;
       font-size: 10px;
     }
