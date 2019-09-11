@@ -1,5 +1,5 @@
 .contents {
-  height: 330px;
+  height: 310px;
   width: 600px;
   margin: 0 auto;
   background-color: whitesmoke;
@@ -16,7 +16,7 @@
     display: block;
     height: 40px;
     width : 300px;
-    margin: 25px auto;
+    margin: 15px auto;
     border-radius: 5px;
     font-size: 12px;
     color: #fff;
@@ -24,12 +24,13 @@
     text-align: center;
     line-height: 40px;
     &--1{
+      margin-top: 30px;
       background-color: #ea352d;
       position: relative;
     }
     .far.fa-envelope {
       display: flex;
-      font-size: 18px;
+      font-size: 20px;
       position: absolute;
       line-height: 40px;
       padding-left: 20px;
@@ -40,7 +41,7 @@
     }
     .fab.fa-facebook-square {
       display: flex;
-      font-size: 18px;
+      font-size: 20px;
       position: absolute;
       line-height: 40px;
       padding-left: 20px;
@@ -51,12 +52,13 @@
       border: 1px solid black;
       position: relative;
     }
-    .fab.fa-google {
+    .googlelogo {
       display: flex;
-      font-size: 18px;
+      font-size: 20px;
       position: absolute;
       line-height: 40px;
-      padding-left: 20px;
+      padding-left: 15px;
+      padding-top: 10px;
     }
   }
 }
