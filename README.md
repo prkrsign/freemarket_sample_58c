@@ -48,7 +48,6 @@ Things you may want to cover:
 |prefecture_id|references|null: false, foreign_key: true|
 |brand_id|references|foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
-|deal_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user 
@@ -90,12 +89,12 @@ Things you may want to cover:
 ## sns_credentialsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|provider|string
-|uid|string
+|provider|string|null: false|
+|uid|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
-belongs_to :user
+has_one :user
 
 ## credit_cardsテーブル
 |Colum|Type|Options|
@@ -112,7 +111,7 @@ belongs_to :user
 |Colum|Type|Options|
 |-----|----|------|
 |category_name|string|null: false|
-|ancestry|
+|ancestry|string||
 
 
 ### Association
