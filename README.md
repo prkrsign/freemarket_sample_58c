@@ -29,6 +29,7 @@ Things you may want to cover:
 |building_name|string|null: false|
 |phone_number|integer|null: false, unique: true|
 |prefecture_id|integer|null: false, foreign_key: true|
+|credit_card_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :prefecture
@@ -45,31 +46,35 @@ Things you may want to cover:
 |price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|deal_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user 
 - belongs_to :prefecture 
-- belongs_to :brands
-- belongs_to :categories
-- belongs_to :deals
+- belongs_to :brand
+- belongs_to :category
 - has_many :images
-- 
 
 ## prefecturesテーブル
 |Colum|Type|Options|
 |-----|----|------|
 |prefecture|string|null:false|
 
+### Association
+- has_many :users
+- has_many :goods
+
 ## imagesテーブル
 |Colum|Type|Options|
 |-----|----|------|
 |goods_picture|string|null: false|
-|goods_id|integer|null: false, foreign_key: true|
+|good_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :good
-- has_many :goods
-- has_many :users
+
 
 ## dealsテーブル
 |Colum|Type|Options|
@@ -79,7 +84,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :goods
 
 
 ## sns_credentialsテーブル
@@ -87,7 +91,7 @@ Things you may want to cover:
 |-----|----|------|
 |provider|string
 |uid|string
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -108,7 +112,7 @@ belongs_to :user
 |-----|----|------|
 |category_name|string|null: false|
 |ancestry|
-|goods_id|integer|null: false, foreign_key: true|
+
 
 ### Association
 - has_many :goods
@@ -117,7 +121,6 @@ belongs_to :user
 |Colum|Type|Options|
 |-----|----|------|
 |brand_name|string|
-|good_id|integer|null: false, foreign_key: true|
 
 ### Association
  - has_many :goods
