@@ -21,13 +21,13 @@ Things you may want to cover:
 |user_description|
 |name|
 |name_in_katakana|
-|bith_date|
+|birth_date|
 |postalcode|
 |city|
 |house_number|
 |building_name|
 |phone_number|
-|prefectures_id|
+|prefecture_id|
 
 ### Association
 belongs_to :prefecture
@@ -38,8 +38,8 @@ belongs_to :prefecture
 |goods_name|
 |goods_description|
 |price|
-|users_iud|
-|prefectures_id|
+|user_id|
+|prefecture_id|
 ### Association
 - belongs_to :user 
 - belongs_to :prefecture 
@@ -65,6 +65,8 @@ belongs_to :good
 ## finished_delasテーブル
 |Colum|Type|Options|
 |-----|----|------|
+
+## dealsテーブルには手をつけてない
 
 ## SNSテーブル
 |Colum|Type|Options|
@@ -103,7 +105,7 @@ belongs_to :good
 |Colum|Type|Options|
 |-----|----|------|
 |brand_name|
-|goods_id|
+|good_id|
 
 ### Association
 belongs_to :good
