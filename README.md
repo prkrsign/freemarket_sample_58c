@@ -16,18 +16,18 @@ Things you may want to cover:
 ## usersテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|username|string|null: false, unique: true|
 |user_description|text
 |name|string|null: false|
 |name_in_katakana|string|null: false|
 |birth_date|integer|null: false|
 |postalcode|integer|null: false|
 |city|string|null: false|
-|house_number|ionteger|null: false|
+|house_number|string|null: false|
 |building_name|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|integer|null: false, unique: true|
 |prefecture_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -35,7 +35,6 @@ Things you may want to cover:
 - belongs_to :credit_card
 - has_many :goods
 - has_many :deals
-- has_many :Snss
 
  
 ## goodsテーブル
@@ -59,7 +58,7 @@ Things you may want to cover:
 ## prefecturesテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|prefecture||null:false|
+|prefecture|string|null:false|
 
 ## imagesテーブル
 |Colum|Type|Options|
@@ -75,7 +74,6 @@ Things you may want to cover:
 ## dealsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|deal|
 |user_id|integer|null: false, foreign_key: true|
 |good_id|integer|null: false, foreign_key: true|
 
@@ -84,11 +82,11 @@ Things you may want to cover:
 - has_many :goods
 
 
-## Snssテーブル
+## sns_credentialsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|provider|
-|uid|
+|provider|string
+|uid|string
 |users_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -108,7 +106,7 @@ belongs_to :user
 ## categoriesテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|category_name||null: false|
+|category_name|string|null: false|
 |ancestry|
 |goods_id|integer|null: false, foreign_key: true|
 
@@ -118,7 +116,7 @@ belongs_to :user
 ## brandsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|brand_name|
+|brand_name|string|
 |good_id|integer|null: false, foreign_key: true|
 
 ### Association
