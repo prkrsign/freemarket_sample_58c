@@ -12,103 +12,117 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+# Mercari DB設計
 ## usersテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|email|integer|
-|password|
-|username|
-|user_description|
-|name|
-|name_in_katakana|
-|birth_date|
-|postalcode|
-|city|
-|house_number|
-|building_name|
-|phone_number|
-|prefecture_id|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+|user_description|text
+|name|string|null: false|
+|name_in_katakana|string|null: false|
+|birth_date|integer|null: false|
+|postalcode|integer|null: false|
+|city|string|null: false|
+|house_number|ionteger|null: false|
+|building_name|string|null: false|
+|phone_number|integer|null: false|
+|prefecture_id|integer|null: false, foreign_key: true|
 
 ### Association
-belongs_to :prefecture
+- belongs_to :prefecture
+- belongs_to :credit_card
+- has_many :goods
+- has_many :deals
+- has_many :Snss
+
  
 ## goodsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|goods_name|
-|goods_description|
-|price|
-|user_id|
-|prefecture_id|
+|goods_name|string|null: false|
+|goods_description|text|null: false|
+|price|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :user 
 - belongs_to :prefecture 
+- belongs_to :brands
+- belongs_to :categories
+- belongs_to :deals
+- has_many :images
+- 
 
 ## prefecturesテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|prefecture|
+|prefecture||null:false|
 
 ## imagesテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|goods_picture|
-|goods_id|
+|goods_picture|string|null: false|
+|goods_id|integer|null: false, foreign_key: true|
 
 ### Association
-belongs_to :good
+- belongs_to :good
+- has_many :goods
+- has_many :users
 
-## on_going_dealsテーブル
+## dealsテーブル
 |Colum|Type|Options|
 |-----|----|------|
+|deal|
+|user_id|integer|null: false, foreign_key: true|
+|good_id|integer|null: false, foreign_key: true|
 
-## finished_delasテーブル
-|Colum|Type|Options|
-|-----|----|------|
+### Association
+- belongs_to :user
+- has_many :goods
 
-## dealsテーブルには手をつけてない
 
-## SNSテーブル
+## Snssテーブル
 |Colum|Type|Options|
 |-----|----|------|
 |provider|
 |uid|
-|users_id|
+|users_id|integer|null: false, foreign_key: true|
 
 ### Association
 belongs_to :user
 
-## credit_cardテーブル
+## credit_cardsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|user_id|
-|customer_id|
-|card_id|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|integer|null: false, foreign_key: true|
+|card_id|integer|null: false, foreign_key: true|
 
 ### Association
-belogns_to :user
-belogns_to :
-belogns_to :  ## ここ入れるのか？
+- has_many :users
 
 
 ## categoriesテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|category_name|
+|category_name||null: false|
 |ancestry|
-|goods_id|
+|goods_id|integer|null: false, foreign_key: true|
 
 ### Association
-belongs_to :good
+- has_many :goods
 
 ## brandsテーブル
 |Colum|Type|Options|
 |-----|----|------|
 |brand_name|
-|good_id|
+|good_id|integer|null: false, foreign_key: true|
 
 ### Association
-belongs_to :good
+ - has_many :goods
 
 
 
