@@ -79,6 +79,7 @@ Things you may want to cover:
 ## dealsテーブル
 |Colum|Type|Options|
 |-----|----|------|
+|deal||
 |user_id|integer|null: false, foreign_key: true|
 |good_id|integer|null: false, foreign_key: true|
 
