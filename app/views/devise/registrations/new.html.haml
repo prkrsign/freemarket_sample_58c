@@ -1,21 +1,14 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.contents
+  .contents__head
+    新規会員登録
+  .contents__btn
+    =link_to "aaa", class:"contents__btn contents__btn--1" do
+      %i.far.fa-envelope
+      メールアドレスで登録する
+    =link_to "aaa", class:"contents__btn contents__btn--2" do
+      %i.fab.fa-facebook-square
+      Facebookで登録する
+    =link_to "aaa", class:"contents__btn contents__btn--3" do
+      %img{ src:"https://img.icons8.com/color/20/000000/google-logo.png", class:"googlelogo" }
+      Googleで登録する
+      
