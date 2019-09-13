@@ -116,6 +116,7 @@ has_one :user
 
 ### Association
 - has_many :goods
+- has_ancestry
 
 ## brandsテーブル
 |Colum|Type|Options|
