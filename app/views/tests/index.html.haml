@@ -1,22 +1,8 @@
 !!!
 %html
   %head
-    Hello,World
-  
-  = link_to "ユーザー登録", new_user_registration_path, class: 'btn btn-default'
-  = link_to "登録内容変更", edit_user_registration_path, class: 'btn btn-default'
-  = link_to "ログアウト", destroy_user_session_path, class: 'btn btn-default'
 
-  = render "signup5"
-  = render "signup4"
-
-  = render "signup3"
-  %body
-    = render "signup2"
-    
-    %body
-
-      = render 'layouts/main_page_header'
+    = render 'shared/main_page_header'
 
     %body
       %aside= render "shared/aside"
