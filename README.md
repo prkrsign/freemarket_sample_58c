@@ -20,20 +20,29 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false, unique: true|
 |user_description|text
-|name|string|null: false|
-|name_in_katakana|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_in_katakana|string|null: false|
+|first_name_in_katakana|string|null: false|
 |birth_date|integer|null: false|
+|phone_number|integer|null: false, unique: true|
+|credit_card|references|foreign_key: true|
+|adress|references|foreign_key: true|
+### Association
+- belongs_to :credit_card
+- has_one :adress
+
+## adressesテーブル
 |postalcode|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|null: false|
-|phone_number|integer|null: false, unique: true|
 |prefecture|references|null: false, foreign_key: true|
-|credit_card|references|foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :prefecture
-- belongs_to :credit_card
+- belongs_to :user
 - has_many :goods
 - has_many :deals
 
@@ -94,7 +103,7 @@ Things you may want to cover:
 |user|references|null: false, foreign_key: true|
 
 ### Association
-has_one :user
+- has_one :user
 
 ## credit_cardsテーブル
 |Colum|Type|Options|
