@@ -1,0 +1,97 @@
+body{
+    background-color: #eee;
+}
+
+
+.mypage-container{
+    height:100%;
+    margin: 40px auto 0;
+    width: 1020px;
+
+
+    .mypage-content{
+        width: 700px;
+        float: right;
+
+        &__icon{
+            height: 200px;
+            background-color: lightcoral;
+            position: relative;
+            height: 160px;
+            padding: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            &__block{
+                height: 111px;
+                display: block;
+                position: absolute;
+                top: 23%;
+                left: 0;
+                right: 0;
+                color: #333;
+                background-color: lightcyan;
+                text-decoration: none;
+                &__image-box{
+                    width: 60px;
+                    height:60px;
+                    margin: 0 auto;
+                }
+                &__user-name{
+                    margin: 8px 0 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+    // ここからサイドバーのCSS。共通化予定
+    .side-bar{
+        width: 280px;
+        margin: 0 40px 0 0;
+        .mypage-nav{
+            &__list{
+                width: 280px;
+                li{
+                    width: 280px;
+                    height: 48px;
+                }
+                &__item{
+                    box-sizing: border-box;
+                    position: relative;
+                    display: block;
+                    height: 48px;
+                    background-color: #fff;
+                    padding: 14px;
+                    font-size: 14px;
+                    color:  #333;
+                    border-bottom: solid 1px #eee;
+                    text-decoration: none;
+
+                    .fa-chevron-right{
+                        position: absolute;
+                        top: 38%;
+                        right: 16px;
+                        color: #ccc;
+                    }
+                }
+                &__item.active{
+                    // background-color: #eee;
+                    font-weight: 600;
+                    .fa-chevron-right{
+                        position: absolute;
+                        top: 38%;
+                        right: 16px;
+                        color: #333;
+                    }
+                }
+            }
+            .mypage-nav__head{
+                margin: 40px 0 5px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
