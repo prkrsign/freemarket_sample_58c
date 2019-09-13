@@ -3,47 +3,99 @@
   .header__main
     .header__upper
       .header__upper__left
-        %a.header__upper__left__a{:href => "#"}
-          %img.header__upper__left__img{:alt => "Mercari", :src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
-      %form.header__upper__right{:action => "/jp/search/"}
-        %input.header__upper__right__in{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        %a.header__upper__left__a{href: "#"}
+          %img.header__upper__left__img{alt: "Mercari", src: "/merucari logo.svg"}/
+      %form.header__upper__right{action: "/jp/search/"}
+        %input.header__upper__right__in{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
         %button.header__upper__right__button
-          %svg.header__upper__right__svg{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
+          %svg.header__upper__right__svg{"aria-hidden" => "true", height: "16", viewbox: "0 0 16 16", width: "16"}
             %path{:d => "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", :fill => "currentColor", "fill-rule" => "nonzero"}
     .header__under
       .header__under__left
         .header__under__left__1
-          %a.header__under__left__1__1{:href => "#"}
-            %svg.header__under__left__1__1__1{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}>
+          %a.header__under__left__1__1{href: "#"}
+            %svg.header__under__left__1__1__1{"aria-hidden": "true", height: "16", viewbox: "0 0 20 16", width: "20"}>
               %path{:d => "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", :fill => "currentColor", "fill-rule" => "nonzero"}
             カテゴリーから探す
           .header__under__left__1__roll 
         .header__under__left__1
-          %a.header__under__left__1__1{:href => "#"}
-            %svg.header__under__left__1__1__2{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 23 16", :width => "23"}>
+          %a.header__under__left__1__1{href: "#"}
+            %svg.header__under__left__1__1__2{"aria-hidden" => "true", height: "16", viewbox: "0 0 23 16", width: "23"}>
               %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", :fill => "currentColor", "fill-rule" => "nonzero"}
             ブランドから探す
           .header__under__left__1__roll 
       .header__under__right
         .header__under__right__1
-          %a.header__under__right__1__1{:href => "#"} 新規会員登録
+          %a.header__under__right__1__1{href: "#"} 新規会員登録
         .header__under__right__2
-          %a.header__under__right__2__2{:href => "#"} ログイン
+          %a.header__under__right__2__2{href: "#"} ログイン
 -# 〜〜〜〜〜ここから中段エリア〜〜〜〜〜
 .middle
   .middle__main
-    .middle__main__slide__area
+    .middle__main__slide
+      %img.middle__main__slide__area{alt: "slidepage", src:"/merucari_top1.png"}
     .middle__main__category
-      .middle__main__category__area
-        %h2.middle__main__category__text
-          .middle__main__category__block
-            %ul.middle__main__category__block__area
-              %li.middle__main__category__block__area__a
-                %a.middle__main__category__block__area__a__1{:href => "#"}レディース
-                %a.middle__main__category__block__area__a__2{:href => "#"}メンズ
-                %a.middle__main__category__block__area__a__3{:href => "#"}家電・スマホ・カメラ
-                %a.middle__main__category__block__area__a__4{:href => "#"}おもちゃ・ホビー・グッズ
+      %h2.middle__main__category__text{style: ""}
+        人気のカテゴリー
+        .middle__main__category__under
+          %ul.middle__main__category__under__area
+            %li.middle__main__category__under__area__a
+              %a.middle__main__category__under__area__a__1{href: "#"}レディース
+              %a.middle__main__category__under__area__a__2{href: "#"}メンズ
+              %a.middle__main__category__under__area__a__3{href: "#"}家電・スマホ・カメラ
+              %a.middle__main__category__under__area__a__4{href: "#"}おもちゃ・ホビー・グッズ
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left{style: ""}
+            レディース新着アイテム
+          %a.middle__main__block__item__top__right
+            =link_to "#", class:"middle__main__block__item__top__right" do
+              もっと見る
+        .middle__main__block__item__area
+          .middle__main__block__item__area__split
+            .middle__main__block__item__area__a
+              %a.middle__main__block__item__area__1
+                .product
+                  .product__upper
+                    .product__upper__text{style: ""}
+                      サンプル
+                      .product__under__text__after
+                  .product__under
+                    .product__under__price{price: ""}
+                    ¥
+                    900
+                    %img.product__under__img{alt: "slidepage", src:"/merucari_top1.png"}
+
 
 
 .exhibit_btn
 .a_area
+
+-# =link_to "aaa", class:"middle__main__category__text__1" do
+-#   人気のカテゴリー
+
+-# .maintenance{ style: "color:lightgray" }
+-#   メンテナンス中
+
+-# .sc-jtggT.foNpXE
+  -# %h2.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv1__3ygH4.sc-ebFjAB.fQfbaq 人気のカテゴリー
+-#   .sc-jKVCRD.hFxLoS
+-#     %ul.sc-kaNhvL.ivyWUP
+-#       %li.sc-LKuAh.hIBODe
+-#         %a.sc-iBEsjs.sc-hzNEM.gDalvy レディース
+-#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt レディース
+-#       %li.sc-LKuAh.hIBODe
+-#         %a.sc-iBEsjs.sc-hzNEM.gDalvy メンズ
+-#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt メンズ
+-#       %li.sc-LKuAh.hIBODe
+-#         %a.sc-iBEsjs.sc-hzNEM.gDalvy 家電・スマホ・カメラ
+-#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt 家電・スマホ・カメラ
+-#       %li.sc-LKuAh.hIBODe
+-#         %a.sc-iBEsjs.sc-hzNEM.gDalvy おもちゃ・ホビー・グッズ
+-#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt おもちゃ・ホビー・グッズ
+-# .sc-cooIXK.RhaiD
+-#   .sc-fcdeBU.gynzDk
+-#     .sc-kxynE.knuEY.sc-iGrrsa.kDCCFE{:name => "scroll-1"}
+-#       %h3.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv2__3K0hn.sc-bmyXtO.llCUnU レディース新着アイテム
+-#       %a.sc-dEoRIm.hiMoUc{:href => "/jp/category/1/"} もっと見る
