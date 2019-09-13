@@ -29,7 +29,7 @@ Things you may want to cover:
 |credit_card|references|foreign_key: true|
 |address|references|foreign_key: true|
 ### Association
-- belongs_to :credit_card
+- has_one :credit_card
 - has_one :address
 
 ## addressesテーブル
@@ -87,7 +87,7 @@ Things you may want to cover:
 ## dealsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|deal|boolean|default: null|
+|deal|boolean||
 |user|references|null: false, foreign_key: true|
 |good|references|null: false, foreign_key: true|
 
@@ -113,7 +113,7 @@ Things you may want to cover:
 |card|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
+- belongs_to :user
 
 
 ## categoriesテーブル
