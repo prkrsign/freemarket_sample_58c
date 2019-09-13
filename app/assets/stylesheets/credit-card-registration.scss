@@ -1,5 +1,5 @@
 .contents-box{
-    margin: 40px 210px 0 210px;
+    margin: 40px 210px 40px 210px;
     width: 700;
     
     .fa-credit-card{
@@ -19,11 +19,12 @@
                 padding: 8px 24px;
                 border-bottom: 1px solid #eee;
                 text-align: center;
+                font-weight: bold;
             }
 
             &__inner{
                 border-top: 1px solid #eee;
-                padding: 64px;
+                padding:  58px 58px 40px 58px;
                     &__content{
                         max-width: 320px;
                         margin: 0 auto;
@@ -48,6 +49,17 @@
                         }
                     }
                 }
+            &__regist{
+                width: 620px;
+                height: 16px;
+                &__way{
+                    font-size: 14px;
+                    display: block;
+                    text-align: right;
+                    color: #0099e8;
+                    text-decoration: none;
+                }
             }
         }
     }
+}
