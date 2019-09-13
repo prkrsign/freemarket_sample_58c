@@ -37,7 +37,6 @@ Things you may want to cover:
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|null: false|
-|prefecture|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 
 ### Association
@@ -54,21 +53,14 @@ Things you may want to cover:
 |goods_description|text|null: false|
 |price|integer|null: false|
 |user|references|null: false, foreign_key: true|
-|prefecture|references|null: false, foreign_key: true|
 |brand|references|foreign_key: true|
 |category|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user 
-- belongs_to :prefecture 
 - belongs_to :brand
 - belongs_to :category
 - has_many :images
-
-## prefecturesテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|prefecture|string|null:false|
 
 ### Association
 - has_many :users
