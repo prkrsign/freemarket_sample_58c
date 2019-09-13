@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    sidebar書くよ
+  
+  %main.mypage-container.clearfix
+    .mypage-content
+      %section.mypage-content__icon
+        %a{href: '#', class: 'mypage-content__icon__block'}
+          %figure.mypage-content__icon__block__image-box
+          %h2.mypage-content__icon__block__user-name
+            ユーザーネーム
+
+      %section.mypage-content__tab-list
+      %section.mypage-content__tab-deal
+
+    %aside= render "layouts/profile-sidebar"
+
+   

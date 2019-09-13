@@ -8,3 +8,13 @@
   = link_to "ログアウト", destroy_user_session_path, class: 'btn btn-default'
 
   = render "signup3"
+  %body
+    = render "signup2"
+    
+    %body
+
+      = render 'layouts/main_page_header'
+
+    %body
+      %aside= render "shared/aside"
+      %footer= render "shared/footer"
