@@ -27,12 +27,12 @@ Things you may want to cover:
 |birth_date|integer|null: false|
 |phone_number|integer|null: false, unique: true|
 |credit_card|references|foreign_key: true|
-|adress|references|foreign_key: true|
+|address|references|foreign_key: true|
 ### Association
 - belongs_to :credit_card
-- has_one :adress
+- has_one :address
 
-## adressesテーブル
+## addressesテーブル
 |postalcode|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
