@@ -87,7 +87,7 @@ Things you may want to cover:
 ## dealsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|deal||
+|deal|boolean|default: null|
 |user|references|null: false, foreign_key: true|
 |good|references|null: false, foreign_key: true|
 
