@@ -28,8 +28,8 @@ Things you may want to cover:
 |house_number|string|null: false|
 |building_name|string|null: false|
 |phone_number|integer|null: false, unique: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|credit_card_id|references|foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
+|credit_card|references|foreign_key: true|
 
 ### Association
 - belongs_to :prefecture
@@ -44,10 +44,10 @@ Things you may want to cover:
 |goods_name|string|null: false|
 |goods_description|text|null: false|
 |price|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|brand_id|references|foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
+|brand|references|foreign_key: true|
+|category|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user 
@@ -69,7 +69,7 @@ Things you may want to cover:
 |Colum|Type|Options|
 |-----|----|------|
 |goods_picture|string|null: false|
-|good_id|references|null: false, foreign_key: true|
+|good|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :good
@@ -79,8 +79,8 @@ Things you may want to cover:
 |Colum|Type|Options|
 |-----|----|------|
 |deal||
-|user_id|references|null: false, foreign_key: true|
-|good_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|good|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -91,7 +91,7 @@ Things you may want to cover:
 |-----|----|------|
 |provider|string|null: false|
 |uid|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 has_one :user
@@ -99,9 +99,9 @@ has_one :user
 ## credit_cardsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|user_id|ireference|null: false, foreign_key: true|
-|customer_id|references|null: false, foreign_key: true|
-|card_id|references|null: false, foreign_key: true|
+|user|ireference|null: false, foreign_key: true|
+|customer|references|null: false, foreign_key: true|
+|card|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :users
