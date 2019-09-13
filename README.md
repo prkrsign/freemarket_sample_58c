@@ -31,6 +31,7 @@ Things you may want to cover:
 ### Association
 - has_one :credit_card
 - has_one :address
+- has_many :goods
 
 ## addressesテーブル
 |postalcode|integer|null: false|
