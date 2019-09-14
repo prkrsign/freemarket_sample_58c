@@ -23,3 +23,10 @@
                 送料込み
             %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
               ポイントはありません
+            %ul.confirmation-main__container__buy-content__inner__buy-form__list__table
+              %li.confirmation-main__container__buy-content__inner__buy-form__list__table__list
+                .confirmation-main__container__buy-content__inner__buy-form__list__table__list__left-text
+                  支払い金額
+                .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
+                  ¥2,600
+            =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
