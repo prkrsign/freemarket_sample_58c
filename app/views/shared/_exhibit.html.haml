@@ -9,7 +9,17 @@
   .contents-box
     .contents-box__sell-container
       商品の情報を入力
-
+    = form_with(url: '#', class: 'contents-box__form-list') do |f|
+      .contents-box__form-list__upload-box
+        .contents-box__form-list__upload-box__image-text
+          出品画像
+        .form-require
+          必須
+        .capture 
+          最大10枚までアップロードできます
+      .contents-box__form-list__drop-box
+        .contents-box__form-list__drop-box__item
+          = f.submit nil, class: 'contents-box__form-list__drop-box__item__upload-file'
 
 
 
