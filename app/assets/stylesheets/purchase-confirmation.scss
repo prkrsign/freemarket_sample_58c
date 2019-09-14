@@ -8,6 +8,7 @@ body{
     height: 100%;
 }
 
+// 画面のヘッダー部分
 .confirmation-header {
     height: 128px;
     text-align: center;
@@ -21,9 +22,11 @@ body{
     }
 }
 
+// メインコンテンツ部分
 main {
     display: block;
 
+    // 商品情報、値段、購入ボタンまで
     .confirmation-main{
         &__container{
             width: 700px;
@@ -138,8 +141,39 @@ main {
                     }
                 }
             }
+
+            // 配送先やユーザーの情報
+            &__buy-info{
+                margin: 40px 0 0;
+                padding: 24px 12.5% 0;
+                border-top: 1px solid #f5f5f5;
+                &__container{
+                    max-width: 320px;
+                    margin: 0 auto;
+                        h3{
+                            margin: 0;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        &__address{
+                            display: block;
+                            margin: 8px 0 0;
+                            font-size: 14px;
+                            line-height: 1.4;
+                            font-style: normal;
+                            font-weight: lighter;
+                        }
+
+                        &__user-info-fix{
+                            margin-top: 10px;
+                            display: block;
+                            text-align: right;
+                            color: #0099e8;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
         }
     }
-}
-
 
