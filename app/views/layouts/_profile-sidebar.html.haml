@@ -8,7 +8,7 @@
       %section.mypage-icon
         =link_to "#"
           %figure
-            %img{:src}  -# haml記述確認する
+            %img{src:"/"}  -# haml記述確認する
             %h2.bold username
           %mypage-amount
             %div
@@ -17,6 +17,29 @@
             %div
             出品数
               %span.bold number
+      %section.mypage-tab-container
+        %ul.tabs
+          %li.notification
+            %h3
+              =link_to "" 
+                %data-toggle tab  -# data-togleの記述を確認する
+                  お知らせ
+                    %span.mypage-number 
+                      %hidden-large  -# 要確認
+                             99+
+          %li.todo-list 
+            %h3 
+              =link_to "#"  
+                %data-toggle tab
+                  やることリスト
+                    %span.mypage-number 
+                      %hidden-large  -# 要確認
+        %div.tab-contents
+          %ul#tab-notification.mypage-item-list.tab-pane.active #ここも怪しい
+            %li
+              =link_to "#" .mypage-item-link-box
+                %figure
+                  %
 
               
 
