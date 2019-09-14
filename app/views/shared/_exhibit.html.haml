@@ -1,0 +1,35 @@
+-# ページのヘッダー部分
+%header.confirmation-header
+  %h1
+    =link_to "#", class: "confirmation-heade__link" do
+      = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
+  
+
+%main.main-contents
+  .contents-box
+    .contents-box__sell-container
+      商品の情報を入力
+
+
+
+
+
+
+
+
+%footer.confirmation-footer
+  %ul.confirmation-footer-container
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        プライバシーポリシー
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        メルカリ利用規約
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        特定商取引に関する表記
+
+    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+  .confirmation-footer-container__footer-text
+    ©︎2019 Mercari
