@@ -49,3 +49,13 @@
           =link_to '#', class: 'confirmation-main__container__buy-info__container__user-info-fix' do
             変更する
             %i.fas.fa-chevron-right
+
+    -# 支払い方法
+    %section.confirmation-main__container__credit-info
+      .confirmation-main__container__credit-info__inner
+        %h3 支払い方法
+        .confirmation-main__container__credit-info__inner__card-number
+          ************1234
+        .confirmation-main__container__credit-info__inner__deadline
+          10/25
+        %img.confirmation-main__container__credit-info__inner__logo{alt: "card-logo", src: "/visa.svg"}
