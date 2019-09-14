@@ -4,11 +4,23 @@
     sidebar書くよ
   
   %main.mypage-container.clearfix
-    .mypage-content
-      %section.mypage-content__icon
-        %a{href: '#', class: 'mypage-content__icon__block'}
-          %figure.mypage-content__icon__block__image-box
-          %h2.mypage-content__icon__block__user-name
+    %my-page-content
+      %section.mypage-icon
+        =link_to "#"
+          %figure
+            %img{:src}  -# haml記述確認する
+            %h2.bold username
+          %mypage-amount
+            %div
+            評価
+              %span.bold number
+            %div
+            出品数
+              %span.bold number
+
+              
+
+        
             
 
       %section.mypage-content__tab-list
