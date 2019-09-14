@@ -1,0 +1,47 @@
+.side-bar{
+    width: 280px;
+    margin: 0 40px 0 0;
+    .mypage-nav{
+        &__list{
+            width: 280px;
+            li{
+                width: 280px;
+                height: 48px;
+            }
+            &__item{
+                box-sizing: border-box;
+                position: relative;
+                display: block;
+                height: 48px;
+                background-color: #fff;
+                padding: 14px;
+                font-size: 14px;
+                color:  #333;
+                border-bottom: solid 1px #eee;
+                text-decoration: none;
+
+                .fa-chevron-right{
+                    position: absolute;
+                    top: 38%;
+                    right: 16px;
+                    color: #ccc;
+                }
+            }
+            &__item.active{
+                // background-color: #eee;
+                font-weight: 600;
+                .fa-chevron-right{
+                    position: absolute;
+                    top: 38%;
+                    right: 16px;
+                    color: #333;
+                }
+            }
+        }
+        .mypage-nav__head{
+            margin: 40px 0 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
