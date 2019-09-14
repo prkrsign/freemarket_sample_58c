@@ -15,5 +15,11 @@
           %img.confirmation-main__container__buy-content__inner__item__image{ alt: "buy-item-image", src: "https://static.mercdn.net/thumb/photos/m57058223520_1.jpg?1567902416" }
         %p.confirmation-main__container__buy-content__inner__item-name
           付録：ピーナッツ スヌーピーのおうちと仲間たちチャーリーブラウンの縦型ポーチ
-    %section
-    %section 
+        = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
+          .confirmation-main__container__buy-content__inner__buy-form__list
+            %p.confirmation-main__container__buy-content__inner__buy-form__list__price
+              ¥2,600
+              %span.confirmation-main__container__buy-content__inner__buy-form__list__price__text
+                送料込み
+            %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
+              ポイントはありません
