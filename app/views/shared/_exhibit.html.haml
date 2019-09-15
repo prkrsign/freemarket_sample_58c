@@ -75,10 +75,65 @@
               必須
             = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
 
-      %section.contents-box__category-section
+      %section.contents-box__category-section#delivery
         %h3.contents-box__category-section__sub-head
           配送について
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            配送料の負担
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            配送の方法
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送元の地域
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送までの日数
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        
+      %section.contents-box__category-section#fee
+        %h3.contents-box__category-section__sub-head
+          販売価格(300~9,999,999)
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__price-section
+          .contents-box__price-section__price-box-left
+            .contents-box__price-section__price-box-left__text
+              価格
+            .form-require
+              必須
+          .contents-box__price-section__price-box-right
+            .contents-box__price-section__price-box-right__text
+              ¥
+            = f.text_field :price, class:'contents-box__price-section__price-box-right__price-form',placeholder: '例)300'
+          .contents-box__price-section__border
 
+          .contents-box__price-section__fee-left
+            販売手数料(10%)
+          .contents-box__price-section__fee-right
+            ¥10000*0.1
+          .contents-box__price-section__border
+
+          .contents-box__price-section__result-left
+            販売利益
+          .contents-box__price-section__result-right
+            ¥9,000
 
 
 
