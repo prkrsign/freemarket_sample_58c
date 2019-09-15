@@ -123,22 +123,41 @@
                     .product__upper__text{style: ""}
                       サンプル
                       .product__upper__text__after
-
-
-
-
-
-
-
-
-
-
-
-
-
-          -# - (1..10).each do |i|
-
-          -# .middle__main__block__item__area
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            メンズ新着アイテム
+          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            家電・スマホ。カメラ新着アイテム
+          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            おもちゃ・ホビー・グッズ新着アイテム
+          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
 
 .exhibit_btn
-.a_area
+  .exhibit_btn__moji
+    出品
+    %i.fas.fa-camera
