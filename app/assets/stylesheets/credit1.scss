@@ -1,0 +1,66 @@
+// https://www.mercari.com/jp/mypage/card/ クレジット登録画面1
+.contents-box{
+    margin: 40px 210px 40px 210px;
+    width: 700;
+    
+    .fa-credit-card{
+        margin-right: 10px;
+    }
+    .credit-box{
+        background-color: #FFF;
+        width: 700px;
+        height: 360px;
+        float: right;
+
+        .credit-chapter-container{
+            margin: 0;
+
+            &__head{
+                font-size: 24px;
+                padding: 8px 24px;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            &__inner{
+                border-top: 1px solid #eee;
+                padding:  58px 58px 40px 58px;
+                    &__content{
+                        max-width: 320px;
+                        margin: 0 auto;
+                        font-weight: 600;
+                    }
+                    &__setting{
+                        padding: 24px 0;
+                        border-bottom: 1px solid #eee;
+                        text-align: center;
+                        &__btn{
+                            margin-left: 125px;
+                            background: #ea352d;
+                            color: #fff;
+                            display: block;
+                            width: 320px;
+                            line-height: 48px;
+                            font-size: 14px;
+                            border: 1px solid transparent;
+                            cursor: pointer;
+                            text-align: center;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            &__regist{
+                width: 620px;
+                height: 16px;
+                &__way{
+                    font-size: 14px;
+                    display: block;
+                    text-align: right;
+                    color: #0099e8;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
