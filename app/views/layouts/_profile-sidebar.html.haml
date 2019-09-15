@@ -37,7 +37,7 @@
         %div.tab-contents
           %ul#tab-notification.mypage-item-list.tab-pane.active #ここも怪しい
             %li
-              =link_to "#" .mypage-item-link-box
+              =link_to "#" ,class: "mypage-item-link-box"
                 %figure
                   %img.lazyloaded{data-src:"/user_image_1.jpg"}
                 %div.notification-message-box 「事務局から個別メッセージ「期間限定、売れたら梱包に使える特製ダンボールが無料でもらえます！」
@@ -49,7 +49,7 @@
                   \::before
                   
             %li
-              =link_to "#" .mypage-item-link-box
+              =link_to "#" ,class: "mypage-item-link-box"
                 %figure
                   %img.lazyloaded{data-src:"/user_image_2.jpg"}
                 %div.notification-message-box モコなりさん、他３名が「新商品 プログラミング教材の決定版」にいいね！しました
@@ -61,7 +61,7 @@
                   \::before
 
             %li
-              =link_to "#" .mypage-item-link-box
+              =link_to "#" ,class: "mypage-item-link-box"
                 %figure
                   %img.lazyloaded{data-src:"/user_image_3.jpg"}
                 %div.notification-message-box マップマーケティングさん、他7名が「ロングヒットの秘訣」にいいね！しました
@@ -73,7 +73,7 @@
                   \::before
 
             %li
-              =link_to "#" .mypage-item-link-box
+              =link_to "#" ,class: "mypage-item-link-box"
                 %figure
                   %img.lazyloaded{data-src:"/user_image_4.jpg"}
                 %div.notification-message-box 寺田下心さん、他2名が「訳ありコーヒーメーカー」にいいね！しました
@@ -85,7 +85,7 @@
                   \::before
 
             %li
-              =link_to "#" .mypage-item-link-box
+              =link_to "#" ,class: "mypage-item-link-box"
                 %figure
                   %img.lazyloaded{data-src:"/user_image_5.jpg"}
                 %div.notification-message-box 内山田洋とクール・ファイブさん、他24名が「だからあなたは悪徳商法に騙される」にいいね！しました
@@ -184,12 +184,7 @@
             =link_to "#"
               一覧を見る
                   
-  %a.sell-btn 
-    =link_to "##"
-      %div
-        出品
-      %i.icon-of-camera
-        \::before
+ 
 
 
 
@@ -201,105 +196,105 @@
 
   
 
-    -# ここからサイドバー。共通で使えるところ。
-    .side-bar
-      %nav.mypage-nav
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item active'} 
-              マイページ
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              お知らせ
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              やることリスト
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              いいね！一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品する
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              出品した商品-出品中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-売却済み
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-過去の取引
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ニュース一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              評価一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ガイド
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              お問い合わせ
-              %i.fas.fa-chevron-right
+    -# -# ここからサイドバー。共通で使えるところ。
+    -# .side-bar
+    -#   %nav.mypage-nav
+    -#     %ul.mypage-nav__list
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item active'} 
+    -#           マイページ
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           お知らせ
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           やることリスト
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           いいね！一覧
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           出品する
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           出品した商品-出品中
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           出品した商品-取引中
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           出品した商品-売却済み
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           出品した商品-取引中
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           出品した商品-過去の取引
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           ニュース一覧
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           評価一覧
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           ガイド
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           お問い合わせ
+    -#           %i.fas.fa-chevron-right
 
-        %h3.mypage-nav__head メルペイ
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              売上・振込申請
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              ポイント
-              %i.fas.fa-chevron-right
+    -#     %h3.mypage-nav__head メルペイ
+    -#     %ul.mypage-nav__list
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           売上・振込申請
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           ポイント
+    -#           %i.fas.fa-chevron-right
         
-        %h3.mypage-nav__head 設定
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              プロフィール
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              発送元・お届け先住所変更
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              支払い方法
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              メール/パスワード
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              本人情報
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              電話番号の確認
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ログアウト
-              %i.fas.fa-chevron-right
+    -#     %h3.mypage-nav__head 設定
+    -#     %ul.mypage-nav__list
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           プロフィール
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           発送元・お届け先住所変更
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           支払い方法
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           メール/パスワード
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           本人情報
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'} 
+    -#           電話番号の確認
+    -#           %i.fas.fa-chevron-right
+    -#       %li
+    -#         %a{href: '#', class: 'mypage-nav__list__item'}
+    -#           ログアウト
+    -#           %i.fas.fa-chevron-right
