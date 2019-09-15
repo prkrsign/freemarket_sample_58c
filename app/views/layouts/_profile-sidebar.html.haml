@@ -76,7 +76,7 @@
               =link_to "#" .mypage-item-link-box
                 %figure
                   %img.lazyloaded{data-src:"/user_image_4.jpg"}
-                %div.notification-message-box 旧DMMさん、他2名が「訳ありコーヒーメーカー」にいいね！しました
+                %div.notification-message-box 寺田下心さん、他2名が「訳ありコーヒーメーカー」にいいね！しました
                   %time
                     %i.icon-time
                       \::before
@@ -102,8 +102,103 @@
           %ul#todo-tab.mypage-item-list
             %li.mypageitem-not-found
               現在、やることリストはありません
-    
-            
+
+    -#購入した商品タブの作成
+    %section.mypage-lower-tab-container
+      %h2.maypage-tab-head
+           購入した商品
+      %ul.mypage-tabs
+        %li
+          %h3
+            =link_to "#" %data-toggle.tab #ここ怪しい
+        %li.active
+          %h3
+            =link_to "#" %data-toggle.tab #ここ怪しいよ    
+      %div.tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list %tab-pane #ここ怪しい
+          %li.mypage-item-not-found
+            取引中の商品はありません
+        %ul#mypage-tab-transaction-old.mypage-item-lists tab-pane %active
+          %li
+            =link_to "#".mypage-item-link
+              %figure
+                = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+              %div.mypage-item-body
+                %div.mypage-item-text 
+                  「焦げ付かないフライパン」を購入しました。
+                     %span 取引が完了しました
+                %div.mypage-item-status bold %done #ここ怪しい
+                  取引完了
+              %i.icon-arrow-right
+                \::before
+
+          %li
+            =link_to "#".mypage-item-link
+              %figure
+                = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+              %div.mypage-item-body
+                %div.mypage-item-text 
+                  「焦げ付かないフライパン」を購入しました。
+                     %span 取引が完了しました
+                %div.mypage-item-status bold %done #ここ怪しい
+                  取引完了
+              %i.icon-arrow-right
+                \::before
+          %li
+            =link_to "#".mypage-item-link
+              %figure
+                = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+              %div.mypage-item-body
+                %div.mypage-item-text 
+                  「焦げ付かないフライパン」を購入しました。
+                     %span 取引が完了しました
+                %div.mypage-item-status bold %done #ここ怪しい
+                  取引完了
+              %i.icon-arrow-right
+                \::before
+          %li
+            =link_to "#".mypage-item-link
+              %figure
+                = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+              %div.mypage-item-body
+                %div.mypage-item-text 
+                  「焦げ付かないフライパン」を購入しました。
+                     %span 取引が完了しました
+                %div.mypage-item-status bold %done #ここ怪しい
+                  取引完了
+              %i.icon-arrow-right
+                \::before
+          %li
+            =link_to "#".mypage-item-link
+              %figure
+                = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+              %div.mypage-item-body
+                %div.mypage-item-text 
+                  「焦げ付かないフライパン」を購入しました。
+                     %span 取引が完了しました
+                %div.mypage-item-status bold %done #ここ怪しい
+                  取引完了
+              %i.icon-arrow-right
+                \::before
+          %li.mypage-go-back-list
+            =link_to "#"
+              一覧を見る
+                  
+  %a.sell-btn 
+    =link_to "##"
+      %div
+        出品
+      %i.icon-of-camera
+        \::before
+
+
+        
+
+         
+
+        
+        
+
   
 
     -# ここからサイドバー。共通で使えるところ。
