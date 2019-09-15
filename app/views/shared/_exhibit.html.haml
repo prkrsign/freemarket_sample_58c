@@ -4,13 +4,14 @@
     =link_to "#", class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
   
--# メインコンテンツ。画像アップロード部分
+-# メインコンテンツ。
 %main.main-contents
   .contents-box
-    .contents-box__sell-container
+    %section.contents-box__sell-container
       商品の情報を入力
     = form_with(url: '#', class: 'contents-box__form-list') do |f|
-      .contents-box__form-list__upload-box
+      -# 画像アップロード部分
+      %section.contents-box__form-list__upload-box
         .contents-box__form-list__upload-box__image-text
           出品画像
         .form-require
@@ -27,7 +28,7 @@
       .contents-box__form-list__space
 
       -# 商品名、商品説明入力部分
-      .contents-box__descript-section
+      %section.contents-box__descript-section
         .contents-box__descript-section__item-name
           .contents-box__descript-section__item-name__text
             商品名
@@ -42,6 +43,13 @@
             必須
         = f.text_area :description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
       .contents-box__descript-section__space
+
+      -# 商品の詳細、カテゴリ選択部分
+      %section.contents-box__categorie-section
+        %h3.contents-box__categorie-section__sub-head
+          配送について
+        =link_to "#", class: "contents-box__categorie-section__sub-head__icon" do
+          %i.fas.fa-question-circle
 
 
 

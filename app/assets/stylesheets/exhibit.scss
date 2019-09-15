@@ -164,6 +164,27 @@ html{
                 border-bottom: 1px solid #eee;
             }
         }
+        // カテゴリ選択
+        &__categorie-section{
+            padding: 40px;
+            &__sub-head{
+                float: left;
+                color: #888;
+                font-size: 14px;
+                &__icon{
+                    .fa-question-circle{
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        background: #0099e8;
+                        line-height: 14px;
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
     }
 }
 
