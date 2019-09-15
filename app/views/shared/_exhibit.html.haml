@@ -4,7 +4,7 @@
     =link_to "#", class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
   
--# メインコンテンツ。
+-# メインコンテンツ
 %main.main-contents
   .contents-box
     %section.contents-box__sell-container
@@ -42,14 +42,46 @@
           .form-require
             必須
         = f.text_area :description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
-      .contents-box__descript-section__space
+      -# .contents-box__descript-section__space
 
       -# 商品の詳細、カテゴリ選択部分
-      %section.contents-box__categorie-section
-        %h3.contents-box__categorie-section__sub-head
+      %section.contents-box__category-section
+        %h3.contents-box__category-section__sub-head
+          商品の詳細
+        .contents-box__category-section__category-box
+          -# カテゴリ繰り替えし
+          .contents-box__category-section__category-box__tag
+            カテゴリー
+            .form-require
+              必須
+            - (1..3).each do
+              = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+          -# サイズプルダウン
+          .contents-box__category-section__category-box__tag
+            サイズ
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+          -# プルダウンにしてるけど、本当はインクリメンタルサーチ
+          .contents-box__category-section__category-box__tag
+            ブランド
+            .form-any
+              任意
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+          -# 商品の状態プルダウン
+          .contents-box__category-section__category-box__tag
+            商品の状態
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+
+      %section.contents-box__category-section
+        %h3.contents-box__category-section__sub-head
           配送について
-        =link_to "#", class: "contents-box__categorie-section__sub-head__icon" do
-          %i.fas.fa-question-circle
+
+
+
+
 
 
 
