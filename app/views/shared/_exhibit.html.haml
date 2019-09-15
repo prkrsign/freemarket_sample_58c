@@ -75,6 +75,7 @@
               必須
             = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
 
+      -# 配送の設定
       %section.contents-box__category-section#delivery
         %h3.contents-box__category-section__sub-head
           配送について
@@ -105,7 +106,8 @@
             .form-require
               必須
             = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
-        
+      
+      -# 販売価格、手数料の表示 
       %section.contents-box__category-section#fee
         %h3.contents-box__category-section__sub-head
           販売価格(300~9,999,999)
@@ -134,6 +136,20 @@
             販売利益
           .contents-box__price-section__result-right
             ¥9,000
+        
+      %section.contents-box__sell-decision-container
+        %p.contents-box__sell-decision-container__note
+          禁止されている出品、行為を必ずご確認ください。
+        %p.contents-box__sell-decision-container__note
+          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %p.contents-box__sell-decision-container__note
+          また、出品をもちまして加盟店規約に同意したことになります。
+        
+        = f.submit nil, class: 'btn btn-primary btn-red' , value: "出品する" do
+          出品する
+        = link_to "#", class:'btn-default btn-gray' do
+          もどる
+        
 
 
 

@@ -237,7 +237,6 @@ body{
         &__price-section{
             float: right;
             margin-top: 50px;
-            // background: lightblue;
             height: 200px;
             width: 400px;
             position: relative;
@@ -316,6 +315,42 @@ body{
                 float: right;
             }
         }
+        &__sell-decision-container{
+            padding:   40px;
+            border-top: 1px solid #eee;
+            height: 250px;
+            background: #fff;
+            &__note{
+                font-size: 14px;
+            }
+            .btn-red{
+                margin: 40px 0 0;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+            }
+            .btn-gray{
+                display: block;
+                width: 45%;
+                margin: 24px auto 0;
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+                line-height: 48px;
+                font-size: 14px;
+                text-decoration: none;
+            }
+        }
     }
 }
 
@@ -335,7 +370,7 @@ body{
 
 // ここからフッター
 footer{
-    top: 3000px; 
+    top: 2750px; 
     left: 650px;
     position: absolute;
     height: 250px;
