@@ -225,4 +225,19 @@
                   取引完了
               %i.icon-arrow-right 
                 \::before
-    
+    %ul.pager
+      %li.pager-num 
+        %ul 
+          %li.pager-cell.active
+            1
+          %li.pager-cell 
+            =link_to "#"
+              2
+      %li.pager-next.visible-pc
+        %ul
+          %li.pager-cell 
+            %link_to "#"
+              %i.icon-arrow-right
+          %li.pager-cell 
+            %link_to "#"
+              %i.icon-arrow-right
