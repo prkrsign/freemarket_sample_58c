@@ -341,29 +341,32 @@
 .exhibit_btn{
   cursor: pointer;
   bottom: 32px;
-  // font-size: 22px;
+  font-size: 22px;
   height: 160px;
   right: 32px;
   width: 160px;
   position: fixed;
   // box-sizing: border-box;
-  // text-align: center;
+  text-align: center;
     z-index: 2;
-    background-color: red
-    // border-radius: 50%;
-    // display: inline-block;
-  
-}
-.exhibit_btn__moji{
-  font-size: 22px;
-}
-.fas.fa-camera {
-    width: 60px;
-    height: 54px;
-    margin-top: 8px;
-    width: 100%;
-    max-height: 100%;
+    background-color: rgb(234, 53, 45);
     color: rgb(255, 255, 255);
-    display: block;
-    margin: 5px auto 0px;
+
+    border-radius: 50%;
+    display: inline-block;
+  
+  .exhibit_btn__moji{
+    margin-top: 30px;
+    font-size: 22px;
+
+  }
+  .fas.fa-camera {
+    font-size: 54px;
+      width: 60px;
+      height: 54px;
+      margin-top: 30px;
+      max-height: 100%;
+      display: block;
+      margin: 5px auto 0px;
+  }
 }
