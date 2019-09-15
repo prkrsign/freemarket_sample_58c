@@ -1,0 +1,79 @@
+-# ページのヘッダー部分
+.confirmation-header
+  %h1
+    =link_to "#", class: "confirmation-heade__link" do
+      = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
+
+-# メイン画面
+%main.confirmation-main
+  %section.confirmation-main__container
+    -# メイン画面ヘッダー
+    %h2.confirmation-main__container__header
+      購入内容の確認
+    
+    -# 商品情報、値段など
+    %section.confirmation-main__container__buy-content
+      .confirmation-main__container__buy-content__inner
+        %h3.confirmation-main__container__buy-content__inner__item
+          = image_tag '/confirm-test.jpg', size: "", alt: "buy-item-image" , class: 'confirmation-main__container__buy-content__inner__item__image'
+        %p.confirmation-main__container__buy-content__inner__item-name
+          付録：ピーナッツ スヌーピーのおうちと仲間たちチャーリーブラウンの縦型ポーチ
+        -# ポイント、支払い金額、購入ボタン
+        = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
+          .confirmation-main__container__buy-content__inner__buy-form__list
+            %p.confirmation-main__container__buy-content__inner__buy-form__list__price
+              ¥2,600
+              %span.confirmation-main__container__buy-content__inner__buy-form__list__price__text
+                送料込み
+            %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
+              ポイントはありません
+            %ul.confirmation-main__container__buy-content__inner__buy-form__list__table
+              %li.confirmation-main__container__buy-content__inner__buy-form__list__table__list
+                .confirmation-main__container__buy-content__inner__buy-form__list__table__list__left-text
+                  支払い金額
+                .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
+                  ¥2,600
+            =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
+    
+    -# ユーザー情報、配送先
+    %section.confirmation-main__container__buy-info
+      .confirmation-main__container__buy-info__container
+        %h3 配送先
+        %address.confirmation-main__container__buy-info__container__address
+          .confirmation-main__container__buy-info__container__address__postal-code 
+            〒000-0000
+          .confirmation-main__container__buy-info__container__address__address-name 
+            東京都渋谷区ほにゃらららららら
+          .confirmation-main__container__buy-info__container__address__user-name  
+            ユーザの本名
+          =link_to '#', class: 'confirmation-main__container__buy-info__container__user-info-fix' do
+            変更する
+            %i.fas.fa-chevron-right
+
+    -# 支払い方法
+    %section.confirmation-main__container__credit-info
+      .confirmation-main__container__credit-info__inner
+        %h3 支払い方法
+        .confirmation-main__container__credit-info__inner__card-number
+          ************1234
+        .confirmation-main__container__credit-info__inner__deadline
+          10/25
+        %img.confirmation-main__container__credit-info__inner__logo{alt: "card-logo", src: "/visa.svg"}
+
+-# ページのフッター部分
+%footer.confirmation-footer
+  %ul.confirmation-footer-container
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        プライバシーポリシー
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        メルカリ利用規約
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        特定商取引に関する表記
+
+    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+  .confirmation-footer-container__footer-text
+    ©︎2019 Mercari
