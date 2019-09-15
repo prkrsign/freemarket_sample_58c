@@ -4,7 +4,7 @@
     =link_to "#", class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
   
-
+-# メインコンテンツ。画像アップロード部分
 %main.main-contents
   .contents-box
     .contents-box__sell-container
@@ -19,9 +19,29 @@
           最大10枚までアップロードできます
       .contents-box__form-list__drop-box
         .contents-box__form-list__drop-box__item
-          = f.submit nil, class: 'contents-box__form-list__drop-box__item__upload-file'
+          -# carrier wave導入で、imageをアップロードできるようにする必要あり。
+          = f.file_field :image, class: 'contents-box__form-list__drop-box__item__upload-file'
+          .contents-box__form-list__drop-box__item__text
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+      .contents-box__form-list__space
 
+      -# 商品名、商品説明入力部分
+      .contents-box__descript-section
+        .contents-box__descript-section__item-name
+          .contents-box__descript-section__item-name__text
+            商品名
+          .form-require
+            必須
+        = f.text_field :name, class:'contents-box__descript-section__name-form',placeholder: '商品名(必須40文字まで)'
 
+        .contents-box__descript-section__item-description
+          .contents-box__descript-section__item-description__text
+            商品の説明
+          .form-require
+            必須
+        = f.text_area :description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+      .contents-box__descript-section__space
 
 
 
