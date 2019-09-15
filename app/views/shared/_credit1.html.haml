@@ -8,12 +8,10 @@
         .credit-chapter-container__inner__content
           クレジットカード一覧
       %section.credit-chapter-container__inner__setting
-        %a.credit-chapter-container__inner__setting__btn.btn-default.btn-red.submit_button{href: "#"}
+        =link_to "#", class: "credit-chapter-container__inner__setting__btn btn-default btn-red submit_button" do
           %i.fas.fa-credit-card
           クレジットカードを追加する
     .credit-chapter-container__regist
-      %a.credit-chapter-container__regist__way{href: "#"}
+      =link_to "#", class: "credit-chapter-container__regist__way" do
         %span 支払い方法について
         %i.fas.fa-chevron-right
-                        
-        
