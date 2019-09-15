@@ -98,4 +98,27 @@
             .mypage-item-text
               ¥5,000
           %i.icon-arrow-right 
-            \::before                   
+            \::before   
+      %li 
+        =link_to "##", class: mypage-item-link
+          %figure
+            = image_tag '/mercari_logo_basic', size: "", alt: "" , class: ''
+            %figcaption.mypage-sold 
+          .mypage-item-body
+            .mypage-item-text
+              メルカリ限定詰め合わせセット
+            .mypage-item-text
+              ¥4,000
+          %i.icon-arrow-right 
+            \::before  
+  %ul.mypage-history.pager
+    %li.pager-prev.pager-cell 
+      =link_to "#"
+        %i.icon-arrow-left 
+          \::before
+    %li.pager-next.pager-cell
+      =link_to "#"
+        %i.icon-arrow-right
+          \::before
+
+          
