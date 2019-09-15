@@ -1,2 +1,160 @@
 %main.l-container.clearfix
-  
+  .l-content
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 
+        出品した商品
+      %ul.listing-tabs
+        %li.active
+          %h3
+            =link_to "#", data-toggle: tab 
+              出品中
+        %li
+          %h3
+            =link_to "#",
+              取引中
+　　　　　%li
+          %h3
+            =link_to "#",
+              売却済み
+      %ul#mypage-tab-tansaction-now.mypage-item-list.tab-pane: active   
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+            %i.icon-arrow-right 
+              \::before
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    5
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    0
+                  .mypage-item-status.bold.awating
+                    出品中   
+            %i.icon-arrow-right 
+              \::before      
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    5
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    0
+                  .mypage-item-status.bold.awating
+                    出品中   
+            %i.icon-arrow-right 
+              \::before
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    7
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    2
+                  .mypage-item-status.bold.awating
+                    出品中   
+            %i.icon-arrow-right 
+              \::before
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    3
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    6
+                  .mypage-item-status.bold.awating
+                    出品中   
+            %i.icon-arrow-right 
+              \::before
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    1
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    0
+                  .mypage-item-status.bold.awating
+                    出品中   
+            %i.icon-arrow-right 
+              \::before
+        %li
+          =link_to "#", class: mypage-item-link
+            %figure
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+            .mypage-item-body.show-stock-item
+              .mypage-item-text
+                新品中禅寺湖
+              %div
+                %span.lisiting-item-count
+                  %i.icon-like-border
+                    \::before
+                  %span
+                    0
+                %span.listing-item-count
+                  %i.icon-message
+                    \::before
+                  %span
+                    0
+                  .mypage-item-status.bold.action-required
+                    公開停止中  
+            %i.icon-arrow-right 
+              \::before
