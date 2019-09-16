@@ -1,4 +1,3 @@
--# 〜〜〜〜〜ここから中段エリア〜〜〜〜〜
 .middle
   .middle__main
     .middle__main__slide
@@ -6,65 +5,120 @@
     .middle__main__category
       %h2.middle__main__category__text
         人気のカテゴリー
-        .middle__main__category__under
-          %ul.middle__main__category__under__area
-            %li.middle__main__category__under__area__a
-              %a.middle__main__category__under__area__a__1{href: "#"}レディース
-              %a.middle__main__category__under__area__a__2{href: "#"}メンズ
-              %a.middle__main__category__under__area__a__3{href: "#"}家電・スマホ・カメラ
-              %a.middle__main__category__under__area__a__4{href: "#"}おもちゃ・ホビー・グッズ
+      .middle__main__category__under
+        %ul.middle__main__category__under__area
+          %li.middle__main__category__under__area__a
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              レディース
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              メンズ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              家電・スマホ・カメラ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              おもちゃ・ホビー・グッズ
     .middle__main__block
       .middle__main__block__item
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             レディース新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
-        .middle__main__block__item__area
-          .middle__main__block__item__area__split
-            .middle__main__block__item__area__a
-              %a.middle__main__block__item__area__1
-                .product
-                  .product__upper
-                    .product__upper__text{style: ""}
-                      サンプル
-                      .product__under__text__after
-                  .product__under
-                    .product__under__price{price: ""}
-                    ¥
-                    900
-                    %img.product__under__img{alt: "product", src:"/radeis_sample1.jpg"}
-
-
-
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            メンズ新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            家電・スマホ・カメラ新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            おもちゃ・ホビー・グッズ新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__category
+      %h2.middle__main__category__text
+        人気のブランド
+      .middle__main__category__under
+        %ul.middle__main__category__under__area
+          %li.middle__main__category__under__area__a
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              シャネル
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              ルイヴィトン
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              シュプリーム
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              ナイキ
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            シャネル新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            ルイヴィトン新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            シュプリーム新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
+    .middle__main__block
+      .middle__main__block__item
+        .middle__main__block__item__top
+          %h3.middle__main__block__item__top__left
+            ナイキ新着アイテム
+          =link_to "#", class:'middle__main__block__item__top__right' do
+            もっと見る
+            %i.fas.fa-chevron-right
+        .block__area
+          - (1..10).each do |i|
+            .block__area__product
 .exhibit_btn
-.a_area
-
--# =link_to "aaa", class:"middle__main__category__text__1" do
--#   人気のカテゴリー
-
--# .maintenance{ style: "color:lightgray" }
--#   メンテナンス中
-
--# .sc-jtggT.foNpXE
-  -# %h2.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv1__3ygH4.sc-ebFjAB.fQfbaq 人気のカテゴリー
--#   .sc-jKVCRD.hFxLoS
--#     %ul.sc-kaNhvL.ivyWUP
--#       %li.sc-LKuAh.hIBODe
--#         %a.sc-iBEsjs.sc-hzNEM.gDalvy レディース
--#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt レディース
--#       %li.sc-LKuAh.hIBODe
--#         %a.sc-iBEsjs.sc-hzNEM.gDalvy メンズ
--#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt メンズ
--#       %li.sc-LKuAh.hIBODe
--#         %a.sc-iBEsjs.sc-hzNEM.gDalvy 家電・スマホ・カメラ
--#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt 家電・スマホ・カメラ
--#       %li.sc-LKuAh.hIBODe
--#         %a.sc-iBEsjs.sc-hzNEM.gDalvy おもちゃ・ホビー・グッズ
--#         %a.sc-iBEsjs.sc-chbbiW.hOgtHt おもちゃ・ホビー・グッズ
--# .sc-cooIXK.RhaiD
--#   .sc-fcdeBU.gynzDk
--#     .sc-kxynE.knuEY.sc-iGrrsa.kDCCFE{:name => "scroll-1"}
--#       %h3.style_heading__3qSF6.common_fontFamily__3-3Si.style_responsiveLv2__3K0hn.sc-bmyXtO.llCUnU レディース新着アイテム
--#       %a.sc-dEoRIm.hiMoUc{:href => "/jp/category/1/"} もっと見る
+  .exhibit_btn__moji
+    出品
+  %i.fas.fa-camera
