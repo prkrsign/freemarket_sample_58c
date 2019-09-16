@@ -1,4 +1,3 @@
--# 〜〜〜〜〜ここから中段エリア〜〜〜〜〜
 .middle
   .middle__main
     .middle__main__slide
@@ -9,16 +8,20 @@
       .middle__main__category__under
         %ul.middle__main__category__under__area
           %li.middle__main__category__under__area__a
-            %a.middle__main__category__under__area__a__parts{href: "#"}レディース
-            %a.middle__main__category__under__area__a__parts{href: "#"}メンズ
-            %a.middle__main__category__under__area__a__parts{href: "#"}家電・スマホ・カメラ
-            %a.middle__main__category__under__area__a__parts{href: "#"}おもちゃ・ホビー・グッズ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              レディース
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              メンズ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              家電・スマホ・カメラ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              おもちゃ・ホビー・グッズ
     .middle__main__block
       .middle__main__block__item
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             レディース新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -29,7 +32,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             メンズ新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -40,7 +43,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             家電・スマホ・カメラ新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -51,7 +54,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             おもちゃ・ホビー・グッズ新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -63,16 +66,20 @@
       .middle__main__category__under
         %ul.middle__main__category__under__area
           %li.middle__main__category__under__area__a
-            %a.middle__main__category__under__area__a__parts{href: "#"}シェネル
-            %a.middle__main__category__under__area__a__parts{href: "#"}ルイヴィトン
-            %a.middle__main__category__under__area__a__parts{href: "#"}シュプリーム
-            %a.middle__main__category__under__area__a__parts{href: "#"}ナイキ
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              シャネル
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              ルイヴィトン
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              シュプリーム
+            =link_to "#", class:"middle__main__category__under__area__a__parts" do
+              ナイキ
     .middle__main__block
       .middle__main__block__item
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             シャネル新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -83,7 +90,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             ルイヴィトン新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -94,7 +101,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             シュプリーム新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
@@ -105,7 +112,7 @@
         .middle__main__block__item__top
           %h3.middle__main__block__item__top__left
             ナイキ新着アイテム
-          %a{herf: '#', class: 'middle__main__block__item__top__right'}
+          =link_to "#", class:'middle__main__block__item__top__right' do
             もっと見る
             %i.fas.fa-chevron-right
         .block__area
