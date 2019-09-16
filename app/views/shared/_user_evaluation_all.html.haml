@@ -1,1 +1,72 @@
 %section.mypage-tab-container
+  %h2.mypage-tab-head
+    評価一覧
+  %ul.review-history-tabs
+    %li.active
+      %h3
+        =link_to "#", data-toggle.tab 
+          すべて
+    %li. 
+      %h3 
+        =link_to "#"
+          %div
+            %i.icon-good 
+              \::before
+            良い
+    %li. 
+      %h3 
+        =link_to "#"
+          %div
+            %i.icon-normal 
+              \::before
+            普通
+    %li. 
+      %h3 
+        =link_to "#"
+          %div
+            %i.icon-bad 
+              \::before
+            悪い
+  .tab-content
+    %ul.mypage-item-list
+      %li
+        =link_to "#", class: mypage-item-link 
+          %figure
+            = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+          .mypage-item-body
+            .mypage-item-text 
+              %i.icon-good 
+                \::before
+              購入者
+            .mypage-item-text
+              DIV
+            .mypage-item-text 
+            .mhypage-item-text 
+              %i.icon-time 
+                \::before 
+              2019年8月31日 19:00
+            %i.icon-arrow-right 
+              \::before
+      %li 
+        =link_to "#", class: ypage-item-link 
+          %figure
+            = image_tag '/user_sample_picture', size: "", alt: "" , class: ''
+          .mypage-item-body 
+            .mypage-item-text 
+              %i.icon-good 
+                \::before 
+              購入者    
+            .mypage-item-text 
+              高橋
+            .maypage-item-text 
+              ありがとうございます！とても気に入っています。
+            .mypage-item-text
+              %i.icon-time
+                \::before 
+              2019年8月1日 21:04
+            %i.icon-arrow-right 
+              \::before
+      
+
+
+      
