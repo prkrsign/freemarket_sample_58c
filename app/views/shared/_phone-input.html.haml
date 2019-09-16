@@ -1,5 +1,5 @@
 -# 他cssとの干渉をさけるため、全体をラップする
-.phone-input-wrapper
+.login-header-wrapper
 
   -# ログインページ用ヘッダー
   = render 'shared/login-header'
@@ -9,12 +9,11 @@
     %section.main-content
       %h2.main-content__header
         電話番号の確認
-      %form
+      = form_with(url: '#') do |f|
         .form-content
           .form-group
-            %label
-              携帯電話の番号
-            %input{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", class: "phone-number"}
+            = f.label  "携帯電話の番号"
+            = f.text_field :name, class: "phone-number" , placeholder: '携帯電話の番号を入力'
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           %button SMSを送信する
           %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
