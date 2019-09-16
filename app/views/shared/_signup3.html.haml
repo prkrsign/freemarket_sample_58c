@@ -5,26 +5,26 @@
   .contents
     .contents__head
       支払い方法
-    .contents__form
+    = form_with(url: '#' , class: "contents__form") do |f|
       .contents__form__title1
         %label カード番号
         %span.contents__form__require#card-number-require 必須
-        %input{ class:"contents__form__input", maxlength:"10", name:"card-name", placeholder:"半角数字のみ", type:"text", value:""}
+        = f.text_field :name, class: "contents__form__input" , placeholder: '半角数字のみ'
         %ul.contents__form__cardlist
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763", width:"40"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "15", width: "40"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763", width:"40"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "15", width: "40"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763", width:"25"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763', height: "15", width: "25"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763", width:"37"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763', height: "15", width: "37"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763", width:"21"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763', height: "15", width: "21"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763", width:"40"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "15", width: "40"
           %li
-            %img{alt:"", height:"15", src:"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763", width:"21"}
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
 
       .contents__form__title
         %label 有効期限
