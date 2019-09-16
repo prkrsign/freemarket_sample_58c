@@ -11,11 +11,14 @@
   display: flex;
   justify-content: center;
   padding: 72px 16px 24px;
-  background-color: azure;
+  background-image: url("/gimp_wallpaper_eyecatch.png");
 }
 .setting-profile-head {
   height: 48px;
   margin: 0 10px 0 0;
+}
+.setting-profile-image {
+  border-radius: 50%;
 }
 .setting-profile-input {
   height: 28px;
