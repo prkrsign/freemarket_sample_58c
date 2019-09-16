@@ -1,0 +1,94 @@
+.credit-register-wrapper
+  %header= render 'shared/main_page_header'
+
+  %main.credit-register-container
+    = render 'shared/profile-sidebar'
+    .credit-register-container__right
+      .credit-register-container__right__header
+        クレジットカード情報入力
+      = form_with(url: '#' , class: "credit-register-container__right__form") do |f|
+        .credit-register-container__right__form__box
+          %label カード番号
+          %span.contents__form__require#card-number-require 必須
+          = f.text_field :name, class: "credit-register-container__right__form__box__text-field" , placeholder: '半角数字のみ'
+          %ul.credit-register-container__right__form__box__cardlist
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "20", width: "45"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "20", width: "45"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763', height: "20", width: "30"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763', height: "20", width: "42"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763', height: "20", width: "26"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "20", width: "45"
+            %li
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "20", width: "26"
+              
+          .credit-register-container__right__deadline
+            %label 有効期限
+            %span.contents__form__require 必須
+            .credit-register-container__right__deadline__list{ style:"display:inline-flex"}
+              %select{ name:"month", class:"credit-register-container__right__deadline__list__month" }
+                %option{value:""} --
+                %option{value:"01"} 01
+                %option{value:"02"} 02
+                %option{value:"03"} 03
+                %option{value:"04"} 04
+                %option{value:"05"} 05
+                %option{value:"06"} 06
+                %option{value:"07"} 07
+                %option{value:"08"} 08
+                %option{value:"09"} 09
+                %option{value:"10"} 10
+                %option{value:"11"} 11
+                %option{value:"12"} 12
+              %span 月
+              %select{ name:"day", class:"credit-register-container__right__deadline__list__year" }
+                %option{value:""} --
+                %option{value:"19"} 19
+                %option{value:"20"} 20
+                %option{value:"21"} 21
+                %option{value:"22"} 22
+                %option{value:"23"} 23
+                %option{value:"24"} 24
+                %option{value:"25"} 25
+                %option{value:"26"} 26
+                %option{value:"27"} 27
+                %option{value:"28"} 28
+                %option{value:"29"} 29
+              %sapn 年
+
+        .credit-register-container__right__form__title
+          %label セキュリティコード
+          %span.contents__form__require 必須
+          = f.text_field :name, class: "credit-register-container__right__form__title__code" , placeholder: 'カード背面4桁もしくは3桁の番号', type: 'text'
+        .credit-register-container__right__form__info
+          %i.fas.fa-question-circle.credit-register-container__right__form__info__question
+          %span カード裏面の番号とは？
+        
+        =f.submit nil, class: 'credit-register-container__right__form__btn', value: '追加する'
+
+  
+%aside= render 'shared/aside'
+%footer= render 'shared/footer'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
