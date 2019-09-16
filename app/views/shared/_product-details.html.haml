@@ -1,5 +1,5 @@
 .container
-  .item-box
+  = form_with url: "#", method: :post , class: 'item-box' do
     %h1.item-box__name ノーブランド＊ワンピース＊オレンジ＊リボン＊M
     %p.item-box__detail 『ノーブランド＊ワンピース＊オレンジ＊リボン＊M』は、、、
     .item-main
@@ -10,7 +10,8 @@
         %tr
           %th.category 出品者
           %td
-            %a.name 名前（仮）
+            = link_to "#", class:"name" do
+              名前（仮）
             .user-rating
               .item-user-ratings
                 %i.fas.fa-laugh 
@@ -82,13 +83,16 @@
       .button-content__left
         .button-like
           %i.far.fa-heart
-          %aいいね！ 0
+          = link_to "#", class: "button-like__text" do
+            いいね！ 0
         .button-report
           %i.far.fa-flag
-          %a不適切な商品の報告
-      .button-content__right
+          = link_to "#", class: "button-report__text" do
+            不適切な商品の報告
+      
+      = link_to "#", class: "button-content__right" do
         %i.fas.fa-lock
-        %aあんしんあんぜんへの取り組み
+          あんしんあんぜんへの取り組み
 
 
 
