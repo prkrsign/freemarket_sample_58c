@@ -1,71 +1,217 @@
-%section.mypage-tab-container
-  %h2.mypage-tab-head
-    評価一覧
-  %ul.review-history-tabs
-    %li.active
-      %h3
-        =link_to "#", data-toggle.tab 
-          すべて
-    %li. 
-      %h3 
-        =link_to "#"
-          %div
-            %i.icon-good 
-              \::before
-            良い
-    %li. 
-      %h3 
-        =link_to "#"
-          %div
-            %i.icon-normal 
-              \::before
-            普通
-    %li. 
-      %h3 
-        =link_to "#"
-          %div
-            %i.icon-bad 
-              \::before
-            悪い
-  .tab-content
-    %ul.mypage-item-list
-      %li
-        =link_to "#", class: mypage-item-link 
-          %figure
-            = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
-          .mypage-item-body
-            .mypage-item-text 
-              %i.icon-good 
+%main.l-container.clearfix
+  .l-content
+    %section.mypage-tab-container
+      %h2.mypage-tab-head
+        評価一覧
+      %ul.review-history-tabs
+        %li.active
+          %h3
+            =link_to "#", data-toggle.tab 
+              すべて
+        %li. 
+          %h3 
+            =link_to "#"
+              %div
+                %i.icon-good 
+                  \::before
+                良い
+        %li. 
+          %h3 
+            =link_to "#"
+              %div
+                %i.icon-normal 
+                  \::before
+                普通
+        %li. 
+          %h3 
+            =link_to "#"
+              %div
+                %i.icon-bad 
+                  \::before
+                悪い
+      .tab-content
+        %ul.mypage-item-list
+          %li
+            =link_to "#", class: mypage-item-link 
+              %figure
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before
+                  購入者
+                .mypage-item-text
+                  DIV
+                .mypage-item-text 
+                .mhypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年8月31日 19:00
+                %i.icon-arrow-right 
+                  \::before
+          %li 
+            =link_to "#", class: ypage-item-link 
+              %figure
+                = image_tag '/user_sample_picture', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  購入者    
+                .mypage-item-text 
+                  高橋
+                .maypage-item-text 
+                  ありがとうございます！とても気に入っています。
+                .mypage-item-text
+                  %i.icon-time
+                    \::before 
+                  2019年8月1日 21:04
+                %i.icon-arrow-right 
+                  \::before
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  田中
+                .mypage-item-text 
+                  またよろしくお願いします
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年7月13日 15:37
+              %i.icon-arrow-right 
                 \::before
-              購入者
-            .mypage-item-text
-              DIV
-            .mypage-item-text 
-            .mhypage-item-text 
-              %i.icon-time 
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  仲田
+                .mypage-item-text 
+                  またよろしくお願いします！
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年7月11日 12:09
+              %i.icon-arrow-right 
+                \::before
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  元木
+                .mypage-item-text 
+                  この度はご購入ありがとうございました
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年6月1日 3:37
+              %i.icon-arrow-right 
+                \::before
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size:"", alt:"", class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-bad 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  クリッパー
+                .mypage-item-text 
+                .mypage-item-text 
+                  %i.icon-time
+                    \::before 
+                  2019年5月30日 14:22
+              %i.icon-arrow-right 
+                \::before
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  田中
+                .mypage-item-text 
+                  またよろしくお願いします
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年5月23日 10:37
+              %i.icon-arrow-right 
+                \::before
+          %li 
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt: "" , class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  出品者
+                .mypage-item-text 
+                  仲田
+                .mypage-item-text 
+                  またよろしくお願いします！
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2019年5月16日 12:09
+              %i.icon-arrow-right 
+                \::before
+          %li
+            =link_to "#", class: "mypage-item-link"
+              %figure 
+                = image_tag '/user_sample_picture_x.png', size: "", alt:"", class: ''
+              .mypage-item-body 
+                .mypage-item-text 
+                  %i.icon-good 
+                    \::before 
+                  購入者
+                .mypage-item-text 
+                  このユーザーは退会済みです
+                .mypage-item-text 
+                  商品を受け取りました。迅速な対応ありがとうございます
+                .mypage-item-text 
+                  %i.icon-time 
+                    \::before 
+                  2016年2月23日
+              %i.icon-arrow-right 
                 \::before 
-              2019年8月31日 19:00
-            %i.icon-arrow-right 
-              \::before
-      %li 
-        =link_to "#", class: ypage-item-link 
-          %figure
-            = image_tag '/user_sample_picture', size: "", alt: "" , class: ''
-          .mypage-item-body 
-            .mypage-item-text 
-              %i.icon-good 
-                \::before 
-              購入者    
-            .mypage-item-text 
-              高橋
-            .maypage-item-text 
-              ありがとうございます！とても気に入っています。
-            .mypage-item-text
-              %i.icon-time
-                \::before 
-              2019年8月1日 21:04
-            %i.icon-arrow-right 
-              \::before
+    %ul.mypage-history.pager 
+      %li.pager-prev.pager-cell
+        =link_to "#"
+          %i.icon-arrow-left 
+            \::before
+      %li.pager-prev.pager-cell
+        =link_to "#"
+          %i.icon-arrow-right 
+            \::before 
+
+
+
       
 
 
