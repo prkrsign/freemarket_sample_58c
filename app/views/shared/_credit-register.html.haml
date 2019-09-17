@@ -31,34 +31,9 @@
             %label 有効期限
             %span.contents__form__require 必須
             .credit-register-container__right__deadline__list{ style:"display:inline-flex"}
-              %select{ name:"month", class:"credit-register-container__right__deadline__list__month" }
-                %option{value:""} --
-                %option{value:"01"} 01
-                %option{value:"02"} 02
-                %option{value:"03"} 03
-                %option{value:"04"} 04
-                %option{value:"05"} 05
-                %option{value:"06"} 06
-                %option{value:"07"} 07
-                %option{value:"08"} 08
-                %option{value:"09"} 09
-                %option{value:"10"} 10
-                %option{value:"11"} 11
-                %option{value:"12"} 12
+              = f.select :month, Test.months.keys.to_a, {} ,class: "credit-register-container__right__deadline__list__month"
               %span 月
-              %select{ name:"day", class:"credit-register-container__right__deadline__list__year" }
-                %option{value:""} --
-                %option{value:"19"} 19
-                %option{value:"20"} 20
-                %option{value:"21"} 21
-                %option{value:"22"} 22
-                %option{value:"23"} 23
-                %option{value:"24"} 24
-                %option{value:"25"} 25
-                %option{value:"26"} 26
-                %option{value:"27"} 27
-                %option{value:"28"} 28
-                %option{value:"29"} 29
+              = f.select :year, Test.years.keys.to_a, {} ,class: "credit-register-container__right__deadline__list__year"
               %sapn 年
 
         .credit-register-container__right__form__title
@@ -72,23 +47,5 @@
         =f.submit nil, class: 'credit-register-container__right__form__btn', value: '追加する'
 
   
-%aside= render 'shared/aside'
+%aside= render 'shared/aside' 
 %footer= render 'shared/footer'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
