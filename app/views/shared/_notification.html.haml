@@ -4,16 +4,16 @@
       %ul.mypage-tabs
         %li.active
           %h3
-            =link_to "#"
+            =link_to "#" do
               お知らせ
         %li.
           %h3
-            =link_to "#"
+            =link_to "#" do
               やることリスト
       .tab-content
-        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+        %ul#mypage-tab-notification.mypage-item-list__tab-pane--active
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 =image_tag '/mercari_logo_basic_type', size: "", alt: "##" , class: 'lazyloaded'
               .mypage-item-body
@@ -28,7 +28,7 @@
               %i.icon-arrow-right
                 \::before
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: 'mypage-item-link', data-open: modal, data-modal: banner  do
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -42,7 +42,7 @@
               %i.icon-arrow-right     
                 \::before   
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -56,7 +56,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -70,7 +70,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do 
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -84,7 +84,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do 
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -98,7 +98,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do   
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -112,7 +112,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -126,7 +126,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do 
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -140,7 +140,7 @@
               %i.icon-arrow-right     
                 \::before 
           %li
-            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner  
+            =link_to "", class: mypage-item-link, data-open: modal, data-modal: banner do
               %figure
                 = image_tag '/mercari_logo_basic', size: "", alt: "" , class: 'lazyloaded'  
               .mypage-item-body
@@ -153,8 +153,6 @@
                       10時間前
               %i.icon-arrow-right     
                 \::before  
-      %ul#mypage-tab-todo.mypage-item-list.tab-pane.active 
+      %ul#mypage-tab-todo, class: 'mypage-item-list'.tab-pane.active 
         %li.mypage-item-not-found.bold
-          現在、やることリストはありません        
-
-              
+          現在、やることリストはありません     
