@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'goods/new'
   resources :tests
+  resources :goods
   devise_for :users
   root to: 'tests#index'
   get '/show', to: 'tests#show'
