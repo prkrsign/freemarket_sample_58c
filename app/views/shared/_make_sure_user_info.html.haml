@@ -1,28 +1,39 @@
 %main.l-container.clearfix
   .l-content 
     %section.l-chapter-container.mypage-identification
-      %h2.l-chapter-head 本人情報の登録
+      %h2.l-chapter-head 
+        本人情報の登録
       %form.action: "#" method: "POST", class: "l-single-inner", novalidate 
         %div 
-          %p お客様の本人情報をご確認ください。
-            %br 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p 
+            お客様の本人情報をご確認ください。
+            %br 
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
           %p.text-right
-            =link_to "#", target: "_blank" 本人確認書類のアプロードについて
+            =link_to "#", target: "_blank" do
+              本人確認書類のアプロードについて 
               %i.icon-arrow-right 
                 \::before
         .form-group 
-          %label お名前カナ
-          %p メルカリ太郎 
+          %label 
+            お名前カナ
+          %p 
+            メルカリ太郎 
         .form-group 
-          %label 生年月日
-          %p 1990/8/30
+          %label 
+            生年月日
+          %p 
+            1990/8/30
         .form-group 
-          %label.for.zipcode 郵便番号
-          %span.sorm-arbitrary 任意
+          %label.for.zipcode 
+            郵便番号
+          %span.sorm-arbitrary 
+            任意
           %input.type:"text", value: "",name: "zip-code", placeholder="例）1234567", class: "input-default" 
         .form-group 
           %label.for: prefecture　都道府県
-          %span.form-arbitrary 任意
+          %span.form-arbitrary 
+            任意
           .selectwrap
             %i.icon-arrow-bottom
               \::before 
@@ -44,7 +55,8 @@
         %button type.submit, class: "btn-default btn-red" 登録する
         .form-group text-right 
           %p 
-            =link_to "#", target: "_blank" 本人情報について
+            =link_to "#", target: "_blank" do
+              本人情報について
               %i.icon-arrow-right 
                 \::before 
         %input type: "hidden" name: "__csrf_value", value: "#"
