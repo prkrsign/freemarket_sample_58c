@@ -6,25 +6,25 @@
       %ul.review-history-tabs
         %li. 
           %h3 
-            =link_to "#"
+            =link_to "#" do
               すべて
         %li.
           %h3 
-            =link_to "#", data-toggle: "tab"
+            =link_to "#", data-toggle: "tab" do
               %div 
                 %i.icon-bad
                   \::before 
                 良い
         %li.
           %h3 
-            =link_to "#", data-toggle: "tab"
+            =link_to "#", data-toggle: "tab" do
               %div 
                 %i.icon-normal
                   \::before 
                 普通
         %li.active
           %h3 
-            =link_to "#", data-toggle: "tab"
+            =link_to "#", data-toggle: "tab" do
               %div 
                 %i.icon-bad
                   \::before 
@@ -32,9 +32,9 @@
       .tab-content 
         %ul.mypage-item-list 
           %li
-            =link_to "#", class: mypage-item-link 
+            =link_to "#", class: mypage-item-link do
               %figure
-                = image_tag '/user_image_sample_claim.jpg', size: "", alt: "" , class: ''
+                = image_tag '/user_image_sample_claim.jpg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
                 .mypage-item-text 
                   %i.icon-bad 
@@ -50,9 +50,9 @@
                 %i.icon-arrow-right 
                   \::before
           %li
-            =link_to "#", class: mypage-item-link 
+            =link_to "#", class: 'mypage-item-link' do 
               %figure
-            = image_tag 'user_image_sample_claim.jpg', size: "", alt: "" , class: ''
+            = image_tag 'user_image_sample_claim.jpg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
                 .mypage-item-text 
                   bad 
@@ -68,9 +68,9 @@
                 %i.icon-arrow-right 
                   \::before
           %li
-            =link_to "#", class: mypage-item-link 
+            =link_to "#", class: 'mypage-item-link' do
               %figure
-            = image_tag '/user_image_sample_claim.jpg', size: "", alt: "" , class: ''
+            = image_tag '/user_image_sample_claim.jpg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
                 .mypage-item-text 
                   bad 
@@ -88,10 +88,10 @@
 
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-left 
             \::before
       %li.pager-prev.pager-cell
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-right 
             \::before
