@@ -99,7 +99,7 @@
             発送元の地域
             .form-require
               必須
-            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.collection_select :category, Prefecture.all, :id, :name ,include_blank: '未選択'
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送までの日数
