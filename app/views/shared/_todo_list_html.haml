@@ -1,0 +1,15 @@
+%main.default-container.clearfix
+  .l-content
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.
+          %h3
+            =link_to "#" do
+              お知らせ
+        %li.active
+          %h3 
+            やることリスト
+      .tab-content
+        %ul#mypage-tab-todo.mypage-item-list__tabpane--active
+          %li.mypage-item-not-found__bold
+            現在やることリストはありません
