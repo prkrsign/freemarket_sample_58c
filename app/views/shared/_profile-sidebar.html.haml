@@ -1,46 +1,43 @@
-!!!
-%html
-  %head
-  %body.data-__gyazo-extension-added-paste-support: "true", style: ""
-    %div.default-container
+-# !!!
+-# -%html
+-#   %head
+-#   %body.data-__gyazo-extension-added-paste-support: "true", style: ""
+-#     %div.default-container
+
       %main.mypage-container.clearfix
-        %my-page-content
+        %mypage-content
           %section.mypage-icon
             =link_to "#"
               %figure
-                %img{src:"/"}  
-                %h2.bold username
-              %mypage-amount
+                = image_tag '/user-image_1.jpg', size: "", alt: "" , class: ''
+              %h2.bold 
+                username
+              .mypage-user-number
                 %div
                   評価
-                  %span.bold number
+                  %span.bold 10
                 %div
                   出品数
-                  %span.bold number
+                  %span.bold 20
           %section.mypage-tab-container
             %ul.tabs
-              %li.notification
+              %li.active
                 %h3
-                  =link_to "" 
-                    %data-toggle 
-                        お知らせ
-                        %span.mypage-number 
-                          %hidden-large  
-                                  99+
-              %li.todo-list 
+                  =link_to "#", data-toggle: "tab"
+                    お知らせ
+                    %span.mypage-number.hidden-large  
+                      99+
+              %li.
                 %h3 
                   =link_to "#"  
-                    %data-toggle tab
-                      やることリスト
-                        %span.mypage-number 
-                          %hidden-large  
+                    %data-toggle tab 
             %div.tab-contents
               %ul#tab-notification.mypage-item-list.tab-pane.active 
                 %li
                   =link_to "#" ,class: "mypage-item-link-box"
                     %figure
-                      %img.lazyloaded{data-src:"/user_image_1.jpg"}
-                    %div.notification-message-box 
+                      = image_tag '/user-image_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+                    .notification-message-box 
                       「事務局から個別メッセージ「期間限定、売れたら梱包に使える特製ダンボールが無料でもらえます！」
                       %time
                         %i.icon-time
@@ -52,19 +49,20 @@
                 %li
                   =link_to "#" ,class: "mypage-item-link-box"
                     %figure
-                      %img.lazyloaded{data-src:"/user_image_2.jpg"}
-                    %div.notification-message-box モコなりさん、他３名が「新商品 プログラミング教材の決定版」にいいね！しました
+                      = image_tag 'user_image_2.jpg', size: "", alt: "", class: 'lazyloaded'
+                    .notification-message-box 
+                      モコなりさん、他３名が「新商品 プログラミング教材の決定版」にいいね！しました
                       %time
                         %i.icon-time
                           \::before
-                              %span 5時間前
+                        %span 5時間前
                     %i.icon-arrow-right
                       \::before
 
                 %li
                   =link_to "#" ,class: "mypage-item-link-box"
                     %figure
-                      %img.lazyloaded{data-src:"/user_image_3.jpg"}
+                      =image_tag 'user_image_3.jpg', size: "", alt: "", class: "lazyloaded"
                     %div.notification-message-box マップマーケティングさん、他7名が「ロングヒットの秘訣」にいいね！しました
                       %time
                         %i.icon-time
@@ -76,7 +74,7 @@
                 %li
                   =link_to "#" ,class: "mypage-item-link-box"
                     %figure
-                      %img.lazyloaded{data-src:"/user_image_4.jpg"}
+                      =image_tag '', size: ""alt: ", "/user_image_4.jpg"}
                     %div.notification-message-box 寺田下心さん、他2名が「訳ありコーヒーメーカー」にいいね！しました
                       %time
                         %i.icon-time
@@ -88,7 +86,7 @@
                 %li
                   =link_to "#" ,class: "mypage-item-link-box"
                     %figure
-                      %img.lazyloaded{data-src:"/user_image_5.jpg"}
+                      =image_tag '', size: ""alt: ", "/user_image_5.jpg"}
                     %div.notification-message-box 内山田洋とクール・ファイブさん、他24名が「だからあなたは悪徳商法に騙される」にいいね！しました
                       %time
                         %i.icon-time
