@@ -1,0 +1,147 @@
+.credit-register-wrapper{
+    margin-bottom: 30px;
+    .credit-register-container{
+        margin: 40px auto 0;
+        width: 1020px;
+        position: relative;
+        &__right{
+            position: absolute;
+            left: 320px;
+            top: 0px;
+            float: right;
+            width:700px;
+            background-color: #fff;
+            &__header{
+                box-sizing: border-box;
+                height: 48px;
+                font-size: 24px;
+                font-weight: 600;
+                padding: 8px 24px;
+                line-height: 1.4;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            &__form{
+                box-sizing: border-box;
+                display: block;
+                width: 700px;
+                border-radius: 5px;
+                margin: 0 auto;
+                padding: 40px 40px 60px;
+                font-size: 10px;
+                color: black;
+                text-decoration: none;
+                line-height: 40px;
+                &__box{
+                    padding: 0 130px;
+                    width: 343px;
+                    label{
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                    &__cardlist{
+                        display: flex;
+                        margin-top: 10px;
+                        height: 30px;
+                    }
+                    &__text-field{
+                        width: 343px;
+                        height: 28px;
+                        padding: 10px 16px 8px;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        line-height: 1.5;
+                        font-size: 16px;
+                    }
+                }
+                &__title{
+                    margin-top: 20px;
+                    padding: 0 130px;
+                    width: 343px;
+                    label{
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+                    &__code{
+                        width: 343px;
+                        height: 28px;
+                        padding: 10px 16px 8px;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        line-height: 1.5;
+                        font-size: 16px;
+                    }
+                }
+                &__info{
+                    margin-top: 20px;
+                    padding: 0 160px;
+                    width: 343px;
+                    color: #0099e8;
+                    text-align: right;
+                    margin-top: 5px;
+                    text-decoration: none;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    &__question{
+                        border-radius: 50%;
+                    }
+                }
+                &__btn{
+                    height: 48px;
+                    background-color: #ea352d;
+                    color: #fff;
+                    margin: 24px 0 0 130px;
+                    display: block;
+                    width: 380px;
+                    line-height: 40px;
+                    font-size: 15px;  
+                    border-radius: 4px;                  
+                }
+            }
+            &__deadline{
+                margin-top: 20px;
+                font-size: 13px;
+                font-weight: 600;
+                &__list{
+                    &__month{
+                        border-radius: 5px;
+                        height: 50px;
+                        width: 140px;
+                        margin-right: 5px;
+                        margin-left: 5px;
+                        padding: 0 16px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        font-size: 14px;
+                    }
+                    &__year{
+                        border-radius: 5px;
+                        height: 50px;
+                        width: 140px;
+                        margin-right: 5px;
+                        margin-left: 5px;
+                        padding: 0 16px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contents__btn{
+    background-color: #ea352d;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 24px;
+    display: block;
+    width: 290px;
+    line-height: 40px;
+    font-size: 12px;
+
+}
