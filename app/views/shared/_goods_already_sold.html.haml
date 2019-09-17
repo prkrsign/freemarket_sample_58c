@@ -6,20 +6,20 @@
       %ul.listing-tabs
         %li.active
           %h3
-            =link_to "#", data-toggle: tab 
+            =link_to "#", data-toggle: tab do
               出品中
         %li
           %h3
-            =link_to "#",
+            =link_to "#" do
               取引中
 　　　　　%li
           %h3
-            =link_to "#",
+            =link_to "#" do
               売却済み
       .tab-content
-        %ul#mypage-tab-tansaction-old.mypage-item-list.tab-pane: active   
+        %ul#mypage-tab-tansaction-old.mypage-item-list__tab-pane--active   
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#" class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -30,7 +30,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#" class: mypage-item-link do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -41,7 +41,7 @@
               %i.icon-arrow-right 
                 \::before      
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#" class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -52,7 +52,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -63,7 +63,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -74,7 +74,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -85,7 +85,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -96,7 +96,7 @@
               %i.icon-arrow-right 
                 \::before
           %li
-            =link_to "#", class: mypage-item-link
+            =link_to "#", class: 'mypage-item-link' do
               %figure
                 = image_tag '/goods_sample_2.jpeg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
@@ -109,10 +109,10 @@
 
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-left 
             \::before
       %li.pager-next.pager-cell 
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-right
             \::before
