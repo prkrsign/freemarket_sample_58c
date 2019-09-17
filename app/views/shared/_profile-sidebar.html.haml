@@ -1,15 +1,14 @@
--# !!!
--# -%html
--#   %head
--#   %body.data-__gyazo-extension-added-paste-support: "true", style: ""
--#     %div.default-container
-
+!!!
+%html
+  %head
+  %body.data-__gyazo-extension-added-paste-support 
+    .default-container
       %main.mypage-container.clearfix
         %mypage-content
           %section.mypage-icon
-            =link_to "#"
+            =link_to "#" do
               %figure
-                = image_tag '/user-image_1.jpg', size: "", alt: "" , class: ''
+                = image_tag '/user-image_1.jpg', size: "", alt: "" , class: 'lazyloaded'
               %h2.bold 
                 username
               .mypage-user-number
@@ -23,18 +22,18 @@
             %ul.tabs
               %li.active
                 %h3
-                  =link_to "#", data-toggle: "tab"
+                  =link_to "#", data-toggle: "tab" do
                     お知らせ
                     %span.mypage-number.hidden-large  
                       99+
-              %li.
+              %li
                 %h3 
-                  =link_to "#"  
+                  =link_to "#" do 
                     %data-toggle tab 
             %div.tab-contents
               %ul#tab-notification.mypage-item-list.tab-pane.active 
                 %li
-                  =link_to "#" ,class: "mypage-item-link-box"
+                  =link_to "#" ,class: 'mypage-item-link-box' do
                     %figure
                       = image_tag '/user-image_1.jpg', size: "", alt: "" , class: 'lazyloaded'
                     .notification-message-box 
@@ -42,61 +41,68 @@
                       %time
                         %i.icon-time
                           \::before
-                              %span 1時間前
+                          %span 
+                            1時間前
                     %i.icon-arrow-right
                       \::before
                       
                 %li
-                  =link_to "#" ,class: "mypage-item-link-box"
+                  =link_to "#" ,class: 'mypage-item-link-box' do
                     %figure
-                      = image_tag 'user_image_2.jpg', size: "", alt: "", class: 'lazyloaded'
+                      = image_tag '/user_image_2.jpg', size: "", alt: "", class: 'lazyloaded'
                     .notification-message-box 
                       モコなりさん、他３名が「新商品 プログラミング教材の決定版」にいいね！しました
                       %time
                         %i.icon-time
                           \::before
-                        %span 5時間前
+                        %span 
+                          5時間前
+                    %i.icon-arrow-right
+                      \::before
+                %li
+                  =link_to "#" ,class: 'mypage-item-link-box' do
+                    %figure
+                      =image_tag '/user_image_3.jpg', size: "", alt: "", class: "lazyloaded"
+                    %div.notification-message-box 
+                      マップマーケティングさん、他7名が「ロングヒットの秘訣」にいいね！しました
+                      %time
+                        %i.icon-time
+                          \::before
+                        %span 
+                          8時間前
+                    %i.icon-arrow-right
+                      \::before
+                %li
+                  =link_to "#" ,class: 'mypage-item-link-box' do
+                    %figure
+                      =image_tag '/user_image_4.jpeg', size: "", alt: "", class: "lazyloaded"
+                    %div.notification-message-box 
+                      寺田下心さん、他2名が「訳ありコーヒーメーカー」にいいね！しました
+                      %time
+                        %i.icon-time
+                          \::before
+                        %span 
+                          10時間前
                     %i.icon-arrow-right
                       \::before
 
                 %li
-                  =link_to "#" ,class: "mypage-item-link-box"
+                  =link_to "#" ,class: "mypage-item-link-box" do
                     %figure
-                      =image_tag 'user_image_3.jpg', size: "", alt: "", class: "lazyloaded"
-                    %div.notification-message-box マップマーケティングさん、他7名が「ロングヒットの秘訣」にいいね！しました
+                      =image_tag '/user_sample_5.jpg', size: "", alt: "", class: "lazyloaded"
+                    %div.notification-message-box 
+                      内山田洋とクール・ファイブさん、他24名が「だからあなたは悪徳商法に騙される」にいいね！しました
                       %time
                         %i.icon-time
                           \::before
-                              %span 8時間前
-                    %i.icon-arrow-right
-                      \::before
-
-                %li
-                  =link_to "#" ,class: "mypage-item-link-box"
-                    %figure
-                      =image_tag '', size: ""alt: ", "/user_image_4.jpg"}
-                    %div.notification-message-box 寺田下心さん、他2名が「訳ありコーヒーメーカー」にいいね！しました
-                      %time
-                        %i.icon-time
-                          \::before
-                              %span 10時間前
-                    %i.icon-arrow-right
-                      \::before
-
-                %li
-                  =link_to "#" ,class: "mypage-item-link-box"
-                    %figure
-                      =image_tag '', size: ""alt: ", "/user_image_5.jpg"}
-                    %div.notification-message-box 内山田洋とクール・ファイブさん、他24名が「だからあなたは悪徳商法に騙される」にいいね！しました
-                      %time
-                        %i.icon-time
-                          \::before
-                              %span 15時間前
+                        %span 
+                          15時間前
                     %i.icon-arrow-right
                       \::before
                 
                 %li.index-go-list
-                  =link_to "#" 一覧を見る
+                  =link_to "#" do
+                    一覧を見る
 
               %ul#todo-tab.mypage-item-list
                 %li.mypageitem-not-found
@@ -104,196 +110,186 @@
 
           -#購入した商品タブの作成
           %section.mypage-lower-tab-container
-          %h2.maypage-tab-head
-                購入した商品
-          %ul.mypage-tabs
+            %h2.maypage-tab-head
+              購入した商品
+            %ul.mypage-tabs
             %li
               %h3
-                =link_to "#" %data-toggle.tab #ここ怪しい
+                =link_to "#" data-toggle.tab #ここ怪しい
             %li.active
               %h3
-                =link_to "#" %data-toggle.tab #ここ怪しいよ    
+                =link_to "#" data-toggle.tab #ここ怪しいよ    
           %div.tab-content
-            %ul#mypage-tab-transaction-now.mypage-item-list %tab-pane 
+            %ul#mypage-tab-transaction-now.mypage-item-list 
               %li.mypage-item-not-found
                 取引中の商品はありません
-            %ul#mypage-tab-transaction-old.mypage-item-lists tab-pane %active
+            %ul#mypage-tab-transaction-old.mypage-item-lists tab-pane active
               %li
-                =link_to "#".mypage-item-link
+                =link_to "#".mypage-item-link do
                   %figure
                     = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
                   %div.mypage-item-body
                     %div.mypage-item-text 
                       「焦げ付かないフライパン」を購入しました。
-                          %span 取引が完了しました
-                    %div.mypage-item-status bold %done 
-                      取引完了
-                  %i.icon-arrow-right
-                    \::before
-
-              %li
-                =link_to "#".mypage-item-link
-                  %figure
-                    = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
-                  %div.mypage-item-body
-                    %div.mypage-item-text 
-                      「焦げ付かないフライパン」を購入しました。
-                          %span 取引が完了しました
+                          %span 
+                            取引が完了しました
                     %div.mypage-item-status bold %done 
                       取引完了
                   %i.icon-arrow-right
                     \::before
               %li
-                =link_to "#".mypage-item-link
+                =link_to "#".mypage-item-link do
                   %figure
                     = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
                   %div.mypage-item-body
                     %div.mypage-item-text 
                       「焦げ付かないフライパン」を購入しました。
-                          %span 取引が完了しました
+                          %span 
+                            取引が完了しました
                     %div.mypage-item-status bold %done 
                       取引完了
                   %i.icon-arrow-right
                     \::before
               %li
-                =link_to "#".mypage-item-link
+                =link_to "#".mypage-item-link do
                   %figure
                     = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
                   %div.mypage-item-body
                     %div.mypage-item-text 
                       「焦げ付かないフライパン」を購入しました。
-                          %span 取引が完了しました
+                          %span 
+                            取引が完了しました
                     %div.mypage-item-status bold %done 
                       取引完了
                   %i.icon-arrow-right
                     \::before
               %li
-                =link_to "#".mypage-item-link
+                =link_to "#".mypage-item-link do
                   %figure
                     = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
                   %div.mypage-item-body
                     %div.mypage-item-text 
                       「焦げ付かないフライパン」を購入しました。
-                          %span 取引が完了しました
+                          %span 
+                            取引が完了しました
+                    %div.mypage-item-status bold %done 
+                      取引完了
+                  %i.icon-arrow-right
+                    \::before
+              %li
+                =link_to "#".mypage-item-link do
+                  %figure
+                    = image_tag '/sample-image_1', size: "", alt: "//static.mercdn.net/thumb/" , class: 'lazyloaded'
+                  %div.mypage-item-body
+                    %div.mypage-item-text 
+                      「焦げ付かないフライパン」を購入しました。
+                          %span 
+                            取引が完了しました
                     %div.mypage-item-status bold %done 
                       取引完了
                   %i.icon-arrow-right
                     \::before
               %li.mypage-go-back-list
-                =link_to "#"
+                =link_to "#" do
                   一覧を見る
-                  
- 
+      .side-bar
+        %nav.mypage-nav
+          %ul.mypage-nav__list
+            %li
+              =link_to "#", class: 'mypage-nav__list__item active'
+                マイページ
+                %i.fas.fa-chevron-right
+            %li
+              =link_to "#", class: 'mypage-nav__list__item' do
+                お知らせ
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                やることリスト
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                いいね！一覧
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do                出品する
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                出品した商品-出品中
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                出品した商品-取引中
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                出品した商品-売却済み
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                出品した商品-取引中
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                出品した商品-過去の取引
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                ニュース一覧
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                評価一覧
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                ガイド
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                お問い合わせ
+                %i.fas.fa-chevron-right
 
-
-
-
-         
-
-        
-        
-
-  
-
-    -# ここからサイドバー。共通で使えるところ。
-    .side-bar
-      %nav.mypage-nav
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item active'} 
-              マイページ
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              お知らせ
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              やることリスト
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              いいね！一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品する
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              出品した商品-出品中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-売却済み
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              出品した商品-過去の取引
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ニュース一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              評価一覧
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ガイド
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              お問い合わせ
-              %i.fas.fa-chevron-right
-
-        %h3.mypage-nav__head メルペイ
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              売上・振込申請
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              ポイント
-              %i.fas.fa-chevron-right
-        
-        %h3.mypage-nav__head 設定
-        %ul.mypage-nav__list
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              プロフィール
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              発送元・お届け先住所変更
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              支払い方法
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              メール/パスワード
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              本人情報
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'} 
-              電話番号の確認
-              %i.fas.fa-chevron-right
-          %li
-            %a{href: '#', class: 'mypage-nav__list__item'}
-              ログアウト
-              %i.fas.fa-chevron-right
+          %h3.mypage-nav__head メルペイ
+          %ul.mypage-nav__list
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                売上・振込申請
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+               ポイント
+                %i.fas.fa-chevron-right
+          
+          %h3.mypage-nav__head 
+            設定
+          %ul.mypage-nav__list
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                プロフィール
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#"'mypage-nav__list__item' do
+                発送元・お届け先住所変更
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                支払い方法
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                メール/パスワード
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                本人情報
+                %i.fas.fa-chevron-right
+            %l
+              =link_to "#" 'mypage-nav__list__item' do
+                電話番号の確認
+                %i.fas.fa-chevron-right
+            %l
+              =link_to"#" 'mypage-nav__list__item' do
+                ログアウト
+                %i.fas.fa-chevron-right
