@@ -10,15 +10,15 @@
               出品中
         %li
           %h3
-            =link_to "#",
+            =link_to "#"
               取引中
 　　　　　%li
           %h3
-            =link_to "#",
+            =link_to "#"
               売却済み
       %ul#mypage-tab-tansaction-now.mypage-item-list.tab-pane: active   
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -27,7 +27,7 @@
             %i.icon-arrow-right 
               \::before
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -49,7 +49,7 @@
             %i.icon-arrow-right 
               \::before      
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -71,7 +71,7 @@
             %i.icon-arrow-right 
               \::before
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -93,7 +93,7 @@
             %i.icon-arrow-right 
               \::before
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -115,7 +115,7 @@
             %i.icon-arrow-right 
               \::before
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -137,7 +137,7 @@
             %i.icon-arrow-right 
               \::before
         %li
-          =link_to "#", class: mypage-item-link
+          = link_to "#", class: 'mypage-item-link' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -160,10 +160,10 @@
               \::before
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-left 
             \::before
       %li.pager-next.pager-cell 
-        =link_to "#"
+        =link_to "#" do
           %i.icon-arrow-right
             \::before
