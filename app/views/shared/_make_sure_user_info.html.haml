@@ -1,62 +1,79 @@
-%main.l-container.clearfix
-  .l-content 
-    %section.l-chapter-container.mypage-identification
-      %h2.l-chapter-head 
-        本人情報の登録
-      %form.action: "#" method: "POST", class: "l-single-inner", novalidate 
-        %div 
-          %p 
-            お客様の本人情報をご確認ください。
-            %br 
+.make-sure-user-info-wrapper
+  = render 'shared/main_page_header'
+
+  .make-sure-user-info-wrapper__main-container
+    = render 'shared/profile-sidebar'
+    %main.make-sure-user-info-wrapper__main-container__user-info-content
+      %section.make-sure-user-info-wrapper__main-container__user-info-content__container
+        %h2.make-sure-user-info-wrapper__main-container__user-info-content__container__title
+          本人情報の登録
+        = form_with(url: '#' , class: 'make-sure-user-info-wrapper__main-container__user-info-content__container__inner') do |f|
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note 
+            %p 
+              お客様の本人情報をご確認ください。
+              %br 
               登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-          %p.text-right
-            =link_to "#", target: "_blank" do
-              本人確認書類のアプロードについて 
-              %i.icon-arrow-right 
-                \::before
-        .form-group 
-          %label 
-            お名前カナ
-          %p 
-            メルカリ太郎 
-        .form-group 
-          %label 
-            生年月日
-          %p 
-            1990/8/30
-        .form-group 
-          %label.for.zipcode 
-            郵便番号
-          %span.sorm-arbitrary 
-            任意
-          %input.type:"text", value: "",name: "zip-code", placeholder="例）1234567", class: "input-default" 
-        .form-group 
-          %label.for: prefecture　都道府県
-          %span.form-arbitrary 
-            任意
-          .selectwrap
-            %i.icon-arrow-bottom
-              \::before 
-            %select.name: "prefecture" class: "select-default"
-            %option --
-            %option.selected 東京都
-        .form-group
-          %label.for: "city" 市区町村
-          %span.form-arbitrary 任意
-          %input.type: "text", value: "渋谷区" name: "city" placeholder: " 例）横浜市緑区", class: "input-default"
-        .form-group 
-          %label.for: "adress1_label" 番地
-          %span.form-arbitrary 任意
-          %input.type: "text", value: "宇田川町1-1-1", name: "adress1", placeholder: "例）青山1-1-1", class: "input-default" 
-        .form-group 
-          %label.for: "adress2_label" 建物名
-          %span.form-arbitrary 任意
-          %input.type: "text", value name: "aress2", placeholder: "柳ビル", class: "input-default"
-        %button type.submit, class: "btn-default btn-red" 登録する
-        .form-group text-right 
-          %p 
-            =link_to "#", target: "_blank" do
-              本人情報について
-              %i.icon-arrow-right 
-                \::before 
-        %input type: "hidden" name: "__csrf_value", value: "#"
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note__box
+              =link_to "#", class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note__box__right" do
+                本人確認書類のアップロードについて 
+                %i.fas.fa-chevron-right
+                    
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              お名前
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              メルカリ太郎 
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              お名前カナ
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              メルカリタロウ
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              生年月日
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              1990/8/30
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group 
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              郵便番号
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '例)123456'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              都道府県
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any
+              任意
+            .selectwrap
+              %i.icon-arrow-bottom
+              %select{ name:"prefecture", class:"make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" }
+                %option{value:""} --
+                %option{value:"北海道"} 北海道
+                %option{value:"沖縄"} 沖縄
+                %option{value:"東京"} 東京
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              市区町村
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '横浜市緑区'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              番地
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '青山1-1-1'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              建物名
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '柳ビル103'
+            = f.submit nil, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__btn", value:'登録する' 
+
+            .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__under
+              = link_to "#", class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__under__right" do
+                本人情報の登録について
+                %i.fas.fa-chevron-right
+  = render 'shared/aside'
+  = render 'shared/footer'
