@@ -1,28 +1,28 @@
 = render 'shared/main_page_header'
 = render 'shared/profile-sidebar'
 
-%main.l-container.clearfix
-  .l-content
-    %section.mypage-tab-container
-      %h2.mypage-tab-head 
+%main.put_up_goods_on_sale.clearfix
+  .content
+    %section.container
+      %h2.tab-head 
         出品した商品
-      %ul.listing-tabs
-        %li.active
+      %ul.list-tabs
+        %li.list-left--active
           %h3
             =link_to "#" do
               出品中
-        %li
+        %li.list-center
           %h3
             =link_to "#" do
               取引中
-        %li
+        %li.list-right
           %h3
             =link_to "#" do
               売却済み
-      %ul#mypage-tab-tansaction-now__mypage-item-list__tab-pane--active   
+      %ul#tab-tansaction__mypage-list__tab-pane--active   
         %li
-          = link_to "#", class: 'mypage-item-link' do
-            %figure
+          = link_to "#", class: 'good-box' do
+            %figure.content-box
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
               .mypage-item-text

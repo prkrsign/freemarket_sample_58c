@@ -1,6 +1,7 @@
 .put_up_goods_on_sale {
     height: 3913px;
     width: 704px;
+    background-color: white 
     
     &__content {
         height: 2581px;
@@ -19,17 +20,18 @@
                 height: 74px;
                 width: 704px;
 
-                &__list-left--active
+                &__list-left--active {
                     height: 74px;
                     width: 233.09px;
-
-                &__list-left
-                height: 74px;
-                width: 233.09px;
-
-                &__list-left
-                height: 74px;
-                width: 233.09px;
+                }
+                &__list-center {
+                    height: 74px;
+                    width: 233.09px;
+                }
+                &__list-right{
+                    height: 74px;
+                    width: 233.09px;
+                }
             }
 
             &__tab-content {
@@ -106,8 +108,8 @@
                                   width: 8.95px;
 
                                 }
-
-                            }
+                              
+                            
                            }
                         }
                     }
