@@ -1,0 +1,55 @@
+.evaluation-all-wrapper{
+    &__container{
+        position: relative;
+        margin: 40px auto 0;
+        width: 1020px;
+        &__list-contents{
+            position: absolute;
+            background-color: lightblue;
+            height: 466px;
+            width: 700px;
+            top: 0px;
+            left: 320px;
+            &__tab-head{
+                padding: 0 16px;
+                background: #fff;
+                font-size: 16px;
+                line-height: 72px;
+                font-weight: 600;
+                &__tabs{
+                    height: 74px;
+                    border: 0;
+                    background:#BBBBBB;
+                    font-size: 0;
+                        &__evaluation{
+                            box-sizing: border-box;
+                            background: lightblue;
+                            height: 100%;
+                            width: 25%;
+                            display: inline-block;
+                            text-align: center;
+                            vertical-align: top;
+                            #mypage-eva-active{
+                                height: 74px;
+                                background: #fff;
+                                border-top: 2px solid red;
+                                width: 25%;
+                                display: inline-block;
+                                text-align: center;
+                                vertical-align: top;
+                            }
+                            &__text{
+                                box-sizing: border-box;
+                                height: 100%;
+                                width: 25%;
+                                color: black;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+

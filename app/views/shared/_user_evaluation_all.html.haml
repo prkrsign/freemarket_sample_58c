@@ -1,32 +1,30 @@
 .evaluation-all-wrapper
   =render 'shared/main_page_header'
 
-
-%main.l-container.clearfix
-  .l-content
-    %section.mypage-tab-container
-      %h2.mypage-tab-head
+  .evaluation-all-wrapper__container
+    =render 'shared/profile-sidebar'
+    %main.evaluation-all-wrapper__container__list-contents
+      %h2.evaluation-all-wrapper__container__list-contents__tab-head
         評価一覧
-      %ul.review-history-tabs
-        %liactive
-          %h3
-            =link_to "#", class:'aa' do
-              すべて
-        %li
+      %ul.evaluation-all-wrapper__container__list-contents__tab-head__tabs
+        =link_to "#", class:'evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation#mypage-eva-active' do
+          %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text
+            すべて
+        %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation
           %h3 
             =link_to "#" do
               %div
                 %i.icon-good 
                   \::before
                 良い
-        %li 
+        %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation 
           %h3 
             =link_to "#" do
               %div
                 %i.icon-normal 
                   \::before
                 普通
-        %li 
+        %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation 
           %h3 
             =link_to "#" do
               %div
