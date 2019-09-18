@@ -50,12 +50,11 @@
           商品の詳細
         .contents-box__category-section__category-box
           -# カテゴリ繰り替えし
-          .contents-box__category-section__category-box__tag
+          .contents-box__category-section__category-box__tag#async-select-box
             カテゴリー
             .form-require
               必須
-            - (1..3).each do
-              = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.select :m_category, [["表示する文字1", "データベースに登録する値1"],["表示する文字2", "データベースに登録する値2"],["表示する文字3", "データベースに登録する値3"]],{include_blank: '未選択'},{class: "category"}
           -# サイズプルダウン
           .contents-box__category-section__category-box__tag
             サイズ
@@ -99,7 +98,7 @@
             発送元の地域
             .form-require
               必須
-            = f.collection_select :category, Prefecture.all, :id, :name ,include_blank: '未選択'
+            = f.collection_select :prefecture_list, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "category"}
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送までの日数

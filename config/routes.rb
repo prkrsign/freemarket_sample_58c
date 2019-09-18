@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'goods/new'
+  get 'goods/search'
   resources :tests
   resources :goods
   devise_for :users
