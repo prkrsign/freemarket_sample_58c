@@ -1,0 +1,40 @@
+.news_index {
+    height: 700px;
+    width: 14002px;
+    &__content {
+        height: 12670px;
+        width: 700px;
+        &__container {
+            height: 12670px;
+            width: 700px;
+            &__head {
+                height: 50;
+                width: 700px;
+                &__list {
+                    height: 12620px;
+                    width: 700px;
+                    &__news {
+                        height: 128px;
+                        width: 700px;
+                        &__link {
+                            height: 128px;
+                            width: 700px;
+                            &__date {
+                                height: 18px;
+                                width: 107.8px;
+                            }
+                            &__text {
+                              height: 24px;
+                              width: 620px;
+                              &__time-icon {
+                                  height: 14px;
+                                  width: 14px;
+                              }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
