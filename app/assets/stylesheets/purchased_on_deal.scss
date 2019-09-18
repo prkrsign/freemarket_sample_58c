@@ -1,0 +1,76 @@
+*{
+    
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    color: #333;
+    font-size: inherit;
+    line-height: inherit;
+    background-repeat: no-repeat;
+}
+
+*, ::before, ::after {
+  border-style: solid;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-width: 0;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  box-sizing: inherit;
+  border-style: solid;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-width: 0;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-style: solid;
+    
+}
+
+::before ::after {
+  text-decoration: inherit;
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  text-decoration-color: inherit;
+  vertical-align: inherit;
+  
+}
+
+::selection {
+  color: currentColor;
+  background-color: #b3d4fc;
+  color: #fff;
+  text-shadow: none;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.purchased_on_deal {
+    height: 1292px;
+    width: 1020px;
+    background-color: white; 
+    margin: 40px auto 0;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    padding: 40px;
+    display: block; 
+
+    $__content {
+        height: 382px;
+        width: 720px; 
+        
+    }
+
+}

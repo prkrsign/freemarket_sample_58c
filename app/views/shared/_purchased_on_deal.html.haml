@@ -1,5 +1,6 @@
-%main.l-container.clearfix
-  .l-content
+=render 'shared/main_page_header'
+%main.purchased_on_deal.clearfix
+  .content
     %section.mypage-tab-container
       %h2.mypage-tab-head 
         購入した商品
@@ -8,7 +9,7 @@
           %h3
             =link_to "#" do
               取引中
-        %li.
+        %li
           %h3 
             =link_to "#" do
               過去の取引
@@ -19,5 +20,8 @@
         %ul#mypage-tab-transaction-old.mypage-item-list__tab-pane
           %li.mypage-item-not-found.bold
           　過去に取引した商品がありません
+  =render 'shared/profile-sidebar'
 
+=render 'shared/aside'
+=render 'shared/footer'
           
