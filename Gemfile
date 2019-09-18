@@ -84,3 +84,5 @@ gem 'devise'
 gem 'kaminari'
 gem "font-awesome-rails"
 gem "ancestry"
+gem 'jquery-rails'
+gem 'active_hash'
