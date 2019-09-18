@@ -46,11 +46,7 @@
               任意
             .selectwrap
               %i.icon-arrow-bottom
-              %select{ name:"prefecture", class:"make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" }
-                %option{value:""} --
-                %option{value:"北海道"} 北海道
-                %option{value:"沖縄"} 沖縄
-                %option{value:"東京"} 東京
+              = f.collection_select :prefecture_list, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field"}
           .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
             %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
               市区町村
