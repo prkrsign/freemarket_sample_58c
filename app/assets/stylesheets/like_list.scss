@@ -1,0 +1,60 @@
+.likes-container {
+    height: 2089px;
+    width: 700px;
+    &__content {
+        height: 757px;
+        width: 700px;
+        &__chapter-container {
+            height: 697px;
+            width: 700px; 
+            &__chapter-head 
+              height: 50px;
+              width: 700px;
+              &__page-item-list {
+                 height: 647px;
+                 width: 700px;
+                 &__like-contents {
+                   height: 81px;
+                   width: 700px;
+                   &__like-item-link {
+                      height: 80px;
+                      width: 700px; 
+                      &__image {
+                         height: 48px;
+                         width: 48px;
+                         &__sold-badge {
+                           height: 0px;
+                           width: 48px;
+                           &__sold-text {
+                             height: 28.86px;
+                             width: 28.86px;
+                           }
+                         }
+                      }
+                      &__body {
+                        height: 42px; 
+                        width: 560px;
+                        &__item-text {
+                          height: 21px;
+                          width: 560px;
+                        }
+                        &__item-text {
+                          height: 21px;
+                          width: 560px; 
+                        }
+                     } 
+                      &__icon-arrow {
+                          height: 14px;
+                          width: 8.59px; 
+                      }
+                   } 
+                 }
+              }
+        }
+        
+        &__history-pager {
+            height: 44px;
+            width: 700px;
+        }
+    }
+}
