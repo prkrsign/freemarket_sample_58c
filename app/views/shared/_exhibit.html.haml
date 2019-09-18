@@ -1,0 +1,175 @@
+-# ページのヘッダー部分
+%header.confirmation-header
+  %h1
+    =link_to "#", class: "confirmation-heade__link" do
+      = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
+  
+-# メインコンテンツ
+%main.main-contents
+  .contents-box
+    %section.contents-box__sell-container
+      商品の情報を入力
+    = form_with(url: '#', class: 'contents-box__form-list') do |f|
+      -# 画像アップロード部分
+      %section.contents-box__form-list__upload-box
+        .contents-box__form-list__upload-box__image-text
+          出品画像
+        .form-require
+          必須
+        .capture 
+          最大10枚までアップロードできます
+      .contents-box__form-list__drop-box
+        .contents-box__form-list__drop-box__item
+          -# carrier wave導入で、imageをアップロードできるようにする必要あり。
+          = f.file_field :image, class: 'contents-box__form-list__drop-box__item__upload-file'
+          .contents-box__form-list__drop-box__item__text
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+      .contents-box__form-list__space
+
+      -# 商品名、商品説明入力部分
+      %section.contents-box__descript-section
+        .contents-box__descript-section__item-name
+          .contents-box__descript-section__item-name__text
+            商品名
+          .form-require
+            必須
+        = f.text_field :name, class:'contents-box__descript-section__name-form',placeholder: '商品名(必須40文字まで)'
+
+        .contents-box__descript-section__item-description
+          .contents-box__descript-section__item-description__text
+            商品の説明
+          .form-require
+            必須
+        = f.text_area :description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+      -# .contents-box__descript-section__space
+
+      -# 商品の詳細、カテゴリ選択部分
+      %section.contents-box__category-section
+        %h3.contents-box__category-section__sub-head
+          商品の詳細
+        .contents-box__category-section__category-box
+          -# カテゴリ繰り替えし
+          .contents-box__category-section__category-box__tag#async-select-box
+            カテゴリー
+            .form-require
+              必須
+            = f.select :m_category, [["表示する文字1", "データベースに登録する値1"],["表示する文字2", "データベースに登録する値2"],["表示する文字3", "データベースに登録する値3"]],{include_blank: '未選択'},{class: "category"}
+          -# サイズプルダウン
+          .contents-box__category-section__category-box__tag
+            サイズ
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+          -# プルダウンにしてるけど、本当はインクリメンタルサーチ
+          .contents-box__category-section__category-box__tag
+            ブランド
+            .form-any
+              任意
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+          -# 商品の状態プルダウン
+          .contents-box__category-section__category-box__tag
+            商品の状態
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+
+      -# 配送の設定
+      %section.contents-box__category-section#delivery
+        %h3.contents-box__category-section__sub-head
+          配送について
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            配送料の負担
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            配送の方法
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送元の地域
+            .form-require
+              必須
+            = f.collection_select :prefecture_list, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "category"}
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送までの日数
+            .form-require
+              必須
+            = f.select :category, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+      
+      -# 販売価格、手数料の表示 
+      %section.contents-box__category-section#fee
+        %h3.contents-box__category-section__sub-head
+          販売価格(300~9,999,999)
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__price-section
+          .contents-box__price-section__price-box-left
+            .contents-box__price-section__price-box-left__text
+              価格
+            .form-require
+              必須
+          .contents-box__price-section__price-box-right
+            .contents-box__price-section__price-box-right__text
+              ¥
+            = f.text_field :price, class:'contents-box__price-section__price-box-right__price-form',placeholder: '例)300'
+          .contents-box__price-section__border
+
+          .contents-box__price-section__fee-left
+            販売手数料(10%)
+          .contents-box__price-section__fee-right
+            ¥10000*0.1
+          .contents-box__price-section__border
+
+          .contents-box__price-section__result-left
+            販売利益
+          .contents-box__price-section__result-right
+            ¥9,000
+        
+      %section.contents-box__sell-decision-container
+        %p.contents-box__sell-decision-container__note
+          禁止されている出品、行為を必ずご確認ください。
+        %p.contents-box__sell-decision-container__note
+          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %p.contents-box__sell-decision-container__note
+          また、出品をもちまして加盟店規約に同意したことになります。
+        
+        = f.submit nil, class: 'btn btn-primary btn-red' , value: "出品する" do
+          出品する
+        = link_to "#", class:'btn-default btn-gray' do
+          もどる
+        
+
+
+
+
+
+
+
+
+%footer.confirmation-footer
+  %ul.confirmation-footer-container
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        プライバシーポリシー
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        メルカリ利用規約
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        特定商取引に関する表記
+
+    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+  .confirmation-footer-container__footer-text
+    ©︎2019 Mercari

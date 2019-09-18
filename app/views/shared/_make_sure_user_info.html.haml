@@ -1,0 +1,75 @@
+.make-sure-user-info-wrapper
+  = render 'shared/main_page_header'
+
+  .make-sure-user-info-wrapper__main-container
+    = render 'shared/profile-sidebar'
+    %main.make-sure-user-info-wrapper__main-container__user-info-content
+      %section.make-sure-user-info-wrapper__main-container__user-info-content__container
+        %h2.make-sure-user-info-wrapper__main-container__user-info-content__container__title
+          本人情報の登録
+        = form_with(url: '#' , class: 'make-sure-user-info-wrapper__main-container__user-info-content__container__inner') do |f|
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note 
+            %p 
+              お客様の本人情報をご確認ください。
+              %br 
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note__box
+              =link_to "#", class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__note__box__right" do
+                本人確認書類のアップロードについて 
+                %i.fas.fa-chevron-right
+                    
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              お名前
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              メルカリ太郎 
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              お名前カナ
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              メルカリタロウ
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              生年月日
+            %p.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__info
+              1990/8/30
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group 
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              郵便番号
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '例)123456'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              都道府県
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any
+              任意
+            .selectwrap
+              %i.icon-arrow-bottom
+              = f.collection_select :prefecture_list, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field"}
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              市区町村
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '横浜市緑区'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              番地
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '青山1-1-1'
+          .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group
+            %label.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__label
+              建物名
+            %span.make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__any 
+              任意
+            = f.text_field :name, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__field" , placeholder: '柳ビル103'
+            = f.submit nil, class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__btn", value:'登録する' 
+
+            .make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__under
+              = link_to "#", class: "make-sure-user-info-wrapper__main-container__user-info-content__container__inner__group__under__right" do
+                本人情報の登録について
+                %i.fas.fa-chevron-right
+  = render 'shared/aside'
+  = render 'shared/footer'
