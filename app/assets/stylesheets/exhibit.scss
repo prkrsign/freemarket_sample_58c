@@ -232,6 +232,21 @@ body{
                     line-height: 1.5;
                     cursor: pointer;
                 }
+                .category{
+                    font-weight:  300;
+                    background: #eee;
+                    margin-top: 10px;
+                    z-index: 2;
+                    height: 48px;
+                    width: 400px;
+                    padding: 0 16px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: 0;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    cursor: pointer;
+                }
             }
         }
         &__price-section{
