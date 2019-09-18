@@ -3,12 +3,11 @@
     %h1.item-box__name
       = @good.goods_name 
     %p.item-box__detail 
-    -# = @good.goods_description
     .item-main
       .item-photo
-        = image_tag @image.goods_picture, class: 'photo-big', size: '300x300' if @image.goods_picture.present?
+        = image_tag @image.goods_picture, class: 'photo-big' if @image.goods_picture.present?
         .photo-small
-          = image_tag @image.goods_picture, class: 'photo-big', size: '60x60' if @image.goods_picture.present?
+          = image_tag @image.goods_picture, class: 'photo-small' if @image.goods_picture.present?
       %table.item-detail
         %tr
           %th.category 出品者
@@ -104,7 +103,7 @@
     
   .footer
 
-
+-# 念の為保管
 -#{style: "background-image: url(#{@image.goods_picture});"}
           -# .photo-big  
             -# = @image.goods_picture

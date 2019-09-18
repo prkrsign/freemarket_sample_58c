@@ -34,10 +34,14 @@
         margin: 0 auto;
         position: relative;
         .photo-big {
+          width: 300px;
+          height: 300px;
           position: relative;
           overflow: hidden;
         }
         .photo-small {
+          width: 60px;
+          height: 60px;
           line-height: 0;
         }
       }
