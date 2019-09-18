@@ -1,14 +1,14 @@
 .container
   = form_with url: "#", method: :post , class: 'item-box' do
-    %h1.item-box__name 
-    = @good.goods_name 
+    %h1.item-box__name
+      = @good.goods_name 
     %p.item-box__detail 
-    = @good.goods_description
+    -# = @good.goods_description
     .item-main
       .item-photo
-        .photo-big{:style => "background-image: url(#{@image.goods_picture});"}
-        -# = @image.goods_picture
+        = image_tag @image.goods_picture, class: 'photo-big', size: '300x300' if @image.goods_picture.present?
         .photo-small
+          = image_tag @image.goods_picture, class: 'photo-big', size: '60x60' if @image.goods_picture.present?
       %table.item-detail
         %tr
           %th.category 出品者
@@ -75,12 +75,7 @@
       購入画面に進む
     .item-description
       %p.item-description__inner
-        ミニワンピなので、下にスカートや
-        ショートパンツなどを合わせてください！
-
-        オレンジが爽やかで、春らしいです♪
-
-        素材：綿  60%
+        = @good.goods_description   #グッズテーブルより引数
         
     .button-content
       .button-content__left
@@ -108,3 +103,8 @@
   .app-banner
     
   .footer
+
+
+-#{style: "background-image: url(#{@image.goods_picture});"}
+          -# .photo-big  
+            -# = @image.goods_picture
