@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_012511) do
+ActiveRecord::Schema.define(version: 2019_09_18_065539) do
 
   create_table "goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_name", null: false
@@ -26,15 +26,20 @@ ActiveRecord::Schema.define(version: 2019_09_17_012511) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_picture", null: false
     t.bigint "good_id", null: false
-<<<<<<< Updated upstream
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "test_goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "goods_name", null: false
+    t.text "goods_description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture", default: 0, null: false
-=======
->>>>>>> Stashed changes
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# 100.times do |index|
+#   Goods.create(goods_name: "商品名#{index}", goods_discription: "商品詳細#{index}", price: "値段#{index}")
+# end

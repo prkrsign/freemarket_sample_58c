@@ -1,10 +1,13 @@
 .container
   = form_with url: "#", method: :post , class: 'item-box' do
-    %h1.item-box__name ノーブランド＊ワンピース＊オレンジ＊リボン＊M
-    %p.item-box__detail 『ノーブランド＊ワンピース＊オレンジ＊リボン＊M』は、、、
+    %h1.item-box__name 
+    = @good.goods_name 
+    %p.item-box__detail 
+    = @good.goods_description
     .item-main
       .item-photo
-        .photo-big
+        .photo-big{:style => "background-image: url(#{@image.goods_picture});"}
+        -# = @image.goods_picture
         .photo-small
       %table.item-detail
         %tr
@@ -35,7 +38,7 @@
           %tr
             %th.category ブランド
             %td
-           
+
           %tr
             %th.category 商品のサイズ
             %td M
@@ -63,12 +66,12 @@
 
     .price-box
       %span.price-box__price
-        ¥1,800
+        = @good.price
       %span.price-box__tax
         (税込)
       %span.price-box__fee
         送料込み
-    .item-buy-btn
+    =link_to "http://localhost:3000/purchase/show", class: "item-buy-btn" do
       購入画面に進む
     .item-description
       %p.item-description__inner
@@ -105,4 +108,3 @@
   .app-banner
     
   .footer
-     
