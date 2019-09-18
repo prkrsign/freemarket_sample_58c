@@ -67,10 +67,24 @@
     padding: 40px;
     display: block; 
 
-    $__content {
+    &__content {
         height: 382px;
         width: 720px; 
-        
-    }
 
+        &__container {
+            height: 382px;
+            width: 720px;
+
+          &__tab-head {
+            height: 72px;
+             width: 720px;   
+          }
+          &__mypage-tabs{
+            height: 74px;
+            width: 720px;
+              
+           
+          } 
+    }
+  }
 }
