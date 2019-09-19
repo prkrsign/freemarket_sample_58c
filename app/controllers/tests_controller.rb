@@ -46,4 +46,8 @@ class TestsController < ApplicationController
     def edit_profile
         
     end
+
+    def purchase_confirmation
+        
+    end
 end
