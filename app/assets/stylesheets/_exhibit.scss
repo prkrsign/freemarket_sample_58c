@@ -384,10 +384,10 @@ body{
 
 
 // ここからフッター
-footer{
-    top: 2750px; 
-    left: 650px;
-    position: absolute;
+.confirmation-footer{
+    // top: 2750px; 
+    // left: 650px;
+    margin: 0 auto;
     height: 250px;
     padding: 40px 0;
     text-align: center;

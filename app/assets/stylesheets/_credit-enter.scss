@@ -1,7 +1,7 @@
-// https://www.mercari.com/jp/mypage/card/ クレジット登録画面1
-.contents-box{
+.credit-enter-wrapper{
     margin: 40px 210px 40px 210px;
     width: 700;
+    position: relative;
     
     .fa-credit-card{
         margin-right: 10px;
@@ -11,6 +11,9 @@
         width: 700px;
         height: 360px;
         float: right;
+        position: absolute;
+        top: 0px;
+        left: 320px;
 
         .credit-chapter-container{
             margin: 0;
