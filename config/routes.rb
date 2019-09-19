@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'tests/signup3', to: 'tests#signup3'
   get 'tests/signup4', to: 'tests#signup4'
   get 'tests/signup5', to: 'tests#signup5'
+  get 'tests/user_login', to: 'tests#user_login'
+  get 'tests/exhibit', to: 'tests#exhibit'
+  get 'tests/logout', to: 'tests#logout'
+  get 'tests/product_details', to: 'tests#product_details'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

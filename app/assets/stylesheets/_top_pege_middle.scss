@@ -179,14 +179,16 @@
     width: 160px;
     position: fixed;
     text-align: center;
-      z-index: 2;
-      background-color: rgb(234, 53, 45);
-      color: rgb(255, 255, 255);
-      border-radius: 50%;
-      display: inline-block;
-    .exhibit_btn__moji{
-      margin-top: 30px;
+    z-index: 2;
+    background-color: rgb(234, 53, 45);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+    text-decoration: none;
+    &__moji{
+      margin-top: 35px;
       font-size: 22px;
+
     }
     .fas.fa-camera {
       font-size: 54px;
