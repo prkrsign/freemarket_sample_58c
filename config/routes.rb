@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/show', to: 'tests#show'
 
   get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
-  post  'products/new',  to: 'products#new'
+  post  'products/new',  to: 'products#new'   
   post 'products',      to: 'products#create' #商品登録機能（テスト）
   get  'products/show', to: 'products#show'   #商品詳細ページ
   post 'products/index', to: 'products#index'
