@@ -1,4 +1,4 @@
-.contents {
+.signup5-contents {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   height: 100%;
   width: 560px;
@@ -23,13 +23,27 @@
     color: black;
     text-decoration: none;
     line-height: 40px;
+    &__btn {
+      background-color: #ea352d;
+      color: #fff;
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      width: 285px;
+      line-height: 40px;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+    }
     &__title1 {
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: 600;
       padding: 0 10px 0;
+      text-align: center;
+      line-height: 30px;
     }
     &__title {
       margin-top: 15px;
-      font-size: 12px;
       padding: 0 10px 0;
     }
     &__require {
@@ -66,16 +80,6 @@
       margin: 0 auto;
       border: 1px solid #ccc;
       background: #fff;
-      font-size: 14px;
-    }
-    &__btn {
-      background-color: #ea352d;
-      color: #fff;
-      display: block;
-      margin: 0 auto;
-      margin-top: 30px;
-      width: 285px;
-      line-height: 40px;
       font-size: 14px;
     }
   }
