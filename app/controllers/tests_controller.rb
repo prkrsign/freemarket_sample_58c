@@ -43,4 +43,7 @@ class TestsController < ApplicationController
         
     end
 
+    def edit_profile
+        
+    end
 end
