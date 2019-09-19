@@ -1,0 +1,61 @@
+.advertisement{
+    width: 100%;
+    height: 260px;
+    background: url(/mercari_aside.jpg) center center / cover;
+    background-size: 120%;
+    position: relative;
+
+    .advertisement-container{
+        width: 750px;
+        height: 260px;
+        margin: 0 auto;
+        
+        
+        .advertisement-text-container{
+            color: #fff;
+            padding-top: 50px;
+            text-shadow: 1px 2px 3px black; 
+            
+             &__up-side{
+                text-align: left;
+                font-size: 22px;
+                font-weight: 600;
+             }
+             &__down-side{
+                text-align: left;
+                font-size: 34px;
+                margin-bottom: 20px;
+             }
+        }
+
+        .advertisement-image-container{
+            margin-top: 20px;
+        
+            &__mercari{
+                width: 70px;
+                height: 70px;
+                float: left;
+            }
+            &__apple{margin-top: 20px;
+                margin-left: 24px;
+                float: left;
+            }
+            &__google{
+                margin-top: 20px;
+                margin-left: 24px;
+                float: left;
+            }
+        }
+
+        .advertisement-free-image-container{
+            &__free{
+                position: absolute;
+                height: 260px;
+                width: 300px;
+                top: 0;
+                left: calc(100% - 650px);
+                bottom: 0;
+            }
+        }
+    }
+}

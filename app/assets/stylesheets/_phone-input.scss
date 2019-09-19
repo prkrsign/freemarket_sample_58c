@@ -27,13 +27,13 @@
           font-weight: 600;
           label {
             font-weight: 600;
-            
           }
-          .phone-number {
+          input{
+            box-sizing: border-box;
             width: 100%;
             margin: 8px 0 0;
-            height: 30px;
-            padding: 10px 16px 8px;
+            height: 48px;
+            padding-left: 16px; 
             border-radius: 4px;
             border: 1px solid #ccc;
             background-color: #fff;
@@ -47,7 +47,7 @@
           line-height: 1.5;
           font-size: 14px;
         }
-        button {
+        &__red-btn {
           margin: 24px 0 0;
           background-color: #ea352d;
           color: #fff;
