@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'tests/product_details', to: 'tests#product_details'
   get 'tests/credit_enter', to: 'tests#credit_enter'
   get 'tests/credit_register', to: 'tests#credit_register'
+  get 'tests/make_sure_user_info', to: 'tests#make_sure_user_info'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

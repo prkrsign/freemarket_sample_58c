@@ -36,6 +36,10 @@ class TestsController < ApplicationController
     end
 
     def credit_register
+
+    end
+
+    def make_sure_user_info
         
     end
 

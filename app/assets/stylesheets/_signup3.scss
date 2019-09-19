@@ -1,4 +1,5 @@
 .signup3-wrapper{
+  height: 950px;
   .contents {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     height: 100%;
@@ -36,9 +37,26 @@
         }
       }
       &__title {
+        
         font-size: 12px;
+        font-weight: 600;
+        position: relative;
+        #signup3-prefecture-select{
+          display: block;
+          border-radius: 5px;
+          height: 40px;
+          width: 284px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 14px;;
+          margin-left: 130px;
+        }
+        &__list{
+          margin-left: 130px;
+        }
       }
       &__require {
+        &__tag{
         margin: 0 0 0 8px;
         padding: 3px 4px;
         border-radius: 2px;
@@ -47,6 +65,7 @@
         font-size: 10px;
         text-decoration: none;
         vertical-align: top;
+        }
       }
       &__cardlist {
         display: flex;
@@ -54,7 +73,7 @@
       }
       &__input {
         display: block;
-        margin: 0 auto;
+        margin: 10px auto;
         border-radius: 5px;
         height: 20px;
         width: 250px;
