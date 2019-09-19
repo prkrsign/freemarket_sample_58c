@@ -1,245 +1,42 @@
-%main.l-container.clearfix
-  .l-content
-    %section.mypage-tab-container
-      %h2.mypage-tab-head 
-        購入した商品
-      %ul.mypage-tabs
-        %li.active
-          %h3
-            =link_to "#" do
-              取引中
-        %li.
-          %h3 
-            =link_to "#" do
-              過去の取引
-      .tab-content
-        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane
-          %li.mypage-item-not-found.bold
-            取引中の商品がありません
+=render 'shared/main_page_header'
 
-        %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane.active
-          %li
+%main.purchased.clearfix
+  =render 'shared/profile-sidebar'
+  .purchased__content
+    %section.purchased__content__container
+      %h2.purchased__content__container__tab-head 
+        購入した商品
+      %ul.purchased__content__container__list-tabs
+        %li.purchased__content__container__list-tabs__left
+          %h3.purchased__content__container__list-tabs__left__text
+            =link_to "#", class:'purchased__content__container__mypage-tabs__active__h3' do
+              取引中
+        %li.purchased__content__container__list-tabs__right
+          %h3.put_up_goods_on_sale__content__container__list-tabs__right__text
+            =link_to "#", class:'purchased__content__container__mypage-tabs__active__h3' do
+              過去の取引
+
+      .purchased__content__container__tab-content
+        %ul#mypage-tab-transaction-now.purchased__content__container__tab-content__mypage-item-list
+          (1..10).each do |i|
+            .block__area__product()
+          %li.purchased__content__container__tab-content__mypage-item-list__mypage-item__active
             =link_to "#", class: "mypage-item-list" do
               %figure
                 = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
               .mypage-item-body
                 .mypage-item-text
                   「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
+                      %span
+                        取引が完了しました
                 .mypage-item-status.bold.done
                   取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do 
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do 
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do 
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
-          %li
-            =link_to "#", class: 'mypage-item-list' do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                     %span
-                       取引が完了しました
-                .mypage-item-status.bold.done
-                  取引完了
-              %i.icon-arrow-right 
-                \::before
+              %i.icon-arrow-right
 
-    %ul.pager
-      %li.pager-num 
-        %ul 
-          %li.pager-cell.active
-            1
-          %li.pager-cell 
-            =link_to "#"
-              2
-      %li.pager-next.visible-pc
-        %ul
-          %li.pager-cell 
-            %link_to "#"
-              %i.icon-arrow-right
-          %li.pager-cell 
-            %link_to "#"
-              %i.icon-arrow-right
+    %ul.mypage-history.pager
+      %li.pager-prev.pager-cell 
+        =link_to "#" do
+          %i.icon-arrow-left 
+      %li.pager-next.pager-cell 
+        =link_to "#" do
+          %i.icon-arrow-right

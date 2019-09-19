@@ -1,0 +1,100 @@
+.purchased {
+    position:relative;
+    height: 1292px;
+    width: 1020px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    padding: 40px;
+    display: block; 
+      &__content {
+          position: absolute;
+          top: 40px;
+          left: 360px;
+          background-color: white;
+          height: 382px;
+          width: 720px; 
+  
+          &__container {
+              height: 382px;
+              width: 720px;
+  
+            &__tab-head {
+                height: 72px;
+                width: 720px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 15px; 
+                box-sizing: border-box;
+                
+              h2 {
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: black;         
+                  }
+            }
+  
+            &__list-tabs {
+              height: 72px;
+              width: 720px;
+              
+              &__left {
+                height: 72px;
+                width: 360px;
+                padding: 20px 0; 
+                background-color: #eee; 
+                display: inline-block;
+                float: left;
+                box-sizing: border-box;
+  
+                h3 {
+                    font-size: 16px; 
+                    text-align: center;
+                    text-decoration-line: none;
+                    font-weight: bold;
+                  a {
+                      text-decoration: none;
+                      color: black;
+                  }
+                }
+              }
+  
+              &__right {
+                height: 72px;
+                width: 360px;
+                padding: 20px 0; 
+                display: inline-block;
+                float: right;
+                box-sizing: border-box;
+  
+  
+                h3 {
+                    font-size: 16px; 
+                    text-align: center;
+                    color: black;
+                    font-weight: bold;
+                  a {
+                      text-decoration: none;
+                      color: black;
+                  }
+                }
+              }
+            } 
+            &__tab-content {
+                &__tab-content__mypage-item-list {
+                    &__mypage-item-not-found {
+                        
+                        // h3 {
+                        //     font-size: 16px; 
+                        //     text-align: center;
+                        //     margin-bottom: 20px; 
+  
+                        // }
+                    }
+                }
+            }
+      }
+    }
+  }
+  
