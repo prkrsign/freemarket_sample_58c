@@ -1,146 +1,34 @@
-= render 'shared/main_page_header'
-= render 'shared/profile-sidebar'
+=render 'shared/main_page_header'
 
 %main.put_up_goods_on_sale.clearfix
+  =render 'shared/profile-sidebar'
   .put_up_goods_on_sale__content
     %section.put_up_goods_on_sale__content__container
       %h2.put_up_goods_on_sale__content__container__tab-head 
         出品した商品
       %ul.put_up_goods_on_sale__content__container__list-tabs
-        -# %li.put_up_goods_on_sale__content__container__list-tabs__list-left--active
-        =link_to "#" , class: 'put_up_goods_on_sale__content__container__list-tabs__list-left--active'do
-          出品中
-        -# %li.put_up_goods_on_sale__content__container__list-tabs__list-center
-          %h3
-            =link_to "#" do
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-left--active
+          %h3.put_up_goods_on_sale__content__container__list-tabs__list-center__block
+            =link_to "#", class: 'put_up_goods_on_sale__content__container__list-tabs__list-left--active__text' do
+              出品中
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-center
+          %h3.put_up_goods_on_sale__content__container__list-tabs__list-center__block
+            =link_to "#", class: 'put_up_goods_on_sale__content__container__list-tabs__list-center__text' do
               取引中
         %li.put_up_goods_on_sale__content__container__list-tabs__list-right
-          %h3
-            =link_to "#" do
+          %h3.put_up_goods_on_sale__content__container__list-tabs__list-right__block
+            =link_to "#", class: 'put_up_goods_on_sale__content__container__list-tabs__list-right__text' do
               売却済み
-      %ul#tab-tansaction__mypage-list__tab-pane--active   
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure.tab-tansaction__mypage-list__tab-pane--active__good-box__content-box
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
-            .tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__item-body.show-stock-item
-              .tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__item-body__item-text
-                新品中禅寺湖
-            %i.icon-arrow-right 
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    5
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    0
-                  .mypage-item-status.bold.awating
-                    出品中   
-            %i.icon-arrow-right    
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    5
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    0
-                  .mypage-item-status.bold.awating
-                    出品中   
-            %i.icon-arrow-right 
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    7
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    2
-                  .mypage-item-status.bold.awating
-                    出品中   
-            %i.icon-arrow-right 
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    3
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    6
-                  .mypage-item-status.bold.awating
-                    出品中   
-            %i.icon-arrow-right 
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'ltab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    1
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    0
-                  .mypage-item-status.bold.awating
-                    出品中   
-            %i.icon-arrow-right 
-        %li
-          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
-            %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
-                新品中禅寺湖
-              %div
-                %span.lisiting-item-count
-                  %i.icon-like-border
-                  %span
-                    0
-                %span.listing-item-count
-                  %i.icon-message
-                  %span
-                    0
-                  .mypage-item-status.bold.action-required
-                    公開停止中  
-            %i.icon-arrow-right 
+
+      .put_up_goods-lists
+        - (1..10).each do |i|
+          .put_up_goods-lists__list
+            = image_tag '/goods_sample_1.jpg', size: "", alt: "buy-item-image" , class: 'put_up_goods-lists__list__image'
+            .put_up_goods-lists__list__text
+              新品中禅寺湖
+              %i.fas.fa-chevron-right.put_up_goods-lists__list__text__icon
+
+    -# ペイジャーは余力あったら作る
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
         =link_to "#" do

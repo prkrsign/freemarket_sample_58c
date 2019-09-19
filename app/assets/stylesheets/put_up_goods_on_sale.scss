@@ -1,16 +1,25 @@
 .put_up_goods_on_sale {
-    height: 3913px;
-    width: 704px;
+    height: 1500px;
+    width: 1020px;
     background-color: white; 
-    
+    display: block;
+    display: flex;
+    position:relative;
+    margin: 40px auto 0;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    padding: 40px;
+
     &__content {
+
         height: 2581px;
         width: 704px;
 
         &__container {
             height: 2497px;
             width: 704px;
-
 
             &__tab-head {
                 font-size: 16px;
@@ -24,121 +33,129 @@
             }
 
             &__list-tabs {
-                display: flex;
+                display: flex;                
                 text-align: center;
                 height: 74px;
                 width: 704px;
                 text-decoration: none;
-
                 &__list-left--active {
-                    font-size: 16px;
-                    font-weight: 600;
+                    position: relative;                    
                     height: 74px;
                     width: 233.09px;
-                    text-decoration: none;                   
-                    text-align: center;
-                    color: #333;
+                    &__text {
+                        position: absolute;
+                        top: 24px;
+                        right:85px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-decoration: none;                   
+                        text-align: center;
+                        color: #333;
+                        
+                    }
+                    
 
                 }
                 &__list-center {
+                    position: relative;
+                    background-color: #eee;
                     font-size: 16px;
                     font-weight: 600;
                     height: 74px;
                     width: 233.09px;
                     text-decoration: none;
+                    text-align: center;
+                    color: #333;
 
+                    &__text {
+                        position: absolute;
+                        top: 24px;
+                        right:85px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-decoration: none;                   
+                        text-align: center;
+                        color: #333;
+                    }
                 }
-                &__list-right{
+                &__list-right {
+                    position: relative;
+                    background-color: #eee;
                     font-size: 16px;
                     font-weight: 600;
                     height: 74px;
                     width: 233.09px;
                     text-decoration: none;
-
-                }
-            }
-        }
-    }
-}
-            // &__tab-content {
-            //     height: 2351px;
-            //     width: 704px;
-                
-.tab-transaction__mypage-list__tab-pane--active {
-height: 2351px;
-width: 704px;
-
-    &__good-box {
-        height: 84px;
-        width: 704px;
-
-        &__content-box {
-            height: 83px;
-            width: 704px;
-            
-            &__image {
-                height: 48px;
-                width: 48px;
-            }
-
-            &__item-body {
-                height: 51px;
-                width: 504px;
-            
-                &__item-text {
-                    height: 21px;
-                    width: 504px;
+                    text-align: center;
+                    color: #333;
+                    &__text {
+                        
+                        position: absolute;
+                        top: 24px;
+                        right:85px;
+                        align-items: center;
+	                    justify-content: center;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-decoration: none;                   
+                        text-align: center;
+                        color: #333;
+                    }
                 }
             }
         }
     }
 }
 
+.put_up_goods-lists{    
+    &__list{
+        position: relative;
+        display: flex;
+        display: block;
+        border-bottom: 1px solid #eee;
+        background-color: white;
+        height:83px;
+        width: 700px;
 
-                                // &__icons-box {
-                                //     height: 30px;
-                                //     width: 504px;
+        &__image{
+            margin: 18.5px ;
+            display: inline-block;
+            height:48px;
+            width: 48px;
+        }
+        &__text{
+            margin-bottom: 50px;
+            overflow: hidden;
+            display: -webkit-box;
+            max-height: 4.4em;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            line-height: 1.5;
+            // overflow: hidden;
+            display: inline-block;
+            font-size: 14px;
+            color: #333;
 
-                                //     &__item-count {
-                                //         height: 18px;
-                                //         width: 30.83px;
+            &__icon{
+                display: inline-block;           
+                position: absolute;
+                top: 40px;
+                right: 16px;
+                font-size: 14px;
+                color: #333;
+            }
+        }    
+    }
+}
 
-                                //         &__like-border {
-                                //             height: 15px;
-                                //             width: 15.25px;
-                                //         }
 
-                                //         &__like-number {
-                                //             height: 20px;
-                                //             width: 7.95px;
-                                //         }
 
-                                //     &__item-count {
-                                //         height: 18px;
-                                //         width: 29.58px;
 
-                                //         &__message-icon {
-                                //             height: 15px;
-                                //             width: 14px;
-                                //         }
 
-                                //         &__comment-number {
-                                //             height: 20px;
-                                //             width: 7.95px;   
-                                //         }
-                                //       }
 
-                                //     &__item-status {
-                                //         height: 22px;
-                                //         width: 48px;
-                                //      }
-                                //     }
-                                //   }
-                                // &__icon-arrow {
-                                //   height: 14px;
-                                //   width: 8.95px;
 
-                                // }
-                              
-                            
-      
+
+
+
+
