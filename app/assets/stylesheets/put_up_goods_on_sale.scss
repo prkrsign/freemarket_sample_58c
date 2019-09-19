@@ -13,25 +13,48 @@
 
 
             &__tab-head {
+                font-size: 16px;
+                font-weight: 600;
+                color: rgb(51, 51, 51);
+                line-height: 72px;
+                padding: 0 16px;
                 height: 72px;
                 width: 704px;
+                
             }
 
-            &__list-tab {
+            &__list-tabs {
+                display: flex;
+                text-align: center;
                 height: 74px;
                 width: 704px;
+                text-decoration: none;
 
                 &__list-left--active {
+                    font-size: 16px;
+                    font-weight: 600;
                     height: 74px;
                     width: 233.09px;
+                    text-decoration: none;                   
+                    text-align: center;
+                    color: #333;
+
                 }
                 &__list-center {
+                    font-size: 16px;
+                    font-weight: 600;
                     height: 74px;
                     width: 233.09px;
+                    text-decoration: none;
+
                 }
                 &__list-right{
+                    font-size: 16px;
+                    font-weight: 600;
                     height: 74px;
                     width: 233.09px;
+                    text-decoration: none;
+
                 }
             }
         }

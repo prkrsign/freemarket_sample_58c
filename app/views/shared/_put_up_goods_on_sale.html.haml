@@ -7,11 +7,10 @@
       %h2.put_up_goods_on_sale__content__container__tab-head 
         出品した商品
       %ul.put_up_goods_on_sale__content__container__list-tabs
-        %li.put_up_goods_on_sale__content__container__list-tabs__list-left--active
-          %h3
-            =link_to "#" do
-              出品中
-        %li.put_up_goods_on_sale__content__container__list-tabs__list-center
+        -# %li.put_up_goods_on_sale__content__container__list-tabs__list-left--active
+        =link_to "#" , class: 'put_up_goods_on_sale__content__container__list-tabs__list-left--active'do
+          出品中
+        -# %li.put_up_goods_on_sale__content__container__list-tabs__list-center
           %h3
             =link_to "#" do
               取引中
