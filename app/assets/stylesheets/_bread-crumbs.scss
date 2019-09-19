@@ -1,0 +1,32 @@
+.bread_crumbs{
+  position: relative;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  background: #fff;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  color: #333;
+  &__line{
+    list-style: none;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    &__mercari{
+      font-size: 14px;
+      text-decoration: none;
+      touch-action: manipulation;
+      color: #333;
+    }
+    &__category{
+      font-size: 14px;
+      text-decoration: none;
+      touch-action: manipulation;
+      color: #333; 
+    }
+  }
+}
+
+.fas.fa-chevron-right{
+  margin: 0 8px;
+  font-size: 9px;
+  color: #888;
+}
