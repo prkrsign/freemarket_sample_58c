@@ -54,7 +54,7 @@
             カテゴリー
             .form-require
               必須
-            = f.select :m_category, [["表示する文字1", "データベースに登録する値1"],["表示する文字2", "データベースに登録する値2"],["表示する文字3", "データベースに登録する値3"]],{include_blank: '未選択'},{class: "category"}
+            = f.select :m_category, @category_parent_array, {}, {class: "category", id: "parent_category"}
           -# サイズプルダウン
           .contents-box__category-section__category-box__tag
             サイズ
