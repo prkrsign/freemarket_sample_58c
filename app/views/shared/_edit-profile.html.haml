@@ -1,0 +1,20 @@
+%header
+  = render "shared/main_page_header"
+  
+%main.mypage-container.clearfix
+  .mypage-content
+    %h2.chapter-head
+      プロフィール
+    %form{action:""}
+      .setting-profile-icon
+        %figure.setting-profile-head
+          %img_tag{height:"48", src:"//static.mercdn.net/thumb/members/159940632.jpg?1480273433", width:"48", class:"setting-profile-image"}
+        %input.setting-profile-input{name:"nickname", placeholder:"例)AYA☆セール中", type:"text", value:""}
+          
+      .setting-profile-content
+        %textarea.textarea-default{placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+        %button{type:"submit", class:"settimg-profile-btn"} 変更する
+
+  %aside= render "shared/profile-sidebar"
+%aside= render "shared/aside"
+%footer= render "shared/footer"
