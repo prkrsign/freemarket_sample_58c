@@ -1,53 +1,53 @@
-*{
+// *{
     
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    color: #333;
-    font-size: inherit;
-    line-height: inherit;
-    background-repeat: no-repeat;
-}
+//     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+//     color: #333;
+//     font-size: inherit;
+//     line-height: inherit;
+//     background-repeat: no-repeat;
+// }
 
-*, ::before, ::after {
-  border-style: solid;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-width: 0;
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 0px;
-  border-left-width: 0px;
-  box-sizing: inherit;
-  border-style: solid;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-width: 0;
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 0px;
-  border-left-width: 0px;
-  border-style: solid;
+// *, ::before, ::after {
+//   border-style: solid;
+//   border-top-style: solid;
+//   border-right-style: solid;
+//   border-bottom-style: solid;
+//   border-left-style: solid;
+//   border-width: 0;
+//   border-top-width: 0px;
+//   border-right-width: 0px;
+//   border-bottom-width: 0px;
+//   border-left-width: 0px;
+//   box-sizing: inherit;
+//   border-style: solid;
+//   border-top-style: solid;
+//   border-right-style: solid;
+//   border-bottom-style: solid;
+//   border-left-style: solid;
+//   border-width: 0;
+//   border-top-width: 0px;
+//   border-right-width: 0px;
+//   border-bottom-width: 0px;
+//   border-left-width: 0px;
+//   border-style: solid;
     
-}
+// }
 
-::before ::after {
-  text-decoration: inherit;
-  text-decoration-line: inherit;
-  text-decoration-style: inherit;
-  text-decoration-color: inherit;
-  vertical-align: inherit;
+// ::before ::after {
+//   text-decoration: inherit;
+//   text-decoration-line: inherit;
+//   text-decoration-style: inherit;
+//   text-decoration-color: inherit;
+//   vertical-align: inherit;
   
-}
+// }
 
-::selection {
-  color: currentColor;
-  background-color: #b3d4fc;
-  color: #fff;
-  text-shadow: none;
-}
+// ::selection {
+//   color: currentColor;
+//   background-color: #b3d4fc;
+//   color: #fff;
+//   text-shadow: none;
+// }
 
 .clearfix:after {
   content: '';
@@ -81,13 +81,39 @@
 
           &__tab-head {
             height: 72px;
-            width: 720px;   
+            width: 720px;
+            display: flex;
+
+            // display: inline-block; 
+            float: left;   
           }
           &__mypage-tabs{
             height: 74px;
             width: 720px;
+            display: inline-block; 
+            float: left; 
             
           } 
     }
   }
+}
+.purchased_on_deal__content__container__mypage-tabs__active{
+
+height:74px;
+width:250px;
+
+
+&__h3{
+  font-size: 16px;
+  font-weight:600px;
+  height:74px;
+  width:250px;
+  text-decoration: none;
+  text-align:center;
+  color: #333;
+  }
+
+
+
+
 }

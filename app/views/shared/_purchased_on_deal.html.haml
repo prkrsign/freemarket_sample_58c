@@ -7,14 +7,12 @@
       %h2.purchased_on_deal__content__container__tab-head 
         購入した商品
       %ul.purchased_on_deal__content__container__mypage-tabs
-        %li.purchased_on_deal__content__container__mypage-tabs__active
-          %purchased_on_deal__content__container__mypage-tabs__active__h3
-            =link_to "#" do
-              取引中
-        %li.purchased_on_deal__content__container__mypage-tabs__non-active
-          %h3 
-            =link_to "#" do
-              過去の取引
+        %h3.purchased_on_deal__content__container__mypage-tabs__active
+          =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+            取引中
+            %h3.purchased_on_deal__content__container__mypage-tabs__active
+              =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+                過去の取引
       .purchased_on_deal__content__container__tab-content
         %ul#mypage-tab-transaction-now.purchased_on_deal__content__container__tab-content__mypage-item-list__tab-pane--active
           %li.purchased_on_deal__content__container__tab-content__mypage-item-list__tab-pane--active__mypage-item-not-found.bold
