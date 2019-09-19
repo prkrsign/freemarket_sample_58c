@@ -1,23 +1,25 @@
 =render 'shared/main_page_header'
+=render 'shared/profile-sidebar'
 
 %main.purchased_on_deal.clearfix
-  =render 'shared/profile-sidebar'
   .purchased_on_deal__content
     %section.purchased_on_deal__content__container
       %h2.purchased_on_deal__content__container__tab-head 
         購入した商品
-      %ul.purchased_on_deal__content__container__mypage-tabs
-        %h3.purchased_on_deal__content__container__mypage-tabs__active
-          =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
-            取引中
-            %h3.purchased_on_deal__content__container__mypage-tabs__active
-              =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
-                過去の取引
+      %ul.purchased_on_deal__content__container__mypage-tabs__list-tabs
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-left--left
+          %h3.put_up_goods_on_sale__content__container__list-tabs__list-left--left
+            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+              取引中
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-left--right
+          %h3.put_up_goods_on_sale__content__container__list-tabs__list-left--right
+            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+              過去の取引
+
       .purchased_on_deal__content__container__tab-content
-        %ul#mypage-tab-transaction-now.purchased_on_deal__content__container__tab-content__mypage-item-list__tab-pane--active
-          %li.purchased_on_deal__content__container__tab-content__mypage-item-list__tab-pane--active__mypage-item-not-found.bold
-            取引中の商品がありません
-        %ul#mypage-tab-transaction-old.purchased_on_deal__content__container__tab-content__mypage-item-list__tab-pane
-          %li.mypage-tab-transaction-old.purchased_on_deal__content__container__tab-content__mypage-item-list__mypage-item-not-found.bold
-            過去に取引した商品がありません
-          
+        %ul#mypage-tab-transaction-now.purchased_on_deal__content__container__tab-content__mypage-item-list
+          %li.purchased_on_deal__content__container__tab-content__mypage-item-list__mypage-item-not-found.bold
+            取引中の商品がありません 
+            
+-# = render 'shared/aside'
+-# = render 'shared/footer' 
