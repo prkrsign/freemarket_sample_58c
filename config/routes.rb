@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'tests/exhibit', to: 'tests#exhibit'
   get 'tests/logout', to: 'tests#logout'
   get 'tests/product_details', to: 'tests#product_details'
+  get 'tests/credit_enter', to: 'tests#credit_enter'
+  get 'tests/credit_register', to: 'tests#credit_register'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

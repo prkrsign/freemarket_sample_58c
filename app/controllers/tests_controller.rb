@@ -32,4 +32,11 @@ class TestsController < ApplicationController
     def product_details
     end
 
+    def credit_enter
+    end
+
+    def credit_register
+        
+    end
+
 end
