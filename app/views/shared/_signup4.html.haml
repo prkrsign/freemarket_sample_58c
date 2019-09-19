@@ -1,15 +1,88 @@
-.contents
-  .contents__head
-    会員登録完了
-  .contents__form
-    .contents__form__title1
-      %p 
-      ありがとうございます。
-      %br
-      会員登録が完了しました。
-    =link_to "aaa", class:"contents__btn" do
-      メルカリをはじめる
+.login-header-wrapper
+  = render 'shared/login-header'
 
-.contents
-  =link_to "aaa" do
-    %img{ class:"cintents__image", alt:"", src:"//www-mercari-jp.akamaized.net/assets/img/signup/jp/banner-pc.jpg?2482339763",width:"560"}/
+.signup4-wrapper
+  .contents
+    .contents__head
+      支払い方法
+    = form_with(url: tests_signup5_path , class: "contents__form", local: true, method: 'GET') do |f|
+      .contents__form__signup4-title
+        %label カード番号
+        %span.contents__form__require#card-number-require 必須
+        = f.text_field :name, class: "contents__form__input" , placeholder: '半角数字のみ'
+        %ul.contents__form__cardlist
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "15", width: "40"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "15", width: "40"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763', height: "15", width: "25"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763', height: "15", width: "37"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763', height: "15", width: "21"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "15", width: "40"
+          %li.contents__form__cardlist__icon
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
+
+      .contents__form__signup4-title
+        %label 有効期限
+        %span.contents__form__require 必須
+        %div{ style:"display:inline-flex"}
+          %select{ name:"month", class:"contents__form__time-select contents__form__select__1" }
+            %option{value:""} --
+            %option{value:"01"} 01
+            %option{value:"02"} 02
+            %option{value:"03"} 03
+            %option{value:"04"} 04
+            %option{value:"05"} 05
+            %option{value:"06"} 06
+            %option{value:"07"} 07
+            %option{value:"08"} 08
+            %option{value:"09"} 09
+            %option{value:"10"} 10
+            %option{value:"11"} 11
+            %option{value:"12"} 12
+          %span 月
+          %select{ name:"day", class:"contents__form__time-select" }
+            %option{value:""} --
+            %option{value:"19"} 19
+            %option{value:"20"} 20
+            %option{value:"21"} 21
+            %option{value:"22"} 22
+            %option{value:"23"} 23
+            %option{value:"24"} 24
+            %option{value:"25"} 25
+            %option{value:"26"} 26
+            %option{value:"27"} 27
+            %option{value:"28"} 28
+            %option{value:"29"} 29
+          %sapn 年
+
+      .contents__form__signup4-title
+        %label セキュリティコード
+        %span.contents__form__require 必須
+        %input{ class:"contents__form__input", maxlength:"10", name:"card-name", placeholder:"カード背面4桁もしくは3桁の番号", type:"text", value:""}
+      .contents__info
+        %span.contents__info__question ？
+        %span カード裏面の番号とは？
+      
+      = f.button '次に進む', class:"contents__btn" 
+      -# ページのフッター部分
+  %footer.confirmation-footer
+    %ul.confirmation-footer-container
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          プライバシーポリシー
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          メルカリ利用規約
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          特定商取引に関する表記
+
+      = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+    .confirmation-footer-container__footer-text
+      ©︎2019 Mercari
