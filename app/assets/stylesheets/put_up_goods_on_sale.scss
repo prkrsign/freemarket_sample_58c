@@ -1,7 +1,7 @@
 .put_up_goods_on_sale {
     height: 3913px;
     width: 704px;
-    background-color: white 
+    background-color: white; 
     
     &__content {
         height: 2581px;
@@ -10,6 +10,7 @@
         &__container {
             height: 2497px;
             width: 704px;
+
 
             &__tab-head {
                 height: 72px;
@@ -33,88 +34,88 @@
                     width: 233.09px;
                 }
             }
-
-            &__tab-content {
-                height: 2351px;
-                width: 704px;
+        }
+    }
+}
+            // &__tab-content {
+            //     height: 2351px;
+            //     width: 704px;
                 
-                &__tab-transaction__mypage-list__tab-pane--active {
-                    height: 2351px;
-                    width: 704px;
+.tab-transaction__mypage-list__tab-pane--active {
+height: 2351px;
+width: 704px;
 
-                    &__good-box {
-                        height: 84px;
-                        width: 704px;
+    &__good-box {
+        height: 84px;
+        width: 704px;
 
-                        &__content-box {
-                            height: 83px;
-                            width: 704px;
-                            
-                            &__image {
-                                height: 48px;
-                                width: 48px;
-                            }
+        &__content-box {
+            height: 83px;
+            width: 704px;
+            
+            &__image {
+                height: 48px;
+                width: 48px;
+            }
 
-                            &__item-body {
-                                height: 51px;
-                                width: 504px;
-                            
-                                &__item-text {
-                                    height: 21px;
-                                    width: 504px;
-                                    }
-
-                                &__icons-box {
-                                    height: 30px;
-                                    width: 504px;
-
-                                    &__item-count {
-                                        height: 18px;
-                                        width: 30.83px;
-
-                                        &__like-border {
-                                            height: 15px;
-                                            width: 15.25px;
-                                        }
-
-                                        &__like-number {
-                                            height: 20px;
-                                            width: 7.95px;
-                                        }
-
-                                    &__item-count {
-                                        height: 18px;
-                                        width: 29.58px;
-
-                                        &__message-icon {
-                                            height: 15px;
-                                            width: 14px;
-                                        }
-
-                                        &__comment-number {
-                                            height: 20px;
-                                            width: 7.95px;   
-                                        }
-                                      }
-
-                                    &__item-status {
-                                        height: 22px;
-                                        width: 48px;
-                                     }
-                                    }
-                                  }
-                                &__icon-arrow {
-                                  height: 14px;
-                                  width: 8.95px;
-
-                                }
-                              
-                            
-                           }
-                        }
-                    }
+            &__item-body {
+                height: 51px;
+                width: 504px;
+            
+                &__item-text {
+                    height: 21px;
+                    width: 504px;
                 }
             }
         }
     }
 }
+
+
+                                // &__icons-box {
+                                //     height: 30px;
+                                //     width: 504px;
+
+                                //     &__item-count {
+                                //         height: 18px;
+                                //         width: 30.83px;
+
+                                //         &__like-border {
+                                //             height: 15px;
+                                //             width: 15.25px;
+                                //         }
+
+                                //         &__like-number {
+                                //             height: 20px;
+                                //             width: 7.95px;
+                                //         }
+
+                                //     &__item-count {
+                                //         height: 18px;
+                                //         width: 29.58px;
+
+                                //         &__message-icon {
+                                //             height: 15px;
+                                //             width: 14px;
+                                //         }
+
+                                //         &__comment-number {
+                                //             height: 20px;
+                                //             width: 7.95px;   
+                                //         }
+                                //       }
+
+                                //     &__item-status {
+                                //         height: 22px;
+                                //         width: 48px;
+                                //      }
+                                //     }
+                                //   }
+                                // &__icon-arrow {
+                                //   height: 14px;
+                                //   width: 8.95px;
+
+                                // }
+                              
+                            
+      

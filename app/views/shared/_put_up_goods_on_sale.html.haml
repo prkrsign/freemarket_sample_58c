@@ -2,34 +2,34 @@
 = render 'shared/profile-sidebar'
 
 %main.put_up_goods_on_sale.clearfix
-  .content
-    %section.container
-      %h2.tab-head 
+  .put_up_goods_on_sale__content
+    %section.put_up_goods_on_sale__content__container
+      %h2.put_up_goods_on_sale__content__container__tab-head 
         出品した商品
-      %ul.list-tabs
-        %li.list-left--active
+      %ul.put_up_goods_on_sale__content__container__list-tabs
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-left--active
           %h3
             =link_to "#" do
               出品中
-        %li.list-center
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-center
           %h3
             =link_to "#" do
               取引中
-        %li.list-right
+        %li.put_up_goods_on_sale__content__container__list-tabs__list-right
           %h3
             =link_to "#" do
               売却済み
       %ul#tab-tansaction__mypage-list__tab-pane--active   
         %li
-          = link_to "#", class: 'good-box' do
-            %figure.content-box
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
-            .mypage-item-body.show-stock-item
-              .mypage-item-text
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
+            %figure.tab-tansaction__mypage-list__tab-pane--active__good-box__content-box
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
+            .tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__item-body.show-stock-item
+              .tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__item-body__item-text
                 新品中禅寺湖
             %i.icon-arrow-right 
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -48,9 +48,9 @@
                     出品中   
             %i.icon-arrow-right    
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
             .mypage-item-body.show-stock-item
               .mypage-item-text
                 新品中禅寺湖
@@ -67,9 +67,9 @@
                     出品中   
             %i.icon-arrow-right 
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
             .mypage-item-body.show-stock-item
               .mypage-item-text
                 新品中禅寺湖
@@ -86,7 +86,7 @@
                     出品中   
             %i.icon-arrow-right 
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
               = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
             .mypage-item-body.show-stock-item
@@ -105,9 +105,9 @@
                     出品中   
             %i.icon-arrow-right 
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'ltab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
             .mypage-item-body.show-stock-item
               .mypage-item-text
                 新品中禅寺湖
@@ -124,9 +124,9 @@
                     出品中   
             %i.icon-arrow-right 
         %li
-          = link_to "#", class: 'mypage-item-link' do
+          = link_to "#", class: 'tab-tansaction__mypage-list__tab-pane--active__good-box' do
             %figure
-              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'lazyloaded'
+              = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'tab-tansaction__mypage-list__tab-pane--active__good-box__content-box__image'
             .mypage-item-body.show-stock-item
               .mypage-item-text
                 新品中禅寺湖
