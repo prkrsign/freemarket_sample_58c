@@ -1,5 +1,4 @@
 =render 'shared/main_page_header'
-
 %main.purchased.clearfix
   =render 'shared/profile-sidebar'
   .purchased__content
@@ -15,51 +14,22 @@
           %h3.purchased__content__container__list-tabs__right__text
             =link_to "#", class:'purchased__content__container__mypage-tabs__active__h3' do
               過去の取引
-
       .purchased__content__container__tab-content
         %ul#mypage-tab-transaction-now.purchased__content__container__tab-content__mypage-item-list
-          (1..10).each do |i|
-            .block__area__product()
-          %li.purchased__content__container__tab-content__mypage-item-list__mypage-item__active
-            =link_to "#", class: "mypage-item-list" do
-              %figure
-                = image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
-              .mypage-item-body
-                .mypage-item-text
-                  「偽物にんにくサプリメント」を購入しました。
-                      %span
-                        取引が完了しました
+          - (1..10).each do |i|
+            .block__area__product(purchased__content__container__tab-content__mypage-item-list__mypage-item__active)
+              %li.purchased__content__container__tab-content__mypage-item-list__mypage-item__active
+                  =link_to "#", class: "mypage-item-list" do
+                    %figure
+                      =image_tag '/goods_sample_3.jpg', size: "", alt: "" , class: 'lazyloaded'
+                    .mypage-item-body
+                      .mypage-item-text
+                        「偽物にんにくサプリメント」を購入しました。
+                          %span
+                            取引が完了しました
                 .mypage-item-status.bold.done
                   取引完了
               %i.icon-arrow-right
-
-    %ul.mypage-history.pager
-      %li.pager-prev.pager-cell 
-        =link_to "#" do
-          %i.icon-arrow-left 
-      %li.pager-next.pager-cell 
-        =link_to "#" do
-          %i.icon-arrow-right
-=render 'shared/main_page_header'
-
-%main.purchased_sale.clearfix
-  =render 'shared/profile-sidebar'
-  .purchased__content
-    %section.purchased__content__container
-      %h2.purchased__content__container__tab-head 
-        購入した商品
-      %ul.purchased__content__container__list-tabs
-        %li.purchased__content__container__list-tabs__list-center
-          %h3.purchased__content__container__list-tabs__list-center__block
-            =link_to "#", class: 'purchased__content__container__list-tabs__list-center__text' do
-              取引中
-      .purchased-lists
-        - (1..10).each do |i|
-          .purchased-lists__list
-            = image_tag '/goods_sample_3.jpg', size: "", alt: "buy-item-image" , class: 'purchased-lists__list__image'
-            .purchased-lists__list__text
-              新品サンプル
-              %i.fas.fa-chevron-right.purchased-lists__list__text__icon
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
         =link_to "#" do
@@ -68,4 +38,31 @@
         =link_to "#" do
           %i.icon-arrow-right
 = render 'shared/aside'
-= render 'shared/footer'   
+= render 'shared/footer'  
+
+
+-# %main.purchased_sale.clearfix
+-#   =render 'shared/profile-sidebar'
+-#   .purchased__content
+-#     %section.purchased__content__container
+-#       %h2.purchased__content__container__tab-head 
+-#         購入した商品
+-#       %ul.purchased__content__container__list-tabs
+-#         %li.purchased__content__container__list-tabs__list-center
+-#           %h3.purchased__content__container__list-tabs__list-center__block
+-#             =link_to "#", class: 'purchased__content__container__list-tabs__list-center__text' do
+-#               取引中
+-#       .purchased-lists
+-#         - (1..10).each do |i|
+-#           .purchased-lists__list
+-#             = image_tag '/goods_sample_3.jpg', size: "", alt: "buy-item-image" , class: 'purchased-lists__list__image'
+-#             .purchased-lists__list__text
+-#               新品サンプル
+-#               %i.fas.fa-chevron-right.purchased-lists__list__text__icon
+-#     %ul.mypage-history.pager
+-#       %li.pager-prev.pager-cell 
+-#         =link_to "#" do
+-#           %i.icon-arrow-left 
+-#       %li.pager-next.pager-cell 
+-#         =link_to "#" do
+-#           %i.icon-arrow-right
