@@ -4,10 +4,34 @@
   display: flex;
   position:relative;
   margin: 40px auto 40px;
-
   &__content {
     width: 704px;
+    background-color: white;
+    &__container{
+      width: 740px; 
 
+      &____user-head {
+        width: 740px; 
+
+        &__image {
+          height: 30px;
+          width: 30px;
+        }
+        &__nickname {
+          color: black;
+          font-size: 15px;
+        }
+        &__numbers {
+          &__evaluation {
+          }
+          &__put-up {
+
+          }
+        }
+      }
+    }
+  }
+}
 //     &__container {
 //       width: 704px;
 
