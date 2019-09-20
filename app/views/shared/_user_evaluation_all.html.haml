@@ -1,0 +1,36 @@
+.evaluation-all-wrapper
+  =render 'shared/main_page_header'
+
+  .evaluation-all-wrapper__container
+    =render 'shared/profile-sidebar'
+    %main.evaluation-all-wrapper__container__list-contents
+      %h2.evaluation-all-wrapper__container__list-contents__tab-head
+        評価一覧
+      %ul.evaluation-all-wrapper__container__list-contents__tab-head__tabs
+        =link_to "#", class:'evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation' do
+          %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text#mypage-eva-active
+            .evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner
+              すべて
+
+        =link_to "#", class:'evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation' do
+          %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text
+            .evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner
+              良い
+              %i.fas.fa-laugh-squint.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner__laugh-icon
+        =link_to "#", class:'evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation' do
+          %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text
+            .evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner
+              普通
+              %i.fas.fa-meh.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner__normal-icon
+        =link_to "#", class:'evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation' do
+          %li.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text
+            .evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner
+              悪い
+              %i.fas.fa-grin-tongue-wink.evaluation-all-wrapper__container__list-contents__tab-head__tabs__evaluation__text__inner__bad-icon
+      .evaluation-all-wrapper__container__list-contents__result-content
+        = image_tag '/mercari-logo-gray.svg' , class: 'evaluation-all-wrapper__container__list-contents__result-content__mercari-icon'
+        .evaluation-all-wrapper__container__list-contents__result-content__right
+          評価はまだありません
+= render 'shared/aside'
+= render 'shared/footer'
+ 

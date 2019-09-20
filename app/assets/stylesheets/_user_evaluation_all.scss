@@ -1,0 +1,88 @@
+.evaluation-all-wrapper{
+    &__container{
+        position: relative;
+        margin: 40px auto 40px;
+        width: 1020px;
+        &__list-contents{
+            position: absolute;
+            height: 466px;
+            width: 700px;
+            top: 0px;
+            left: 320px;
+            &__tab-head{
+                padding: 0 16px;
+                background-color: #fff;
+                font-size: 16px;
+                line-height: 72px;
+                font-weight: 600;
+                &__tabs{
+                    height: 74px;
+                    border: 0;
+                    background-color:#ccc;
+                        &__evaluation{
+                            box-sizing: border-box;
+                            height: 100%;
+                            width: 25%;
+                            display: inline-block;
+                            text-align: center;
+                            vertical-align: top;
+                            line-height: 70px;
+                            text-decoration: none;
+                            #mypage-eva-active{
+                                height: 74px;
+                                width: 100%;
+                                color: black;
+                                background-color: #fff;
+                                border-top: 2px solid red;
+                                display: inline-block;
+                                text-align: center;
+                                vertical-align: top;
+                            }
+                            &__text{
+                                box-sizing: border-box;
+                                height: 100%;
+                                color: black;
+                                font-weight: 600;
+                                &__inner{
+                                    height: 100%;
+                                    &__laugh-icon{
+                                        color: #ef5185;
+                                    }
+                                    &__normal-icon{
+                                        color: #fba933;
+                                    }
+                                    &__bad-icon{
+                                        color: #6ab5d8;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+                &__result-content{
+                    width: 700px;
+                    height: 236px;
+                    background-color: #fff;
+                    &__mercari-icon{
+                        position: absolute;
+                        height: 100px;
+                        width: 100px;
+                        top: 200px;
+                        left: 300px;
+                    }
+                    &__right{
+                        position: absolute;
+                        width: 200px;
+                        font-weight: 600;
+                        color: #bbb;
+                        top: 330px;
+                        left: 280px;
+                        
+                    }
+                }
+            }
+        }
+    }
+

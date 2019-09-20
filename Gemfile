@@ -88,3 +88,6 @@ gem 'kaminari'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem "ancestry"
+gem 'jquery-rails'
+gem 'active_hash'
