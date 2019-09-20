@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   def index
   end
 
+  # 以下テスト用ダミーです。
   def show
     @good = Good.find(1)
     @image = Image.find(1)
