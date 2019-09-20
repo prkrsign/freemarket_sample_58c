@@ -1,1 +1,35 @@
 = render 'shared/main_page_header'
+
+%main.mypage-mypage.clearfix
+  =render 'shared/profile-sidebar'
+  .mypage-mypage__content
+    %section.mypage-mypage__content__container
+      .mypage-mypage__content__container__user-head
+        .mypage-mypage__content__container__use
+      %h2.mypage-mypage__content__container__tab-head 
+        購入した商品
+      %ul.mypage-mypage__content__container__list-tabs
+        %li.mypage-mypage__content__container__list-tabs__left
+          %h3.mypage-mypage__content__container__list-tabs__left__text
+            =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
+              取引中
+        %li.mypage-mypage__content__container__list-tabs__right
+          %h3.mypage-mypage__content__container__list-tabs__right__text
+            =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
+              過去の取引
+
+      .mypage-mypage__content__container__tab-content
+        %ul#mypage-tab-transaction-now.mypage-mypage__content__container__tab-content__mypage-item-list
+          %li.mypage-mypage__content__container__tab-content__mypage-item-list__mypage-item-not-found
+            取引中の商品がありません 
+            = image_tag '/mercari-logo-gray.svg', alt: "" , class: 'lazyloaded'
+    %ul.mypage-history.pager
+      %li.pager-prev.pager-cell 
+        =link_to "#" do
+          %i.icon-arrow-left 
+      %li.pager-next.pager-cell 
+        =link_to "#" do
+          %i.icon-arrow-right
+
+=render 'shared/aside'
+=render 'shared/footer'
