@@ -1,27 +1,19 @@
 .put_up_goods_on_sale {
-  height: 1500px;
   width: 1020px;
-  background-color: white; 
   display: block;
   display: flex;
   position:relative;
-  margin: 40px auto 0;
-  margin-top: 40px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
-  padding: 40px;
+  margin: 40px auto 40px;
 
   &__content {
-
-    height: 2581px;
     width: 704px;
 
     &__container {
-      height: 2497px;
       width: 704px;
 
       &__tab-head {
+        box-sizing: border-box;
+        background-color: #fff;
         font-size: 16px;
         font-weight: 600;
         color: rgb(51, 51, 51);
@@ -29,7 +21,6 @@
         padding: 0 16px;
         height: 72px;
         width: 704px;
-        
         }
 
       &__list-tabs {
@@ -39,7 +30,9 @@
         width: 704px;
         text-decoration: none;
         &__list-left--active {
-          position: relative;                    
+          border-top: 2px solid red;
+          position: relative;   
+          background-color: #fff;                 
           height: 74px;
           width: 233.09px;
           &__text {
@@ -58,7 +51,7 @@
         }
         &__list-center {
           position: relative;
-          background-color: #eee;
+          background-color: #ccc;
           font-size: 16px;
           font-weight: 600;
           height: 74px;
@@ -80,7 +73,7 @@
         }
         &__list-right {
           position: relative;
-          background-color: #eee;
+          background-color: #ccc;
           font-size: 16px;
           font-weight: 600;
           height: 74px;

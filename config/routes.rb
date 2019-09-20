@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'tests/make_sure_user_info', to: 'tests#make_sure_user_info'
   get 'tests/edit_profile', to: 'tests#edit_profile'
   get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
+  get 'tests/put_up_goods_on_sale', to: 'tests#put_up_goods_on_sale'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

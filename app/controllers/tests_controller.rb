@@ -50,4 +50,8 @@ class TestsController < ApplicationController
     def purchase_confirmation
         
     end
+
+    def put_up_goods_on_sale
+        
+    end
 end
