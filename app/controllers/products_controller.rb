@@ -13,12 +13,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(product_params)
+    Good.create(goods_name: product_params[:goods_name], goods_discription: product_params[:goods_discription], price: product_params[:price]user_id: current_user.id)
+
+    # product = Product.create(product_params)
     product.save!
 
     # @goods = Goods.create(goods_name: "i",goods_description: "i")
-    # Goods.create(goods_name: params[:goods_name], price: params[:price], goods_description: params[:goods_description])
-
+    # Goods.create(goods_name: params[:goods_name], price: params[:price], goods_description: params[:goods_description])@
   end
 
   private
