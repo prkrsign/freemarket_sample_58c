@@ -52,6 +52,11 @@ class TestsController < ApplicationController
     end
 
     def put_up_goods_on_sale
-        
+
     end
+
+    def purchased_on_deal
+
+    end
+    
 end
