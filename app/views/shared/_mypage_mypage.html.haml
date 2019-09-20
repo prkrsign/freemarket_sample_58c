@@ -1,28 +1,57 @@
-= render 'shared/main_page_header'
+-# = render 'shared/main_page_header'
 
 %main.mypage-mypage.clearfix
-  =render 'shared/profile-sidebar'
+  -# =render 'shared/profile-sidebar'
   .mypage-mypage__content
     %section.mypage-mypage__content__container
       .mypage-mypage__content__container__user-head
-        .mypage-mypage__content__container__use
-      %h2.mypage-mypage__content__container__tab-head 
-        購入した商品
+        .mypage-mypage__content__container__user_head__image
+        .mypage-mypage__content__container__user_head__nickname
+        %ul.mypage-mypage__content__container__user_head__numbers
+          %li.mypage-mypage__content__container__user_head__numbers__evaluation
+          %li.mypage-mypage__content__container__user_head__numbers__put-up
+
       %ul.mypage-mypage__content__container__list-tabs
         %li.mypage-mypage__content__container__list-tabs__left
           %h3.mypage-mypage__content__container__list-tabs__left__text
             =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
-              取引中
+              お知らせ
         %li.mypage-mypage__content__container__list-tabs__right
           %h3.mypage-mypage__content__container__list-tabs__right__text
             =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
+              やることリスト
+      .mypage-mypage__content__container__good__lists
+        - (1..5).each do |i|
+          .mypage-mypage__content__container__good__lists__list
+            = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'mypage-mypage.mypage-mypage__content__container__goofd__lists__list__image'
+            .mypage-mypage__content__container__good__lists__list__text
+              新品中禅寺湖
+              %i.fas.fa-chevron-right.mypage-mypage__content__container__good__lists__list__text__icon
+      .mypage-mypage__content__container__see-lists
+        %h2.mypage-mypage__content__container__see-lists__box
+          = link_to '＃', class: "mypage-mypage__content__container__see-lists__box__h3" do
+            一覧を見る
+  .purchased_on_deal__content
+    %section.purchased_on_deal__content__container
+      %h2.purchased_on_deal__content__container__tab-head 
+        購入した商品
+      %ul.purchased_on_deal__content__container__list-tabs
+        %li.purchased_on_deal__content__container__list-tabs__left
+          %h3.purchased_on_deal__content__container__list-tabs__left__text
+            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+              取引中
+        %li.purchased_on_deal__content__container__list-tabs__right
+          %h3.purchased_on_deal__content__container__list-tabs__right__text
+            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
               過去の取引
 
-      .mypage-mypage__content__container__tab-content
-        %ul#mypage-tab-transaction-now.mypage-mypage__content__container__tab-content__mypage-item-list
-          %li.mypage-mypage__content__container__tab-content__mypage-item-list__mypage-item-not-found
+      .purchased_on_deal__content__container__tab-content
+        %ul#mypage-tab-transaction-now.purchased_on_deal__content__container__tab-content__mypage-item-list
+          %li.purchased_on_deal__content__container__tab-content__mypage-item-list__mypage-item-not-found
             取引中の商品がありません 
             = image_tag '/mercari-logo-gray.svg', alt: "" , class: 'lazyloaded'
+
+
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
         =link_to "#" do
@@ -31,5 +60,6 @@
         =link_to "#" do
           %i.icon-arrow-right
 
-=render 'shared/aside'
-=render 'shared/footer'
+-# =render 'shared/aside'
+-# =render 'shared/footer'
+
