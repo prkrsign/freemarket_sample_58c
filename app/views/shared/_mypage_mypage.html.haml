@@ -1,58 +1,48 @@
--# = render 'shared/main_page_header'
+=render 'shared/main_page_header'
 
-%main.mypage-mypage.clearfix
+%main.mypage_mypage.clearfix
   =render 'shared/profile-sidebar'
-  .mypage-mypage__content
-    %section.mypage-mypage__content__container
-      .mypage-mypage__content__container__user-head
-        .mypage-mypage__content__container__user_head__image
-        .mypage-mypage__content__container__user_head__nickname
-          AYA
-        %ul.mypage-mypage__content__container__user_head__numbers
-          %li.mypage-mypage__content__container__user_head__numbers__evaluation
-          %li.mypage-mypage__content__container__user_head__numbers__put-up
+  .mypage_mypage__content
+    %section.mypage_mypage__content__container
 
-      %ul.mypage-mypage__content__container__list-tabs
-        %li.mypage-mypage__content__container__list-tabs__left
-          %h3.mypage-mypage__content__container__list-tabs__left__text
-            =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
+      .mypage_mypage__content__container__user-head
+      %ul.mypage_mypage__content__container__upper-list-tabs
+        %li.mypage_mypage__content__container__upper-list-tabs__list-left--active
+          %h3.mypage_mypage__content__container__upper-list-tabs__list-left__block
+            =link_to "#", class: 'mypage_mypage__content__container__upper-list-tabs__list-left--active__text' do
               お知らせ
-        %li.mypage-mypage__content__container__list-tabs__right
-          %h3.mypage-mypage__content__container__list-tabs__right__text
-            =link_to "#", class:'mypage-mypage__content__container__mypage-tabs__active__h3' do
+        %li.mypage_mypage__content__container__upper-list-tabs__list-right
+          %h3.mypage_mypage__content__container__list-tabs__list-right__block
+            =link_to "#", class: 'mypage_mypage__content__container__upper-list-tabs__list-right__text' do
               やることリスト
-      .mypage-mypage__content__container__good__lists
+      .mypage_mypage__content__container__container-lists
         - (1..5).each do |i|
-          .mypage-mypage__content__container__good__lists__list
-            = image_tag '/goods_sample_1.jpg', size: "", alt: "" , class: 'mypage-mypage.mypage-mypage__content__container__goofd__lists__list__image'
-            .mypage-mypage__content__container__good__lists__list__text
-              新品中禅寺湖
-              %i.fas.fa-chevron-right.mypage-mypage__content__container__good__lists__list__text__icon
-      .mypage-mypage__content__container__see-lists
-        %h2.mypage-mypage__content__container__see-lists__box
-          = link_to '＃', class: "mypage-mypage__content__container__see-lists__box__h3" do
-            一覧を見る
-  .purchased_on_deal__content
-    %section.purchased_on_deal__content__container
-      %h2.purchased_on_deal__content__container__tab-head 
+          .mypage_mypage__content__container__container-lists__list
+            = image_tag '/goods_sample_1.jpg', size: "", alt: "buy-item-image" , class: 'mypage_mypage__content__container__container-lists__list__image'
+            .mypage_mypage__content__container__container-lists__list__text
+              テックエキスパートさん、他３名がいいねしました
+              %i.fas.fa-chevron-right.mypage_mypage__content__container__container-lists__list__text__icon
+
+      %h2.mypage_mypage__content__container__lower-tab-head
         購入した商品
-      %ul.purchased_on_deal__content__container__list-tabs
-        %li.purchased_on_deal__content__container__list-tabs__left
-          %h3.purchased_on_deal__content__container__list-tabs__left__text
-            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+      %ul.mypage_mypage__content__container__lower-list-tabs
+        %li.mypage_mypage__content__container__lower-list-tabs__list-left--active
+          %h3.mypage_mypage__content__container__lower-list-tabs__list-center__block
+            =link_to "#", class: 'mypage_mypage__content__container__lower-list-tabs__list-left--active__text' do
               取引中
-        %li.purchased_on_deal__content__container__list-tabs__right
-          %h3.purchased_on_deal__content__container__list-tabs__right__text
-            =link_to "#", class:'purchased_on_deal__content__container__mypage-tabs__active__h3' do
+        %li.mypage_mypage__content__container__lower-list-tabs__list-right
+          %h3.mypage_mypage__content__container__lower-list-tabs__list-right__block
+            =link_to "#", class: 'mypage_mypage__content__container__lower-list-tabs__list-right__text' do
               過去の取引
-
-      .purchased_on_deal__content__container__tab-content
-        %ul#mypage-tab-transaction-now.purchased_on_deal__content__container__tab-content__mypage-item-list
-          %li.purchased_on_deal__content__container__tab-content__mypage-item-list__mypage-item-not-found
-            取引中の商品がありません 
-            = image_tag '/mercari-logo-gray.svg', alt: "" , class: 'lazyloaded'
-
-
+      .mypage_mypage__content__container__container-lists
+        - (1..5).each do |i|
+          .mypage_mypage__content__container__container-lists__list
+            = image_tag '/goods_sample_1.jpg', size: "", alt: "buy-item-image" , class: 'mypage_mypage__content__container__container-lists__list__image'
+            .mypage_mypage__content__container__container-lists__list__text
+              「早い者勝ち！訳あり中禅寺湖を購入しました」取引が完了しました。
+              %i.fas.fa-chevron-right.mypage_mypage__content__container__container-lists__list__text__icon
+    
+    -# ペイジャーは余力あったら作る
     %ul.mypage-history.pager
       %li.pager-prev.pager-cell 
         =link_to "#" do
@@ -61,6 +51,7 @@
         =link_to "#" do
           %i.icon-arrow-right
 
--# =render 'shared/aside'
--# =render 'shared/footer'
+= render 'shared/aside'
+= render 'shared/footer'
 
+  
