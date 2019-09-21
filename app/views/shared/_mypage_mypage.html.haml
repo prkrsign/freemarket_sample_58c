@@ -4,8 +4,17 @@
   =render 'shared/profile-sidebar'
   .mypage_mypage__content
     %section.mypage_mypage__content__container
-
       .mypage_mypage__content__container__user-head
+         = image_tag '/merucari_top1.png', width: "700", height: "200", alt: "" , class: 'mypage_mypage__content__container__user-head__bck'
+        .mypage_mypage__content__container__user-head__box
+          .mypage_mypage__content__container__user-head__box__image
+          .mypage_mypage__content__container__user-head__box__nickname
+            AYA
+          %ul.mypage_mypage__content__container__user-head__box__numbers
+            %li.mypage_mypage__content__container__user-head__box__evaluation 評価 20           
+            %li.mypage_mypage__content__container__user-head__box__put-up 出品数 16
+
+
       %ul.mypage_mypage__content__container__upper-list-tabs
         %li.mypage_mypage__content__container__upper-list-tabs__list-left--active
           %h3.mypage_mypage__content__container__upper-list-tabs__list-left__block

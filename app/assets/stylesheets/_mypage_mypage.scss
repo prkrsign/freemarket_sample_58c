@@ -12,7 +12,68 @@
       &__user-head {
         width: 700px;
         height: 200px;
-        background: lightblue;
+        // background: lightblue;
+        // &__bck {
+        //   width: 700px;
+        //   height: 200px;
+        //   margin: 18.5px ;
+        //   display: inline-block;
+        // }
+          &__box {
+            width: 150px;
+            height: 150px;
+            top: 20px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: relative;
+            margin: auto;
+            background: white;
+            &__image {
+              width: 60px;
+              height: 60px;
+              top: 20px;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              position: relative;
+              margin: auto;
+              background: lightblue;
+            }
+            &__nickname {
+              width: 70px;
+              height: 19px;
+              top: 32px;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              position: relative;
+              margin: auto;
+              margin: auto;
+              text-align: center;
+            }
+            &__numbers {
+              width: 130px;
+              height: 20px;
+              top: 45px;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              position: relative;
+              margin: auto;
+              margin: auto;
+              background: lightblue;
+              &__evaluation {
+                width: 70px;
+                height: 19px;
+                background: white;
+              }
+              &__put-up {
+                width: 60px;
+                height: 19px;
+              }
+          }
+        }
       }
       &__upper-list-tabs {
         display: flex;                
@@ -125,7 +186,7 @@
     }
   }
 }
-  
+
 .mypage_mypage__content__container__container-lists {    
   &__list {
     position: relative;
