@@ -1,5 +1,7 @@
 class GoodsController < ApplicationController
   def new
+    @good = Good.new
+    @good.images.build
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみを抽出し、配列化
@@ -20,6 +22,21 @@ class GoodsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def create
+    @good = Good.new(good_params)
+    @good.save
+    redirect_to root_path
+
+    #if @good.save
+      #image_params[:images].each do |image|
+       # @good.images.create(goods_picture: image)
+      #end
+      #redirect_to root_path
+    #else
+      #render :new
+    #end
+  end
+
 
   def search
     # if params[:m_cat_id]
@@ -31,5 +48,21 @@ class GoodsController < ApplicationController
     #   format.html
     #   format.json
     # end
+  end
+
+  private
+  def good_params
+    params.require(:good).permit(
+      :goods_name,
+      :goods_description,
+      :price,
+      :category_id,
+      :prefecture_id,
+      images_attributes: [:goods_picture]
+    ).merge(user_id: 1)
+  end
+
+  def image_params
+    params.require(:images).permit({goods_picture: []})
   end
 end
