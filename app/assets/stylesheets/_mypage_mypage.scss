@@ -4,7 +4,6 @@
   display: flex;
   position:relative;
   margin: 40px auto 40px;
-
   &__content {
     width: 704px;
     &__container {
@@ -12,66 +11,70 @@
       &__user-head {
         width: 700px;
         height: 200px;
-        // background: lightblue;
-        // &__bck {
-        //   width: 700px;
-        //   height: 200px;
-        //   margin: 18.5px ;
-        //   display: inline-block;
-        // }
-          &__box {
-            width: 150px;
-            height: 150px;
+        position: relative;
+        &__mypage_mypage__content__container__user-head__bck {
+          z-index: -1;
+        }
+        &__box {
+        width: 150px;
+        height: 150px;
+        top: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin: auto;
+        background-color: transparent;
+        position: absolute;
+          &__image {
+            width: 60px;
+            height: 60px;
             top: 20px;
             bottom: 0;
             left: 0;
             right: 0;
             position: relative;
             margin: auto;
-            background: white;
-            &__image {
+            &__icon {
+              border-radius: 30px;
+            }
+          }
+          &__nickname {
+            width: 70px;
+            height: 19px;
+            top: 32px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: relative;
+            margin: auto;
+            margin: auto;
+            text-align: center;
+          }
+          &__numbers {
+            width: 130px;
+            height: 20px;
+            top: 45px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: relative;
+            margin: auto;
+            margin: auto;
+            background-color: transparent;
+            &__evaluation {
               width: 60px;
-              height: 60px;
-              top: 20px;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              position: relative;
-              margin: auto;
-              background: lightblue;
-            }
-            &__nickname {
-              width: 70px;
               height: 19px;
-              top: 32px;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              position: relative;
-              margin: auto;
-              margin: auto;
-              text-align: center;
+              background: white;
+              display: inline-block;
+              background-color: transparent;
             }
-            &__numbers {
-              width: 130px;
-              height: 20px;
-              top: 45px;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              position: relative;
-              margin: auto;
-              margin: auto;
-              background: lightblue;
-              &__evaluation {
-                width: 70px;
-                height: 19px;
-                background: white;
-              }
-              &__put-up {
-                width: 60px;
-                height: 19px;
-              }
+            &__put-up {
+              width: 60px;
+              height: 19px;
+              display: inline-block;
+              background-color: transparent;
+            }
           }
         }
       }
@@ -97,8 +100,6 @@
             text-align: center;
             color: #333;           
           }
-          
-
         }
         &__list-right {
           position: relative;

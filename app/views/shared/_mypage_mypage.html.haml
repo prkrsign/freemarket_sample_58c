@@ -1,20 +1,28 @@
 =render 'shared/main_page_header'
 
+-# メインページ
 %main.mypage_mypage.clearfix
   =render 'shared/profile-sidebar'
   .mypage_mypage__content
     %section.mypage_mypage__content__container
+
+      -# ユーザーヘッド
       .mypage_mypage__content__container__user-head
-         = image_tag '/merucari_top1.png', width: "700", height: "200", alt: "" , class: 'mypage_mypage__content__container__user-head__bck'
+        = image_tag '/user-bck_image.jpg', width: "700", height: "200", alt: "" , class: 'mypage_mypage__content__container__user-head__bck'
         .mypage_mypage__content__container__user-head__box
           .mypage_mypage__content__container__user-head__box__image
+            = image_tag '/radies_sample1.jpg', width: "60", height: "60", alt: "", class: "mypage_mypage__content__container__user-head__box__image__icon"
           .mypage_mypage__content__container__user-head__box__nickname
             AYA
+          
+          -# 評価と出品数を１行で表示したいです。丸山
           %ul.mypage_mypage__content__container__user-head__box__numbers
-            %li.mypage_mypage__content__container__user-head__box__evaluation 評価 20           
-            %li.mypage_mypage__content__container__user-head__box__put-up 出品数 16
+            %li.mypage_mypage__content__container__user-head__box__numbers__evaluation 
+              評価 20           
+            %li.mypage_mypage__content__container__user-head__box__numbers__put-up 
+              出品数 16
 
-
+      -# お知らせ/やることリストタブ
       %ul.mypage_mypage__content__container__upper-list-tabs
         %li.mypage_mypage__content__container__upper-list-tabs__list-left--active
           %h3.mypage_mypage__content__container__upper-list-tabs__list-left__block
@@ -24,6 +32,7 @@
           %h3.mypage_mypage__content__container__list-tabs__list-right__block
             =link_to "#", class: 'mypage_mypage__content__container__upper-list-tabs__list-right__text' do
               やることリスト
+      -# リスト一覧
       .mypage_mypage__content__container__container-lists
         - (1..5).each do |i|
           .mypage_mypage__content__container__container-lists__list
@@ -31,7 +40,8 @@
             .mypage_mypage__content__container__container-lists__list__text
               テックエキスパートさん、他３名がいいねしました
               %i.fas.fa-chevron-right.mypage_mypage__content__container__container-lists__list__text__icon
-
+      
+      -# 購入した商品/取引タブ
       %h2.mypage_mypage__content__container__lower-tab-head
         購入した商品
       %ul.mypage_mypage__content__container__lower-list-tabs
@@ -43,6 +53,7 @@
           %h3.mypage_mypage__content__container__lower-list-tabs__list-right__block
             =link_to "#", class: 'mypage_mypage__content__container__lower-list-tabs__list-right__text' do
               過去の取引
+      -# 購入商品一覧
       .mypage_mypage__content__container__container-lists
         - (1..5).each do |i|
           .mypage_mypage__content__container__container-lists__list
