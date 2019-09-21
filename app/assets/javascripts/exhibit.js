@@ -1,14 +1,14 @@
 $(document).on('turbolinks:load', function(){
   //カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
 
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<select class='category' name='s1_category' id='child_category'>
+    childSelectHtml = `<select class='category' name='category_id' id='child_category'>
                         <option value='---' data-category='---'>---</option>
                          ${insertHTML}
                        </select>`;
@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `
 
-    　　　　　　　<select class="category" name="s1_category" id="grandchild_category">
+    　　　　　　　<select class="category" name="good[category_id]" id="grandchild_category">
     　　　　　　　　<option value="---" data-category="---">---</option>
     　　　　　　　　${insertHTML}
     　　　　　　　</select>

@@ -1,4 +1,5 @@
 class GoodsController < ApplicationController
+  before_action :set_category, only: [:index, :new, :show]
   def new
     @good = Good.new
     @good.images.build
@@ -57,12 +58,17 @@ class GoodsController < ApplicationController
       :goods_description,
       :price,
       :category_id,
+      :brand_id,
       :prefecture_id,
       images_attributes: [:goods_picture]
     ).merge(user_id: 1)
   end
 
-  def image_params
-    params.require(:images).permit({goods_picture: []})
-  end
+  def set_category
+    @category = Category.all
+  end  
+
+  #def image_params
+    #params.require(:images).permit({goods_picture: []})
+  #end
 end
