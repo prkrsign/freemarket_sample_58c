@@ -4,6 +4,15 @@ Rails.application.routes.draw do
   resources :goods
   devise_for :users
   root to: 'tests#index'
+  get '/show', to: 'tests#show'
+
+  get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
+  post  'products/new',  to: 'products#new'   
+  post 'products',      to: 'products#create' #商品登録機能（テスト）
+  get  'products/show', to: 'products#show'   #商品詳細ページ
+  post 'products/index', to: 'products#index'
+  
+  get 'purchase/show', to: 'purchase#show' #商品購入ページ
   get 'products/show', to: 'products#show'
   get 'purchase/show', to: 'purchase#show'
 
@@ -25,6 +34,7 @@ Rails.application.routes.draw do
   get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
   get 'tests/put_up_goods_on_sale', to: 'tests#put_up_goods_on_sale'
   get 'tests/purchased_on_deal', to: 'tests#purchased_on_deal'
+
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
