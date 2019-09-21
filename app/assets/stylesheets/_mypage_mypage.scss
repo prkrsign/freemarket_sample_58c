@@ -16,7 +16,7 @@
           z-index: -1;
         }
         &__box {
-        width: 150px;
+        width: 170px;
         height: 150px;
         top: 20px;
         bottom: 0;
@@ -52,7 +52,7 @@
             text-align: center;
           }
           &__numbers {
-            width: 130px;
+            width: 170px;
             height: 20px;
             top: 45px;
             bottom: 0;
@@ -63,16 +63,12 @@
             margin: auto;
             background-color: transparent;
             &__evaluation {
-              width: 60px;
-              height: 19px;
               background: white;
-              display: inline-block;
+              display: inline;
               background-color: transparent;
             }
             &__put-up {
-              width: 60px;
-              height: 19px;
-              display: inline-block;
+              display: inline;
               background-color: transparent;
             }
           }
