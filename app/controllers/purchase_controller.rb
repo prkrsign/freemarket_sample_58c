@@ -3,8 +3,10 @@ class PurchaseController < ApplicationController
 
     end
 
+# 以下テスト用ダミーです。
     def show
-      
+        @image = Image.all
+        @good = Good.find(1)
     end
 
 end
