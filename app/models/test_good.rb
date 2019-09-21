@@ -1,0 +1,2 @@
+class TestGood < ApplicationRecord
+end
