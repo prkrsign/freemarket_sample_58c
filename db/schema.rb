@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2019_09_18_065539) do
   end
 
   create_table "test_goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "goods_name"
-    t.text "goods_description"
-    t.integer "price"
+    t.string "goods_name", null: false
+    t.text "goods_description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

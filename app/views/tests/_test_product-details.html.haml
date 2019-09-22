@@ -7,9 +7,11 @@
       %p.item-box__detail 
       .item-main
         .item-photo
-          = image_tag @image.goods_picture, class: 'photo-big' if @image.goods_picture.present?
+          = image_tag @image.goods_picture.url, class: "photo-big"
+          -# = image_tag @image.goods_picture, class: 'photo-big' if @image.goods_picture.present?
           .photo-small
-            = image_tag @image.goods_picture, class: 'photo-small' if @image.goods_picture.present?
+            = image_tag @image.goods_picture.url, class: "photo-small"
+            -# = image_tag @image.goods_picture, class: 'photo-small' if @image.goods_picture.present?
         %table.item-detail
           %tr
             %th.category 出品者
@@ -72,7 +74,7 @@
           (税込)
         %span.price-box__fee
           送料込み
-      =link_to "http://localhost:3000/purchase/show", class: "item-buy-btn" do
+      =link_to "/purchase/show", class: "item-buy-btn" do
         購入画面に進む
       .item-description
         %p.item-description__inner

@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
 
   # 以下テスト用ダミーです。
   def show
-    @good = Good.find(1)
-    @image = Image.find(1)
+    @good = Good.find(10)
+    @image = Image.find(17)
     # @good = Image.find(params[good_id])
   end
 

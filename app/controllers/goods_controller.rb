@@ -2,7 +2,7 @@ class GoodsController < ApplicationController
 
   # トップページの商品一覧表示
   def index
-    @image = Image.find(1)
+    @image = Image.find(17)
   
   end
   
@@ -15,6 +15,10 @@ class GoodsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
     end
+  end
+
+  def show
+
   end
 
   # 以下全て、formatはjsonのみ

@@ -25,12 +25,13 @@
             =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
+              -# レディース新着アイテムブロック　商品詳細への遷移先記載9/21 YS
           .block__area
             - (1..10).each do |i|
-              .block__area__product
-              
-                = image_tag @image.goods_picture, class: "goods_picture_1"
-                -# - binding.pry
+              =link_to "/products/show", class: '' do  
+                .block__area__product 
+                  = image_tag @image.goods_picture.url, class: "goods_picture_1"
+                
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -116,14 +117,14 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ナイキ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
+            =link_to "", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
               .block__area__product
 
-=link_to tests_exhibit_path, class: 'exhibit_btn' do
+=link_to "/goods/new", class: 'exhibit_btn' do
   .exhibit_btn__moji
     出品
   %i.fas.fa-camera
