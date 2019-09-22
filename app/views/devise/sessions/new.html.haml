@@ -7,7 +7,9 @@
       .login-page
         .login-no-account
           %p アカウントをお持ちでない方はこちら
-          %a{class: "new",href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
+          = link_to '/users/sign_up', class: 'new' do
+            新規会員登録
+          -# %a{class: "new",href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
         .login-form-inner
           = link_to'/user/auth/facebook', class: 'btn facebook' do
             %i.fab.fa-facebook-square

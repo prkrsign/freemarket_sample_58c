@@ -1,16 +1,43 @@
 Rails.application.routes.draw do
+  
   get 'goods/new'
   get 'goods/search'
   resources :tests
   resources :goods
-  devise_for :users
+  
+  resources :signup do
+    collection do
+      get 'step1' => 'signup#step1'
+      get 'step2' => 'signup#step2'
+    end
+  end
+  resources :cards do
+    collection do
+      post 'step5'
+      post 'new'
+    end
+  end
+  resources :addresses do
+    collection do
+      post 'new'
+    end
+  end
+  
+
+  
   root to: 'tests#index'
   get '/show', to: 'tests#show'
   get 'products/show', to: 'products#show'
   get 'purchase/show', to: 'purchase#show'
 
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'   
+  } 
+
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get "sign_in", :to => "users/sessions#new"
+    get "sign_out", :to => "users/sessions#destroy" 
   end
   
 end
