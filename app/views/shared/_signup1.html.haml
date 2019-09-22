@@ -3,19 +3,19 @@
     会員情報入力
   .contents__form
   = form_with do |f|
-    - binding.pry
+    -# - binding.pry
     .contents__form__title1
       %label ニックネーム
       %span.contents__form__require 必須
+      / SNS認証の場合、@user.usernameによりフォームにユーザーネームがすでに表示された状態となる
       = f.text_field :username, autofocus: true, autocomplete: "username", class: 'contents__form__input' , value: @user.username
-      -# %input{ class:"contents__form__input", maxlength:"10", name:"nickname", placeholder:"例）メルカリ太郎", type:"text", value:""}
 
     .contents__form__title
       %label メールアドレス
       %span.contents__form__require 必須
-      - binding.pry
+      -# - binding.pry
+      / SNS認証の場合、@user.emailによりフォームにemailアドレスがすでに表示された状態となる
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'contents__form__input' , value: @user.email
-      -# %input{ class:"contents__form__input", maxlength:"10", name:"email", placeholder:"PC・携帯どちらでも可", type:"text", value:""}
 
     .contents__form__title
       %label パスワード

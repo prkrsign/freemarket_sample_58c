@@ -6,6 +6,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:facebook) #コールバック
   end
 
+  def google_oauth2
+    callback_for(:google_oauth2) #コールバック
+  end
+
 
   def callback_for(provider)
     @omniauth =request.env["omniauth.auth"]  
