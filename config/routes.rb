@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users,
-  controllers: {
-   registrations: 'users/registrations' ,
-   omniauth_callbacks: 'users/omniauth_callbacks'
-   }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+                 registrations: 'users/registrations' }
 
   root to: 'goods#index'
   
