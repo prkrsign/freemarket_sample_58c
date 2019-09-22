@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
-  resources :goods
+  resources :tests
+  resources :goods do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
   devise_for :users
   root to: 'goods#index'
   get '/show', to: 'tests#show'
