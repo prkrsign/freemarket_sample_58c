@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
-  resources :tests
   resources :goods do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root to: 'goods#index'
-  get '/show', to: 'tests#show'
+  # get '/show', to: 'tests#show'
 
   get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
   post  'products/new',  to: 'products#new'   
