@@ -5,7 +5,7 @@ class PurchaseController < ApplicationController
 
 # 以下テスト用ダミーです。
     def show
-        @image = Image.all
+        @image = Image.find(1)
         @good = Good.find(1)
     end
 

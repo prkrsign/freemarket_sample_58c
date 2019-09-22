@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def show
     @good = Good.find(1)
     @image = Image.find(1)
+    # @good = Image.find(params[good_id])
   end
 
 
