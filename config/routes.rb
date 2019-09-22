@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  root to: 'tests#index'
+  root to: 'goods#index'
   get '/show', to: 'tests#show'
 
   get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'purchase/show', to: 'purchase#show'
 
   # スプリントレビュー用
+  # root to: 'tests#index'
   get 'tests/signup', to: 'tests#signup'
   get 'tests/signup1', to: 'tests#signup1'
   get 'tests/signup2', to: 'tests#signup2'
