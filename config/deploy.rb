@@ -29,6 +29,8 @@ set :keep_releases, 5
 set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+  aws_access_key_id: Rails.application.credentials.aws[:access_key_id]
+  aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key]
 }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
