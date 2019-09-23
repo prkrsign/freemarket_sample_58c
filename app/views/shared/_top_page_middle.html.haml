@@ -29,7 +29,7 @@
             - (1..10).each do |i|
               .block__area__product
               
-                = image_tag @image.goods_picture, class: "goods_picture_1"
+                = image_tag @image.goods_picture.url, class: "goods_picture_1"
                 -# - binding.pry
       .middle__main__block
         .middle__main__block__item

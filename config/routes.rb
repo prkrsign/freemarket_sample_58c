@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
-  resources :tests
+  # resources :tests
   resources :goods do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
