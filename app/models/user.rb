@@ -44,13 +44,11 @@ class User < ApplicationRecord
           email: auth.info.email,
           username: auth.info.name
         )
-        user.save!(:validate => false) 
 
         # Snscredentialテーブルにuidとproviderを保存。providerはfacebookかgoogleのこと。uidはprovider側で管理しているidのこと。
         sns = SnsCredential.create(
           uid: uid,
-          provider: provider,
-          user_id: user.id
+          provider: provider
         )
 
       end
