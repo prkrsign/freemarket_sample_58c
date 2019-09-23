@@ -18,7 +18,8 @@ class GoodsController < ApplicationController
   end
 
   def show
-
+    # 以下翻訳：インスタンス変数を定義　グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
+    @good = Good.find(params[:id])
   end
 
   # 以下全て、formatはjsonのみ

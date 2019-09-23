@@ -16,11 +16,10 @@
     %section.confirmation-main__container__buy-content
       .confirmation-main__container__buy-content__inner
         %h3.confirmation-main__container__buy-content__inner__item
-          = image_tag @image.goods_picture.url, class: 'confirmation-main__container__buy-content__inner__item__image'
-          -# = image_tag @image.goods_picture.url, class: 'confirmation-main__container__buy-content__inner__item__image', size: '' if @image.goods_picture.present?
-          -# = image_tag '/confirm-test.jpg', size: "", alt: "buy-item-image" , class: 'confirmation-main__container__buy-content__inner__item__image'
+          -# 以下翻訳：重要 アソシエーションでhas_manyを定義しているため複数の画像(images)の中から一番初め(first)の画像を取ってくる、この考え方が超重要で単数形(image)もしくは(first)が抜けるとエラーが発生する。
+          = image_tag @good.images.first.goods_picture.url, class: "confirmation-main__container__buy-content__inner__item__image"
         %p.confirmation-main__container__buy-content__inner__item-name
-          = @good.goods_name 
+          = @good.goods_name
         -# ポイント、支払い金額、購入ボタン
         = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
           .confirmation-main__container__buy-content__inner__buy-form__list
