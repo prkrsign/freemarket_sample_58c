@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
-
-  # resources :tests
-  resources :goods do
+  resources :tests
+  resources :goods 
+  resources :purchase do  # 商品購入確認ページにて使用YS
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
@@ -17,15 +17,17 @@ Rails.application.routes.draw do
   root to: 'goods#index'
   
 
+  #商品詳細ページ
   get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
   post  'products/new',  to: 'products#new'   
   post 'products',      to: 'products#create' #商品登録機能（テスト）
   get  'products/show', to: 'products#show'   #商品詳細ページ
   post 'products/index', to: 'products#index'
-  
-  get 'purchase/show', to: 'purchase#show' #商品購入ページ
   get 'products/show', to: 'products#show'
-  get 'purchase/show', to: 'purchase#show'
+
+
+   #商品購入ページテスト用以下消してもOKなはず　9/23 YS
+  # get 'purchase/show', to: 'purchase#show'
 
   # スプリントレビュー用
   # root to: 'tests#index'
