@@ -167,7 +167,6 @@
     margin: 0 0 20px 10px;
     box-sizing: border-box;
     display: inline-block;
-    background: lightblue;
     position: relative;
     &__price {
       width: 80px;
@@ -176,8 +175,8 @@
       border-bottom-right-radius: 15px;
       padding-bottom: 5px;
       background: rgba(0,0,0,.4);
+      box-sizing: border-box;
       position: absolute;
-      z-index: 1;
     }
     &__title {
       width: 188px;
@@ -223,5 +222,5 @@
   .goods_picture_ladies {
     height: 188px;
     width: 188px;
-    z-index: -1;
+    // z-index: -;
   }
