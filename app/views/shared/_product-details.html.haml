@@ -10,10 +10,10 @@
         .item-photo
           -# - 以下翻訳：イメージテーブルにあるグッズidの一番最初(first)の画像(goods_picture)を呼び出す記述,クラスはその画像に対して大きさや修飾するため？に必要 9/23 YS
           = image_tag @good.images.first.goods_picture.url, class: "photo-big"
-          .photo-small
+          .photo-smallbox
             -# 以下翻訳：イメージテーブルにあるグッズidに関わる画像(goods_picture)を何度も(each)呼び出してきている 9/23 YS
             - @good.images.each do |image|
-              = image_tag image.goods_picture.url, class: "photo-small"
+              = image_tag image.goods_picture.url, class: "photo-small-item"
         %table.item-detail
           %tr
             %th.category 出品者
@@ -63,6 +63,7 @@
             %tr
               %th.category 発送元地域
               %td.name 千葉県
+              = @good.prefecture
               
             %tr
               %th.category 発送日の目安
