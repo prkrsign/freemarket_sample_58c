@@ -2,12 +2,13 @@
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
+  # 
   def facebook
-    callback_for(:facebook) #コールバック
+    callback_for(:facebook)
   end
 
   def google_oauth2
-    callback_for(:google_oauth2) #コールバック
+    callback_for(:google_oauth2)
   end
 
 
@@ -23,7 +24,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
       
-      # binding.pry
+      binding.pry
       
     
     #userが存在しなかったら
