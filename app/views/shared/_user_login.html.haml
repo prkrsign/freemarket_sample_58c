@@ -9,11 +9,11 @@
           %p アカウントをお持ちでない方はこちら
           %a{class: "new",href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
         .login-form-inner
-          = link_to'/user/auth/facebook', class: 'btn facebook' do
+          = link_to user_facebook_omniauth_authorize_path, class: 'btn facebook' do
             %i.fab.fa-facebook-square
             Facebookでログイン
           
-          = link_to'/user/auth/google', class: 'btn google' do
+          = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn google' do
             %img.fab.fa-google{src: "https://img.icons8.com/color/20/000000/google-logo.png"}
             Googleでログイン
         .user-login-form
@@ -42,4 +42,3 @@
         %img{alt: "mercari",height: "65",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2482339763",width: "80"}
       %p
         %small © 2019 Mercari
-
