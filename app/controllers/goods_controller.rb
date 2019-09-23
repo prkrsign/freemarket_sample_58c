@@ -2,7 +2,7 @@ class GoodsController < ApplicationController
 
   # トップページの商品一覧表示
   def index
-    @image = Image.find(1)
+    @image = Image.find(2)
   
   end
   
@@ -36,7 +36,7 @@ class GoodsController < ApplicationController
 
     #if @good.save
       #image_params[:images].each do |image|
-       # @good.images.create(goods_picture: image)
+      # @good.images.create(goods_picture: image)
       #end
       #redirect_to root_path
     #else

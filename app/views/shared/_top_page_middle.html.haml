@@ -22,22 +22,22 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               レディース新着アイテム
-            =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
-              .block__area__product
-              
-                = image_tag @image.goods_picture, class: "goods_picture_1"
-                -# - binding.pry
-      .middle__main__block
+              .block__area__product       
+                = image_tag @image.goods_picture.url, class: 'goods_picture_1'
+                .block__area__product__title
+                  .block__area__product__price
+
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               メンズ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
