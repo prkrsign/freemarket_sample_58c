@@ -27,5 +27,6 @@
 /config/master.key
 vendor/bundle
 .DS_Store
+.env
 
 app/assets/javascripts/products.coffee

@@ -31,5 +31,4 @@
           .header__under__right__2
             %a.header__under__right__2__2{href: tests_user_login_path} ログイン
           =link_to tests_logout_path, class: "header__under__right__sprint-review" do
-            マイページ
-    
+            = current_user.username if user_signed_in?
