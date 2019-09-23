@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
+  # SNS会員登録の時必要になる。user_idとsns_idでリレーションを組むためのメソッド。機能未実装(神山)
   def create
     #binding.pry
      if params[:user][:password] == "" #sns登録なら
@@ -15,8 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
        super
      end
    end
-
-
 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
