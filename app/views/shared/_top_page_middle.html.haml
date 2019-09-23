@@ -27,11 +27,12 @@
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
-              .block__area__product       
+              .block__area__product 
                 = image_tag @image.goods_picture.url, class: 'goods_picture_1'
+                .block__area__product__price
+              
                 .block__area__product__title
-                  .block__area__product__price
-
+                  
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
