@@ -2,8 +2,14 @@ class GoodsController < ApplicationController
 
   # トップページの商品一覧表示
   def index
+<<<<<<< HEAD
     @image = Image.find(1)
     # @good = Goods.find(1)
+=======
+
+    @image = Image.find(2)
+
+>>>>>>> f7aa36f3707708e6b15baf29ac475494982b5051
   
   end
   
