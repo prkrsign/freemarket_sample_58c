@@ -27,8 +27,8 @@
         width: 100%;
         padding: 56px 0px 30px;
         box-sizing: border-box;      
-        &__area{
-        }
+        // &__area{
+        // }
         &__text{
           margin-bottom: 16px;
           text-align: center;
@@ -143,8 +143,8 @@
             width: 188;
             position: relative;
           }
-          &__1{
-          }
+          // &__1{
+          // }
         }
       }
     }
@@ -165,7 +165,36 @@
     height: 252px;
     width: 188px;
     margin: 0 0 20px 10px;
+    box-sizing: border-box;
     display: inline-block;
+    position: relative;
+    &__good-pic_price_box {
+      height: 188px;
+      width: 188px;
+      position: relative;
+      &__price {
+        width: 80px;
+        height: 30px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background: rgba(0,0,0,.4);
+        color: white;
+        font-size: 17px;
+        box-sizing: border-box;
+        padding: 5px 0px 5px 10px;
+        position: absolute;
+        left: 0px;
+        bottom: 10px;
+        z-index: 1;
+      }
+    }
+    &__title {
+      width: 188px;
+      height: 64px;
+      background: white;
+      padding: 12px 12px;
+      box-sizing: border-box;
+    }
   }
 
 
@@ -200,8 +229,8 @@
     }
   }
 
-  .goods_picture_1 {
-    background-color: aqua;
-    height: 252px;
+  .goods_picture_ladies {
+    height: 188px;
     width: 188px;
+    // z-index: -;
   }

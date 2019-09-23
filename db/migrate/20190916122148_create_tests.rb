@@ -5,7 +5,7 @@ class CreateTests < ActiveRecord::Migration[5.2]
       t.string        :goods_name,        null: false
       t.text          :goods_description, null: false
       t.integer       :price,             null: false
-      t.timestampsrake
+      t.timestamps
     end
   end
 end
