@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # has_secure_password
+
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :username,                 presence: true, length: { minimum:2, maximum:10 }
   validates :email,                    presence: true
@@ -12,8 +14,8 @@ class User < ApplicationRecord
   validates :password,                 presence: true
   validates :password,                 length: { minimum: 7, maximum: 20}
   validates :password,                 confirmation: true
-  # validates :password_confirmation,    presence: true
-  # validates :phone_number,             presence: true
+  validates :password_confirmation,    presence: true
+  validates :phone_number,             presence: true
   validates :family_name,              presence: true
   validates :first_name,               presence: true
   validates :family_name_in_katakana,  presence: true, format: { 

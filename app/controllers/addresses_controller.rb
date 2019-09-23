@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @address = Address.new
     
@@ -6,10 +7,6 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    
-    
-    
-    
     if @address.save!
        redirect_to new_card_path
     else

@@ -27,9 +27,11 @@
       .header__under__right
         .header__under__right__1
           -# %a.header__under__right__1__1{href: "#"} 新規会員登録
-        =link_to "/users/sign_in", class:"header__under__right__1__1" do
+        =link_to new_user_registration_path, class:"header__under__right__1__1" do
           新規会員登録
         .header__under__right__2
           -# %a.header__under__right__2__2{href: "#"} ログイン
-        =link_to "/users/sign_up", class:"header__under__right__2__2" do
+        =link_to "/users/sign_in", class:"header__under__right__2__2" do
           ログイン
+        =link_to '/sign_out', class: 'header__under__right__2__2' do
+          ログアウト

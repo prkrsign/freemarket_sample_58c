@@ -1,7 +1,7 @@
 .container
   .contents
-    .header  
-      %a{href: "https://www.mercari.com/jp/"}
+    .header 
+      %a{href: "/"}
         %img{alt: "mercari",width: 185,height: 95,src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2482339763"}/
     .main
       .login-page
@@ -9,26 +9,29 @@
           %p アカウントをお持ちでない方はこちら
           = link_to '/users/sign_up', class: 'new' do
             新規会員登録
-          -# %a{class: "new",href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
         .login-form-inner
-          = link_to'/user/auth/facebook', class: 'btn facebook' do
+          = link_to'#', class: 'btn facebook' do
             %i.fab.fa-facebook-square
             Facebookでログイン
           
-          = link_to'/user/auth/google', class: 'btn google' do
+          = link_to'#', class: 'btn google' do
             %img.fab.fa-google{src: "https://img.icons8.com/color/20/000000/google-logo.png"}
             Googleでログイン
         .form
           .form-inner
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .form-inner__mail
-              %input.login-input-text{name: "email",placeholder: "メールアドレス",type: "email",value: ""}
+              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'login-input-text'
+              -# %input.login-input-text{name: "email",placeholder: "メールアドレス",type: "email",value: ""}
             .form-inner__mail
-              %input.login-input-text{name: "password",placeholder: "パスワード",type: "password"}
+              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'login-input-text'
+              -# %input.login-input-text{name: "password",placeholder: "パスワード",type: "password"}
             .form-inner__lobot
               .login-captcha
                 .form-group
                   .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                %button.login-btn{type: "submit"} ログイン              
+                  = f.submit 'ログイン', class: 'login-btn'
+                -# %button.login-btn{type: "submit"} ログイン              
                 %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
 
     %footer.single-footer

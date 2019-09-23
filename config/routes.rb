@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'goods/search'
   resources :tests
   resources :goods
+  resources :cards 
+  resources :addresses 
   
   resources :signup do
     collection do
@@ -11,20 +13,6 @@ Rails.application.routes.draw do
       get 'step2' => 'signup#step2'
     end
   end
-  resources :cards do
-    collection do
-      post 'step5'
-      post 'new'
-    end
-  end
-  resources :addresses do
-    collection do
-      post 'new'
-    end
-  end
-  
-
-  
   root to: 'tests#index'
   get '/show', to: 'tests#show'
   get 'products/show', to: 'products#show'

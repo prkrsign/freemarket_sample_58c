@@ -3,7 +3,7 @@
     発送元・お届け先住所入力
   .contents__form
   -# = form_for @address, url: new_card_path, method: :post do |f|
-  = form_with model: @address, url: cards_path, local: true do |f|
+  = form_with model: @address, url: addresses_path, local: true do |f|
     .contents__form__title1
       = f.label 'お名前'
       %span.contents__form__require 必須

@@ -6,7 +6,7 @@
     .contents__head
       支払い方法    
       .contents__form__title1
-      = form_with model: @card, url: step5_cards_path, local: true do |f|
+      = form_with model: @card, url: cards_path, method: :post local: true do |f|
         %label カード番号
         %span.contents__form__require#card-number-require 必須
         = f.text_field :customer, class: "contents__form__input" , placeholder: '半角数字のみ'  
