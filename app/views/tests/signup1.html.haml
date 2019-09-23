@@ -1,24 +1,2 @@
-.signup1-wrapper
-  = render 'shared/login-header'
-  = render 'shared/signup1'
-
-
-.signup1-wrapper__footer
-  -# ページのフッター部分
-  .wrapper__footer
-    %footer.confirmation-footer
-      %ul.confirmation-footer-container
-        %li.confirmation-footer-container__list
-          =link_to '#', class: 'confirmation-footer-container__list__info' do
-            プライバシーポリシー
-        %li.confirmation-footer-container__list
-          =link_to '#', class: 'confirmation-footer-container__list__info' do
-            メルカリ利用規約
-        %li.confirmation-footer-container__list
-          =link_to '#', class: 'confirmation-footer-container__list__info' do
-            特定商取引に関する表記
-
-        = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
-
-      .confirmation-footer-container__footer-text
-        ©︎2019 Mercari
+= render 'shared/login-header1'
+= render 'shared/signup1'

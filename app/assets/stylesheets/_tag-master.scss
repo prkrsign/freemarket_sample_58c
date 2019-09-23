@@ -19,7 +19,7 @@
       display: inline-block;
       vertical-align: top;
       ol {
-        .active_red {
+        .active {
           font-weight: 600;
           color:#ea362dd5;
           min-width: 60px;
@@ -68,25 +68,6 @@
               width: 100%;
               height: 2px;
               background-color: #ccc;
-              right: 50%;
-            }
-            .after_red {
-              position: absolute;
-              bottom: 5px;
-              z-index: -1;
-              display: block;
-              width: 100%;
-              height: 2px;
-              background-color: #ea352d;
-            }
-            .before_red {
-              position: absolute;
-              bottom: 5px;
-              z-index: -1;
-              display: block;
-              width: 100%;
-              height: 2px;
-              background-color: #ea352d;
               right: 50%;
             }
           }
