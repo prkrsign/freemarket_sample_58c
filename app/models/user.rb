@@ -13,7 +13,6 @@ class User < ApplicationRecord
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
     
-    # binding.pry
     
     #sns登録のみ完了してるユーザー?
     if snscredential.present? 

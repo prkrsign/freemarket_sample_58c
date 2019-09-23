@@ -3,7 +3,6 @@
     会員情報入力
   .contents__form
   = form_with do |f|
-    -# - binding.pry
     .contents__form__title1
       %label ニックネーム
       %span.contents__form__require 必須
@@ -13,7 +12,6 @@
     .contents__form__title
       %label メールアドレス
       %span.contents__form__require 必須
-      -# - binding.pry
       / SNS認証の場合、@user.emailによりフォームにemailアドレスがすでに表示された状態となる。条件定義未実装(神山)
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'contents__form__input' , value: @user.email
 
