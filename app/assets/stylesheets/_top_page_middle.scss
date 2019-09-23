@@ -168,15 +168,20 @@
     box-sizing: border-box;
     display: inline-block;
     position: relative;
-    &__price {
-      width: 80px;
-      height: 30px;
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
-      padding-bottom: 5px;
-      background: rgba(0,0,0,.4);
-      box-sizing: border-box;
-      position: absolute;
+    &__good-pic_price_box {
+      height: 188px;
+      width: 188px;
+      
+      &__price {
+        width: 80px;
+        height: 30px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding-bottom: 5px;
+        background: rgba(0,0,0,.4);
+        box-sizing: border-box;
+        position: absolute;
+      }
     }
     &__title {
       width: 188px;
