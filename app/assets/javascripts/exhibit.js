@@ -23,9 +23,7 @@ $(document).on('turbolinks:load', function(){
     　　　　　　　<select class="category" name="good[category_id]" id="grandchild_category">
     　　　　　　　　<option value="---" data-category="---">---</option>
     　　　　　　　　${insertHTML}
-    　　　　　　　</select>
-
-    　　　　　　　`;
+    　　　　　　　</select>`;
     $('.contents-box__category-section__category-box__tag#async-select-box').append(grandchildSelectHtml);
   }
 
@@ -39,6 +37,27 @@ $(document).on('turbolinks:load', function(){
   //              `
   //  return html;
   //}
+  function appendOption2(delivery){
+    var html = `<option value="${delivery.id}" data-delivery="${delivery.id}">${delivery.name}</option>`;
+    return html;
+  }
+
+  function appendChildrenBox2(insertHTML){
+    var child2SelectHtml = '';
+    child2SelectHtml = `<div class='contents-box__category-section__category-box__tag#async-select-box2'>
+                          <div class='contents-box__category-section__category-box__tag' id='delivery-method'>
+                            配送の方法
+                            <div class='form-require'>
+                              必須
+                            </div>
+                          </div>
+                          <select class='category' name='good[delivery_id]' id='child_delivery'>
+                            <option value='---' data-delivery='---'>---</option>
+                              ${insertHTML}
+                          </select>
+                        </div>`;
+    $('.contents-box__category-section__category-box__tag#async-select-box2').append(child2SelectHtml);
+  }
 
 
    // $(document).on('change', '#s1_category', function () {
@@ -112,4 +131,32 @@ $(document).on('turbolinks:load', function(){
         $('#grandchild_category').remove();
       }
     });
+    
+
+    $('#parent_delivery').on('change', function(){
+      var parentDelivery = document.getElementById('parent_delivery').value;
+      if (parentDelivery != "---") {
+        $.ajax({
+          url: 'get_delivery_children',
+          type: 'GET',
+          data: { parent_name: parentDelivery },
+          dataType: 'json'
+        })
+        .done(function(children2){
+          $('#delivery-method').remove();
+          $('#child_delivery').remove();
+          var insertHTML = '';
+          children2.forEach(function(child2){
+            insertHTML += appendOption2(child2);
+          });
+          appendChildrenBox2(insertHTML);
+        })
+        .fail(function(){
+          alert('カテゴリー取得に失敗しました');
+        })
+      }else{
+        $('#grandchild_category').remove();
+      }
+    });
+
 });

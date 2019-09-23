@@ -1,0 +1,92 @@
+.purchased_on_deal {
+  position:relative;
+  height: 1292px;
+  width: 1020px; 
+  margin: 40px auto 40px;
+  display: block; 
+  &__content {
+    position: absolute;
+    top: 0px;
+    left: 320px;
+    background-color: white;
+    height: 382px;
+    width: 720px; 
+    &__container {
+      position: relative;
+      height: 382px;
+      width: 720px;
+      &__tab-head {
+        font-weight: 600;
+        height: 72px;
+        width: 720px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 15px; 
+        box-sizing: border-box;            
+      }
+        &__list-tabs {
+          height: 72px;
+          width: 720px;
+            
+          &__left {
+            border-top: solid 2px red;
+            height: 72px;
+            width: 360px;
+            padding: 20px 0; 
+            display: inline-block;
+            box-sizing: border-box;
+            &__text {
+              font-size: 16px; 
+              text-align: center;
+              text-decoration-line: none;
+              font-weight: bold;               
+              .purchased_on_deal__content__container__mypage-tabs__active__h3{
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+
+          &__right {
+            height: 72px;
+            width: 360px;
+            padding: 20px 0; 
+            background-color: #ccc;
+            float: right;
+            box-sizing: border-box;
+            &__text {
+              font-size: 16px; 
+              text-align: center;
+              color: black;
+              font-weight: bold;
+              .purchased_on_deal__content__container__mypage-tabs__active__h3{
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+        } 
+    }
+  }
+}
+
+
+.purchased_on_deal__content__container__tab-content__mypage-item-list__mypage-item-not-found {
+  font-size: 16px; 
+  color: #eee;
+  position: absolute; 
+  top: 300px;
+  left: 250px;
+  right: 0;
+  margin: auto;
+}
+
+.lazyloaded { 
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  bottom: 60px;
+  left: 0px;
+  right: 260px;
+  margin: auto;
+}

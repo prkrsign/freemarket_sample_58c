@@ -1,0 +1,10 @@
+.test
+= form_with(url: products_path , method: :post, local: true) do |f|
+  %h3
+    商品入力テスト用
+  
+  .field
+  = f.text_field :goods_name,placeholder: '商品名'
+  = f.text_field :price,placeholder: '価格'
+  = f.text_area :goods_description, placeholder: '商品情報'
+  = f.submit nil
