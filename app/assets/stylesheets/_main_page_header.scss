@@ -18,7 +18,6 @@
 
         &__upper{
             display: flex;
-            -webkit-box-pack: justify;
             justify-content: space-between;
             box-sizing: border-box;
             background-color: rgb(255, 255, 255);
@@ -29,10 +28,8 @@
             font: inherit;
 
           &__left{
-              -webkit-box-align: center;
               align-items: center;
               display: flex;
-              height: 40px;
               margin-right: 45px;
               &__a{
                 color: inherit;
