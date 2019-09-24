@@ -20,8 +20,17 @@ class GoodsController < ApplicationController
   def show
     # 以下翻訳：インスタンス変数を定義　グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
     @good = Good.find(params[:id])
+    @user = User.find(1)
+
+    # @user = User.find(params[:id])
+    #　以下試験的に作ったので消してもOK 9/24 YS
+    # @category = Category.find(params[:id])
+    # @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
+
   end
 
+ 
+  
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -38,6 +47,8 @@ class GoodsController < ApplicationController
     @good = Good.new(good_params)
     @good.save
     redirect_to root_path
+
+ 
 
     #if @good.save
       #image_params[:images].each do |image|

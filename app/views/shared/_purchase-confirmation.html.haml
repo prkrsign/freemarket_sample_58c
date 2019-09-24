@@ -24,7 +24,7 @@
         = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
           .confirmation-main__container__buy-content__inner__buy-form__list
             %p.confirmation-main__container__buy-content__inner__buy-form__list__price
-              = @good.price
+              = number_to_currency(@good.price, unit: "￥", precision: 0)
               %span.confirmation-main__container__buy-content__inner__buy-form__list__price__text
                 送料込み
             %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
@@ -34,7 +34,7 @@
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__left-text
                   支払い金額
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
-                  = @good.price
+                  = number_to_currency(@good.price, unit: "￥", precision: 0)
             =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
     
     -# ユーザー情報、配送先
