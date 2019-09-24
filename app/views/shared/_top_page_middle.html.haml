@@ -28,7 +28,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
-                = image_tag @image.goods_picture.url, class: "goods_picture_1"
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -40,6 +45,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description           
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -51,6 +62,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -60,8 +77,15 @@
               もっと見る
               %i.fas.fa-chevron-right
           .block__area
+            .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description
       .middle__main__category
         %h2.middle__main__category__text
           人気のブランド
@@ -87,6 +111,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -98,6 +128,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box
+                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                .block__area__product__title
+                  = @good.goods_description
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -109,6 +145,7 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -120,6 +157,7 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
 
 =link_to tests_exhibit_path, class: 'exhibit_btn' do
   .exhibit_btn__moji

@@ -1,5 +1,5 @@
-.top-page-middle-wrapper{
-  .middle{
+.top-page-middle-wrapper {
+  .middle {
     position: relative;
     min-height: 100%;
     color: rgb(51, 51, 51);
@@ -11,25 +11,25 @@
     width: 100%;
     margin: 0px auto;
     height: 100%;
-    &__main{
+    &__main {
       position: relative;
-      &__slide__area{
+      &__slide__area {
         background-color: rgb(255, 255, 255);
         width: 100%;
         height: 400px;
         padding-top: 28px;
         box-sizing: border-box;
       }
-      &__category{
+      &__category {
         height: 171px;
         display: block;
         position: relative;
         width: 100%;
         padding: 56px 0px 30px;
         box-sizing: border-box;      
-        // &__area{
+        // &__area {
         // }
-        &__text{
+        &__text {
           margin-bottom: 16px;
           text-align: center;
           box-sizing: border-box;
@@ -39,15 +39,15 @@
           margin-bottom: 16px;
           text-align: center;
         }
-        &__under{
-          &__area{
+        &__under {
+          &__area {
             height: 40px;
             text-align: center;
             width: 100%;
             margin: -10px 0px 0px -10px;
             box-sizing: border-box;
-            &__a{
-              &__parts{
+            &__a {
+              &__parts {
                 background-color: rgb(239, 239, 239);
                 cursor: pointer;
                 font-size: 14px;
@@ -65,7 +65,7 @@
       }
     }
 
-  .middle__main__block{
+  .middle__main__block {
     padding: 42px 100px 100px;
     position: relative;
     min-height: 100%;
@@ -77,18 +77,18 @@
     height:615px;
     box-sizing: border-box;
     margin: 0 auto;
-    &__item{
+    &__item {
       width: 100%;
       height:573px;
       background-color: rgb(245, 245, 245);
       box-sizing: border-box;
       margin: 0 auto;
-      &__top{
+      &__top {
         height:33px;
         margin-bottom: 16px;
         display: flex;
         box-sizing: border-box;
-        &__left{
+        &__left {
           font-size: 24px;
           font-weight: 600;
           line-height: 1.4em;
@@ -100,7 +100,7 @@
           box-sizing: border-box;
           margin: 0 auto;
         }
-        &__right{
+        &__right {
           font-size: 14px;
           padding: 5px 16px 5px 5px;
           color: rgb(0, 149, 238);
@@ -112,7 +112,7 @@
           box-sizing: border-box;
           margin: 0 auto;
         }
-      .fas.fa-chevron-right{
+      .fas.fa-chevron-right {
           height: 10px;
       width: 10px;
       bottom: 0px;
@@ -124,11 +124,11 @@
       box-sizing: border-box;
         }
       }
-        &__area{
+        &__area {
           float:left;
           display: flex;
           box-sizing: border-box;
-          &__split{
+          &__split {
             grid-template-columns: repeat(5, 1fr);
             gap: 20px 20px;
             display: block;
@@ -136,7 +136,7 @@
             display: grid;
             box-sizing: border-box;
           }
-          &__a{
+          &__a {
             cursor: pointer;
             background-color: rgb(245, 245, 245);
             height:252px;
@@ -171,6 +171,7 @@
     &__good-pic_price_box {
       height: 188px;
       width: 188px;
+      background: lightblue;
       position: relative;
       &__price {
         width: 80px;
@@ -198,7 +199,7 @@
   }
 
 
-  .exhibit_btn{
+  .exhibit_btn {
     cursor: pointer;
     bottom: 32px;
     font-size: 22px;
@@ -213,7 +214,7 @@
     border-radius: 50%;
     display: inline-block;
     text-decoration: none;
-    &__moji{
+    &__moji {
       margin-top: 35px;
       font-size: 22px;
 
@@ -232,5 +233,4 @@
   .goods_picture_ladies {
     height: 188px;
     width: 188px;
-    // z-index: -;
   }
