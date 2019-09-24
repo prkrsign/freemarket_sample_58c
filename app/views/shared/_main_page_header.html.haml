@@ -3,15 +3,17 @@
   .header
     = form_with(class: 'header__main') do |f|
       .header__upper
+        -# メルカリロゴ部分
         .header__upper__left
           =link_to root_path, class: 'header__upper__left__a' do
             = image_tag '/merucari logo.svg', alt: 'Mercari', class: 'header__upper__left__img'
         
+        -# 検索ボックス部分
         %form.header__upper__right
           =f.text_field nil, class: 'header__upper__right__in', url: "#", placeholder: "何かお探しですか？" 
           %i.fas.fa-search.header__upper__right__icon
 
-          
+      -# カテゴリ、ブランドアイコン部分
       .header__under
         .header__under__left
           =link_to '#' , class: 'category-list-box' do
@@ -24,6 +26,7 @@
               .header__under__left__tag-icon__text
                 ブランドから探す
 
+        -# 新規登録、ログイン部分。ユーザーログイン時のビューは未実装(神山)
         .header__under__right
           .header__under__right__register-button
             =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
