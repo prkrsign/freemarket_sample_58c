@@ -3,3 +3,60 @@
   %h1
     =link_to "#", class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
+
+
+.purchase-completed-wrapper
+  .purchase-completed-wrapper__main-container
+    .purchase-completed-wrapper__main-container__header
+      %i.far.fa-clock.purchase-completed-wrapper__main-container__header__icon
+      .purchase-completed-wrapper__main-container__header__upper 
+        発送をお待ちください
+      .purchase-completed-wrapper__main-container__header__lower 
+        出品者からの発送通知をお待ちください
+    
+    .purchase-completed-wrapper__main-container__result
+      .purchase-completed-wrapper__main-container__result__text
+        購入完了しました
+    
+    .purchase-completed-wrapper__main-container__info
+      = image_tag '/book_gijutsusyo_it_set.png', class: 'purchase-completed-wrapper__main-container__info__image'
+
+      .purchase-completed-wrapper__main-container__info__name
+        仮置きネーム
+    
+    .purchase-completed-wrapper__main-container__price
+      .purchase-completed-wrapper__main-container__price__value
+        ¥111,111
+      .purchase-completed-wrapper__main-container__price__note
+        送料込み
+
+    .purchase-completed-wrapper__main-container__address
+      .purchase-completed-wrapper__main-container__address__title
+
+      .purchase-completed-wrapper__main-container__address__name
+
+
+
+
+
+
+
+
+
+
+%footer.purchase-confirmation-footer
+  %ul.confirmation-footer-container
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        プライバシーポリシー
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        メルカリ利用規約
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        特定商取引に関する表記
+
+    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+  .confirmation-footer-container__footer-text
+    ©︎2019 Mercari
