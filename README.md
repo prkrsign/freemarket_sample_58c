@@ -58,9 +58,10 @@ Things you may want to cover:
 |category|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user 
+- belongs_to :prefecture
 - belongs_to :brand
 - belongs_to :category
+- belongs_to :user 
 - has_many :images
 
 ### Association
