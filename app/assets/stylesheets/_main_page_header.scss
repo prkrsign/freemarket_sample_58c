@@ -74,7 +74,6 @@
             &__left{
               display: flex;
               justify-content: space-between;
-              margin-top: 18px;
                 &__list-icon{
                   color: red;
                   float: left;
@@ -144,6 +143,16 @@
           }
 }
 
-.brand-list-box{
+
+#category-list-box{
+  box-sizing: border-box;
+  padding-top: 20px;
+  height: 40px;
+}
+
+#brand-list-box{
+  box-sizing: border-box;
+  padding-top: 20px;
+  height: 40px;
   margin-left: 24px;
 }

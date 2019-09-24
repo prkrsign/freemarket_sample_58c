@@ -16,12 +16,12 @@
       -# カテゴリ、ブランドアイコン部分
       .header__under
         .header__under__left
-          =link_to '#' , class: 'category-list-box' do
+          =link_to '#' , id: 'category-list-box' do
             %i.fas.fa-list-ul.header__under__left__list-icon
               .header__under__left__list-icon__text 
                 カテゴリーから探す
           
-          =link_to '#', class: 'brand-list-box'do
+          =link_to '#', id: 'brand-list-box'do
             %i.fas.fa-tags.header__under__left__tag-icon
               .header__under__left__tag-icon__text
                 ブランドから探す
