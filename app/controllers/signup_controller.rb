@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  
 
 def step1
     @user = User.new
@@ -46,6 +47,7 @@ def create
     )
   if  @user.save!
       session[:user_id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path
   else
       render '/signup/step1'
@@ -76,6 +78,7 @@ private
       :phone_number   
     )
   end
+  
 end
 
 

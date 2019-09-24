@@ -13,5 +13,6 @@ class CardsController < ApplicationController
   end
 
   def step5
+    
   end
 end
