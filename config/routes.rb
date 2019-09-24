@@ -2,8 +2,14 @@ Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
   resources :tests
-  resources :goods 
+  
   resources :purchase do  # 商品購入確認ページにて使用YS
+    collection do
+      post 'pay/:id' => 'purchase#pay', as: 'pay'
+    end
+  end
+
+  resources :goods do 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
