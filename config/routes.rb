@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                  registrations: 'users/registrations' }
 
-  # root to: 'goods#index'
+  root to: 'goods#index'
   
 
   #商品詳細ページ
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   # get 'purchase/show', to: 'purchase#show'
 
   # スプリントレビュー用
-  root to: 'tests#index'
+  # root to: 'tests#index'
   # get '/show', to: 'tests#show'
   get 'tests/signup', to: 'tests#signup'
   get 'tests/signup1', to: 'tests#signup1'

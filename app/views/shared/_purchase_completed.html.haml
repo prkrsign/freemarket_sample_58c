@@ -19,30 +19,26 @@
         購入完了しました
     
     .purchase-completed-wrapper__main-container__info
-      = image_tag '/book_gijutsusyo_it_set.png', class: 'purchase-completed-wrapper__main-container__info__image'
+      = image_tag @good.images.first.goods_picture.url, class: 'purchase-completed-wrapper__main-container__info__image'
 
       .purchase-completed-wrapper__main-container__info__name
-        仮置きネーム
+        = @good.goods_name
     
     .purchase-completed-wrapper__main-container__price
       .purchase-completed-wrapper__main-container__price__value
-        ¥111,111
+        = "¥#{@good.price}"
       .purchase-completed-wrapper__main-container__price__note
         送料込み
 
     .purchase-completed-wrapper__main-container__address
       .purchase-completed-wrapper__main-container__address__title
-
+        配送先
+      .purchase-completed-wrapper__main-container__address__post-code
+        〒373-0000仮置き
+      .purchase-completed-wrapper__main-container__address__city
+        仮置き町
       .purchase-completed-wrapper__main-container__address__name
-
-
-
-
-
-
-
-
-
+        田中太郎
 
 %footer.purchase-confirmation-footer
   %ul.confirmation-footer-container
