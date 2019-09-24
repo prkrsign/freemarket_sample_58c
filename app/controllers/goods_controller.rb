@@ -2,7 +2,7 @@ class GoodsController < ApplicationController
 
   # トップページの商品一覧表示
   def index
-    @image = Image.find(1)
+    @images = Image.order('id ASC').limit(10)
     @good = Good.find(1)
   end
   
@@ -11,10 +11,18 @@ class GoodsController < ApplicationController
     @good.images.build
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
+
     #データベースから、親カテゴリーのみを抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
     end
+  end
+
+  def show
+    @good = Good.find(params[:id])
+    # @user = User.find(1)
+
+    # @good = Good.find(params[:id])
   end
 
   # 以下全て、formatはjsonのみ

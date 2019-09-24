@@ -26,14 +26,17 @@
               もっと見る
               %i.fas.fa-chevron-right
           .block__area
-            - (1..10).each do |i|
+            = @images.each do |image| 
+              -# - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description    
+                  -# - binding.pry
+                  = link_to good_path(@good) , class:"" do
+                    = image_tag image.goods_picture.url, class: "goods_picture_ladies"
+                  -# .block__area__product__good-pic_price_box__price
+                  -#   = "¥#{@good.price}"
+                  -# .block__area__product__title
+                  -#   = "¥#{@good.goods_name}"
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -46,7 +49,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -63,7 +66,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -80,7 +83,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -111,7 +114,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -128,7 +131,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -145,7 +148,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
@@ -162,7 +165,7 @@
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box
-                  = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
                 .block__area__product__title
