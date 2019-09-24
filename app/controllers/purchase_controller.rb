@@ -13,10 +13,8 @@ class PurchaseController < ApplicationController
 
     # payjpの支払い記述(神山)
     def pay
-        # binding.pry
         @good = Good.find(params[:id])
         Payjp.api_key = 'sk_test_2ef78e8e70f19787263e2df5'
-        # binding.pry
         charge = Payjp::Charge.create(
         :amount => @good.price,
         :card => params['payjp-token'],
