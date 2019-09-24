@@ -21,7 +21,7 @@
         %p.confirmation-main__container__buy-content__inner__item-name
           = @good.goods_name
         -# ポイント、支払い金額、購入ボタン
-        = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
+        = form_with(url: pay_purchase_index_path, method: :post, class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
           .confirmation-main__container__buy-content__inner__buy-form__list
             %p.confirmation-main__container__buy-content__inner__buy-form__list__price
               = @good.price
@@ -35,7 +35,10 @@
                   支払い金額
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
                   = @good.price
-            =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
+              -# payjp実装のためのJavaScript埋め込みの記述。ボタンも同時に生成(神山)
+              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_b9e130775ea650797ff7b649"}
+                購入する
+              -# =f.submit '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
     
     -# ユーザー情報、配送先
     %section.confirmation-main__container__buy-info
