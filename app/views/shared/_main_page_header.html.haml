@@ -1,34 +1,37 @@
 -# 〜〜〜〜〜ここからヘッダー（上段）エリア〜〜〜〜〜
 .main-page-header-wrapper
   .header
-    .header__main
+    = form_with(class: 'header__main') do |f|
       .header__upper
         .header__upper__left
-          %a.header__upper__left__a{href: root_path}
-            %img.header__upper__left__img{alt: "Mercari", src: "/merucari logo.svg"}/
-        %form.header__upper__right{action: "/jp/search/"}
-          %input.header__upper__right__in{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-          %button.header__upper__right__button
-            %svg.header__upper__right__svg{"aria-hidden" => "true", height: "16", viewbox: "0 0 16 16", width: "16"}
-              %path{:d => "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", :fill => "currentColor", "fill-rule" => "nonzero"}
+          =link_to root_path, class: 'header__upper__left__a' do
+            = image_tag '/merucari logo.svg', alt: 'Mercari', class: 'header__upper__left__img'
+        
+        %form.header__upper__right
+          =f.text_field nil, class: 'header__upper__right__in', url: "#", placeholder: "何かお探しですか？" 
+          %i.fas.fa-search.header__upper__right__icon
+
+          
       .header__under
         .header__under__left
-          .header__under__left__1
-            %a.header__under__left__1__1{href: "#"}
-              %svg.header__under__left__1__1__1{"aria-hidden": "true", height: "16", viewbox: "0 0 20 16", width: "20"}>
-                %path{:d => "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", :fill => "currentColor", "fill-rule" => "nonzero"}
-              カテゴリーから探す
-            .header__under__left__1__roll 
-          .header__under__left__1
-            %a.header__under__left__1__1{href: "#"}
-              %svg.header__under__left__1__1__2{"aria-hidden" => "true", height: "16", viewbox: "0 0 23 16", width: "23"}>
-                %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", :fill => "currentColor", "fill-rule" => "nonzero"}
-              ブランドから探す
-            .header__under__left__1__roll
+          =link_to '#' , class: 'category-list-box' do
+            %i.fas.fa-list-ul.header__under__left__list-icon
+              .header__under__left__list-icon__text 
+                カテゴリーから探す
+          
+          =link_to '#', class: 'brand-list-box'do
+            %i.fas.fa-tags.header__under__left__tag-icon
+              .header__under__left__tag-icon__text
+                ブランドから探す
+
         .header__under__right
-          .header__under__right__1
-            %a.header__under__right__1__1{href: tests_signup_path} 新規会員登録
-          .header__under__right__2
-            %a.header__under__right__2__2{href: tests_user_login_path} ログイン
+          .header__under__right__register-button
+            =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
+              新規会員登録
+          .header__under__right__login-button
+            =link_to tests_signup_path, class: 'header__under__right__login-button__text' do
+              ログイン
+
+          -# 仮置きのマイページ遷移テキスト。ユーザーログイン時に表示(神山)
           =link_to tests_logout_path, class: "header__under__right__sprint-review" do
             = current_user.username if user_signed_in?
