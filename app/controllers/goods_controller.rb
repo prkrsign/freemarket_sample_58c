@@ -12,7 +12,6 @@ class GoodsController < ApplicationController
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみを抽出し、配列化
-    #Category.where(ancestry: nil).pluck(:id, :category_name ).each do |parent|
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
     end
