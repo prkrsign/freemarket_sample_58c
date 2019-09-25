@@ -7,13 +7,13 @@
     .contents__form__title1
       = f.label 'お名前'
       %span.contents__form__require 必須
-      = f.text_field :user, class: 'contents__form__input', placeholder: '例）山田'
-      = f.text_field :user, class: 'contents__form__input', placeholder: '例）綾'
+      = f.text_field :family_name, class: 'contents__form__input', placeholder: '例）山田'
+      = f.text_field :first_name, class: 'contents__form__input', placeholder: '例）綾'
     .contents__form__title
       = f.label 'お名前カナ'
       %span.contents__form__require 必須
-      = f.text_field :user, class: 'contents__form__input', placeholder: '例）ヤマダ'
-      = f.text_field :user, class: 'contents__form__input', placeholder: '例）アヤ'
+      = f.text_field :family_name_kana, class: 'contents__form__input', placeholder: '例）ヤマダ'
+      = f.text_field :first_name_kana, class: 'contents__form__input', placeholder: '例）アヤ'
     .contents__form__title
       = f.label '郵便番号'
       %span.contents__form__require 必須

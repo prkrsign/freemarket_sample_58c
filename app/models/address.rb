@@ -3,8 +3,15 @@ class Address < ApplicationRecord
   belongs_to :user, optional: true
   has_many :goods
   has_many :deals
-
-  validates :postalcode, :city, :building_name, :house_number, presence: true
+             
+  validates :family_name,                 presence: true
+  validates :first_name,                  presence: true
+  validates :family_name_kana,            presence: true
+  validates :first_name_kana,             presence: true
+  validates :postalcode,                  presence: true
+  validates :city,                        presence: true
+  validates :building_name,               presence: true
+  validates :house_number,                presence: true
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions

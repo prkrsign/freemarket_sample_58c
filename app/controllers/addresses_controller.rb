@@ -1,5 +1,4 @@
 class AddressesController < ApplicationController
-  before_action :authenticate_user!
   def new
     @address = Address.new
     
@@ -16,6 +15,10 @@ class AddressesController < ApplicationController
   private
   def address_params
     params.require(:address).permit(
+      :family_name,
+      :first_name,
+      :family_name_kana,
+      :first_name_kana,
       :postalcode,
       :city,
       :house_number,

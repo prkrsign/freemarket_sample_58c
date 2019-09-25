@@ -13,10 +13,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # def destroy
-  #   reset_session
-  #   redirect_to root_url, notice: 'ログアウト'
-  # end
+  # # def destroy
+  # #   reset_session
+  # #   redirect_to root_url, notice: 'ログアウト'
+  # # end
 
   # DELETE /resource/sign_out
   # def destroy

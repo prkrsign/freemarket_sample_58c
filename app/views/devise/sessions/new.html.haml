@@ -19,7 +19,7 @@
             Googleでログイン
         .form
           .form-inner
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = form_for(@user, url: session_path(resource_name)) do |f|
             .form-inner__mail
               = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'login-input-text'
               -# %input.login-input-text{name: "email",placeholder: "メールアドレス",type: "email",value: ""}
