@@ -9,10 +9,7 @@
   .contents-box
     %section.contents-box__sell-container
       商品の情報を入力
-    -# = form_with(url: '#', class: 'contents-box__form-list') do |f|
     = form_with model: @good, class: 'contents-box__form-list' do |f|
-      -#= form_for @good, url: {action: "create"}, html: {class: 'contents-box__form-list'} do |f|
-      
       -# 画像アップロード部分
       %section.contents-box__form-list__upload-box
         .contents-box__form-list__upload-box__image-text
@@ -21,19 +18,16 @@
           必須
         .capture 
           最大10枚までアップロードできます
-        -#.contents-box__form-list__drop-box
-        -# carrier wave導入で、imageをアップロードできるようにする必要あり。
-        -# = f.file_field :images, class: 'contents-box__form-list__drop-box__item__upload-file', multiple: true
         = f.fields_for :images, @images do |i|#:goods_picture, class:'contents-box__form-list__drop-box__item__upload-file' do |i|
           .dropzone-container.clearfix
             .sell-uploads-drop
-              #preview
+              #exhibit-images-preview
               .dropzone-area
               = i.label :image, for: 'upload-image' do
                 .sell_upload__area
                   = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
                 %p ここをクリックしてください
-              #preview2
+              #exhibit-images-preview2
               .dropzone-area2
                 = i.label :image, for: 'upload-image' do
                   %p
@@ -69,9 +63,6 @@
             = f.select :parent, @category_parent_array, {}, {class: "category", id: "parent_category"}
           .contents-box__category-section__category-box__tag#size
             -#サイズ
-            -#.form-require
-              必須
-            -# = f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
           -# プルダウンにしてるけど、本当はインクリメンタルサーチ
           .contents-box__category-section__category-box__tag
             ブランド
@@ -98,13 +89,6 @@
             .form-require
               必須
             = f.select :delivery_id, @delivery_parent_array, {}, {class: "category", id: "parent_delivery"}
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
-        -#.contents-box__category-section__category-box
-          -#.contents-box__category-section__category-box__tag
-            配送の方法
-            -#.form-require
-              必須
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送元の地域
@@ -119,7 +103,7 @@
             = f.collection_select :shipment_id, Shipment.all, :id, :name, {include_blank: '未選択'},{class: "category"}
       
       -# 販売価格、手数料の表示 
-      %section.contents-box__category-section#fee
+      %section.contents-box__category-section#exhibit-selling-price
         %h3.contents-box__category-section__sub-head
           販売価格(300~9,999,999)
           =link_to "#", class: "contents-box__category-section__sub-head__icon" do
@@ -135,7 +119,6 @@
             .contents-box__price-section__price-box-right__text
               ¥
             = f.text_field :price, id: 'sell_center', class:'contents-box__price-section__price-box-right__price-form', placeholder: '例)300'
-          = f.fields_for :trading do |n|
           .contents-box__price-section__border
 
           .contents-box__price-section__fee-left

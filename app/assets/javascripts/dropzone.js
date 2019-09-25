@@ -5,8 +5,8 @@ $(document).on('turbolinks:load', function(){
   var images = [];
   var inputs  =[];
   var input_area = $('.sell_upload__area');
-  var preview = $('#preview');
-  var preview2 = $('#preview2');
+  var preview = $('#exhibit-images-preview');
+  var preview2 = $('#exhibit-images-preview2');
 
   // ここから、file_fieldで選択されたファイルを読み込んでプレビュー画像を作る処理
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
