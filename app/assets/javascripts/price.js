@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   // 価格に金額が入力されると、moneyCalc関数が発動する。
 	$(function() {
 		$(document).on('keyup', '#sell_center', function() {
@@ -21,4 +21,5 @@ $(function() {
 			$('.sales-profit').text('¥' + (Input - fee).toLocaleString());
 		};
 	};
-});
+ });
+ 

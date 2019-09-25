@@ -66,11 +66,10 @@
             カテゴリー
             .form-require
               必須
-            = f.select :category_id, @category_parent_array, {}, {class: "category", id: "parent_category"}
-          -# サイズプルダウン
-          .contents-box__category-section__category-box__tag
-            サイズ
-            .form-require
+            = f.select :parent, @category_parent_array, {}, {class: "category", id: "parent_category"}
+          .contents-box__category-section__category-box__tag#size
+            -#サイズ
+            -#.form-require
               必須
             -# = f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
           -# プルダウンにしてるけど、本当はインクリメンタルサーチ
@@ -137,8 +136,6 @@
               ¥
             = f.text_field :price, id: 'sell_center', class:'contents-box__price-section__price-box-right__price-form', placeholder: '例)300'
           = f.fields_for :trading do |n|
-            = n.hidden_field :status, value: 1
-            = n.hidden_field :user_id, value: 1
           .contents-box__price-section__border
 
           .contents-box__price-section__fee-left

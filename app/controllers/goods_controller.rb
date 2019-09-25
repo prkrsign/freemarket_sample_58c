@@ -6,6 +6,7 @@ class GoodsController < ApplicationController
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみを抽出し、配列化
+    #Category.where(ancestry: nil).pluck(:id, :category_name ).each do |parent|
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
     end
@@ -67,13 +68,14 @@ class GoodsController < ApplicationController
     params.require(:good).permit(
       :goods_name,
       :goods_description,
-      :price,
       :category_id,
+      :size,
       :brand_id,
       :condition_id,
+      :delivery_id,
       :prefecture_id,
       :shipment_id,
-      :delivery_id,
+      :price,
       {images_attributes: [:goods_picture]}
     ).merge(user_id: 1)
   end

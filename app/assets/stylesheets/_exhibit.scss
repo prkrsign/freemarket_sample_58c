@@ -421,5 +421,8 @@ body{
     display: flex;
 }
 .sell-uploads-drop {
-    display: inline;
+    float: left;
+}
+.sell-uploads-area {
+    display: flex;
 }

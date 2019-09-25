@@ -8,10 +8,12 @@ $(document).on('turbolinks:load', function(){
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<select class='category' name='category_id' id='child_category'>
-                        <option value='---' data-category='---'>---</option>
-                         ${insertHTML}
-                       </select>`;
+    childSelectHtml = `
+                       <select class='category' name='good[child]' id='child_category'>
+                         <option value='---' data-category='---'>---</option>
+                          ${insertHTML}
+                       </select>
+                      `;
     $('.contents-box__category-section__category-box__tag#async-select-box').append(childSelectHtml);
   }
 
@@ -19,24 +21,14 @@ $(document).on('turbolinks:load', function(){
   function appendGrandchildBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `
-
-    　　　　　　　<select class="category" name="good[category_id]" id="grandchild_category">
-    　　　　　　　　<option value="---" data-category="---">---</option>
-    　　　　　　　　${insertHTML}
-    　　　　　　　</select>`;
+                            <select class='category' name='good[category_id]' id='grandchild_category'>
+                             <option value='---' data-category='---'>---</option>
+                              ${insertHTML}
+                            </select>
+                           `;
     $('.contents-box__category-section__category-box__tag#async-select-box').append(grandchildSelectHtml);
   }
 
-  //function buildHTML_sub2() {
-  //  var html  = `
-  //              <select class="category" name="s2_category" id="garndchildren_category">
-  //                <option value="データベースに登録するサブカテゴリ2a">表示する文字サブカテゴリ2a</option>
-  //                <option value="データベースに登録するサブカテゴリ2b">表示する文字サブカテゴリ2b</option>
-  //                <option value="データベースに登録するサブカテゴリ2c">表示する文字サブカテゴリ2c</option>
-  //              </select>
-  //              `
-  //  return html;
-  //}
   function appendOption2(delivery){
     var html = `<option value="${delivery.id}" data-delivery="${delivery.id}">${delivery.name}</option>`;
     return html;
@@ -60,13 +52,6 @@ $(document).on('turbolinks:load', function(){
   }
 
 
-   // $(document).on('change', '#s1_category', function () {
-   // var s1_cat_id = $('s_category1').val();
-   // console.log(s1_cat_id);
-   // insertHTML = buildHTML_sub2();
-   // $('#async-select-box').append(insertHTML)
-   // });
-
     // 親カテゴリー選択後のイベント
     $('#parent_category').on('change', function(){
       var parentCategory = document.getElementById('parent_category').value;
@@ -80,6 +65,10 @@ $(document).on('turbolinks:load', function(){
         .done(function(children){
           $('#child_category').remove();
           $('#grandchild_category').remove();
+          $('#good_size1').remove();
+          $('#good_size2').remove();
+          $('#good_size_id').remove();
+          $('#good_size2_id').remove();
           var insertHTML = '';
           children.forEach(function(child){
             insertHTML += appendOption(child);
@@ -92,16 +81,6 @@ $(document).on('turbolinks:load', function(){
       }else{
         $('#grandchild_category').remove();
       }
-      //console.log(m_cat_id);
-      //insertHTML = buildHTML_sub1();
-      //$('#async-select-box').append(insertHTML)
-      // $('.category').append(insertHTML);
-        // $.ajax({
-        //   type: "GET",
-        //   url: "/goods/search",
-        //   data: {m_cat_id: m_cat_id},
-        //   dataType: 'json'
-        // })
     });
 
     // 子カテゴリー選択後のイベント
@@ -117,6 +96,10 @@ $(document).on('turbolinks:load', function(){
         .done(function(grandchildren){
           if (grandchildren.length != 0) {
             $('#grandchild_category').remove();
+            $('#good_size1').remove();
+            $('#good_size2').remove();
+            $('#good_size_id').remove();
+            $('#good_size2_id').remove();
             var insertHTML = '';
             grandchildren.forEach(function(grandchild){
               insertHTML += appendOption(grandchild);
@@ -131,7 +114,6 @@ $(document).on('turbolinks:load', function(){
         $('#grandchild_category').remove();
       }
     });
-    
 
     $('#parent_delivery').on('change', function(){
       var parentDelivery = document.getElementById('parent_delivery').value;
@@ -158,5 +140,4 @@ $(document).on('turbolinks:load', function(){
         $('#grandchild_category').remove();
       }
     });
-
 });
