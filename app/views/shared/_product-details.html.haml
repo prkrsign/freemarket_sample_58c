@@ -19,8 +19,8 @@
             %th.category 出品者
             %td
               = link_to "#",  class:"name" do
-                = @user.username
-                -# 名前（仮）
+                = @user.username 
+                -# 名前userDB待ち（仮）
               .user-rating
                 .item-user-ratings
                   %i.fas.fa-laugh 
@@ -31,25 +31,25 @@
                 .item-user-ratings
                   %i.fas.fa-frown
                     %span.text 0
-              
+              -# 以下翻訳：超テクニック！！40行目にある.parentを入れるだけでアンせストリーで作った上のカテゴリーを引っ張ってこれる！！9/25YS
             %tr
               %th.category カテゴリー
               %td
                 .item-detail-table-sub-category
+                  = link_to "#",  class:"name" do
+                    = @good.category.parent.parent.category_name
                 %i.fa.fa-chevron-right.items-link_to
-                  = @good.category.ancestry
-                  -# = @good.category_id
-                  -# = @category_children
+                  = link_to "#",  class:"name" do
+                    = @good.category.parent.category_name
                 .item-detail-table-sub-sub-category
                 %i.fa.fa-chevron-right.items-link_to
-                  = @good.category.category_name
-                  -# = link_to "#",
-                  -# = @good.categories.first.category_name
-                  -# = @category.goods.category_id
+                  = link_to "#",  class:"name" do
+                    = @good.category.category_name
             %tr
               %th.category ブランド
               %td
-              -# = @good 
+                = link_to "#",  class:"name" do
+                  = @good.brand.name
 
             %tr
               %th.category 商品のサイズ
@@ -71,9 +71,6 @@
               %th.category 発送元地域
               %td
                 = link_to @good.prefecture.name
-              -# = @good :prefecture_id, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "category"}
-
-              -# = @good.goodprefecture   修正する。
               
             %tr
               %th.category 発送日の目安
@@ -93,7 +90,7 @@
         購入画面に進む
       .item-description
         %p.item-description__inner
-          = @good.goods_description   #グッズテーブルより引数
+          = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
           
       .button-content
         .button-content__left

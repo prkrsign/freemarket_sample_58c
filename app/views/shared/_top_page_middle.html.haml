@@ -26,11 +26,13 @@
               =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
                 もっと見る
               %i.fas.fa-chevron-right
-              -# レディース新着アイテムブロック　商品詳細への遷移先記載9/21 YS
+              -# レディース新着アイテムブロック商品詳細への遷移先記載9/21 YS
           .block__area
             - (1..10).each do |i|
               .block__area__product
                 .block__area__product__good-pic_price_box 
+                = link_to good_path(@good) , class:"item-buy-btn" do
+                  -# = link_to purchase_path(@good) , class: "item-buy-btn" do
                   = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
                   .block__area__product__good-pic_price_box__price
                     = "¥#{@good.price}"
