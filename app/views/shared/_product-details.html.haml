@@ -1,14 +1,19 @@
 = render 'shared/main_page_header'
-
+-# 商品詳細ページ機能追加中 YS（残り　カテゴリー、ブランド、サイズ？、商品、状態、負担、方法、地域ユーザー情報、出品者の名前、）9/23
 .product-details-wrapper
   .container
     = form_with url: "#", method: :post , class: 'item-box' do
-      %h1.item-box__name ノーブランド＊ワンピース＊オレンジ＊リボン＊M
-      %p.item-box__detail 『ノーブランド＊ワンピース＊オレンジ＊リボン＊M』は、、、
+      %h1.item-box__name
+        = @good.goods_name 
+      %p.item-box__detail 
       .item-main
         .item-photo
-          .photo-big
-          .photo-small
+          -# - 以下翻訳：イメージテーブルにあるグッズidの一番最初(first)の画像(goods_picture)を呼び出す記述,クラスはその画像に対して大きさや修飾するため？に必要 9/23 YS
+          = image_tag @good.images.first.goods_picture.url, class: "photo-big"
+          .photo-smallbox
+            -# 以下翻訳：イメージテーブルにあるグッズidに関わる画像(goods_picture)を何度も(each)呼び出してきている 9/23 YS
+            - @good.images.each do |image|
+              = image_tag image.goods_picture.url, class: "photo-small-item"
         %table.item-detail
           %tr
             %th.category 出品者
@@ -38,7 +43,7 @@
             %tr
               %th.category ブランド
               %td
-            
+
             %tr
               %th.category 商品のサイズ
               %td M
@@ -58,32 +63,26 @@
             %tr
               %th.category 発送元地域
               %td.name 千葉県
+              = @good.prefecture
               
             %tr
               %th.category 発送日の目安
               %td 2~3日で発送
               
 
-
-
       .price-box
         %span.price-box__price
-          ¥1,800
+          = @good.price
         %span.price-box__tax
           (税込)
         %span.price-box__fee
           送料込み
-      =link_to tests_purchase_confirmation_path, class: "item-buy-btn" do
+        -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
+      = link_to purchase_path(@good) , class: "item-buy-btn" do
         購入画面に進む
       .item-description
         %p.item-description__inner
-          ミニワンピなので、下にスカートや
-          ショートパンツなどを合わせてください！
-
-
-          オレンジが爽やかで、春らしいです♪
-
-          素材：綿  60%
+          = @good.goods_description   #グッズテーブルより引数
           
       .button-content
         .button-content__left
@@ -103,14 +102,14 @@
 
 
 
-  .detail
-  %ul.nav-link
-  .social-box
-  .user-box
-  .nav-bread
-  .app-banner
-    
-  .footer
+    .detail
+    %ul.nav-link
+    .social-box
+    .user-box
+    .nav-bread
+    .app-banner
+      
+    .footer
+
 = render 'shared/aside'
 = render 'shared/footer'
-     
