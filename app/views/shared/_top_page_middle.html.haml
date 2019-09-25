@@ -2,7 +2,7 @@
   .middle
     .middle__main
       .middle__main__slide
-        %img.middle__main__slide__area{alt: "slidepage", src:"/merucari_top1.png"}
+        = image_tag '/merucari_top1.png', alt: "slidepage", class: "middle__main__slide__area"
       .middle__main__category
         %h2.middle__main__category__text
           人気のカテゴリー
@@ -25,18 +25,7 @@
             =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            = @images.each do |image| 
-              -# - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# - binding.pry
-                  = link_to good_path(@good) , class:"" do
-                    = image_tag image.goods_picture.url, class: "goods_picture_ladies"
-                  -# .block__area__product__good-pic_price_box__price
-                  -#   = "¥#{@good.price}"
-                  -# .block__area__product__title
-                  -#   = "¥#{@good.goods_name}"
+          = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -45,15 +34,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description           
+          = render 'goods/show_goods_all'        
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -62,15 +43,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -79,15 +52,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
       .middle__main__category
         %h2.middle__main__category__text
           人気のブランド
@@ -110,15 +75,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -127,15 +84,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -144,15 +93,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -161,17 +102,9 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          .block__area
-            - (1..10).each do |i|
-              .block__area__product
-                .block__area__product__good-pic_price_box
-                  -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
-                  .block__area__product__good-pic_price_box__price
-                    = "¥#{@good.price}"
-                .block__area__product__title
-                  = @good.goods_description
+          = render 'goods/show_goods_all'
 
-=link_to tests_exhibit_path, class: 'exhibit_btn' do
+=link_to new_good_path, class: 'exhibit_btn' do
   .exhibit_btn__moji
     出品
   %i.fas.fa-camera

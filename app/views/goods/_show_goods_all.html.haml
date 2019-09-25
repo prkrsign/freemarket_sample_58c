@@ -1,0 +1,9 @@
+.block__area
+  - (1..10).each do |i|
+    .block__area__product
+      .block__area__product__good-pic_price_box
+        -# = image_tag @image.goods_picture.url, class: "goods_picture_ladies"
+        .block__area__product__good-pic_price_box__price
+          = "¥#{@good.price}"
+      .block__area__product__title
+        = "¥#{@good.goods_name}"

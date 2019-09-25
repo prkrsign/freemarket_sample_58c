@@ -2,8 +2,8 @@ class GoodsController < ApplicationController
 
   # トップページの商品一覧表示
   def index
-    @images = Image.order('id ASC').limit(10)
-    @good = Good.find(1)
+    @image = Image.order('id DESC').limit(10)
+    @good = Good.find(10)
   end
   
   def new
