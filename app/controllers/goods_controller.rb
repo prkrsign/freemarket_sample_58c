@@ -1,4 +1,10 @@
 class GoodsController < ApplicationController
+
+  # トップページの商品一覧表示
+  def index
+    @image = Image.find(1)
+    @good = Good.find(1)
+  end
   
   def new
     @good = Good.new
@@ -15,6 +21,11 @@ class GoodsController < ApplicationController
     Delivery.where(ancestry: nil).each do |parent|
       @delivery_parent_array << parent.delivery_method
     end
+  end
+
+  def show
+    # 以下翻訳：インスタンス変数を定義　グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
+    @good = Good.find(params[:id])
   end
 
   # 以下全て、formatはjsonのみ
@@ -48,6 +59,7 @@ class GoodsController < ApplicationController
     else
       render :new
     end
+    
   end
 
 

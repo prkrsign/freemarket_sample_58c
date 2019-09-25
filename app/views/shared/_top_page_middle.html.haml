@@ -17,28 +17,43 @@
                 家電・スマホ・カメラ
               =link_to "#", class:"middle__main__category__under__area__a__parts" do
                 おもちゃ・ホビー・グッズ
+      
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               レディース新着アイテム
-            =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
+              -# レディース新着アイテムブロック　商品詳細への遷移先記載9/21 YS
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                %h3.block__area__product__title
+                  = @good.goods_description
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               メンズ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+                  
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -50,6 +65,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -61,6 +82,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
       .middle__main__category
         %h2.middle__main__category__text
           人気のブランド
@@ -86,6 +113,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -97,6 +130,12 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -108,19 +147,31 @@
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ナイキ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
+            =link_to "", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
           .block__area
             - (1..10).each do |i|
               .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
 
-=link_to tests_exhibit_path, class: 'exhibit_btn' do
+=link_to "/goods/new", class: 'exhibit_btn' do
   .exhibit_btn__moji
     出品
   %i.fas.fa-camera

@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
     t.bigint "good_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "test_goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_name"
     t.text "goods_description"
@@ -61,6 +69,9 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture", default: 0, null: false
+    t.string "goods_name", null: false
+    t.text "goods_description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
