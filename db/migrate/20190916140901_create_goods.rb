@@ -5,6 +5,7 @@ class CreateGoods < ActiveRecord::Migration[5.2]
       t.text          :goods_description, null: false
       t.integer       :price,             null: false
 
+      t.timestamps
     end
   end
 end

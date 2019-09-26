@@ -10,6 +10,7 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.includes(:images).where(brand_id:[2]).order("created_at DESC").limit(10)
     @goods_new_ysl = Good.includes(:images).where(brand_id:[6]).order("created_at DESC").limit(10)
     @goods_new_lv = Good.includes(:images).where(brand_id:[3]).order("created_at DESC").limit(10)
+  
 
   end
   
@@ -72,9 +73,8 @@ class GoodsController < ApplicationController
 
 
     if @good.save
-      #binding.pry
       params[:images]['goods_picture'].each do |i|
-       @image = @good.images.create!(goods_picture: i)
+      @image = @good.images.create!(goods_picture: i)
       end
       redirect_to root_path
     else

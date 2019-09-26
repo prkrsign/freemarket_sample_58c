@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_picture", null: false
+    t.bigint "good_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "good_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +69,9 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture", default: 0, null: false
+    t.string "goods_name", null: false
+    t.text "goods_description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
