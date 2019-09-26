@@ -3,7 +3,7 @@ class GoodsController < ApplicationController
   def index
     # @image = Image.includes(:good).order("created_at DESC").limit(10)
     @goods = Good.includes(:images).order("created_at DESC").limit(10)
-    # - binding.pry
+    # binding.pry
   end
   
   def new

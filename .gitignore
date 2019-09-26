@@ -28,5 +28,6 @@
 vendor/bundle
 .DS_Store
 .env
+public/uploads
 
 app/assets/javascripts/products.coffee

@@ -25,7 +25,8 @@
               =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
                 もっと見る
               %i.fas.fa-chevron-right
-          - render partial: 'goods/show_goods_all' ,locals: {goods: @goods}
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -34,7 +35,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'        
+          -# = render 'goods/show_goods_all'        
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -43,7 +44,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -52,7 +53,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
       .middle__main__category
         %h2.middle__main__category__text
           人気のブランド
@@ -75,7 +76,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -84,7 +85,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -93,7 +94,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -102,7 +103,7 @@
             =link_to "#", class:'middle__main__block__item__top__right' do
               もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          -# = render 'goods/show_goods_all'
 
 =link_to new_good_path, class: 'exhibit_btn' do
   .exhibit_btn__moji
