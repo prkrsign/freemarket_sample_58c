@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
-  resources :tests
+  # resources :tests
   resources :purchase do  # 商品購入確認ページにて使用YS
 
     collection do

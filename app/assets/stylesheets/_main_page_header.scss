@@ -7,7 +7,6 @@
     background-color: rgb(255, 255, 255);
     position: relative;
     display: block;
-
       &__main{
         width: 1020px;
         margin: 0px auto;
@@ -15,10 +14,8 @@
         box-sizing: border-box;
         display: block;
       }
-
         &__upper{
             display: flex;
-            -webkit-box-pack: justify;
             justify-content: space-between;
             box-sizing: border-box;
             background-color: rgb(255, 255, 255);
@@ -27,12 +24,9 @@
             vertical-align: baseline;    
             border-width: 0px;
             font: inherit;
-
           &__left{
-              -webkit-box-align: center;
               align-items: center;
               display: flex;
-              height: 40px;
               margin-right: 45px;
               &__a{
                 color: inherit;
@@ -43,12 +37,9 @@
                 width: 134px;
               }
           }
-
-
           &__right{
             position: relative;
             width: 100%;
-          
               &__in{
                 background-color: rgb(245, 245, 245);
                 font-size: 16px;
@@ -67,99 +58,51 @@
                 transition: all 0.3s ease-out 0s;
                 font-family: inherit;
               }
-              &__button{
-                background-color: transparent;
+              &__icon{
+                font-size: 18px;
                 cursor: pointer;
-                height: 40px;
                 position: absolute;
-                right: 0px;
-                top: 0px;
-                width: 40px;
-                -webkit-appearance: none;
-                border-width: initial;
-                border-style: none;
-                border-color: initial;
-                border-image: initial;
-                border-radius: 0px 4px 4px 0px;
-                padding: 0px;
-                font-family: inherit;
-                  font-size: 100%;
-              }
-              &__svg{
-                max-width: 100%;
-                max-height: 100%;
-                color: rgb(34, 34, 34);
-                height: 14px;
-                margin-top: 2px;
-                width: 14px;
-              }
-          }
-        }
-
-          &__under{
-            display: flex;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-
-            &__left{
-              display: flex;
-              -webkit-box-pack: justify;
-              justify-content: space-between;
-              margin-top: 8px;
-
-              &__1{
-                padding-left: 0px;
-                cursor: pointer;
-                height: 20px;
-                position: relative;
-                z-index: 3;
-                margin-bottom: 10px;
-                margin-left: 10px;
-              
-                &__1{
-                  display: block;
-                  font-size: 14px;
-                  font-weight: 600;
-                  line-height: 36px;
-                  white-space: nowrap;
-                  text-decoration: none;
-                  color: rgb(51, 51, 51);
-
-
-
-                  &__1{
-                    max-width: 100%;
-                    max-height: 100%;
-                    color: rgb(234, 53, 45);
-                    height: 12px;
-                    margin-right: 4px;
-                  }
-
-                  &__2{
-                    max-width: 100%;
-                    max-height: 100%;
-                    color: rgb(234, 53, 45);
-                    height: 12px;
-                    margin-right: 4px;
-                    text-decoration: none;
-
-                  }
-                }
-                &__roll{
-                }
+                top:  24px;
+                left: 1200px;
               }
             }
-            
-
-
+          }
+        &__under{
+            margin: 0 200px;
+            display: flex;
+            justify-content: space-between;
+            &__left{
+              display: flex;
+              justify-content: space-between;
+                &__list-icon{
+                  color: red;
+                  float: left;
+                  font-size: 14px;
+                  &__text{
+                    margin-left: 6px;
+                    float: right;
+                    color: black;
+                  }
+                }
+              &__tag-icon{
+                color: red;
+                float: left;
+                font-size: 14px;
+                &__text{
+                  margin-left: 6px;
+                  float: right;
+                  color: black;
+                }
+              }
+            }            
             &__right{
               margin-top: 8px;
               display: flex;
             
-              &__1{
+              &__register-button{
                 text-align: center;
 
-                &__1{
+                &__text{
                   height: 14px;
                   background-color: rgb(234, 53, 45);
                   color: rgb(255, 255, 255);
@@ -176,10 +119,10 @@
 
                 }
               }
-              &__2{
+              &__login-button{
                 text-align: center;
                 margin-left: 11px;
-                &__2{
+                &__text{
                   height: 14px;
                   background-color: rgb(255, 255, 255);
                   color: rgb(0, 149, 238);
@@ -198,4 +141,18 @@
               }
             }
           }
+}
+
+
+#category-list-box{
+  box-sizing: border-box;
+  padding-top: 20px;
+  height: 48px;
+}
+
+#brand-list-box{
+  box-sizing: border-box;
+  padding-top: 20px;
+  height: 40px;
+  margin-left: 24px;
 }
