@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function(){
   var preview2 = $('#exhibit-images-preview2');
 
   // ここから、file_fieldで選択されたファイルを読み込んでプレビュー画像を作る処理
-  $(document).on('change', 'input[type= "file"].upload-image',function(event) {
+  $(document).on('change', 'input[type= "file"].upload-image',function() {
     var file = $(this).prop('files')[0];
     // ↓FileReaderオブジェクトは、選択した画像を読み込むためのオブジェクトでreaderAsDataURLに引数でファイルを渡してあげることでreader.onloadから先の関数が動く。
     var reader = new FileReader();
