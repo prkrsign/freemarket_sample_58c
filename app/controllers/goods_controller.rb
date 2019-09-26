@@ -1,6 +1,8 @@
 class GoodsController < ApplicationController
+
   # トップページの商品一覧表示
   def index
+    
     @goods_new_ladies = Good.recent.where(category_id:[147..263]).active
     @goods_new_men = Good.recent.where(category_id:[1..146]).active
     @goods_old_ladies = Good.recent.where(category_id:[147..263]).sorted
@@ -9,6 +11,7 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.recent.where(brand_id:[2]).active
     @goods_new_ysl = Good.recent.where(brand_id:[6]).active
     @goods_new_lv = Good.recent.where(brand_id:[3]).active
+    
   end
   
   def new
@@ -102,6 +105,10 @@ class GoodsController < ApplicationController
       :price,
       {images_attributes: [:goods_picture]}
     ).merge(user_id: 1)
+  end
+
+  def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
   end
 
 end
