@@ -9,8 +9,7 @@
   .contents-box
     %section.contents-box__sell-container
       商品の情報を入力
-    -# = form_with(url: '#', class: 'contents-box__form-list') do |f|
-    = form_for @good, url: {action: "create"}, html: {class: 'contents-box__form-list'} do |f|
+    = form_with model: @good, class: 'contents-box__form-list' do |f|
       -# 画像アップロード部分
       %section.contents-box__form-list__upload-box
         .contents-box__form-list__upload-box__image-text
@@ -19,13 +18,19 @@
           必須
         .capture 
           最大10枚までアップロードできます
-      .contents-box__form-list__drop-box
-        .contents-box__form-list__drop-box__item
-          -# carrier wave導入で、imageをアップロードできるようにする必要あり。
-          -# = f.file_field :images, class: 'contents-box__form-list__drop-box__item__upload-file', multiple: true
-          = f.fields_for :images, @good.images do |i|#:goods_picture, class:'contents-box__form-list__drop-box__item__upload-file' do |i|
-            -#.contents-box__form-list__drop-box__item__text
-            = i.file_field :goods_picture, type: 'file', class: 'contents-box__form-list__drop-box__item', style:'opacity: 0;'
+        = f.fields_for :images, @images do |i|#:goods_picture, class:'contents-box__form-list__drop-box__item__upload-file' do |i|
+          .dropzone-container.clearfix
+            .sell-uploads-drop
+              #exhibit-images-preview
+              .dropzone-area
+              = i.label :image, for: 'upload-image' do
+                .sell_upload__area
+                  = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
+                %p ここをクリックしてください
+              #exhibit-images-preview2
+              .dropzone-area2
+                = i.label :image, for: 'upload-image' do
+                  %p
       .contents-box__form-list__space
 
       -# 商品名、商品説明入力部分
@@ -55,13 +60,9 @@
             カテゴリー
             .form-require
               必須
-            = f.select :category_id, @category_parent_array, {}, {class: "category", id: "parent_category"}
-          -# サイズプルダウン
-          .contents-box__category-section__category-box__tag
-            サイズ
-            .form-require
-              必須
-            -# = f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.select :parent, @category_parent_array, {}, {class: "category", id: "parent_category"}
+          .contents-box__category-section__category-box__tag#size
+            -#サイズ
           -# プルダウンにしてるけど、本当はインクリメンタルサーチ
           .contents-box__category-section__category-box__tag
             ブランド
@@ -73,7 +74,7 @@
             商品の状態
             .form-require
               必須
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.collection_select :condition_id, Condition.all, :id, :name, {include_blank: '未選択'}, {class: 'category'}
 
       -# 配送の設定
       %section.contents-box__category-section#delivery
@@ -83,32 +84,26 @@
             %i.fas.fa-question-circle
             
         .contents-box__category-section__category-box
-          .contents-box__category-section__category-box__tag
+          .contents-box__category-section__category-box__tag#async-select-box2
             配送料の負担
             .form-require
               必須
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
-        .contents-box__category-section__category-box
-          .contents-box__category-section__category-box__tag
-            配送の方法
-            .form-require
-              必須
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.select :delivery_id, @delivery_parent_array, {}, {class: "category", id: "parent_delivery"}
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送元の地域
             .form-require
               必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name,  {include_blank: '未選択'},{class: "category"}
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '未選択'},{class: "category"}
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送までの日数
             .form-require
               必須
-            -#= f.select :brand_id, [["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"],["表示する文字", "データベースに登録する値"]]
+            = f.collection_select :shipment_id, Shipment.all, :id, :name, {include_blank: '未選択'},{class: "category"}
       
       -# 販売価格、手数料の表示 
-      %section.contents-box__category-section#fee
+      %section.contents-box__category-section#exhibit-selling-price
         %h3.contents-box__category-section__sub-head
           販売価格(300~9,999,999)
           =link_to "#", class: "contents-box__category-section__sub-head__icon" do
@@ -123,19 +118,19 @@
           .contents-box__price-section__price-box-right
             .contents-box__price-section__price-box-right__text
               ¥
-            = f.text_field :price, class:'contents-box__price-section__price-box-right__price-form',placeholder: '例)300'
+            = f.text_field :price, id: 'sell_center', class:'contents-box__price-section__price-box-right__price-form', placeholder: '例)300'
           .contents-box__price-section__border
 
           .contents-box__price-section__fee-left
             販売手数料(10%)
           .contents-box__price-section__fee-right
-            ¥10000*0.1
+            .contents-box__price-section__fee-right.sales-commission -
           .contents-box__price-section__border
 
           .contents-box__price-section__result-left
             販売利益
           .contents-box__price-section__result-right
-            ¥9,000
+            .contents-box__price-section__result-right.sales-profit -
         
       %section.contents-box__sell-decision-container
         %p.contents-box__sell-decision-container__note
