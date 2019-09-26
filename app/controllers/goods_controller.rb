@@ -34,12 +34,6 @@ class GoodsController < ApplicationController
     @user = User.find(1)
   end
 
-
-  def show
-    @good = Good.find(params[:id])
-    @user = User.find(1)
-  end
-
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
