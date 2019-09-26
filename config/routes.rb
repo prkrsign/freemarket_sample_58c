@@ -35,7 +35,9 @@ Rails.application.routes.draw do
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                 registrations: 'users/registrations' }
+                 registrations: 'users/registrations' ,
+                 sessions: 'users/sessions'
+                }
 
   root to: 'goods#index'
   
@@ -75,10 +77,10 @@ Rails.application.routes.draw do
   get 'tests/purchased_on_deal', to: 'tests#purchased_on_deal'
 
 
-  devise_for :users, :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions',
-  } 
+  # devise_for :users, :controllers => {
+  #   :registrations => 'users/registrations',
+  #   :sessions => 'users/sessions',
+  # } 
 
   devise_scope :user do
     get "sign_in", :to => "users/sessions#new" 

@@ -1,5 +1,5 @@
 .login-header-wrapper
-= render 'shared/login-header3'
+  = render 'shared/login-header4'
 
 .signup3-wrapper
   .contents
@@ -25,7 +25,7 @@
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "15", width: "40"
           %li
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
-          
+            
         .contents__form__title
           %span.contents__form__require 必須
 
@@ -37,9 +37,7 @@
           %span.contents__info__question ？
           %span カード裏面の番号とは？  
           = f.submit '次に進む', class: 'contents__btn'
-          
-      
-      -# ページのフッター部分
+            
   %footer.confirmation-footer
     %ul.confirmation-footer-container
       %li.confirmation-footer-container__list
@@ -52,7 +50,7 @@
         =link_to '#', class: 'confirmation-footer-container__list__info' do
           特定商取引に関する表記
 
-        = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+      = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
 
-      .confirmation-footer-container__footer-text
-        ©︎2019 Mercari
+    .confirmation-footer-container__footer-text
+      ©︎2019 Mercari

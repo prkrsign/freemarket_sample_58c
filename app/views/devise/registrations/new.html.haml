@@ -14,30 +14,31 @@
       =link_to "/signup/step1", class:"contents__btn contents__btn--1" do
         %i.far.fa-envelope
         メールアドレスで登録する
-      =link_to "aaa", class:"contents__btn contents__btn--2" do
+      =link_to user_facebook_omniauth_authorize_path, class:"contents__btn contents__btn--2" do
         %i.fab.fa-facebook-square
         Facebookで登録する
-      =link_to "aaa", class:"contents__btn contents__btn--3" do
+      =link_to user_google_oauth2_omniauth_authorize_path, class:"contents__btn contents__btn--3" do
         = image_tag '/signup-google-color-logo.png', size: "", alt: "google-color-logo" , class: 'googlelogo'
         Googleで登録する
         
 
 
 
--# ページのフッター部分
-%footer.confirmation-footer
-  %ul.confirmation-footer-container
-    %li.confirmation-footer-container__list
-      =link_to '#', class: 'confirmation-footer-container__list__info' do
-        プライバシーポリシー
-    %li.confirmation-footer-container__list
-      =link_to '#', class: 'confirmation-footer-container__list__info' do
-        メルカリ利用規約
-    %li.confirmation-footer-container__list
-      =link_to '#', class: 'confirmation-footer-container__list__info' do
-        特定商取引に関する表記
+  -# ページのフッター部分
+  .wrapper__footer
+    %footer.confirmation-footer
+      %ul.confirmation-footer-container
+        %li.confirmation-footer-container__list
+          =link_to '#', class: 'confirmation-footer-container__list__info' do
+            プライバシーポリシー
+        %li.confirmation-footer-container__list
+          =link_to '#', class: 'confirmation-footer-container__list__info' do
+            メルカリ利用規約
+        %li.confirmation-footer-container__list
+          =link_to '#', class: 'confirmation-footer-container__list__info' do
+            特定商取引に関する表記
 
-    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+        = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
 
-  .confirmation-footer-container__footer-text
-    ©︎2019 Mercari
+      .confirmation-footer-container__footer-text
+        ©︎2019 Mercari

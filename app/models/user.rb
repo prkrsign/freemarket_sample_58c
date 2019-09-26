@@ -2,9 +2,11 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        #  :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :validatable, :omniauthable,  omniauth_providers: %i[facebook google_oauth2]
 
   has_one :address
+  has_many :sns_credentials, dependent: :destroy
 
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :username,                 presence: true, length: { minimum:2, maximum:10 }
@@ -27,9 +29,9 @@ class User < ApplicationRecord
   validates :birth_year,               presence: true
   validates :birth_month,              presence: true
   validates :birth_day,                presence: true
-end
-         :recoverable, :rememberable, :validatable, :omniauthable,  omniauth_providers: %i[facebook google_oauth2]
-  has_many :sns_credentials, dependent: :destroy
+
+  #        :recoverable, :rememberable, :validatable, :omniauthable,  omniauth_providers: %i[facebook google_oauth2]
+  # has_many :sns_credentials, dependent: :destroy
 
 
   # SNSログイン機能。facebookかgoogleからユーザー情報を引っ張り出してreturnする。(神山)
