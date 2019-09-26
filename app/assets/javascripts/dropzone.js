@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-
+    // 消さないでください 谷田辺
     //if(images.length >= 5) {
       //dropzone2.css({
         //'display': 'block'
@@ -37,10 +37,9 @@ $(document).on('turbolinks:load', function(){
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview.append(image);
-        //dropzone.css({
-          //'width': `calc(620px - (135px * ${images.length - 5}))`
-        //})
       })
+
+      //消さないでください 谷田辺
       //if(images.length == 9) {
         //dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
       //}
@@ -85,9 +84,6 @@ $(document).on('turbolinks:load', function(){
     })
     var new_image = $(`<input multiple= "multiple" name="images[goods_picture][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image" style="opacity:0;">`);
     input_area.prepend(new_image);
-    //$('input[type= "file"].upload-image:first').attr({
-      //'data-image': inputs.length
-    //})
     $.each(inputs, function(index, input) {
       var input = $(this)
       input.attr({
@@ -95,6 +91,8 @@ $(document).on('turbolinks:load', function(){
       })
       $('input[type= "file"].upload-image:first').after(input)
     })
+
+    //消さないでください 谷田辺
     //if (images.length >= 5) {
       //dropzone2.css({
         //'display': 'block'
