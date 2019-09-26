@@ -1,14 +1,7 @@
-
--# - @images.each do |image| 
--# - @goods.each do |good| 
--# =image_tag image.image.url, class: "goods_picture_ladies"
 .block_area__product
-  -# -binding.pry
-  
-  -# -image_tag @good.image.first.goods_picture.url, class: "goods_picture_ladies"
   .block_area__product__good-pic_price_box
     =  image_tag show_goods_all.images.first.goods_picture.url, class: "goods_picture_ladies"
     .block_area__product__good-pic_price_box__price 
-      = show_goods_all.price
+      = "¥#{show_goods_all.price}"
   .block_area__product__title
     = show_goods_all.goods_name

@@ -32,28 +32,31 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               メンズ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'        
+          .block_area
+            = render partial: "show_goods_all", collection: @goods        
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
-              家電・スマホ・カメラ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              レディース過去のアイテム
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
-              おもちゃ・ホビー・グッズ
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              メンズ過去のアイテム
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__category
         %h2.middle__main__category__text
           人気のブランド
@@ -65,7 +68,7 @@
               =link_to "#", class:"middle__main__category__under__area__a__parts" do
                 ルイヴィトン
               =link_to "#", class:"middle__main__category__under__area__a__parts" do
-                シュプリーム
+                アディダス
               =link_to "#", class:"middle__main__category__under__area__a__parts" do
                 ナイキ
       .middle__main__block
@@ -73,37 +76,41 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               シャネル新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ルイヴィトン新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
-              シュプリーム新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              アディダス新着アイテム
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ナイキ新着アイテム
-            =link_to "#", class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          -# = render 'goods/show_goods_all'
+          .block_area
+            = render partial: "show_goods_all", collection: @goods
 
 =link_to new_good_path, class: 'exhibit_btn' do
   .exhibit_btn__moji
