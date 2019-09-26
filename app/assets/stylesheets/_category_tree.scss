@@ -1,9 +1,19 @@
 .category-tree-box{
-    box-shadow: 0.5px 0.5px 8px gray;
+    box-shadow: 0 0 20px gray;
     position: absolute;
     background-color: #fff;
     margin-top: 26px;
-    width: 210px;
-    height: 45px;
+    width: 250px;
+    // height: 2000px;
     z-index: 10;
+    &__main-category{
+        box-sizing: border-box;
+        width: 100%;
+        height: 48px;
+        background-color: #fff;
+        font-size: 15px;
+        color:  rgb(51, 51, 51);
+        line-height: 48px;
+        padding-left: 20px;
+    }
 }
