@@ -104,9 +104,12 @@
 
               
               &__register-button{
-
+                
                 text-align: center;
-
+                &__mypage{
+                  text-decoration: none;
+                  color: black;
+                }
                 &__text{
                   height: 14px;
                   background-color: rgb(234, 53, 45);
@@ -121,7 +124,7 @@
                   padding: 8px 10px;
                   text-decoration: none;
                   line-height: 15px;
-
+                  margin-right: 10px;
                 }
               }
               &__login-button{

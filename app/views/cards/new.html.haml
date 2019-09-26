@@ -1,7 +1,7 @@
 .login-header-wrapper
   = render 'shared/login-header4'
 
-.signup3-wrapper
+.signup4-wrapper
   .contents
     .contents__head
       支払い方法    
@@ -11,19 +11,19 @@
         %span.contents__form__require#card-number-require 必須
         = f.text_field :customer, class: "contents__form__input" , placeholder: '半角数字のみ'  
         %ul.contents__form__cardlist
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "15", width: "40"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "15", width: "40"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763', height: "15", width: "25"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763', height: "15", width: "37"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763', height: "15", width: "21"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "15", width: "40"
-          %li
+          %li.icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
             
         .contents__form__title
