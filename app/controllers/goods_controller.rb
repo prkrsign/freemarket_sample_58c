@@ -3,8 +3,9 @@ class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
     @images = Image.order('id ASC').limit(10)
-    @image = Image.find(18)
+    @image = Image.find(2)
     @good = Good.find(2)
+
     # 以下翻訳：カテゴリーレディースID(147から260)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @ladies = Good.where(category_id:[6..7]).order('id ASC').limit(10)
     # 以下翻訳：カテゴリーメンズID(1から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
