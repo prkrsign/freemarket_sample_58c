@@ -22,16 +22,11 @@
           .dropzone-container.clearfix
             .sell-uploads-drop
               #exhibit-images-preview
-              .dropzone-area
+            .dropzone-area
               = i.label :image, for: 'upload-image' do
                 .sell_upload__area
                   = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
-                %p ここをクリックしてください
-              #exhibit-images-preview2
-              .dropzone-area2
-                = i.label :image, for: 'upload-image' do
-                  %p
-      .contents-box__form-list__space
+      //.contents-box__form-list__space
 
       -# 商品名、商品説明入力部分
       %section.contents-box__descript-section
@@ -127,10 +122,11 @@
             .contents-box__price-section__fee-right.sales-commission -
           .contents-box__price-section__border
 
-          .contents-box__price-section__result-left
-            販売利益
-          .contents-box__price-section__result-right
-            .contents-box__price-section__result-right.sales-profit -
+          .contents-box__price-section__result
+            .contents-box__price-section__result-left
+              販売利益
+            .contents-box__price-section__result-right
+              .contents-box__price-section__result-right.sales-profit -
         
       %section.contents-box__sell-decision-container
         %p.contents-box__sell-decision-container__note
