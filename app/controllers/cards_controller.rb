@@ -6,7 +6,7 @@ class CardsController < ApplicationController
   def create
   end
 
-  def step5
+  def complete
   end
 
   private

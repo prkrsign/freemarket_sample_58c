@@ -7,11 +7,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    info = {}
-    @user = current_user
-    info[:user_id] = @user.id
-    new_address_params = address_params.merge(info)
-    @address = Address.new(new_address_params)
+    @address = Address.new(new_address_params).merge(user_id: @user.id)
     
     if @address.save!      
        redirect_to new_card_path

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :cards do
     collection do
-      get 'step5' => 'cards#step5'
+      get 'complete' => 'cards#complete'
     end
   end
   resources :addresses 
