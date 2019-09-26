@@ -5,7 +5,7 @@ class Good < ApplicationRecord
     belongs_to                    :category
     belongs_to_active_hash        :condition
     belongs_to_active_hash        :shipment
-    has_many 　　　　　　　　        :images
+    has_many                      :images
     accepts_nested_attributes_for :images
 end
 
