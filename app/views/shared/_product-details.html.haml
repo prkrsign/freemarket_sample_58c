@@ -1,5 +1,5 @@
 = render 'shared/main_page_header'
--# 商品詳細ページ機能追加中 YS（残り　カテゴリー、ブランド、サイズ？、商品、状態、負担、方法、地域ユーザー情報、出品者の名前、）9/23
+-# 商品詳細ページ機能追加中 YS（残り+@分ブランド、サイズ？、商品、状態、負担、方法、地域ユーザー情報、出品者の名前、）9/23
 .product-details-wrapper
   .container
     = form_with url: "#", method: :post , class: 'item-box' do
@@ -80,7 +80,6 @@
       .price-box
         %span.price-box__price
           = number_to_currency(@good.price, unit: "￥", precision: 0)
-          -# = @good.price
         %span.price-box__tax
           (税込)
         %span.price-box__fee

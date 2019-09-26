@@ -5,10 +5,9 @@ class GoodsController < ApplicationController
     @images = Image.order('id ASC').limit(10)
     @image = Image.find(18)
     @good = Good.find(2)
-    # @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
-    # @gooodd = Tweet.find(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
+    # 以下翻訳：カテゴリーレディースID(１から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @ladies = Good.where(category_id:[6..7]).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーメンズID(１から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    # 以下翻訳：カテゴリーメンズID(147から260)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @mens = Good.where(category_id:[1..5]).order('id ASC').limit(10)
     # 以下翻訳：カテゴリーブランドシャネルID(1)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @chanel = Good.where(brand_id:1).order('id ASC').limit(10)
@@ -18,9 +17,6 @@ class GoodsController < ApplicationController
     @nike = Good.where(brand_id:2).order('id ASC').limit(10)
     # 以下翻訳：カテゴリーブランドシュプリームID(4)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @supreme = Good.where(brand_id:4).order('id ASC').limit(10)
-
-
-
 
   end
   
@@ -40,8 +36,8 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
     @user = User.find(1)
 
-    # @user = User.find(params[:id])
     #　以下試験的に作ったので消してもOK 9/24 YS
+    # @user = User.find(params[:id])
     # @category = Category.find(params[:id])
     # @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
 
