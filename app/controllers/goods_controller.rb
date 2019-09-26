@@ -5,9 +5,9 @@ class GoodsController < ApplicationController
     @images = Image.order('id ASC').limit(10)
     @image = Image.find(18)
     @good = Good.find(2)
-    # 以下翻訳：カテゴリーレディースID(１から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    # 以下翻訳：カテゴリーレディースID(147から260)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @ladies = Good.where(category_id:[6..7]).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーメンズID(147から260)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    # 以下翻訳：カテゴリーメンズID(1から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @mens = Good.where(category_id:[1..5]).order('id ASC').limit(10)
     # 以下翻訳：カテゴリーブランドシャネルID(1)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
     @chanel = Good.where(brand_id:1).order('id ASC').limit(10)
