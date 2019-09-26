@@ -48,7 +48,7 @@ class User < ApplicationRecord
         # Snscredentialテーブルにuidとproviderを保存。providerはfacebookかgoogleのこと。uidはprovider側で管理しているidのこと。
         sns = SnsCredential.create(
           uid: uid,
-          provider: provider,
+          provider: provider
         )
 
       end

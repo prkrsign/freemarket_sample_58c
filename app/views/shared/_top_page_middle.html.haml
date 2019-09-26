@@ -25,6 +25,7 @@
               =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
                 もっと見る
               %i.fas.fa-chevron-right
+
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_ladies
       .middle__main__block
@@ -35,8 +36,10 @@
               =link_to "#", class:'middle__main__block__item__top__right' do
                 もっと見る
               %i.fas.fa-chevron-right
+
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_men       
+
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top
@@ -106,13 +109,17 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ナイキ新着アイテム
+
               =link_to "#", class:'middle__main__block__item__top__right' do
                 もっと見る
+
               %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_nike
 
+
 =link_to new_good_path, class: 'exhibit_btn' do
+
   .exhibit_btn__moji
     出品
   %i.fas.fa-camera
