@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
   resources :tests
-  
   resources :purchase do  # 商品購入確認ページにて使用YS
+
     collection do
       post 'pay/:id' => 'purchase#pay', as: 'pay'
     end
   end
-
+# 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
   resources :goods do 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
