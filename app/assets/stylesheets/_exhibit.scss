@@ -313,7 +313,7 @@ body{
             }
             &__fee-right{
                 float: right;
-                padding: 30px 0 20px 0;
+                padding: 15px 0 20px 0;
                 font-size: 13px;
             }
             &__result-left{
@@ -324,7 +324,7 @@ body{
 
             }
             &__result-right{
-                margin-top: 30px;
+                margin-top: 12px;
                 font-size: 26px;
                 font-weight: 600;
                 float: right;
@@ -373,8 +373,8 @@ body{
     height: calc(100% - 250px);
 }
 
-#fee{
-    height: calc(100% - 400px);
+#exhibit-selling-price{
+    height: calc(100% - 300px);
 }
 
 
@@ -412,4 +412,17 @@ body{
             font-size: 10px;
         }
     }
+}
+
+#exhibit-images-preview {
+    display: flex;
+}
+#exhibit-images-preview2 {
+    display: flex;
+}
+.sell-uploads-drop {
+    float: left;
+}
+.sell-uploads-area {
+    display: flex;
 }

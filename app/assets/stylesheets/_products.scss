@@ -38,10 +38,23 @@
           .photo-big {
             position: relative;
             overflow: hidden;
+            font-size: 0;
           }
-          .photo-small {
+          .photo-smallbox {
+            background-color: #fafafa;
+            height:120px;
+            width:300px;
             line-height: 0;
+            font-size: 0;
+            display: inline-block;
+            .photo-small-item {
+              height:60px;
+              width:60px;
+              font-size: 0;
+              display: inline-block;
+            }
           }
+         
         }
         .item-detail {
           float: right;

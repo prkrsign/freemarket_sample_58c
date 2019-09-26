@@ -1,5 +1,7 @@
 = render 'shared/main_page_header'
--# 商品詳細ページ機能追加中 YS（残り+@分、？、、、、地域ユーザー情報、出品者の名前、）9/23
+
+-# 商品詳細ページ機能追加中 YS（残り+@分ブランド、サイズ？、商品、状態、負担、方法、地域ユーザー情報、出品者の名前、）9/23
+
 .product-details-wrapper
   .container
     = form_with url: "#", method: :post , class: 'item-box' do
@@ -77,8 +79,12 @@
               
             %tr
               %th.category 発送日の目安
+
               %td 
                 -# = @good.shipment.name
+
+
+              
 
 
       .price-box
@@ -89,7 +95,8 @@
         %span.price-box__fee
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
-      -# = link_to purchase_path(@good) , class: "item-buy-btn" do
+
+      = link_to purchase_path(@good) , class: "item-buy-btn" do
         購入画面に進む
       .item-description
         %p.item-description__inner

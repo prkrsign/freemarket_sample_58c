@@ -11,19 +11,20 @@
     %h2.confirmation-main__container__header
       購入内容の確認
     
-    -# 商品情報、値段など
+    -# 商品情報、値段など                  
+
     %section.confirmation-main__container__buy-content
       .confirmation-main__container__buy-content__inner
         %h3.confirmation-main__container__buy-content__inner__item
-          = image_tag @image.goods_picture, class: 'confirmation-main__container__buy-content__inner__item__image', size: '' if @image.goods_picture.present?
-          -# = image_tag '/confirm-test.jpg', size: "", alt: "buy-item-image" , class: 'confirmation-main__container__buy-content__inner__item__image'
+          -# 以下翻訳：重要 アソシエーションでhas_manyを定義しているため複数の画像(images)の中から一番初め(first)の画像を取ってくる、この考え方が超重要で単数形(image)もしくは(first)が抜けるとエラーが発生する。
+          = image_tag @good.images.first.goods_picture.url, class: "confirmation-main__container__buy-content__inner__item__image"
         %p.confirmation-main__container__buy-content__inner__item-name
-          = @good.goods_name 
+          = @good.goods_name
         -# ポイント、支払い金額、購入ボタン
-        = form_with(url: '#', class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
+        = form_with(url: pay_purchase_index_path, method: :post, class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
           .confirmation-main__container__buy-content__inner__buy-form__list
             %p.confirmation-main__container__buy-content__inner__buy-form__list__price
-              = @good.price
+              = number_to_currency(@good.price, unit: "￥", precision: 0)
               %span.confirmation-main__container__buy-content__inner__buy-form__list__price__text
                 送料込み
             %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
@@ -33,8 +34,13 @@
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__left-text
                   支払い金額
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
-                  = @good.price
-            =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
+                  = number_to_currency(@good.price, unit: "￥", precision: 0)
+              -# payjp実装のためのJavaScript埋め込みの記述。ボタンも同時に生成(神山)
+              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_b9e130775ea650797ff7b649"}
+                購入する
+              -# =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
+              -# =f.submit '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
+              
     
     -# ユーザー情報、配送先
     %section.confirmation-main__container__buy-info
