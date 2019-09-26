@@ -1,124 +1,180 @@
-.middle
-  .middle__main
-    .middle__main__slide
-      %img.middle__main__slide__area{alt: "slidepage", src:"/merucari_top1.png"}
-    .middle__main__category
-      %h2.middle__main__category__text
-        人気のカテゴリー
-      .middle__main__category__under
-        %ul.middle__main__category__under__area
-          %li.middle__main__category__under__area__a
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              レディース
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              メンズ
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              家電・スマホ・カメラ
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              おもちゃ・ホビー・グッズ
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            レディース新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            メンズ新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            家電・スマホ・カメラ新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            おもちゃ・ホビー・グッズ新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__category
-      %h2.middle__main__category__text
-        人気のブランド
-      .middle__main__category__under
-        %ul.middle__main__category__under__area
-          %li.middle__main__category__under__area__a
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              シャネル
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              ルイヴィトン
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              シュプリーム
-            =link_to "#", class:"middle__main__category__under__area__a__parts" do
-              ナイキ
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            シャネル新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            ルイヴィトン新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            シュプリーム新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-    .middle__main__block
-      .middle__main__block__item
-        .middle__main__block__item__top
-          %h3.middle__main__block__item__top__left
-            ナイキ新着アイテム
-          =link_to "#", class:'middle__main__block__item__top__right' do
-            もっと見る
-            %i.fas.fa-chevron-right
-        .block__area
-          - (1..10).each do |i|
-            .block__area__product
-.exhibit_btn
+.top-page-middle-wrapper
+  .middle
+    .middle__main
+      .middle__main__slide
+        %img.middle__main__slide__area{alt: "slidepage", src:"/merucari_top1.png"}
+      .middle__main__category
+        %h2.middle__main__category__text
+          人気のカテゴリー
+        .middle__main__category__under
+          %ul.middle__main__category__under__area
+            %li.middle__main__category__under__area__a
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                レディース
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                メンズ
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                家電・スマホ・カメラ
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                おもちゃ・ホビー・グッズ
+      
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              レディース新着アイテム
+              =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
+                もっと見る
+              %i.fas.fa-chevron-right
+              -# レディース新着アイテムブロック　商品詳細への遷移先記載9/21 YS
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    = "¥#{@good.price}"
+                %h3.block__area__product__title
+                  = @good.goods_description
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              メンズ新着アイテム
+              =link_to "#", class:'middle__main__block__item__top__right' do
+                もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+                  
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              家電・スマホ・カメラ新着アイテム
+            =link_to "#", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              おもちゃ・ホビー・グッズ新着アイテム
+            =link_to "#", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+      .middle__main__category
+        %h2.middle__main__category__text
+          人気のブランド
+        .middle__main__category__under
+          %ul.middle__main__category__under__area
+            %li.middle__main__category__under__area__a
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                シャネル
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                ルイヴィトン
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                シュプリーム
+              =link_to "#", class:"middle__main__category__under__area__a__parts" do
+                ナイキ
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              シャネル新着アイテム
+            =link_to "#", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              ルイヴィトン新着アイテム
+            =link_to "#", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              シュプリーム新着アイテム
+            =link_to "#", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+      .middle__main__block
+        .middle__main__block__item
+          .middle__main__block__item__top
+            %h3.middle__main__block__item__top__left
+              ナイキ新着アイテム
+            =link_to "", class:'middle__main__block__item__top__right' do
+              もっと見る
+              %i.fas.fa-chevron-right
+          .block__area
+            - (1..10).each do |i|
+              .block__area__product
+                .block__area__product__good-pic_price_box 
+                  = image_tag @image.goods_picture.url, class: 'goods_picture_ladies'
+                  .block__area__product__good-pic_price_box__price
+                    ¥
+                %h3.block__area__product__title
+                  アマガエルくん
+
+=link_to "/goods/new", class: 'exhibit_btn' do
   .exhibit_btn__moji
     出品
   %i.fas.fa-camera
+
+= render 'shared/aside'
+= render 'shared/footer'

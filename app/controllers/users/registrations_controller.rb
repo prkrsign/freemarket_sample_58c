@@ -1,40 +1,21 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
+  # SNS会員登録の時必要になる。user_idとsns_idでリレーションを組むためのメソッド。機能未実装(神山)
+  def create
+     if params[:user][:password] == "" #sns登録なら
+       params[:user][:password] = "Devise.friendly_token.first(6)" #deviseのパスワード自動生成機能を使用
+       params[:user][:password_confirmation] = "Devise.friendly_token.first(6)"
+       super
+       sns = SnsCredential.update(user_id:  @user.id)
+     else #email登録なら
+       super
+     end
+   end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  # def new
-  #   @user = User.new
-    
-  # end
-
-  # def create
-  #   @user = User.new
-    
-
-  #   if @user.save
-  #       render 'index'
-  #   else
-  #       render 'new'
-  #   end
-
-  # private
-  # def user_params
-  #   params.require(:user).permit(
-  #     :username,
-  #     :email,
-  #     :password, 
-  #     :password_confirmation,
-  #     :family_name,
-  #     :first_name,
-  #     :family_name_in_katakana,
-  #     :first_name_in_katakana,
-  #     :birth_year,
-  #     :birth_month,
-  #     :birth_day,
-  #     :phone_number   
-  #   )
-  # end
 
   # GET /resource/sign_up
   # def new

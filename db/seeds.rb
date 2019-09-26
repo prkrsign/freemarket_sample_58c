@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 #メンズブロック
 #メンズの子カテゴリー配列
 mens_child_array = ['トップス','ジャケット/アウター','パンツ','靴','バッグ','スーツ','帽子','アクセサリー','小物','時計','水着','レッグウェア','アンダーウェア','その他',]
@@ -62,3 +61,7 @@ lady_child_array.each_with_index do |child, i|
    child.children.create(category_name: grandchild)
  end
 end
+
+# S3動作確認用 ダミーデータ 最終的には削除予定(神山)
+# Good.create!(goods_name: 'カエル', goods_description: 'カビカビ', price: 10000000, user_id: 1, brand_id: 1, category_id: 100, prefecture_id: 1 )
+# Image.create!(goods_picture: open("#{Rails.root}/db/dammyimage/dims.jpeg"), good_id: 1)

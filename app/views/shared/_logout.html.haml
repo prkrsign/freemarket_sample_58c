@@ -1,5 +1,14 @@
-.logout-box
-  .logout-box__container
-    .logout-box__container__btn-box
-      = link_to "#", class:"btn-default btn-red" do
-        ログアウト
+=render 'shared/main_page_header'
+
+.logout-side-bar
+  =render 'shared/profile-sidebar'
+
+  .logout-contents
+    .logout-contents__logout-box
+      .logout-contents__logout-box__container
+        .logout-contents__logout-box__container__btn-box
+          = link_to "#", class:"logout-contents__logout-box__container__btn-box__btn-red" do
+            ログアウト
+  
+= render 'shared/aside'
+= render 'shared/footer'
