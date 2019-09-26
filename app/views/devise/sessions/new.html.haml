@@ -7,8 +7,10 @@
       .login-page
         .login-no-account
           %p アカウントをお持ちでない方はこちら
-          %a{class: "new",href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
+          = link_to new_user_registration_path, class: 'new' do
+            新規会員登録
         .login-form-inner
+
           = link_to user_facebook_omniauth_authorize_path, class: 'btn facebook' do
             %i.fab.fa-facebook-square
             Facebookでログイン
@@ -18,15 +20,16 @@
             Googleでログイン
         .user-login-form
           .form-inner
+          = form_for(@user, url: session_path(resource_name)) do |f|
             .form-inner__mail
-              %input.user-login-input-text{name: "email",placeholder: "メールアドレス",type: "email",value: ""}
+              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'login-input-text'
             .form-inner__mail
-              %input.user-login-input-text{name: "password",placeholder: "パスワード",type: "password"}
+              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'login-input-text'
             .form-inner__lobot
               .login-captcha
                 .user-login-form-group
                   .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                %button.login-btn{type: "submit"} ログイン              
+                  = f.submit 'ログイン', class: 'login-btn'              
                 %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
 
     %footer.user-login-single-footer

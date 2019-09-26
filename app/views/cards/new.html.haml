@@ -1,0 +1,56 @@
+.login-header-wrapper
+  = render 'shared/login-header4'
+
+.signup3-wrapper
+  .contents
+    .contents__head
+      支払い方法    
+      .contents__form__title1
+      =form_with(model: @card, url: complete_cards_path, method: :get,local: true) do |f|
+        %label カード番号
+        %span.contents__form__require#card-number-require 必須
+        = f.text_field :customer, class: "contents__form__input" , placeholder: '半角数字のみ'  
+        %ul.contents__form__cardlist
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "15", width: "40"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "15", width: "40"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2482339763', height: "15", width: "25"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2482339763', height: "15", width: "37"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2482339763', height: "15", width: "21"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2482339763', height: "15", width: "40"
+          %li
+            = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
+            
+        .contents__form__title
+          %span.contents__form__require 必須
+
+        .contents__form__title
+          %label セキュリティコード
+          %span.contents__form__require 必須
+          %input{ class:"contents__form__input", maxlength:"10", name:"card-name", placeholder:"カード背面4桁もしくは3桁の番号", type:"text", value:""}
+        .contents__info
+          %span.contents__info__question ？
+          %span カード裏面の番号とは？  
+          = f.submit '次に進む', class: 'contents__btn'
+            
+  %footer.confirmation-footer
+    %ul.confirmation-footer-container
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          プライバシーポリシー
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          メルカリ利用規約
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          特定商取引に関する表記
+
+      = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+    .confirmation-footer-container__footer-text
+      ©︎2019 Mercari
