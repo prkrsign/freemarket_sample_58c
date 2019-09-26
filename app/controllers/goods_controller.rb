@@ -10,6 +10,8 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.includes(:images).where(brand_id:[2]).order("created_at DESC").limit(10)
     @goods_new_ysl = Good.includes(:images).where(brand_id:[6]).order("created_at DESC").limit(10)
     @goods_new_lv = Good.includes(:images).where(brand_id:[3]).order("created_at DESC").limit(10)
+    # @good = Good.find(params[:id])
+    # @good = Good.find(1..10)
   end
   
   def new
@@ -26,7 +28,7 @@ class GoodsController < ApplicationController
 
   def show
     @good = Good.find(params[:id])
-    # @user = User.find(1)
+    @user = User.find(1)
 
     # @good = Good.find(params[:id])
   end
