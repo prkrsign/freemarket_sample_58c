@@ -3,9 +3,24 @@ class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
     @images = Image.order('id ASC').limit(10)
-    @image = Image.find(1)
-    @good = Good.find(1)
-    # @good = Good.order('id ASC').limit(3)
+    @image = Image.find(18)
+    @good = Good.find(2)
+    # @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    # @gooodd = Tweet.find(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
+    @ladies = Good.where(category_id:[6..7]).order('id ASC').limit(10)
+    # 以下翻訳：カテゴリーメンズID(１から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    @mens = Good.where(category_id:[1..5]).order('id ASC').limit(10)
+    # 以下翻訳：カテゴリーブランドシャネルID(1)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    @chanel = Good.where(brand_id:1).order('id ASC').limit(10)
+    # 以下翻訳：カテゴリーブランドヴィトンID(3)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    @vuitton = Good.where(brand_id:3).order('id ASC').limit(10)
+    # 以下翻訳：カテゴリーブランドナイキID(2)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    @nike = Good.where(brand_id:2).order('id ASC').limit(10)
+    # 以下翻訳：カテゴリーブランドシュプリームID(4)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
+    @supreme = Good.where(brand_id:4).order('id ASC').limit(10)
+
+
+
 
   end
   
