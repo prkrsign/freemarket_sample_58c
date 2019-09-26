@@ -54,21 +54,21 @@
             %tr
               %th.category 商品のサイズ
               %td 
-                -# = @good.size
+                = @good.size
               
             %tr
               %th.category 商品の状態
               %td 
-                -# = @good.condition.name
+                = @good.condition.name
               
             %tr
               %th.category 配送料の負担
               %td 
-                -# = @good.delivery.parent.delivery_method
+                = @good.delivery.parent.delivery_method
             %tr
               %th.category 配送の方法
               %td 
-                -# = @good.delivery.delivery_method
+                = @good.delivery.delivery_method
               
             %tr
               %th.category 発送元地域
@@ -78,7 +78,7 @@
             %tr
               %th.category 発送日の目安
               %td 
-                -# = @good.shipment.name
+                = @good.shipment.name
 
 
       .price-box
@@ -89,7 +89,7 @@
         %span.price-box__fee
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
-      -# = link_to purchase_path(@good) , class: "item-buy-btn" do
+      = link_to purchase_path(@good) , class: "item-buy-btn" do
         購入画面に進む
       .item-description
         %p.item-description__inner

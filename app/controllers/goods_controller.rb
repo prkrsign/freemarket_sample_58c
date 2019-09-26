@@ -1,7 +1,6 @@
 class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
-    # @image = Image.includes(:good).order("created_at DESC").limit(10)
     @goods_new_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at DESC").limit(10)
     @goods_new_men = Good.includes(:images).where(category_id:[1..146]).order("created_at DESC").limit(10)
     @goods_old_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at ASC").limit(10)
@@ -10,8 +9,6 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.includes(:images).where(brand_id:[2]).order("created_at DESC").limit(10)
     @goods_new_ysl = Good.includes(:images).where(brand_id:[6]).order("created_at DESC").limit(10)
     @goods_new_lv = Good.includes(:images).where(brand_id:[3]).order("created_at DESC").limit(10)
-    # @good = Good.find(params[:id])
-    # @good = Good.find(1..10)
   end
   
   def new
@@ -29,8 +26,6 @@ class GoodsController < ApplicationController
   def show
     @good = Good.find(params[:id])
     @user = User.find(1)
-
-    # @good = Good.find(params[:id])
   end
 
   # 以下全て、formatはjsonのみ
