@@ -1,17 +1,14 @@
 class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
-    
-    @goods_new_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at DESC").limit(10)
-    @goods_new_men = Good.includes(:images).where(category_id:[1..146]).order("created_at DESC").limit(10)
-    @goods_old_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at ASC").limit(10)
-    @goods_old_men = Good.includes(:images).where(category_id:[1..146]).order("created_at ASC").limit(10)
-    @goods_new_adidas = Good.includes(:images).where(brand_id:[5]).order("created_at DESC").limit(10)
-    @goods_new_nike = Good.includes(:images).where(brand_id:[2]).order("created_at DESC").limit(10)
-    @goods_new_ysl = Good.includes(:images).where(brand_id:[6]).order("created_at DESC").limit(10)
-    @goods_new_lv = Good.includes(:images).where(brand_id:[3]).order("created_at DESC").limit(10)
-  
-
+    @goods_new_ladies = Good.recent.where(category_id:[147..263]).active
+    @goods_new_men = Good.recent.where(category_id:[1..146]).active
+    @goods_old_ladies = Good.recent.where(category_id:[147..263]).sorted
+    @goods_old_men = Good.recent.where(category_id:[1..146]).sorted
+    @goods_new_adidas = Good.recent.where(brand_id:[5]).active
+    @goods_new_nike = Good.recent.where(brand_id:[2]).active
+    @goods_new_ysl = Good.recent.where(brand_id:[6]).active
+    @goods_new_lv = Good.recent.where(brand_id:[3]).active
   end
   
   def new
@@ -35,12 +32,6 @@ class GoodsController < ApplicationController
     # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
     @good = Good.find(params[:id])
     @user = User.find(1)
-
-    # 以下試験的に作ったので消してもOK 9/24 YS
-    # @user = User.find(params[:id])
-    # @category = Category.find(params[:id])
-    # @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
-
   end
 
 
