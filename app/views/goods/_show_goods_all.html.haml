@@ -1,0 +1,8 @@
+.block_area_product
+  .block_area__product__good-pic_price_box
+    = link_to good_path(show_goods_all.id) do
+      = image_tag show_goods_all.images.first.goods_picture.url, class: "goods_picture_ladies"
+    .block_area__product__good-pic_price_box__price 
+      = "¥#{show_goods_all.price}"
+  .block_area__product__title
+    = show_goods_all.goods_name

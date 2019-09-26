@@ -1,23 +1,15 @@
 class GoodsController < ApplicationController
-  before_action :set_current_user
+
   # トップページの商品一覧表示
   def index
-    @images = Image.order('id ASC').limit(10)
-    @image = Image.find(1)
-    @good = Good.find(1)
-    # 以下翻訳：カテゴリーレディースID(147から260)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @ladies = Good.where(category_id:[6..7]).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーメンズID(1から146)のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @mens = Good.where(category_id:[1..5]).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーブランドシャネルID(1)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @chanel = Good.where(brand_id:1).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーブランドヴィトンID(3)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @vuitton = Good.where(brand_id:3).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーブランドナイキID(2)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @nike = Good.where(brand_id:2).order('id ASC').limit(10)
-    # 以下翻訳：カテゴリーブランドシュプリームID(4)に該当のレコードを呼び出す IDの若い順に１０番までの表示させる 9/26 YS
-    @supreme = Good.where(brand_id:4).order('id ASC').limit(10)
-
+    @goods_new_ladies = Good.recent.mujer.active
+    @goods_new_men = Good.recent.hombre.active
+    @goods_old_ladies = Good.recent.mujer.sorted
+    @goods_old_men = Good.recent.hombre.sorted
+    @goods_new_adidas = Good.recent.adi.active
+    @goods_new_nike = Good.recent.nk.active
+    @goods_new_ysl = Good.recent.ysl.active
+    @goods_new_lv = Good.recent.lv.active
   end
   
   def new
@@ -25,6 +17,7 @@ class GoodsController < ApplicationController
     @image = @good.images.build
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
+
     #データベースから、親カテゴリーのみを抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
@@ -37,19 +30,11 @@ class GoodsController < ApplicationController
   end
 
   def show
-    # 以下翻訳：インスタンス変数を定義　グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
+    # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
     @good = Good.find(params[:id])
     @user = User.find(1)
-
-    #　以下試験的に作ったので消してもOK 9/24 YS
-    # @user = User.find(params[:id])
-    # @category = Category.find(params[:id])
-    # @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
-
   end
 
- 
-  
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -74,9 +59,8 @@ class GoodsController < ApplicationController
 
 
     if @good.save
-      #binding.pry
       params[:images]['goods_picture'].each do |i|
-       @image = @good.images.create!(goods_picture: i)
+      @image = @good.images.create!(goods_picture: i)
       end
       redirect_to root_path
     else
