@@ -22,10 +22,10 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               レディース新着アイテム
-            =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
-              もっと見る
+              =link_to tests_product_details_path, class:'middle__main__block__item__top__right' do
+                もっと見る
               %i.fas.fa-chevron-right
-          = render 'goods/show_goods_all'
+          - render partial: 'goods/show_goods_all' ,locals: {goods: @goods}
       .middle__main__block
         .middle__main__block__item
           .middle__main__block__item__top

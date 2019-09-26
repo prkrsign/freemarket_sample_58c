@@ -1,7 +1,9 @@
 class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
-    @image = Image.includes(:good).order("created_at DESC").limit(10)
+    # @image = Image.includes(:good).order("created_at DESC").limit(10)
+    @goods = Good.includes(:images).order("created_at DESC").limit(10)
+    # - binding.pry
   end
   
   def new

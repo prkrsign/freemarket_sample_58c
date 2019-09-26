@@ -1,7 +1,13 @@
--# - @images.each do |image| 
-- (1..10).each do |i|
-  .block__area__product
-    .block__area__product__good-pic_price_box
-      .block__area__product__good-pic_price_box__price  
-    .block__area__product__title
-      
+.block_area
+  -# - @images.each do |image| 
+  -# =image_tag image.image.url, class: "goods_picture_ladies"
+  - @goods.each do |good|
+    .block_area__product
+      -# -binding.pry
+      -# -image_tag good.images.first.url, class: "goods_picture_ladies"
+      -# -image_tag @good.image.first.goods_picture.url, class: "goods_picture_ladies"
+      .block_area__product__good-pic_price_box
+        .block_area__product__good-pic_price_box__price 
+          = "¥#{good.price}"
+      .block_area__product__title
+        = good.goods_name
