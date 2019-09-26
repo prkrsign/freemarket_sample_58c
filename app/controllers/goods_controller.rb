@@ -1,14 +1,14 @@
 class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
-    @goods_new_ladies = Good.recent.where(category_id:[147..263]).active
-    @goods_new_men = Good.recent.where(category_id:[1..146]).active
-    @goods_old_ladies = Good.recent.where(category_id:[147..263]).sorted
-    @goods_old_men = Good.recent.where(category_id:[1..146]).sorted
-    @goods_new_adidas = Good.recent.where(brand_id:[5]).active
-    @goods_new_nike = Good.recent.where(brand_id:[2]).active
-    @goods_new_ysl = Good.recent.where(brand_id:[6]).active
-    @goods_new_lv = Good.recent.where(brand_id:[3]).active
+    @goods_new_ladies = Good.recent.mujer.active
+    @goods_new_men = Good.recent.hombre.active
+    @goods_old_ladies = Good.recent.mujer.sorted
+    @goods_old_men = Good.recent.hombre.sorted
+    @goods_new_adidas = Good.recent.adi.active
+    @goods_new_nike = Good.recent.nk.active
+    @goods_new_ysl = Good.recent.ysl.active
+    @goods_new_lv = Good.recent.lv.active
   end
   
   def new
