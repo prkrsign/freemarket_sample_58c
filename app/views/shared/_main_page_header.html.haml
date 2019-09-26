@@ -41,20 +41,16 @@
             =link_to user_session_path,  class:"header__under__right__login-button__text" do
               ログイン
           = current_user.username if user_signed_in?
-          
 
-      
-        
-        
 
-          .header__under__right__register-button
-            =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
-              新規会員登録
-          .header__under__right__login-button
-            =link_to tests_signup_path, class: 'header__under__right__login-button__text' do
-              ログイン
+          -# .header__under__right__register-button
+          -#   =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
+          -#     新規会員登録
+          -# .header__under__right__login-button
+          -#   =link_to tests_signup_path, class: 'header__under__right__login-button__text' do
+          -#     ログイン
 
-          -# 仮置きのマイページ遷移テキスト。ユーザーログイン時に表示(神山)
-          =link_to tests_logout_path, class: "header__under__right__sprint-review" do
-            = current_user.username if user_signed_in?
+          -# -# 仮置きのマイページ遷移テキスト。ユーザーログイン時に表示(神山)
+          -# =link_to tests_logout_path, class: "header__under__right__sprint-review" do
+          -#   = current_user.username if user_signed_in?
 
