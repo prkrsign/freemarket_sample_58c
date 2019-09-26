@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'goods/search'
   resources :tests
   resources :goods
-  resources :cards 
+  resources :cards do
+    collection do
+      get 'step5' => 'cards#step5'
+    end
+  end
   resources :addresses 
   
   resources :signup do
@@ -24,8 +28,7 @@ Rails.application.routes.draw do
   } 
 
   devise_scope :user do
-    get "sign_in", :to => "users/sessions#new"
-  #   get "sign_out", :to => "users/sessions#destroy" 
+    get "sign_in", :to => "users/sessions#new" 
   end
   
 end

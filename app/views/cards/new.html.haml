@@ -6,7 +6,7 @@
     .contents__head
       支払い方法    
       .contents__form__title1
-      = form_with model: @card, url: cards_path, method: :post local: true do |f|
+      =form_with(model: @card, url: step5_cards_path, method: :get,local: true) do |f|
         %label カード番号
         %span.contents__form__require#card-number-require 必須
         = f.text_field :customer, class: "contents__form__input" , placeholder: '半角数字のみ'  
@@ -28,36 +28,6 @@
           
         .contents__form__title
           %span.contents__form__require 必須
-        -# %div{ style:"display:inline-flex"}
-        -#   %select{ name:"month", class:"contents__form__select contents__form__select__1" }
-        -#     %option{value:""} --
-        -#     %option{value:"01"} 01
-        -#     %option{value:"02"} 02
-        -#     %option{value:"03"} 03
-        -#     %option{value:"04"} 04
-        -#     %option{value:"05"} 05
-        -#     %option{value:"06"} 06
-        -#     %option{value:"07"} 07
-        -#     %option{value:"08"} 08
-        -#     %option{value:"09"} 09
-        -#     %option{value:"10"} 10
-        -#     %option{value:"11"} 11
-        -#     %option{value:"12"} 12
-        -#   %span 月
-        -#   %select{ name:"day", class:"contents__form__select" }
-        -#     %option{value:""} --
-        -#     %option{value:"19"} 19
-        -#     %option{value:"20"} 20
-        -#     %option{value:"21"} 21
-        -#     %option{value:"22"} 22
-        -#     %option{value:"23"} 23
-        -#     %option{value:"24"} 24
-        -#     %option{value:"25"} 25
-        -#     %option{value:"26"} 26
-        -#     %option{value:"27"} 27
-        -#     %option{value:"28"} 28
-        -#     %option{value:"29"} 29
-        -#   %sapn 年
 
         .contents__form__title
           %label セキュリティコード

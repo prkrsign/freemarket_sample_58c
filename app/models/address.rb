@@ -12,7 +12,7 @@ class Address < ApplicationRecord
   validates :city,                        presence: true
   validates :building_name,               presence: true
   validates :house_number,                presence: true
-
+  validates :user_id,                     presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture

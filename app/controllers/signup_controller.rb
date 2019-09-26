@@ -1,5 +1,4 @@
 class SignupController < ApplicationController
-  # before_action :authenticate_user!
 
 def step1
     @user = User.new
@@ -7,13 +6,6 @@ end
 
 def step2
     @user = User.new(user_params)
-    # binding.pry
-    
-  # if @user.save!
-  #     # render 'index'
-  # else
-  #     # render 'new'
-  # end
     session[:username] = user_params[:username]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -47,17 +39,10 @@ def create
     )
   if  @user.save!
       session[:user_id] = @user.id
-      # sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path
   else
       render '/signup/step1'
   end
-  # if @user.save
-  #     session[:id] = @user.id
-  #     redirect_to done_signup_index_path
-  # else
-  #     render '/signup/registration'
-  # end
 end
 
 

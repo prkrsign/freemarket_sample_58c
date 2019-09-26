@@ -1,18 +1,16 @@
 class CardsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_current_user
   def new
-    @card = Card.new
   end
+  
   def create
-    @card = card.new
-    if @card.save
-      redirect_to step5_cards_path
-    else
-      render 'new'
-    end
   end
 
   def step5
-    
+  end
+
+  private
+  def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
   end
 end
