@@ -2,8 +2,14 @@ class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
     # @image = Image.includes(:good).order("created_at DESC").limit(10)
-    @goods = Good.includes(:images).order("created_at DESC").limit(10)
-    # binding.pry
+    @goods_new_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at DESC").limit(10)
+    @goods_new_men = Good.includes(:images).where(category_id:[1..146]).order("created_at DESC").limit(10)
+    @goods_old_ladies = Good.includes(:images).where(category_id:[147..263]).order("created_at ASC").limit(10)
+    @goods_old_men = Good.includes(:images).where(category_id:[1..146]).order("created_at ASC").limit(10)
+    @goods_new_adidas = Good.includes(:images).where(brand_id:[5]).order("created_at DESC").limit(10)
+    @goods_new_nike = Good.includes(:images).where(brand_id:[2]).order("created_at DESC").limit(10)
+    @goods_new_ysl = Good.includes(:images).where(brand_id:[6]).order("created_at DESC").limit(10)
+    @goods_new_lv = Good.includes(:images).where(brand_id:[3]).order("created_at DESC").limit(10)
   end
   
   def new
