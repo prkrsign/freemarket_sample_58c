@@ -1,4 +1,5 @@
 class GoodsController < ApplicationController
+
   # トップページの商品一覧表示
   def index
     @goods_new_ladies = Good.recent.mujer.active
@@ -96,6 +97,10 @@ class GoodsController < ApplicationController
       :price,
       {images_attributes: [:goods_picture]}
     ).merge(user_id: 1)
+  end
+
+  def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
   end
 
 end
