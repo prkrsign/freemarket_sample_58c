@@ -22,12 +22,17 @@ class GoodsController < ApplicationController
   
   def new
     @good = Good.new
-    @good.images.build
+    @image = @good.images.build
     #セレクトボックスの初期設定
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみを抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
+    end
+
+    @delivery_parent_array = ["---"]
+    Delivery.where(ancestry: nil).each do |parent|
+      @delivery_parent_array << parent.delivery_method
     end
   end
 
@@ -57,21 +62,27 @@ class GoodsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  #配送方法
+  def get_delivery_children
+    @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+
   def create
     @good = Good.new(good_params)
     @good.save
-    redirect_to root_path
 
- 
 
-    #if @good.save
-      #image_params[:images].each do |image|
-      # @good.images.create(goods_picture: image)
-      #end
-      #redirect_to root_path
-    #else
-      #render :new
-    #end
+    if @good.save
+      #binding.pry
+      params[:images]['goods_picture'].each do |i|
+       @image = @good.images.create!(goods_picture: i)
+      end
+      redirect_to root_path
+    else
+      render :new
+    end
+    
   end
 
 
@@ -92,11 +103,15 @@ class GoodsController < ApplicationController
     params.require(:good).permit(
       :goods_name,
       :goods_description,
-      :price,
       :category_id,
+      :size,
       :brand_id,
+      :condition_id,
+      :delivery_id,
       :prefecture_id,
-      images_attributes: [:goods_picture]
+      :shipment_id,
+      :price,
+      {images_attributes: [:goods_picture]}
     ).merge(user_id: 1)
   end
 

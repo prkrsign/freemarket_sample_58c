@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_061250) do
+ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
@@ -20,23 +20,35 @@ ActiveRecord::Schema.define(version: 2019_09_22_061250) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "delivery_method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_deliveries_on_ancestry"
+  end
+
   create_table "goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_name", null: false
     t.text "goods_description", null: false
     t.integer "price", null: false
-    t.bigint "user_id", null: false
-    t.bigint "brand_id"
-    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "prefecture_id", null: false
+    t.bigint "condition_id"
+    t.bigint "brand_id", null: false
+    t.bigint "shipment_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "delivery_id", null: false
+    t.string "size"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_picture", null: false
-    t.bigint "good_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "good_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,9 +60,9 @@ ActiveRecord::Schema.define(version: 2019_09_22_061250) do
   end
 
   create_table "test_goods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "goods_name", null: false
-    t.text "goods_description", null: false
-    t.integer "price", null: false
+    t.string "goods_name"
+    t.text "goods_description"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
