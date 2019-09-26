@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'goods/new'
   get 'goods/search'
+
   resources :tests
 
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     end
   end
   
+
 
   resources :purchase do  # 商品購入確認ページにて使用YS
 
