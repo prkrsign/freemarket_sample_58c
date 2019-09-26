@@ -21,6 +21,7 @@
       = f.label '都道府県'
       %span.contents__form__require 必須 
       = f.text_field :city, class: 'contents__form__input'
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name
       
     .contents__form__title
       = f.label '市町村'
