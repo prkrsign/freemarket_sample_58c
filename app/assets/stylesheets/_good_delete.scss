@@ -1,4 +1,4 @@
-.good_delete-wrapper{
+.good_delete-wrapper {
   margin-bottom: 40px;
   .container {
     position: relative;
@@ -53,8 +53,7 @@
               font-size: 0;
               display: inline-block;
             }
-          }
-        
+          }     
         }
         .item-detail {
           float: right;
@@ -119,31 +118,6 @@
       &__inner {
         white-space: pre-wrap;
         
-      }
-    }
-    .good_option_box {
-      width: 700px;
-      height: 262px;
-      background: white;
-      &__edit {
-        width: 668px;
-        height: 50px;
-        background: red;
-        color: white;
-      }
-      &__or {
-        width: 262px;
-        height: 16px;
-      }
-      &__pause {
-        width: 668px;
-        height: 50px;
-        background: #eee;
-      }
-      &__delete{
-        width: 668px;
-        height: 50px;
-        background: #eee;
       }
     }
   }
