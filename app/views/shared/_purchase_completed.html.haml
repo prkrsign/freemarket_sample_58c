@@ -34,11 +34,11 @@
       .purchase-completed-wrapper__main-container__address__title
         配送先
       .purchase-completed-wrapper__main-container__address__post-code
-        〒373-0000仮置き
+        = "〒#{@good.user.address.postalcode}"
       .purchase-completed-wrapper__main-container__address__city
-        仮置き町
+        = @good.user.address.city
       .purchase-completed-wrapper__main-container__address__name
-        田中太郎
+        = "#{@good.user.address.family_name + @good.user.address.first_name}"
 
 %footer.purchase-confirmation-footer
   %ul.confirmation-footer-container
