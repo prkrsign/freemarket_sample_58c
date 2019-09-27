@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
     t.string "house_number", null: false
     t.string "building_name", null: false
     t.bigint "user_id", null: false
+    t.bigint "prefecture_id", null: false
+    t.string "block", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
