@@ -59,7 +59,8 @@ class GoodsController < ApplicationController
   end
 
   #商品削除のプップアップページ
-  def show_delete_popup
+  def good_delete_popup
+  
   end
 
   #商品削除

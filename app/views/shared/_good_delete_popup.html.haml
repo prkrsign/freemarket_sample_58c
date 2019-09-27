@@ -1,10 +1,15 @@
-.goods_delete_popup_box
-  .goods_delete_popup_box__head
-  　　本当に削除しますか？
-  %ul.goods_delete_popup_box__option
-    %li.goods_delete_popup_box__option__cancel
-      キャンセル
-    %li.goods_delete_popup_box__option__delete
-      削除
-
-
+.goods_delete_popup__wrapper
+  =image_tag '/mercari-logo.png', class: "goods_delete_popup_wrapper__background_image"
+  .goods_delete_popup__wrapper__alert_box
+    .goods_delete_popup__wrapper__alert_box__head
+      [確認] 
+      %br 本当に削除しますか？
+      .goods_delete_popup__wrapper__alert_box__head__caution-box
+        一度削除された商品は二度と出品することができません。
+    .goods_delete_popup__wrapper__alert_box__option
+      %li.goods_delete_popup__wrapper__alert_box__option__cancel
+        =link_to good_path, class: "cancel-text" do
+          キャンセル 
+      %li.goods_delete_popup__wrapper__alert_box__option__delete
+        =link_to good_path , method: :DELETE, class: "delete-text" do
+          削除  

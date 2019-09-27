@@ -1,0 +1,52 @@
+.goods_delete_popup__wrapper {
+  background: #eee;
+  width: 700px;
+  position: relative;
+  margin: 0 auto;
+  &__alert_box {
+    // position: absolute;
+    // top: 30px;
+    // left: 400px;
+    width: 700px;
+    height: 400px;
+    background: white;
+    position: relative;
+    padding: 10px;
+    &__head {
+      width: 700px;
+      height: 100px;
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      &__caution-box {
+        width: 700px;
+        height: 80px;
+        font-size: 15px;
+        font-weight: normal;
+        margin: 30px;
+      }
+    }
+    &__option {
+      width: 700px;
+      height: 300px;
+      &__cancel {
+        width: 349px;
+        height: 100px;
+        display: inline-block;
+        font-size: 50px;
+        &__cancel-text {
+        text-decoration: none;
+        }
+      }
+      &__delete {
+        width: 349px;
+        height: 100px;
+        background: red;
+        color: white;
+        display: inline-block;
+        font-size: 50px;
+      }
+    }
+  }
+}
+
