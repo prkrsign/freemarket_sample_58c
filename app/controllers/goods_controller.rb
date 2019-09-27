@@ -52,6 +52,13 @@ class GoodsController < ApplicationController
     @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #商品削除
+  def destroy
+    good = Good.find(params[:id])
+      if good.user_id == current_user.id
+        good.destroy
+  end
+
 
   def create
     @good = Good.new(good_params)
