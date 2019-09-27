@@ -1,0 +1,107 @@
+= render 'shared/main_page_header'
+
+-# 商品詳細ページ機能 （残り+ユーザー情報出品者の名前）9/26
+
+.product-details-wrapper
+  .container
+    = form_with url: "#", method: :post , class: 'item-box' do
+      %h1.item-box__name
+        -# = @good.goods_name 
+      %p.item-box__detail 
+      .item-main
+        .item-photo
+          -# - 以下翻訳：イメージテーブルにあるグッズidの一番最初(first)の画像(goods_picture)を呼び出す記述,クラスはその画像に対して大きさや修飾するため？に必要 9/23 YS
+          -# = image_tag @good.images.first.goods_picture.url, class: "photo-big"
+          .photo-smallbox
+            -# 以下翻訳：イメージテーブルにあるグッズidに関わる画像(goods_picture)を何度も(each)呼び出してきている 9/23 YS
+            -# - @good.images.each do |image|
+              = image_tag image.goods_picture.url, class: "photo-small-item"
+        %table.item-detail
+          %tr
+            %th.category 出品者
+            %td
+              = link_to "#",  class:"name" do
+                -# = @user.username 
+                -# 名前userDB待ち（仮）
+              
+              -# 以下翻訳：超テクニック！！40行目にある.parentを入れるだけでアンせストリーで作った上のカテゴリーを引っ張ってこれる！！9/25YS
+            %tr
+              %th.category カテゴリー
+              %td
+                .item-detail-table-sub-category
+                  = link_to "#",  class:"name" do
+                    -# = @good.category.parent.parent.category_name
+                %i.fa.fa-chevron-right.items-link_to
+                  = link_to "#",  class:"name" do
+                    -# = @good.category.parent.category_name
+                .item-detail-table-sub-sub-category
+                %i.fa.fa-chevron-right.items-link_to
+                  = link_to "#",  class:"name" do
+                    -# = @good.category.category_name
+            %tr
+              %th.category ブランド
+              %td
+                = link_to "#",  class:"name" do
+                  -# = @good.brand.name
+
+            %tr
+              %th.category 商品のサイズ
+              %td 
+                -# = @good.size
+              
+            %tr
+              %th.category 商品の状態
+              %td 
+                -# = @good.condition.name
+              
+            %tr
+              %th.category 配送料の負担
+              %td 
+                -# = @good.delivery.parent.delivery_method
+            %tr
+              %th.category 配送の方法
+              %td 
+                -# = @good.delivery.delivery_method
+              
+            %tr
+              %th.category 発送元地域
+              %td
+                -# = link_to @good.prefecture.name
+              
+            %tr
+              %th.category 発送日の目安
+
+
+              %td 
+                -# = @good.shipment.name
+
+
+
+      .price-box
+        %span.price-box__price
+          -# = number_to_currency(@good.price, unit: "￥", precision: 0)
+        %span.price-box__tax
+          (税込)
+        %span.price-box__fee
+          送料込み
+        -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
+
+      -# = link_to purchase_path(@good) , class: "item-buy-btn" do
+        購入画面に進む
+      .item-description
+        %p.item-description__inner
+          -# = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+
+
+
+    .detail
+    %ul.nav-link
+    .social-box
+    .user-box
+    .nav-bread
+    .app-banner
+      
+    .footer
+
+= render 'shared/aside'
+= render 'shared/footer'
