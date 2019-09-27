@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'goods/new'
   get 'goods/search'
+  get 'tests/mypage', to: 'tests#mypage'  #レビュー用だよ
 
   # resources :tests
 
@@ -43,6 +44,10 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations' ,
                  sessions: 'users/sessions'
                 }
+  devise_scope :user do
+    get "sign_in", :to => "users/sessions#new" 
+    get '/users/sign_out' => 'users/sessions#destroy'
+  end
 
 
   root to: 'goods#index'
@@ -62,8 +67,8 @@ Rails.application.routes.draw do
   # get 'purchase/show', to: 'purchase#show'
 
   # スプリントレビュー用
-  # root to: 'tests#index'
-  # get '/show', to: 'tests#show'
+  root to: 'tests#index'
+  get '/show', to: 'tests#show'
   get 'tests/signup', to: 'tests#signup'
   get 'tests/signup1', to: 'tests#signup1'
   get 'tests/signup2', to: 'tests#signup2'
@@ -83,15 +88,5 @@ Rails.application.routes.draw do
   get 'tests/purchased_on_deal', to: 'tests#purchased_on_deal'
   get 'tests/mypage', to: 'tests#mypage'
 
-
-  # devise_for :users, :controllers => {
-  #   :registrations => 'users/registrations',
-  #   :sessions => 'users/sessions',
-  # } 
-
-  devise_scope :user do
-    get "sign_in", :to => "users/sessions#new" 
-    # get '/users/sign_out' => 'devise/sessions#destroy'
-  end
   
 end

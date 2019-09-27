@@ -60,7 +60,7 @@ class TestsController < ApplicationController
     end
 
     def mypage
-        
+
     end
     
 end
