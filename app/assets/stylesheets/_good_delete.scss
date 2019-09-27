@@ -1,4 +1,4 @@
-.product-details-wrapper{
+.good_delete-wrapper{
   margin-bottom: 40px;
   .container {
     position: relative;
@@ -54,7 +54,7 @@
               display: inline-block;
             }
           }
-         
+        
         }
         .item-detail {
           float: right;
@@ -121,44 +121,18 @@
         
       }
     }
-    .button-content {
-      margin: 16px 0 0px;
-      font-weight: 400;
-      &__left {
-        float: left;
-        display: flex;
+    .good_option_box {
+      &__edit {
+
       }
-      .button-like {
-        border-radius: 40px;
-        background: rgb(233, 229, 229); 
-        padding: 8px 16px;
-        &__text{
-          color: #333;
-          background: #e9e5e5;
-          padding: 8px 4px;
-          border-radius: 40px;
-          text-decoration: none;
-        }
+      &__or {
+
       }
-      .button-report {
-        margin: 0 0 0 16px;
-        color: #333;
-        background: rgb(233, 229, 229);
-        padding: 8px 16px;
-        border-radius: 40px;
-        &__text{
-          color: #333;
-          background: #e9e5e5;
-          padding: 8px 4px;
-          border-radius: 40px;
-          text-decoration: none;
-        }
+      &__pause {
+
       }
-      &__right {
-        float: right;
-        color: #0099e8;
-        background: #f5f5f5;
-        padding: 8px 16px;
+      &__delete{
+        
       }
     }
   }

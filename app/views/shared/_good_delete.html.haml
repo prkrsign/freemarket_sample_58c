@@ -2,7 +2,7 @@
 
 -# 商品詳細ページ機能追加中 YS（残り+@分ブランド、サイズ？、商品、状態、負担、方法、地域ユーザー情報、出品者の名前、）9/23
 
-.product-details-wrapper
+.good_delete-wrapper
   .container
     = form_with url: "#", method: :post , class: 'item-box' do
       %h1.item-box__name
@@ -96,26 +96,22 @@
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
 
-      = link_to purchase_path(@good) , class: "item-buy-btn" do
-        購入画面に進む
       .item-description
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
-          
-      .button-content
-        .button-content__left
-          .button-like
-            %i.far.fa-heart
-            = link_to "#", class: "button-like__text" do
-              いいね！ 0
-          .button-report
-            %i.far.fa-flag
-            = link_to "#", class: "button-report__text" do
-              不適切な商品の報告
         
-        = link_to "#", class: "button-content__right" do
-          %i.fas.fa-lock
-            あんしんあんぜんへの取り組み
+      .good_option_box
+        .good_option_box__edit
+          商品の編集
+        .good_option_box__or
+          or
+        .good_option_box__pause
+          出品を一旦停止する
+        .good_option_box__delete
+        -# jsで取得しアラートを上部に表示させる
+          この商品を削除する
+
+          
 
 
 
