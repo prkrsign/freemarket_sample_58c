@@ -98,7 +98,7 @@ class GoodsController < ApplicationController
       :shipment_id,
       :price,
       {images_attributes: [:goods_picture]}
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   def set_current_user
