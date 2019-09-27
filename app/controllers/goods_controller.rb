@@ -53,6 +53,8 @@ class GoodsController < ApplicationController
   end
 
   def show_delete
+    @good = Good.find(params[:id])
+    
 
   end
 

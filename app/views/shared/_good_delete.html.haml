@@ -6,22 +6,22 @@
   .container
     = form_with url: "#", method: :post , class: 'item-box' do
       %h1.item-box__name
-        -# = @good.goods_name 
+        = @good.goods_name 
       %p.item-box__detail 
       .item-main
         .item-photo
           -# - 以下翻訳：イメージテーブルにあるグッズidの一番最初(first)の画像(goods_picture)を呼び出す記述,クラスはその画像に対して大きさや修飾するため？に必要 9/23 YS
-          -# = image_tag @good.images.first.goods_picture.url, class: "photo-big"
+          = image_tag @good.images.first.goods_picture.url, class: "photo-big"
           .photo-smallbox
             -# 以下翻訳：イメージテーブルにあるグッズidに関わる画像(goods_picture)を何度も(each)呼び出してきている 9/23 YS
-            -# - @good.images.each do |image|
+            - @good.images.each do |image|
               = image_tag image.goods_picture.url, class: "photo-small-item"
         %table.item-detail
           %tr
             %th.category 出品者
             %td
               = link_to "#",  class:"name" do
-                -# = @user.username 
+                = @good.user.username
                 -# 名前userDB待ち（仮）
               
               -# 以下翻訳：超テクニック！！40行目にある.parentを入れるだけでアンせストリーで作った上のカテゴリーを引っ張ってこれる！！9/25YS
@@ -30,29 +30,29 @@
               %td
                 .item-detail-table-sub-category
                   = link_to "#",  class:"name" do
-                    -# = @good.category.parent.parent.category_name
+                    = @good.category.parent.parent.category_name
                 %i.fa.fa-chevron-right.items-link_to
                   = link_to "#",  class:"name" do
-                    -# = @good.category.parent.category_name
+                    = @good.category.parent.category_name
                 .item-detail-table-sub-sub-category
                 %i.fa.fa-chevron-right.items-link_to
                   = link_to "#",  class:"name" do
-                    -# = @good.category.category_name
+                    = @good.category.category_name
             %tr
               %th.category ブランド
               %td
                 = link_to "#",  class:"name" do
-                  -# = @good.brand.name
+                  = @good.brand.name
 
             %tr
               %th.category 商品のサイズ
               %td 
-                -# = @good.size
+                = @good.size
               
             %tr
               %th.category 商品の状態
               %td 
-                -# = @good.condition.name
+                = @good.condition.name
               
             %tr
               %th.category 配送料の負担
@@ -66,20 +66,18 @@
             %tr
               %th.category 発送元地域
               %td
-                -# = link_to @good.prefecture.name
+                = link_to @good.prefecture.name
               
             %tr
               %th.category 発送日の目安
 
 
               %td 
-                -# = @good.shipment.name
-
-
+                = @good.shipment.name
 
       .price-box
         %span.price-box__price
-          -# = number_to_currency(@good.price, unit: "￥", precision: 0)
+          = number_to_currency(@good.price, unit: "￥", precision: 0)
         %span.price-box__tax
           (税込)
         %span.price-box__fee
@@ -90,8 +88,17 @@
         購入画面に進む
       .item-description
         %p.item-description__inner
-          -# = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
-
+          = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+      .good_option_box
+        .good_option_box__edit
+          商品を編集する
+        .good_option_box__or
+          or
+        .good_option_box__pause
+          出品を一旦停止する
+        .good_option_box__delete
+          = link_to "", class: "" do 
+            この商品を削除する
 
 
     .detail

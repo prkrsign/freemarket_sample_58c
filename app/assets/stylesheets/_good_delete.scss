@@ -121,5 +121,31 @@
         
       }
     }
+    .good_option_box {
+      width: 700px;
+      height: 262px;
+      &__edit {
+        width: 668px;
+        height: 50px;
+        background: red;
+        color: white;
+      
+      }
+      &__or {
+        width: 262px;
+        height: 16px;
+      }
+      &__pause {
+        width: 668px;
+        height: 50px;
+        background: #eee;
+      }
+      &__delete {
+        width: 668px;
+        height: 50px;
+        background: #eee;
+      }
+    }
   }
 }
+
