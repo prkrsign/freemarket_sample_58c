@@ -29,28 +29,16 @@
 
         -# 新規登録、ログイン部分。ユーザーログイン時のビューは未実装(神山)
         .header__under__right
-
-         
-        .header__under__right__register-button
-          - if user_signed_in?
-            =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__2__2' do
+          .header__under__right__register-button
+          - if user_signed_in? # このリンク仮置きだよ?
+            =link_to  mypage_path, class: 'header__under__right__register-button__mypage' do
               マイページ
+            -# =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__register-button__mypage' do
+            -#   マイページ
           - else
             =link_to new_user_registration_path, class:"header__under__right__register-button__text" do
               新規会員登録
             =link_to user_session_path,  class:"header__under__right__login-button__text" do
               ログイン
-          = current_user.username if user_signed_in?
-
-
-          -# .header__under__right__register-button
-          -#   =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
-          -#     新規会員登録
-          -# .header__under__right__login-button
-          -#   =link_to tests_signup_path, class: 'header__under__right__login-button__text' do
-          -#     ログイン
-
-          -# -# 仮置きのマイページ遷移テキスト。ユーザーログイン時に表示(神山)
-          -# =link_to tests_logout_path, class: "header__under__right__sprint-review" do
-          -#   = current_user.username if user_signed_in?
+          
 

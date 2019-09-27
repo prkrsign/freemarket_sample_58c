@@ -22,7 +22,7 @@
 
       .put_up_goods-lists
         - (1..10).each do |i|
-          .put_up_goods-lists__list
+          =link_to '#', class: 'put_up_goods-lists__list' do
             = image_tag '/goods_sample_1.jpg', size: "", alt: "buy-item-image" , class: 'put_up_goods-lists__list__image'
             .put_up_goods-lists__list__text
               新品中禅寺湖
