@@ -58,6 +58,10 @@ class GoodsController < ApplicationController
 
   end
 
+  #商品削除のプップアップページ
+  def show_delete_popup
+  end
+
   #商品削除
   def destroy
     good = Good.find(params[:id])

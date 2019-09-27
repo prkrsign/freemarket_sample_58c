@@ -97,10 +97,8 @@
         .good_option_box__pause
           出品を一旦停止する
         .good_option_box__delete
-          %h3.good_option_box__delete, onclick: "MoveCheck();"
-            この商品を削除する
-
-
+            =link_to "#", do
+              本当に削除しますか？
     .detail
     %ul.nav-link
     .social-box

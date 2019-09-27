@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   end
 
   get 'goods/:id/show_delete', to: 'goods#show_delete'
+  get 'goods/:id/show_delete/popup', to: 'goods#show_delete_popup'
 
   # get 'goods/:id/delete', to: 'goods/#delete'
 
