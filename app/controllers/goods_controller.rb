@@ -52,11 +52,18 @@ class GoodsController < ApplicationController
     @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  def show_delete
+
+  end
+
   #商品削除
   def destroy
     good = Good.find(params[:id])
       if good.user_id == current_user.id
         good.destroy
+      else 
+        redirect_to root_path
+      end
   end
 
 
@@ -106,8 +113,7 @@ class GoodsController < ApplicationController
     ).merge(user_id: 1)
   end
 
-  def set_current_user
-    @current_user = User.find_by(id: session[:user_id])
-  end
-
+  # def set_current_user
+  #   @current_user = User.find_by(id: session[:user_id])
+  # end
 end
