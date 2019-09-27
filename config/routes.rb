@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'goods/new'
   get 'goods/search'
 
-  resources :tests
+  # resources :tests
 
 
   
@@ -81,6 +81,7 @@ Rails.application.routes.draw do
   get 'tests/purchase_confirmation', to: 'tests#purchase_confirmation'
   get 'tests/put_up_goods_on_sale', to: 'tests#put_up_goods_on_sale'
   get 'tests/purchased_on_deal', to: 'tests#purchased_on_deal'
+  get 'tests/mypage', to: 'tests#mypage'
 
 
   # devise_for :users, :controllers => {
