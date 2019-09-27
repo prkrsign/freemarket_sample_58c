@@ -21,8 +21,6 @@ Rails.application.routes.draw do
     end
   end
   
-
-
   resources :purchase do  # 商品購入確認ページにて使用YS
 
     collection do
