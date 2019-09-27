@@ -16,7 +16,7 @@
             = f.text_field :phone_number, class: "phone-number" , placeholder: '携帯電話の番号を入力'
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           -# %button SMSを送信する
-          = f.submit 'sms'
+          = f.submit 'SMSを送信する', class: 'step2-submit-red-btn'
           %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .form-text
             %a 電話番号の確認が必要な理由
