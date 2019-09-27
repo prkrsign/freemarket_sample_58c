@@ -65,13 +65,17 @@
       }
     }
     &__select {
+        text-align: center;
         border-radius: 5px;
         height: 40px;
-        width: 88px;
+        width: 70px;
         padding: 10px 16px 8px;
         border: 1px solid #ccc;
         background: #fff;
         font-size: 14px;
+    }
+    &__fullname {
+      display: flex;
     }
   }
   &__btn {
