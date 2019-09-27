@@ -32,7 +32,8 @@
           .header__under__right__register-button
           - if user_signed_in? # このリンク仮置きだよ?
             =link_to  '/tests/mypage', class: 'header__under__right__register-button__mypage' do
-              マイページ
+              - current_user.username
+
             -# =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__register-button__mypage' do
             -#   マイページ
           - else

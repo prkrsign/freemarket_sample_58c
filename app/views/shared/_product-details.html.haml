@@ -95,11 +95,18 @@
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
 
-      = link_to purchase_path(@good) , class: "item-buy-btn" do
-        購入画面に進む
+      -# 今のユーザーIDと
+      - if current_user.id == @good.user.id 
+        = link_to '#' , class: "item-buy-btn" do
+          商品の編集
+      - else  
+        = link_to purchase_path(@good) , class: "item-buy-btn" do
+          購入画面に進む
+
       .item-description
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+
           
       .button-content
         .button-content__left
