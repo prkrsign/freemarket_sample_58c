@@ -65,5 +65,7 @@ Rails.application.routes.draw do
   get 'mypage/edit_profile', to: 'mypage#edit_profile'
   get 'mypage/credit_enter', to: 'mypage#credit_enter'
   get 'mypage/make_sure_user_info', to: 'mypage#make_sure_user_info'
+  get 'mypage/credit_register', to: 'mypage#credit_register'
+  get 'mypage/logout', to: 'mypage#logout'
   
 end

@@ -20,6 +20,15 @@ class MypageController < ApplicationController
     end
 
     def make_sure_user_info
-        
+
     end
+
+    def credit_register
+
+    end
+    
+    def logout
+
+    end
+
 end

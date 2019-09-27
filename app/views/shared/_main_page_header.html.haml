@@ -31,7 +31,7 @@
         .header__under__right
           .header__under__right__register-button
           - if user_signed_in? # このリンク仮置きだよ?
-            =link_to  '/tests/mypage', class: 'header__under__right__register-button__mypage' do
+            =link_to  mypage_path, class: 'header__under__right__register-button__mypage' do
               マイページ
             -# =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__register-button__mypage' do
             -#   マイページ
