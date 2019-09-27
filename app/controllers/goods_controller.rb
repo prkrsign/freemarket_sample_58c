@@ -58,9 +58,9 @@ class GoodsController < ApplicationController
 
   end
 
-  #商品削除のプップアップページ
+  #商品削除のポップアップページ
   def good_delete_popup
-  
+    @good = Good.find(params[:id])
   end
 
   #商品削除
