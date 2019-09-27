@@ -1,7 +1,28 @@
 Rails.application.routes.draw do
+  
   get 'goods/new'
   get 'goods/search'
-  # resources :tests
+
+  resources :tests
+
+
+  
+  resources :cards do
+    collection do
+      get 'complete' => 'cards#complete'
+    end
+  end
+  resources :addresses 
+  
+  resources :signup do
+    collection do
+      get 'step1' => 'signup#step1'
+      get 'step2' => 'signup#step2'
+    end
+  end
+  
+
+
   resources :purchase do  # 商品購入確認ページにて使用YS
 
     collection do
@@ -19,7 +40,10 @@ Rails.application.routes.draw do
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                 registrations: 'users/registrations' }
+                 registrations: 'users/registrations' ,
+                 sessions: 'users/sessions'
+                }
+
 
   root to: 'goods#index'
   
@@ -30,6 +54,7 @@ Rails.application.routes.draw do
   post 'products',      to: 'products#create' #商品登録機能（テスト）
   get  'products/show', to: 'products#show'   #商品詳細ページ
   post 'products/index', to: 'products#index'
+
   get 'products/show', to: 'products#show'
 
 
@@ -58,8 +83,14 @@ Rails.application.routes.draw do
   get 'tests/purchased_on_deal', to: 'tests#purchased_on_deal'
 
 
+  # devise_for :users, :controllers => {
+  #   :registrations => 'users/registrations',
+  #   :sessions => 'users/sessions',
+  # } 
+
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get "sign_in", :to => "users/sessions#new" 
+    # get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
 end

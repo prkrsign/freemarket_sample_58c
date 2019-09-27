@@ -1,0 +1,43 @@
+.login-header-wrapper
+  = render 'shared/login-header5'
+
+.signup4-wrapper
+  .contents
+    .contents__head
+      会員登録完了
+    .contents__form
+      .contents__form__title1
+        %p 
+        ありがとうございます。
+        %br
+        会員登録が完了しました。
+      =link_to "/", class:"contents__btn" do
+        メルカリをはじめる
+
+
+      .contents__form__signup4-title
+        %label セキュリティコード
+        %span.contents__form__require 必須
+        %input{ class:"contents__form__input", maxlength:"10", name:"card-name", placeholder:"カード背面4桁もしくは3桁の番号", type:"text", value:""}
+      .contents__info
+        %span.contents__info__question ？
+        %span カード裏面の番号とは？
+      
+      -# = f.button '次に進む', class:"contents__btn" 
+      -# ページのフッター部分
+  %footer.confirmation-footer
+    %ul.confirmation-footer-container
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          プライバシーポリシー
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          メルカリ利用規約
+      %li.confirmation-footer-container__list
+        =link_to '#', class: 'confirmation-footer-container__list__info' do
+          特定商取引に関する表記
+
+      = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+    .confirmation-footer-container__footer-text
+      ©︎2019 Mercari

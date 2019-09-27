@@ -12,6 +12,24 @@
 
 ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "family_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "family_name_kana", null: false
+    t.string "postalcode", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name", null: false
+    t.bigint "user_id", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user", null: false
+    t.bigint "card", null: false
+    t.bigint "customer", null: false
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.datetime "created_at", null: false
@@ -46,9 +64,9 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "goods_picture", null: false
+    t.bigint "good_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "good_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +87,9 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture", default: 0, null: false
+    t.string "goods_name", null: false
+    t.text "goods_description", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,6 +103,16 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username", null: false
+    t.text "user_description"
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_in_katakana", null: false
+    t.string "first_name_in_katakana", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.string "phone_number", null: false
+    t.bigint "address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
