@@ -1,5 +1,6 @@
 =render 'shared/main_page_header'
 
+-# - binding.pry
 -# メインページ
 %main.mypage_mypage.clearfix
   =render 'shared/profile-sidebar'
@@ -12,7 +13,7 @@
           .mypage_mypage__content__container__user-head__box__image
             = image_tag '/radies_sample1.jpg', width: "60", height: "60", alt: "", class: "mypage_mypage__content__container__user-head__box__image__icon"
           .mypage_mypage__content__container__user-head__box__nickname
-            AYA
+            = @user.username
           
           -# 評価と出品数
           %ul.mypage_mypage__content__container__user-head__box__numbers

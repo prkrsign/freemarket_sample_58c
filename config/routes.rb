@@ -59,7 +59,7 @@ Rails.application.routes.draw do
 
 
   # マイページ用ルーティング
-  get 'mypage', to: 'mypage#mypage'
+  get 'mypage', to: 'mypage#mypage', as: 'mypage'
   get 'mypage/put_up_goods_on_sale', to: 'mypage#put_up_goods_on_sale'
   get 'mypage/purchased_on_deal', to: 'mypage#purchased_on_deal'
   get 'mypage/edit_profile', to: 'mypage#edit_profile'
