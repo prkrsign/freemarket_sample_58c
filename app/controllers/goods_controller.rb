@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-
+  before_action :set_current_user
   # トップページの商品一覧表示
   def index
 
