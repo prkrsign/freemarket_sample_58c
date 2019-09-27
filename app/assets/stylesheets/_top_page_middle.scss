@@ -149,7 +149,7 @@
     }
   }
 
-  .block__area {
+  .block_area {
     margin: 0 auto;
     box-sizing: border-box;
     cursor: pointer;
@@ -160,7 +160,7 @@
     }
   }
 
-  .block__area__product {
+  .block_area_product {
     height: 252px;
     width: 188px;
     margin: 0 0 20px 10px;
@@ -190,6 +190,7 @@
     &__title {
       width: 188px;
       height: 64px;
+      color: black;
       background: white;
       padding: 12px 12px;
       box-sizing: border-box;

@@ -18,20 +18,14 @@
           必須
         .capture 
           最大10枚までアップロードできます
-        = f.fields_for :images, @images do |i|#:goods_picture, class:'contents-box__form-list__drop-box__item__upload-file' do |i|
+        = f.fields_for :images, @images do |i|
           .dropzone-container.clearfix
             .sell-uploads-drop
               #exhibit-images-preview
-              .dropzone-area
+            .dropzone-area
               = i.label :image, for: 'upload-image' do
                 .sell_upload__area
                   = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
-                %p ここをクリックしてください
-              #exhibit-images-preview2
-              .dropzone-area2
-                = i.label :image, for: 'upload-image' do
-                  %p
-      .contents-box__form-list__space
 
       -# 商品名、商品説明入力部分
       %section.contents-box__descript-section
@@ -48,7 +42,6 @@
           .form-require
             必須
         = f.text_area :goods_description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
-      -# .contents-box__descript-section__space
 
       -# 商品の詳細、カテゴリ選択部分
       %section.contents-box__category-section
@@ -127,10 +120,11 @@
             .contents-box__price-section__fee-right.sales-commission -
           .contents-box__price-section__border
 
-          .contents-box__price-section__result-left
-            販売利益
-          .contents-box__price-section__result-right
-            .contents-box__price-section__result-right.sales-profit -
+          .contents-box__price-section__result
+            .contents-box__price-section__result-left
+              販売利益
+            .contents-box__price-section__result-right
+              .contents-box__price-section__result-right.sales-profit -
         
       %section.contents-box__sell-decision-container
         %p.contents-box__sell-decision-container__note

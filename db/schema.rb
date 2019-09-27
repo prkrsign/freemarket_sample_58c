@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_105758) do
     t.string "goods_name", null: false
     t.text "goods_description", null: false
     t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "prefecture_id", null: false
     t.bigint "condition_id"
     t.bigint "brand_id", null: false
