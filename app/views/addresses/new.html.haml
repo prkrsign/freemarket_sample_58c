@@ -21,27 +21,27 @@
       .contents__form__title
         = f.label '郵便番号'
         %span.contents__form__require 必須
-        = f.text_field :postalcode, class: 'contents__form__input', placeholder: '例) 123-4567', maxlength:"7"
+        = f.text_field :postalcode, class: 'contents__form__input', placeholder: '例) 123-4567', maxlength:"8"
       .contents__form__title
         = f.label '都道府県'
         %span.contents__form__require 必須 
         -# = f.text_field :city, class: 'contents__form__input'
-        = f.collection_select :city, Prefecture.all, :id, :name, {prompt: '---'}, {class: 'contents__form__input'}
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: '---'}, {class: 'contents__form__input'}
         
       .contents__form__title
         = f.label '市町村'
         %span.contents__form__require 必須
-        = f.text_field :building_name, maxlength: '7', placeholder: '例）横浜市緑区', class: 'contents__form__input' 
+        = f.text_field :city, maxlength: '10', placeholder: '例）横浜市緑区', class: 'contents__form__input' 
 
       .contents__form__title
         = f.label '番地'
         %span.contents__form__require 必須
-        = f.text_field :building_name, maxlength: '7', placeholder: '例）青山1-1-1', class: 'contents__form__input'
+        = f.text_field :block, maxlength: '10', placeholder: '例）青山1-1-1', class: 'contents__form__input'
 
       .contents__form__title
         = f.label '建物'
         %span.contents__form__require__2 任意
-        = f.text_field :building_name, maxlength: '7', placeholder: '例）柳ビル103', class: 'contents__form__input'
+        = f.text_field :building_name, maxlength: '10', placeholder: '例）柳ビル103', class: 'contents__form__input'
 
       .contents__form__title
         = f.label '電話'
