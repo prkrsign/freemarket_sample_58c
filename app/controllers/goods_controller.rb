@@ -31,6 +31,38 @@ class GoodsController < ApplicationController
     end
   end
 
+  def edit
+    @good = Good.find(params[:id])
+    #@image = Image.find(params[:id])
+    @user = User.find(1)
+
+    @category_parent_array = ['---']
+    #データベースから、親カテゴリーのみを抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.category_name
+    end
+    
+    @category_child_array = @good.category.parent.parent.children
+    @category_grandchild_array = @good.category.parent.children
+
+    @delivery_parent_array = ['---']
+    Delivery.where(ancestry: nil).each do |parent|
+      @delivery_parent_array << parent.delivery_method
+    end
+    @delivery_child_array = @good.delivery.parent.children
+  end
+
+  def update
+    @good = Good.find(params[:id])
+    if @good.user_id == current_user.id
+      @good.update(good_params)
+      #params[:images]['goods_picture'].each do |i|
+        #@image = @good.images.create!(goods_picture: i)
+      #end
+    end
+    redirect_to root_path
+  end
+
   def show
     # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
     @good = Good.find(params[:id])
@@ -97,7 +129,7 @@ class GoodsController < ApplicationController
       :prefecture_id,
       :shipment_id,
       :price,
-      {images_attributes: [:goods_picture]}
+      {images_attributes: [:goods_picture, :_destroy, :id]}
     ).merge(user_id: 1)
   end
 

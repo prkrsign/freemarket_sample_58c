@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # resources :tests
 
-
+  get 'goods/:id/edit', to: 'goods#edit'
   
   resources :cards do
     collection do
