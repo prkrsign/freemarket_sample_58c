@@ -27,7 +27,12 @@ Rails.application.routes.draw do
 
 
 # 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
-  resources :goods do 
+  resources :goods do
+
+    member do 
+      get 'show_delete'
+      get 'good_delete_popup'
+    end
 
     collection do      
       get 'get_category_children', defaults: { format: 'json' }
@@ -36,8 +41,6 @@ Rails.application.routes.draw do
     end 
   end
 
-  get 'goods/:id/show_delete', to: 'goods#show_delete', as: 'delete_page'
-  get 'goods/:id/good_delete/popup', to: 'goods#good_delete_popup', as: 'popup'
   
 
   devise_for :users,
