@@ -7,57 +7,67 @@
     .contents__head
       会員情報入力
     .contents__form
-    = form_with model: @user, url: step2_signup_index_path, method: :get, local: true do |f|
-      .contents__form__title1
-        %label ニックネーム
-        %span.contents__form__require 必須
-        = f.text_field :username, autofocus: true, autocomplete: "username", placeholder:'例）メルカリ太郎', class: "contents__form__input", value: @user.username
-      .contents__form__title
-        %label メールアドレス
-        %span.contents__form__require 必須 
-        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:'PC・携帯どちらでも可', class: "contents__form__input", value: @user.email
-      .contents__form__title
-        %label パスワード
-        %span.contents__form__require 必須
-        = f.text_field :password, autofocus: true, autocomplete: "password", placeholder:'7文字以上', class: "contents__form__input"
-      .contents__form__title
-        %label パスワード (確認)
-        %span.contents__form__require 必須
-        = f.text_field :password, autofocus: true, autocomplete: "password_confirmation", placeholder:'7文字以上', class: "contents__form__input"
-      .contents__form__title
-        %h3.contents__message 本人確認
-        %p.contents__message__main 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-      .contents__form__title
-        %label お名前(全角)
-        %span.contents__form__require 必須
-        = f.text_field :family_name, class: "form-group__input", placeholder: "例) 山田", autofocus: "true"
-        = f.text_field :first_name, class: "form-group__input", placeholder: "例) 彩", autofocus: "true"
-      .contents__form__title
-        %label お名前カナ(全角)
-        %span.contents__form__require 必須
-        = f.text_field :family_name_in_katakana, class: "contents__form__input__2", placeholder: "例) ヤマダ", autofocus: "true"
-        = f.text_field :first_name_in_katakana, class: "contents__form__input__2", placeholder: "例) アヤ", autofocus: "true" 
-      .contents__form__title
-        %label 生年月日
-        %span.contents__form__require 必須
-        = f.text_field :birth_year, class: "contents__form__select", placeholder: "年", autofocus: "true"
-        = f.text_field :birth_month, class: "contents__form__select", placeholder: "月", autofocus: "true"
-        = f.text_field :birth_day, class: "contents__form__select", placeholder: "日", autofocus: "true"
-        %p.form__info__text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      = form_with model: @user, url: step2_signup_index_path, method: :get, local: true do |f|
+        .contents__form__title1
+          %label ニックネーム
+          %span.contents__form__require 必須
+          = f.text_field :username, autofocus: true, autocomplete: "username", placeholder:'例）メルカリ太郎', class: "contents__form__input", value: @user.username
+        .contents__form__title
+          %label メールアドレス
+          %span.contents__form__require 必須 
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:'PC・携帯どちらでも可', class: "contents__form__input", value: @user.email
+        .contents__form__title
+          %label パスワード
+          %span.contents__form__require 必須
+          = f.text_field :password, autofocus: true, autocomplete: "password", placeholder:'7文字以上', class: "contents__form__input"
+        .contents__form__title
+          %label パスワード (確認)
+          %span.contents__form__require 必須
+          = f.text_field :password, autofocus: true, autocomplete: "password_confirmation", placeholder:'7文字以上', class: "contents__form__input"
+        .contents__form__title
+          %h3.contents__message 本人確認
+          %p.contents__message__main 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .contents__form__title
+          %label お名前(全角)
+          %span.contents__form__require 必須
+          .contents__form__fullname
+            = f.text_field :family_name, class: "contents__form__input__2", placeholder: "例) 山田", autofocus: "true"
+            = f.text_field :first_name, class: "contents__form__input__2", placeholder: "例) 彩", autofocus: "true"
+        .contents__form__title
+          %label お名前カナ(全角)
+          %span.contents__form__require 必須
+          .contents__form__fullname
+            = f.text_field :family_name_in_katakana, class: "contents__form__input__2", placeholder: "例) ヤマダ", autofocus: "true"
+            = f.text_field :first_name_in_katakana, class: "contents__form__input__2", placeholder: "例) アヤ", autofocus: "true" 
+        .contents__form__title
+          %label 生年月日
+          %span.contents__form__require 必須
+          .contents__form__birthday
+            = f.collection_select :birth_year, BirthYear.all, :name, :name, {include_blank: '未選択'}, {class: 'contents__form__select'}
+            年
+            = f.collection_select :birth_month, BirthMonth.all, :name, :name, {include_blank: '未選択'}, {class: 'contents__form__select'}
+            月
+            = f.collection_select :birth_day, BirthDay.all, :name, :name, {include_blank: '未選択'}, {class: 'contents__form__select'}
+            日
+            //%p 年
+            //= f.text_field :birth_year, class: "contents__form__select", placeholder: "年", autofocus: "true"
+            //= f.text_field :birth_month, class: "contents__form__select", placeholder: "月", autofocus: "true"
+            //= f.text_field :birth_day, class: "contents__form__select", placeholder: "日", autofocus: "true"
+          %p.form__info__text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       
-      %div
-        %p.contents__message__main2
-          「次へ進む」のボタンを押すことにより、
-          =link_to "#", class:"contents__message__main2__link" do
-            利用規約
-          に同意したものとみなします
-      = f.submit "次へ進む", class: "contents__btn"
+        %div
+          %p.contents__message__main2
+            「次へ進む」のボタンを押すことにより、
+            =link_to "#", class:"contents__message__main2__link" do
+              利用規約
+            に同意したものとみなします
+        = f.submit "次へ進む", class: "contents__btn"
 
-      .contents__info
-        %p
-          =link_to "sss", class:"contents__info" do
-            本人情報の登録について
-            %i.fas.fa-chevron-right
+        .contents__info
+          %p
+            =link_to "sss", class:"contents__info" do
+              本人情報の登録について
+              %i.fas.fa-chevron-right
 
   %footer.confirmation-footer
     %ul.confirmation-footer-container
@@ -75,4 +85,3 @@
 
     .confirmation-footer-container__footer-text
       ©︎2019 Mercari
-

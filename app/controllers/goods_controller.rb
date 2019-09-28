@@ -1,7 +1,8 @@
 class GoodsController < ApplicationController
-
+  before_action :set_current_user
   # トップページの商品一覧表示
   def index
+
     @goods_new_ladies = Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
     @goods_old_ladies = Good.recent.mujer.sorted
@@ -10,6 +11,7 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.recent.nk.active
     @goods_new_ysl = Good.recent.ysl.active
     @goods_new_lv = Good.recent.lv.active
+
   end
   
   def new
@@ -119,7 +121,7 @@ class GoodsController < ApplicationController
       :shipment_id,
       :price,
       {images_attributes: [:goods_picture]}
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   # def set_current_user

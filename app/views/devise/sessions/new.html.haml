@@ -22,9 +22,9 @@
           .form-inner
           = form_for(@user, url: session_path(resource_name)) do |f|
             .form-inner__mail
-              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'login-input-text'
+              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'user-login-input-text'
             .form-inner__mail
-              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'login-input-text'
+              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'user-login-input-text'
             .form-inner__lobot
               .login-captcha
                 .user-login-form-group

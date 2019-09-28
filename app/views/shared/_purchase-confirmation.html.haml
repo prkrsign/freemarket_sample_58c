@@ -48,11 +48,11 @@
         %h3 配送先
         %address.confirmation-main__container__buy-info__container__address
           .confirmation-main__container__buy-info__container__address__postal-code 
-            〒000-0000
+            = "〒#{@good.user.address.postalcode}"
           .confirmation-main__container__buy-info__container__address__address-name 
-            東京都渋谷区ほにゃらららららら
+            = @good.user.address.city
           .confirmation-main__container__buy-info__container__address__user-name  
-            ユーザの本名
+            = "#{@good.user.address.family_name + @good.user.address.first_name}"
           =link_to '#', class: 'confirmation-main__container__buy-info__container__user-info-fix' do
             変更する
             %i.fas.fa-chevron-right

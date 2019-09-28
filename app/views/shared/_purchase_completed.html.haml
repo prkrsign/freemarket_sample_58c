@@ -4,7 +4,7 @@
     =link_to "#", class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
 
-
+-# 購入内容詳細
 .purchase-completed-wrapper
   .purchase-completed-wrapper__main-container
     .purchase-completed-wrapper__main-container__header
@@ -18,28 +18,34 @@
       .purchase-completed-wrapper__main-container__result__text
         購入完了しました
     
+    -# 商品画像
     .purchase-completed-wrapper__main-container__info
       = image_tag @good.images.first.goods_picture.url, class: 'purchase-completed-wrapper__main-container__info__image'
 
       .purchase-completed-wrapper__main-container__info__name
         = @good.goods_name
     
+    -# 金額
     .purchase-completed-wrapper__main-container__price
       .purchase-completed-wrapper__main-container__price__value
         = "¥#{@good.price}"
       .purchase-completed-wrapper__main-container__price__note
         送料込み
 
+    -# 配送先情報
     .purchase-completed-wrapper__main-container__address
       .purchase-completed-wrapper__main-container__address__title
         配送先
       .purchase-completed-wrapper__main-container__address__post-code
-        〒373-0000仮置き
+        = "〒#{@good.user.address.postalcode}"
       .purchase-completed-wrapper__main-container__address__city
-        仮置き町
+        = @good.user.address.city
       .purchase-completed-wrapper__main-container__address__name
-        田中太郎
+        = "#{@good.user.address.family_name + @good.user.address.first_name}"
 
+
+
+-# ページのフッター部分
 %footer.purchase-confirmation-footer
   %ul.confirmation-footer-container
     %li.confirmation-footer-container__list

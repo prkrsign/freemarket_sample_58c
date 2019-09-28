@@ -58,5 +58,9 @@ class TestsController < ApplicationController
     def purchased_on_deal
 
     end
+
+    def mypage
+
+    end
     
 end
