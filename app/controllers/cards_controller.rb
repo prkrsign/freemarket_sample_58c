@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-
+  before_action :authenticate_user!
   require "payjp"
 
   def new
@@ -18,14 +18,14 @@ class CardsController < ApplicationController
       ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to action: "complete"
       else
         redirect_to action: "pay"
       end
     end
   end
 
-  def delete 
+  def delete       #マイページの削除用だよ
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -37,7 +37,7 @@ class CardsController < ApplicationController
       redirect_to action: "complete"
   end
 
-  def show 
+  def show
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
