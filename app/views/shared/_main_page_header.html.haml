@@ -26,8 +26,8 @@
               .header__under__left__tag-icon__text
                 ブランドから探す
 
-        -# 新規登録、ログイン部分。ユーザーログイン時のビューは未実装(神山)
-        - if user_signed_in? # このリンク仮置きだよ?
+          -# ユーザーがログインしている時。各種情報。リンクは仮置き。
+        - if user_signed_in?
           .header__under__login-right
             =link_to '#', class: 'header__under__login-right__like-box' do
               .header__under__login-right__like-box__like-list
@@ -49,6 +49,7 @@
                 マイページ
               = image_tag '/mypage_link_icon.png', class: 'header__under__login-right__mypage-box__icon'
 
+          -# ユーザーがログインしていない時。新規登録、ログイン部分。
         - else
           .header__under__right
             .header__under__right__register-button
