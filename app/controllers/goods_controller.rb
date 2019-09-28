@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
   
   # トップページの商品一覧表示
   def index
@@ -34,7 +34,6 @@ class GoodsController < ApplicationController
 
   def show
     # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
-    @good = Good.find(params[:id])
     @user = User.find(1)
   end
 
@@ -55,11 +54,24 @@ class GoodsController < ApplicationController
     @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #商品商品詳細ページ
+  def show_delete
+  end
+
+  #商品削除のポップアップページ
+  def good_delete_popup
+  end
+
+  #商品削除
+  def destroy
+    @good.destroy
+    redirect_to root_path
+  end
+
 
   def create
     @good = Good.new(good_params)
     @good.save
-
 
     if @good.save
       params[:images]['goods_picture'].each do |i|
@@ -72,17 +84,13 @@ class GoodsController < ApplicationController
     
   end
 
+  #before_actionのメソッド（該当するメソッドに共通する部分）
+  def set_good
+    @good = Good.find(params[:id])
+  end
+
 
   def search
-    # if params[:m_cat_id]
-    #   @m_cat = Category.find(params[:m_cat_id]).children
-    # else
-    #   @s_cat = Category.find(params[:s_cat_id]).children
-    # end
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
   end
 
   private
@@ -101,7 +109,4 @@ class GoodsController < ApplicationController
       {images_attributes: [:goods_picture]}
     ).merge(user_id: current_user.id)
   end
-
-
-
 end
