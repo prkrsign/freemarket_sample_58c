@@ -1,4 +1,3 @@
--# 〜〜〜〜〜ここからヘッダー（上段）エリア〜〜〜〜〜
 .main-page-header-wrapper
   .header
     = form_with(class: 'header__main') do |f|
@@ -31,11 +30,10 @@
         .header__under__right
           .header__under__right__register-button
           - if user_signed_in? # このリンク仮置きだよ?
-            =link_to  '/tests/mypage', class: 'header__under__right__register-button__mypage' do
-              - current_user.username
-
-            -# =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__register-button__mypage' do
-            -#   マイページ
+            =current_user.username
+            =link_to  mypage_path, class: 'header__under__right__register-button__mypage' do
+              マイページ
+              
           - else
             =link_to new_user_registration_path, class:"header__under__right__register-button__text" do
               新規会員登録
