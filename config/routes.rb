@@ -28,15 +28,17 @@ Rails.application.routes.draw do
 
 # 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
   resources :goods do 
+
     collection do      
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_children', defaults: { format: 'json' }
-    end
+    end 
   end
 
   get 'goods/:id/show_delete', to: 'goods#show_delete', as: 'delete_page'
   get 'goods/:id/good_delete/popup', to: 'goods#good_delete_popup', as: 'popup'
+  
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
