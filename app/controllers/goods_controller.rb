@@ -1,5 +1,6 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+  
   # トップページの商品一覧表示
   def index
 
