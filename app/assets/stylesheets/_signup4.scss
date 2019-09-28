@@ -36,7 +36,6 @@
             &__card-list{
               display: inline-block; 
               margin-top: 10px;
-              margin-left: 10px;
               text-align: center;
               &__icon{
                 display: inline-block; 
@@ -44,7 +43,7 @@
             }
             &__input{
               display: block;
-              margin: 0 auto;
+              margin: 10px auto 0;
               border-radius: 5px;
               height: 20px;
               width: 250px;
@@ -82,19 +81,14 @@
             &__list{
               position: relative;
               margin-top: 8px;
+              width: 200px;
               &__month{
-                display: inline-block;
-                margin: 0 auto;
                 border-radius: 5px;
                 height: 40px;
                 width: 130px;
-                padding: 10px 16px 8px;
                 border: 1px solid #ccc;
                 background: #fff;
                 font-size: 14px;
-                position: absolute;
-                top: 10px;
-                left:  -70px;
               }
               &__month-text{
                 position: absolute;
@@ -102,8 +96,6 @@
                 right:  -80px;
               }
               &__year{
-                display: inline-block;
-                margin: 0 auto;
                 border-radius: 5px;
                 height: 40px;
                 width: 130px;
@@ -112,8 +104,7 @@
                 background: #fff;
                 font-size: 14px;
                 position: absolute;
-                top: 60px;
-                left:  -70px;
+                top: 50px;
               }
               &__year-text{
                 position: absolute;
@@ -156,49 +147,23 @@
           }
         }   
         &__info{
+          display: inline-block;
           text-align: right;
           color: #0099e8;
-          font-size: 14px;
-        }
-
-    &__form {
-      display: block;
-      width: 300px;
-      margin: 0 auto;
-      padding: 30px 20px 60px;
-      font-size: 10px;
-      color: black;
-      line-height: 1.5;
-        &__signup4-title{
-          margin-top: 20px;
           font-size: 12px;
+          &__text{
+            display: inline-block;
+          }
+          &__red-btn{
+            background-color: #ea352d;
+            color: #fff;
+            margin: 15px auto 0;
+            display: block;
+            width: 290px;
+            line-height: 40px;
+            font-size: 12px;
+          }
         }
-
-        &__time-select{
-          height: 35px;
-          width: 130px;
-          display: block;
-          margin: 0 auto;
-          border-radius: 5px;
-          margin-left: 10px;
-          padding: 10px 16px 8px;
-          border: 1px solid #ccc;
-          background: #fff;
-          font-size: 14px;
-        }
-      }
-      &__btn {
-        background-color: #ea352d;
-        color: #fff;
-        margin: 0 auto;
-        margin-top: 30px;
-        display: block;
-        width: 290px;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        font-size: 12px;
       }
     }
   }
-}

@@ -5,13 +5,15 @@
   .signup4-wrapper__contents
     .signup4-wrapper__contents__head
       支払い方法    
-      .contents__form__title1
-      = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm", class: 'signup4-wrapper__contents__title') do
-        %label カード番号
-        %span.contents__form__require#card-number-require 必須
-        = text_field_tag "number", "", class: "contents__form__input", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number" 
-        %ul.contents__form__cardlist
-          %li.icon
+    = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm", class: 'signup4-wrapper__contents__title') do
+      .signup4-wrapper__contents__title__main-contents
+        %label.signup4-wrapper__contents__title__main-contents__label
+          カード番号
+        %span.signup4-wrapper__contents__title__main-contents__require 
+          必須
+        = text_field_tag "number", "", class: "signup4-wrapper__contents__title__main-contents__input", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number" 
+        %ul.signup4-wrapper__contents__title__main-contents__card-list
+          %li.signup4-wrapper__contents__title__main-contents__card-list__icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763', height: "15", width: "40"
           %li.signup4-wrapper__contents__title__main-contents__card-list__icon
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2482339763', height: "15", width: "40"
@@ -27,13 +29,14 @@
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2482339763', height: "15", width: "21"
             
 
-        .signup4-wrapper__contents__title__middle-contents
-          .signup4-wrapper__contents__title__middle-contents__deadline
-            %label.signup4-wrapper__contents__title__middle-contents__deadline__text
-              有効期限
-            %span.contents__form__require 必須
-            .credit-register-container__right__deadline__list{ style:"display:inline-flex"}
-            %select#exp_month{name: "exp_month", type: "text", class: "credit-register-container__right__deadline__list__month"}
+      .signup4-wrapper__contents__title__middle-contents
+        .signup4-wrapper__contents__title__middle-contents__deadline
+          %label.signup4-wrapper__contents__title__middle-contents__deadline__text
+            有効期限
+          %span.signup4-wrapper__contents__title__middle-contents__deadline__require
+            必須
+          .signup4-wrapper__contents__title__middle-contents__deadline__list{ style:"display:inline-flex"}
+            %select#exp_month{name: "exp_month", type: "text", class: "signup4-wrapper__contents__title__middle-contents__deadline__list__month"}
               %option{value: ""} --
               %option{value: "1"}01
               %option{value: "2"}02
@@ -47,8 +50,9 @@
               %option{value: "10"}10
               %option{value: "11"}11
               %option{value: "12"}12
-            %p.date 月
-            %select#exp_year{name: "exp_year", type: "text", class: "credit-register-container__right__deadline__list__year"}
+              .signup4-wrapper__contents__title__middle-contents__deadline__list__month-text
+                月
+            %select#exp_year{name: "exp_year", type: "text", class: "signup4-wrapper__contents__title__middle-contents__deadline__list__year"}
               %option{value: ""} --
               %option{value: "2019"}19
               %option{value: "2020"}20
@@ -61,45 +65,21 @@
               %option{value: "2027"}27
               %option{value: "2028"}28
               %option{value: "2029"}29
-            %p.date 年
+              %p.signup4-wrapper__contents__title__middle-contents__deadline__list__year-text
+                年
 
         .signup4-wrapper__contents__title__low-contents
-          %label セキュリティコード
-          %span.contents__form__require 必須
-          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc", class: 'contents__form__input'
+          %label.signup4-wrapper__contents__title__low-contents__code 
+            セキュリティコード
+          %span.signup4-wrapper__contents__title__low-contents__require
+            必須
+          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc", class: 'signup4-wrapper__contents__title__low-contents__input'
         .signup4-wrapper__contents__title__info
           %i.fas.fa-question-circle.signup4-wrapper__contents__title__info__icon
-          %span.contents__info__question 
-          %span カード裏面の番号とは？
+          .signup4-wrapper__contents__title__info__text
+            カード裏面の番号とは？
           #card_token
-          = submit_tag "追加する", id: "token_submit", class: 'contents__btn'
-
-      -# .signup4-wrapper__contents__title__middle-contents
-      -#   .signup4-wrapper__contents__title__middle-contents__deadline
-      -#     =f.label class: 'signup4-wrapper__contents__title__middle-contents__deadline__text' do
-      -#       有効期限
-      -#     %span.signup4-wrapper__contents__title__middle-contents__deadline__require
-      -#       必須
-      -#     .signup4-wrapper__contents__title__middle-contents__deadline__list{ style:"display:inline-flex"}
-      -#       = f.select :month, Test.months.keys.to_a, {} ,class: "signup4-wrapper__contents__title__middle-contents__deadline__list__month"
-      -#       %span.signup4-wrapper__contents__title__middle-contents__deadline__list__month-text
-      -#         月
-      -#       = f.select :year, Test.years.keys.to_a, {} ,class: "signup4-wrapper__contents__title__middle-contents__deadline__list__year"
-      -#       %sapn.signup4-wrapper__contents__title__middle-contents__deadline__list__year-text
-      -#         年
-
-      -# .signup4-wrapper__contents__title__low-contents
-      -#   =f.label class:'signup4-wrapper__contents__title__low-contents__code' do
-      -#     セキュリティコード
-      -#   %span.signup4-wrapper__contents__title__low-contents__require
-      -#     必須
-      -#   = f.text_field :nil, class: 'signup4-wrapper__contents__title__low-contents__input',placeholder:"カード背面4桁もしくは3桁の番号"
-      -# .signup4-wrapper__contents__title__info
-      -#   %i.fas.fa-question-circle.signup4-wrapper__contents__title__info__icon
-      -#   %span.contents__info__question
-      -#   %span カード裏面の番号とは？  
-      -#   = f.submit '次に進む', class: 'contents__btn'
-
+          = submit_tag "追加する", id: "token_submit", class: 'signup4-wrapper__contents__title__info__red-btn'
             
   %footer.confirmation-footer
     %ul.confirmation-footer-container
