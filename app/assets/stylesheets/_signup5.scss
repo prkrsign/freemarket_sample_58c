@@ -111,7 +111,17 @@
         &__title{
           font-size: 16px;
         }
-
+        &__red-btn{
+          background-color: #ea352d;
+          color: #fff;
+          margin: 0 auto;
+          margin-top: 24px;
+          display: block;
+          width: 290px;
+          line-height: 40px;
+          font-size: 14px;
+          text-decoration: none;
+        }
       }
     }
 }
