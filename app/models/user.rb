@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :goods
 
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :username,                 presence: true, length: { minimum:2, maximum:10 }
+  validates :username,                 presence: true, length: { minimum:1, maximum:10 }
   validates :email,                    presence: true
   validates :email,                    uniqueness: true
   validates :email,                    format: { with: VALID_EMAIL_REGIX }
