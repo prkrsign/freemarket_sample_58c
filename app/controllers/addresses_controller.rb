@@ -35,7 +35,9 @@ class AddressesController < ApplicationController
       :postalcode,
       :city,
       :house_number,
-      :building_name
+      :building_name,
+      :block,
+      :prefecture_id
     )
   end
 end
