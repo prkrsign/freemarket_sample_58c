@@ -15,7 +15,7 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
@@ -29,12 +29,12 @@ class CardsController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:secret]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+      redirect_to action: "complete"
   end
 
   def show 
@@ -42,7 +42,7 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:secret]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
@@ -53,18 +53,4 @@ class CardsController < ApplicationController
   def complete
   end
 end
-  # before_action :set_current_user
-  # def new
-  # end
-  
-  # def create
-  # end
-
-  # def complete
-  # end
-
-  # private
-  # def set_current_user
-  #   @current_user = User.find_by(id: session[:user_id])
-  # end
 
