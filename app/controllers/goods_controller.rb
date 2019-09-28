@@ -66,11 +66,13 @@ class GoodsController < ApplicationController
   #商品削除
   def destroy
     good = Good.find(params[:id])
-      if good.user_id == current_user.id
-        good.destroy
-      else 
-        redirect_to root_path
-      end
+    good.destroy
+    redirect_to root_path
+      # if good.user_id == current_user.id
+      #   good.destroy
+      # else 
+      #   redirect_to root_path
+      # end
   end
 
 

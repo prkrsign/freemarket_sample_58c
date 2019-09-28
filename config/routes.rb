@@ -40,8 +40,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'goods/:id/show_delete', to: 'goods#show_delete'
-  get 'goods/:id/good_delete/popup', to: 'goods#good_delete_popup'
+  get 'goods/:id/show_delete', to: 'goods#show_delete', as: 'delete_page'
+  get 'goods/:id/good_delete/popup', to: 'goods#good_delete_popup', as: 'popup'
 
   # get 'goods/:id/delete', to: 'goods/#delete'
 
