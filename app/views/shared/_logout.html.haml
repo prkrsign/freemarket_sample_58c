@@ -7,7 +7,7 @@
     .logout-contents__logout-box
       .logout-contents__logout-box__container
         .logout-contents__logout-box__container__btn-box
-          = link_to "#", class:"logout-contents__logout-box__container__btn-box__btn-red" do
+          = link_to destroy_user_session_path, method: :delete, class:"logout-contents__logout-box__container__btn-box__btn-red" do
             ログアウト
   
 = render 'shared/aside'

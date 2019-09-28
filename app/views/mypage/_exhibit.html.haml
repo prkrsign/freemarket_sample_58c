@@ -1,0 +1,7 @@
+=link_to good_path(exhibit), class: 'put_up_goods-lists__list' do
+  = image_tag exhibit.images.first.goods_picture.url, size: "", alt: "buy-item-image" , class: 'put_up_goods-lists__list__image'
+  .put_up_goods-lists__list__text
+    = exhibit.goods_name
+    %i.fas.fa-chevron-right.put_up_goods-lists__list__text__icon
+  .put_up_goods-lists__list__status
+    出品中
