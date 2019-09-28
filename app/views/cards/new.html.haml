@@ -1,6 +1,8 @@
 .login-header-wrapper
   = render 'shared/login-header4'
 
+  -# これより先の#exp_month、#exp_year、#card_token、#cvc、#card_numberを目印にjsで個人情報を取得しデータベースに残さないよう削除してます。ご注意くださいませ
+  
 .signup4-wrapper
   .signup4-wrapper__contents
     .signup4-wrapper__contents__head
@@ -31,10 +33,10 @@
           .signup4-wrapper__contents__title__middle-contents__deadline
             %label.signup4-wrapper__contents__title__middle-contents__deadline__text
               有効期限
-            %span.contents__form__require 必須
+            %span.contents__form__require 必須                
             .credit-register-container__right__deadline__list{ style:"display:inline-flex"}
             %select#exp_month{name: "exp_month", type: "text", class: "credit-register-container__right__deadline__list__month"}
-              %option{value: ""} --
+              %option{value: ""} --    
               %option{value: "1"}01
               %option{value: "2"}02
               %option{value: "3"}03
