@@ -29,8 +29,9 @@
               .login-captcha
                 .user-login-form-group
                   .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                  = f.submit 'ログイン', class: 'login-btn'              
-                %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+                  = f.submit 'ログイン', class: 'login-page-red-btn'   
+                =link_to '#', class: 'login-page-password-forget' do 
+                  パスワードをお忘れの方
 
     %footer.user-login-single-footer
       %nav.clearfix.user-login-single-footer__text-list
