@@ -43,8 +43,6 @@ Rails.application.routes.draw do
   get 'goods/:id/show_delete', to: 'goods#show_delete', as: 'delete_page'
   get 'goods/:id/good_delete/popup', to: 'goods#good_delete_popup', as: 'popup'
 
-  # get 'goods/:id/delete', to: 'goods/#delete'
-
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                  registrations: 'users/registrations' ,

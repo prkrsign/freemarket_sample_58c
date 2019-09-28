@@ -52,10 +52,9 @@ class GoodsController < ApplicationController
     @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #商品商品詳細ページ
   def show_delete
     @good = Good.find(params[:id])
-    
-
   end
 
   #商品削除のポップアップページ
@@ -68,11 +67,6 @@ class GoodsController < ApplicationController
     good = Good.find(params[:id])
     good.destroy
     redirect_to root_path
-      # if good.user_id == current_user.id
-      #   good.destroy
-      # else 
-      #   redirect_to root_path
-      # end
   end
 
 
@@ -121,8 +115,4 @@ class GoodsController < ApplicationController
       {images_attributes: [:goods_picture]}
     ).merge(user_id: 1)
   end
-
-  # def set_current_user
-  #   @current_user = User.find_by(id: session[:user_id])
-  # end
 end
