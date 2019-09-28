@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   root to: 'goods#index'
   
 
-  #商品詳細ページ
+  #商品詳細ページ(productsコントローラは使わないため、削除予定)
   get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
   post  'products/new',  to: 'products#new'   
   post 'products',      to: 'products#create' #商品登録機能（テスト）
