@@ -6,13 +6,19 @@ class Address < ApplicationRecord
              
   validates :family_name,                 presence: true
   validates :first_name,                  presence: true
-  validates :family_name_kana,            presence: true
-  validates :first_name_kana,             presence: true
+  validates :family_name_kana,            presence: true, format: { 
+                                          with: /\A[\p{katakana}ー－]+\z/, 
+                                          message: "はカナ文字を入力してください" }
+  validates :first_name_kana,             presence: true, format: { 
+                                          with: /\A[\p{katakana}ー－]+\z/, 
+                                          message: "はカナ文字を入力してください" }
   validates :postalcode,                  presence: true
   validates :city,                        presence: true
   validates :building_name,               presence: true
   validates :house_number,                presence: true
   validates :user_id,                     presence: true
+  validates :block,                       presence: true
+  
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
