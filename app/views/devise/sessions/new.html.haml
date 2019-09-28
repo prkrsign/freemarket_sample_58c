@@ -22,15 +22,16 @@
           .form-inner
           = form_for(@user, url: session_path(resource_name)) do |f|
             .form-inner__mail
-              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'login-input-text'
+              = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'user-login-input-text'
             .form-inner__mail
-              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'login-input-text'
+              = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'user-login-input-text'
             .form-inner__lobot
               .login-captcha
                 .user-login-form-group
                   .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                  = f.submit 'ログイン', class: 'login-btn'              
-                %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+                  = f.submit 'ログイン', class: 'login-page-red-btn'   
+                =link_to '#', class: 'login-page-password-forget' do 
+                  パスワードをお忘れの方
 
     %footer.user-login-single-footer
       %nav.clearfix.user-login-single-footer__text-list
