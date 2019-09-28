@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_current_user
   require "payjp"
 
   def new
@@ -51,6 +51,11 @@ class CardsController < ApplicationController
   def create
   end
   def complete
+  end
+
+  private
+  def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
   end
 end
 
