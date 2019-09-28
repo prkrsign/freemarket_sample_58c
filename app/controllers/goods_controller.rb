@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_current_user
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup]
   # トップページの商品一覧表示
   def index
 
@@ -33,7 +33,6 @@ class GoodsController < ApplicationController
 
   def show
     # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
-    @good = Good.find(params[:id])
     @user = User.find(1)
   end
 
@@ -56,12 +55,10 @@ class GoodsController < ApplicationController
 
   #商品商品詳細ページ
   def show_delete
-    @good = Good.find(params[:id])
   end
 
   #商品削除のポップアップページ
   def good_delete_popup
-    @good = Good.find(params[:id])
   end
 
   #商品削除
@@ -86,6 +83,11 @@ class GoodsController < ApplicationController
       render :new
     end
     
+  end
+
+  #before_actionのメソッド（該当するメソッドに共通する部分）
+  def set_good
+    @good = Good.find(params[:id])
   end
 
 
