@@ -24,7 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :products do
+  end
 
 # 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
   resources :goods do 
