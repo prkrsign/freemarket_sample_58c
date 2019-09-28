@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
   # トップページの商品一覧表示
   def index
 
@@ -63,8 +63,7 @@ class GoodsController < ApplicationController
 
   #商品削除
   def destroy
-    good = Good.find(params[:id])
-    good.destroy
+    @good.destroy
     redirect_to root_path
   end
 
@@ -72,7 +71,6 @@ class GoodsController < ApplicationController
   def create
     @good = Good.new(good_params)
     @good.save
-
 
     if @good.save
       params[:images]['goods_picture'].each do |i|
