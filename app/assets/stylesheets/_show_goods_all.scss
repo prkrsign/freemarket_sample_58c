@@ -40,6 +40,9 @@
     background: white;
     padding: 12px 12px;
     box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 .block_area_product:hover {
