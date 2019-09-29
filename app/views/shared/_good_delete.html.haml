@@ -80,14 +80,14 @@
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
 
-        購入画面に進む
       .item-description
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
       .good_option_box
         .good_option_box__edit
           =link_to "#" do
-            商品を編集する
+            .good_option_box__edit__text
+              商品の編集
         .good_option_box__or
           or
         .good_option_box__pause
