@@ -193,6 +193,26 @@
     }
   }
 
+  .block_area__product__good-pic_price_box__price {
+    width: 80px;
+        height: 30px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background: rgba(0,0,0,.4);
+        color: white;
+        font-size: 17px;
+        box-sizing: border-box;
+        padding: 5px 0px 5px 10px;
+        position: absolute;
+        left: 0px;
+        bottom: 10px;
+        z-index: 1;
+
+
+
+  }
+  
+
 
   .exhibit_btn {
     cursor: pointer;

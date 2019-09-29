@@ -37,10 +37,11 @@ def create
       birth_day: session[:birth_day],
       phone_number: user_params[:phone_number]
     )
-  if  @user.save!
+  if  @user.save
       session[:user_id] = @user.id
-      redirect_to new_address_path
+      redirect_to new_address_path, notice: "情報を登録しました。"
   else
+      flash.now[:alert] = "必須項目をご記入ください。"
       render '/signup/step1'
   end
 end

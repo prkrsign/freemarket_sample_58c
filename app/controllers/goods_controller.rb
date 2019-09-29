@@ -1,5 +1,7 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+# 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
+  before_action :authenticate_user!, only: [:new]
   
   # トップページの商品一覧表示
   def index
@@ -77,8 +79,9 @@ class GoodsController < ApplicationController
       params[:images]['goods_picture'].each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
-      redirect_to root_path
+      redirect_to root_path, notice: "商品を登録しました。"
     else
+      flash.now[:alert] = "必須項目をご記入ください。"
       render :new
     end
     
@@ -89,6 +92,8 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
   end
 
+  def notlogin
+  end
 
   def search
   end
