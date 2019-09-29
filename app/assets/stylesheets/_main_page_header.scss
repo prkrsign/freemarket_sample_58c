@@ -96,15 +96,9 @@
               }
             }            
             &__right{
-              // height: 100px;
-              // width: 100px;
               margin-top: 8px;
-              display: flex;
-            
-
-              
+              display: flex;              
               &__register-button{
-                
                 text-align: center;
                 &__mypage{
                   text-decoration: none;
@@ -145,6 +139,84 @@
                   transition: all 0.3s ease-out 0s;
                   text-decoration: none;
                   line-height: 15px;
+                }
+              }
+            }
+            &__login-right{
+              position: relative;
+              width: 530px;
+              &__like-box{
+                &__like-list{
+                  float: right;
+                  position: absolute;
+                  top: 15px;
+                  right: 415px;
+                  color: rgb(51, 51, 51);
+                }
+                &__icon{
+                  float: left;
+                  margin-top: 15px;
+                  font-size: 22px;
+                  color: rgb(204, 204, 204);
+                }
+              }
+              &__info-box{
+                position: absolute;
+                top: 0;
+                left: 150px;
+                height: 30px;
+                width: 115px;
+                margin-top: 15px;
+                &__text{
+                  float: right;
+                  color: rgb(51, 51, 51);
+                  margin-right: 32px;
+                }
+                &__icon{
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(204, 204, 204);
+                }
+              }
+              &__check-box{
+                position: absolute; 
+                top: 0px;
+                left: 255px;
+                height: 30px;
+                width: 130px;
+                margin-top: 15px;
+                &__text{
+                  margin-right: 3px;
+                  float: right;
+                  color: rgb(51, 51, 51);
+                }
+                &__icon{
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(204, 204, 204);
+                }
+              }
+              &__mypage-box{
+                position: absolute; 
+                top: 0px;
+                left: 410px;
+                height: 30px;
+                width: 170px;
+                margin-top: 10px;
+                &__text{
+                  position: absolute;
+                  left: 40px;
+                  line-height: 35px;
+                  float: right;
+                  color: rgb(51, 51, 51);
+                }
+                &__icon{
+                  border-radius: 25px;
+                  height: 33px;
+                  width: 33px;
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(204, 204, 204);
                 }
               }
             }
