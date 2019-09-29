@@ -46,19 +46,9 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
 
-
+# 以下の構文いりますか？消していいかも確認願います。YS 9/29
   root to: 'goods#index'
   
-
-  #商品詳細ページ
-  get  'products/new',  to: 'products#new'    #商品登録ページ（テスト）
-  post  'products/new',  to: 'products#new'   
-  post 'products',      to: 'products#create' #商品登録機能（テスト）
-  get  'products/show', to: 'products#show'   #商品詳細ページ
-  post 'products/index', to: 'products#index'
-  get 'products/show', to: 'products#show'
-
-
   # マイページ用ルーティング
   get 'mypage', to: 'mypage#mypage', as: 'mypage'
   get 'mypage/put_up_goods_on_sale', to: 'mypage#put_up_goods_on_sale'
