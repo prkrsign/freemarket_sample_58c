@@ -84,18 +84,18 @@
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
       .good_option_box
-        .good_option_box__edit
-          =link_to "#" do
-            .good_option_box__edit__text
-              商品の編集
+        =link_to "#", class:'good_option_box__edit' do
+          .good_option_box__edit__text
+            商品の編集
+
         .good_option_box__or
           or
-        .good_option_box__pause
-          =link_to "#" do
-            出品を一旦停止する
-        .good_option_box__delete
-          =link_to good_delete_popup_good_path, method: :GET do
-            商品を削除する
+
+        =link_to "#", class:'good_option_box__pause'   do
+          出品を一旦停止する
+
+        =link_to good_delete_popup_good_path, method: :GET, class: 'good_option_box__delete' do
+          商品を削除する
     .detail
     %ul.nav-link
     .social-box
