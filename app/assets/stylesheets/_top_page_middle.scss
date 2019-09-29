@@ -181,3 +181,13 @@
     height: 188px;
     width: 188px;
   }
+  .block_area {
+    margin: 0 auto;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 524px;
+    width: 1020px;
+    &__text {
+      color: #222;
+    }
+  }
