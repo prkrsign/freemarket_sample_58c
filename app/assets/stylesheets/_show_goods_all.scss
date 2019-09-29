@@ -1,10 +1,10 @@
 .block_area_product {
   height: 252px;
   width: 188px;
-  margin: 0 0 20px 10px;
+  margin: 0 0 20px 12px;
   box-sizing: border-box;
   display: inline-block;
-  filter: drop-shadow(3px 3px 3px rgba(171, 168, 168, 0.6));
+  filter: drop-shadow(2px 2px 2px rgba(171, 168, 168, 0.6));
   &__good-pic_price_box {
     height: 188px;
     width: 188px;
@@ -33,4 +33,10 @@
     padding: 12px 12px;
     box-sizing: border-box;
   }
+}
+.block_area_product:hover {
+  // filter: drop-shadow: none;
+  outline: 2px solid #1E90FF;
+  outline-offset: -2px;
+  z-index: 4;
 }
