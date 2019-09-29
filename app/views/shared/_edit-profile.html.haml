@@ -1,6 +1,12 @@
 %header
   = render "shared/main_page_header"
-  
+  .bread_crumbs
+    .bread_crumbs__line
+      -# config/breadcrumbs.rbに定義したmypageを呼び出し
+      - breadcrumb :profile
+      -# 下記を記述した箇所にパンくずリストが表示される。
+    = breadcrumbs separator: "#{content_tag(:i, '', class: 'fas fa-chevron-right')}", class: "breadcrumbs-list"
+
 .edit-profile-container
   %main.mypage-container.clearfix
     .mypage-content

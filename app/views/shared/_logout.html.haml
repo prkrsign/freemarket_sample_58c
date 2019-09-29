@@ -1,4 +1,10 @@
 =render 'shared/main_page_header'
+.bread_crumbs
+  .bread_crumbs__line
+    -# config/breadcrumbs.rbに定義したmypageを呼び出し9/28(YS&神山)
+    - breadcrumb :logout
+    -# 下記を記述した箇所にパンくずリストが表示される。9/28(YS&神山)
+    = breadcrumbs separator: "#{content_tag(:i, '', class: 'fas fa-chevron-right')}", class: "breadcrumbs-list"
 
 .logout-side-bar
   =render 'shared/profile-sidebar'
@@ -7,7 +13,7 @@
     .logout-contents__logout-box
       .logout-contents__logout-box__container
         .logout-contents__logout-box__container__btn-box
-          = link_to "#", class:"logout-contents__logout-box__container__btn-box__btn-red" do
+          = link_to destroy_user_session_path, method: :delete, class:"logout-contents__logout-box__container__btn-box__btn-red" do
             ログアウト
   
 = render 'shared/aside'

@@ -1,4 +1,3 @@
--# 〜〜〜〜〜ここからヘッダー（上段）エリア〜〜〜〜〜
 .main-page-header-wrapper
   .header
     = form_with(class: 'header__main') do |f|
@@ -27,30 +26,36 @@
               .header__under__left__tag-icon__text
                 ブランドから探す
 
-        -# 新規登録、ログイン部分。ユーザーログイン時のビューは未実装(神山)
-        .header__under__right
+          -# ユーザーがログインしている時。各種情報。リンクは仮置き。
+        - if user_signed_in?
+          .header__under__login-right
+            =link_to '#', class: 'header__under__login-right__like-box' do
+              .header__under__login-right__like-box__like-list
+                いいね！一覧
+              %i.far.fa-heart.header__under__login-right__like-box__icon
 
-         
-        .header__under__right__register-button
-          - if user_signed_in?
-            =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__2__2' do
-              マイページ
-          - else
+            =link_to '#', class: 'header__under__login-right__info-box' do
+              .header__under__login-right__info-box__text
+                お知らせ
+              %i.far.fa-bell.header__under__login-right__info-box__icon
+            
+            =link_to '#', class: 'header__under__login-right__check-box' do
+              .header__under__login-right__check-box__text
+                やることリスト
+              %i.fas.fa-check.header__under__login-right__check-box__icon
+            
+            =link_to mypage_path, class: 'header__under__login-right__mypage-box' do
+              .header__under__login-right__mypage-box__text
+                マイページ
+              = image_tag '/mypage_link_icon.png', class: 'header__under__login-right__mypage-box__icon'
+
+          -# ユーザーがログインしていない時。新規登録、ログイン部分。
+        - else
+          .header__under__right
+            .header__under__right__register-button
             =link_to new_user_registration_path, class:"header__under__right__register-button__text" do
               新規会員登録
             =link_to user_session_path,  class:"header__under__right__login-button__text" do
               ログイン
-          = current_user.username if user_signed_in?
-
-
-          -# .header__under__right__register-button
-          -#   =link_to tests_signup_path, class: 'header__under__right__register-button__text' do
-          -#     新規会員登録
-          -# .header__under__right__login-button
-          -#   =link_to tests_signup_path, class: 'header__under__right__login-button__text' do
-          -#     ログイン
-
-          -# -# 仮置きのマイページ遷移テキスト。ユーザーログイン時に表示(神山)
-          -# =link_to tests_logout_path, class: "header__under__right__sprint-review" do
-          -#   = current_user.username if user_signed_in?
+          
 

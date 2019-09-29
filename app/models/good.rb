@@ -4,12 +4,15 @@ class Good < ApplicationRecord
     belongs_to_active_hash        :prefecture
     belongs_to_active_hash        :brand
     belongs_to                    :category
+
     belongs_to                    :delivery
     belongs_to_active_hash        :condition
     belongs_to_active_hash        :shipment
     has_many                      :images
     belongs_to                    :delivery
     accepts_nested_attributes_for :images
+    belongs_to                    :user
+
 
     scope :active, -> { order(created_at: :DESC).limit(10) }
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
