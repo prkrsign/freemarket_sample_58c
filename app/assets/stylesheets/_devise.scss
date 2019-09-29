@@ -13,7 +13,7 @@
     } 
     .user-login-main {
       box-sizing: border-box;
-      height: 731px;
+      height: 710px;
       .login-page {
         width: 456px;
         margin: 0 auto;
@@ -93,8 +93,8 @@
             }
           }
           &__lobot {
-            padding: 0 60px 0 60px;
-            margin: 24px 0 0;
+            padding: 0 75px 0 60px;
+            margin: 24px 4px 0;
             .login-captcha {
               border-radius: 4px;
               width: 304px;
@@ -104,26 +104,6 @@
               border: 1px solid #ccc;
               text-align: center;
               display: block;
-              .user-login-form-group{
-                .login-page-red-btn {
-                  margin: 24px 0 0;
-                  background-color: #ea352d;
-                  color: white;
-                  width: 332px;
-                  line-height: 48px;
-                  font-size: 14px;
-                  text-align: center;
-                  cursor: pointer;
-                }
-              }
-
-              .login-page-password-forget{
-                display: block;
-                margin: 40px 0 0;
-                color: #0099e8;
-                text-decoration: none;
-                text-align: left;
-              }
             }
           }
           .login-btn {
@@ -148,7 +128,7 @@
     .user-login-single-footer {
       width: 456px;
       margin: 0 auto;
-      padding: 40px 0;
+      padding: 20px 0;
       position: absolute;
       right: 0;
       bottom: 0;
@@ -157,7 +137,7 @@
       text-align: center;
       color: black;
       .user-login-single-footer__text-list {
-        color: initial;
+        text-decoration:  none;
         color: black;
         font-size: 4px;
         margin-bottom: 15px;
@@ -176,4 +156,24 @@
       }
     }
   }
+}
+
+.login-page-red-btn {
+
+  margin: 24px 65px 0;
+  background-color: #ea352d;
+  color: white;
+  width: 332px;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login-page-password-forget{
+  display: block;
+  margin: 30px 0 0 70px;
+  color: #0099e8;
+  text-decoration: none;
+  text-align: left;
 }
