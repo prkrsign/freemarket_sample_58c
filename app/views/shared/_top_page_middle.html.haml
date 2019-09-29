@@ -22,10 +22,10 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               レディース新着アイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
-
+                %i.fas.fa-chevron-right
+                
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_ladies
             
