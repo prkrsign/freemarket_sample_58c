@@ -1,9 +1,9 @@
 document.addEventListener(
-  "DOMContentLoaded", e => {
+  "DOMContentLoaded", function(e) {
     if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合却下
       Payjp.setPublicKey("pk_test_bc47a177790f8c1d5de76381"); 
       let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得！
-      btn.addEventListener("click", e => { //イベントね
+      btn.addEventListener("click", function(e) { //イベントね
         e.preventDefault(); 
         let card = {
           number: document.getElementById("card_number").value,
