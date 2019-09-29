@@ -20,8 +20,8 @@
     text-decoration: initial;
     &__text{
       text-decoration: none;
+      color: #eee;
     }
-    
   }
   &__or {
     width: 100%;
@@ -44,7 +44,6 @@
     background-color: #eee;
     text-align: center;
     line-height: 60px;
-
     color: black;
   }
   &__delete {

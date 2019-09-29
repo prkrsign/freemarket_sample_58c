@@ -1,15 +1,24 @@
-.goods_delete_popup__wrapper
-  =image_tag '/mercari-logo.png', class: "goods_delete_popup_wrapper__background_image"
-  .goods_delete_popup__wrapper__alert_box
-    .goods_delete_popup__wrapper__alert_box__head
-      [確認] 
-      %br 本当に削除しますか？
-      .goods_delete_popup__wrapper__alert_box__head__caution-box
-        一度削除された商品は二度と出品することができません。
-    .goods_delete_popup__wrapper__alert_box__option
-      %li.goods_delete_popup__wrapper__alert_box__option__cancel
-        =link_to show_delete_good_path, class: "cancel-text" do
-          キャンセル 
-      %li.goods_delete_popup__wrapper__alert_box__option__delete
-        =link_to good_path , method: :DELETE, class: "delete-text" do
-          削除  
+.user-login-container
+  .user-login-contents
+    .user-login-header  
+      = link_to root_path do
+        =image_tag '/merucari logo.svg', alt: "mercari",width: 185,height: 95
+
+  .goods_delete_popup__wrapper
+    .goods_delete_popup__wrapper__alert_box
+      .goods_delete_popup__wrapper__alert_box__head
+        %i.fas.fa-exclamation-triangle.goods_delete_popup__wrapper__alert_box__icon
+          確認
+        
+    .goods_delete_popup__wrapper__caution-box
+      .goods_delete_popup__wrapper__caution-box__upper-info 
+        本当に削除しますか？
+      .goods_delete_popup__wrapper__caution-box__lower-info 
+        削除すると二度と復活できません。
+        
+
+    .goods_delete_popup__wrapper__option
+      =link_to show_delete_good_path, class: "goods_delete_popup__wrapper__option__cancel" do
+        キャンセル 
+      =link_to good_path , method: :DELETE, class: "goods_delete_popup__wrapper__option__delete" do
+        削除する
