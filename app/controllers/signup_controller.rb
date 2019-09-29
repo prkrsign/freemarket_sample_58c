@@ -66,9 +66,8 @@ private
     )
   end
 
-  # ロボット
+  # ロボットにチェックが入っているか確認する
   def check_recaptcha
-    binding.pry
     @user = User.new(user_params)
     if verify_recaptcha
       return @user
