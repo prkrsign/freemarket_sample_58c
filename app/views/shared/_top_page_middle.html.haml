@@ -35,9 +35,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               メンズ新着アイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
 
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_men       
@@ -47,9 +47,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               レディース過去のアイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_old_ladies
       .middle__main__block
@@ -57,9 +57,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               メンズ過去のアイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_old_men
       .middle__main__category
@@ -81,9 +81,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               ルイヴィトン新着アイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_lv
       .middle__main__block
@@ -91,9 +91,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               イヴ・サンローラン
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_ysl
       .middle__main__block
@@ -101,9 +101,9 @@
           .middle__main__block__item__top
             %h3.middle__main__block__item__top__left
               アディダス新着アイテム
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_adidas
       .middle__main__block
@@ -112,19 +112,16 @@
             %h3.middle__main__block__item__top__left
               ナイキ新着アイテム
 
-              =link_to "#", class:'middle__main__block__item__top__right' do
+              =link_to "#", class:'middle__main__block__item__top__left__text-see-more' do
                 もっと見る
-
-              %i.fas.fa-chevron-right
+                %i.fas.fa-chevron-right
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_nike
 
-
-=link_to new_good_path, class: 'exhibit_btn' do
-
-  .exhibit_btn__moji
-    出品
-  %i.fas.fa-camera
+  =link_to new_good_path, class: 'exhibit_btn' do
+    .exhibit_btn__moji
+      出品
+    %i.fas.fa-camera
 
 = render 'shared/aside'
 = render 'shared/footer'
