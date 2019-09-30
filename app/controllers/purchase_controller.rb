@@ -1,13 +1,12 @@
 class PurchaseController < ApplicationController
+    before_action :authenticate_user!, only: [:show]
+
     def index
 
     end
 
-# 以下テスト用ダミーです。
+# 以下テスト用ダミーです。近日けす予定多分大丈夫なはず。9/29 YS
     def show
-        # @image = Image.all
-        # @image = Image.find(17)
-        # @good = Good.find(1)
         @good = Good.find(params[:id])
     end
 

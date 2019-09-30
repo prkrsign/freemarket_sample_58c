@@ -1,10 +1,12 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+# 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
+  before_action :authenticate_user!, only: [:new]
   
   # トップページの商品一覧表示
   def index
 
-    @goods_new_ladies = Good.recent.mujer.active
+    @goods_new_ladies = Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
     @goods_old_ladies = Good.recent.mujer.sorted
     @goods_old_men = Good.recent.hombre.sorted
@@ -33,8 +35,6 @@ class GoodsController < ApplicationController
   end
 
   def show
-    # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
-    @user = User.find(1)
   end
 
   # 以下全て、formatはjsonのみ
@@ -71,14 +71,17 @@ class GoodsController < ApplicationController
 
   def create
     @good = Good.new(good_params)
-    @good.save
+    # @good.save
+    binding.pry
 
     if @good.save
+      binding.pry
       params[:images]['goods_picture'].each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
-      redirect_to root_path
+      redirect_to root_path, notice: "商品を出品しました。"
     else
+      flash.now[:alert] = "必須項目を埋めてください。"
       render :new
     end
     
@@ -89,6 +92,8 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
   end
 
+  def notlogin
+  end
 
   def search
   end
