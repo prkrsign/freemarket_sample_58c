@@ -32,7 +32,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       #sns_credentialのidを他のメソッドに持ち越す
       session["devise.sns_id"] = sns_id 
       #redirect_to だと更新してしまうのでrenderで。
-      render template: "tests/signup1" 
+      render template: step1_signup_index_path 
       
     end
   end

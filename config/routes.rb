@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   resources :cards do
     collection do
-      get 'complete' => 'cards#complete'
+      get 'complete', to: 'cards#complete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
   resources :addresses 
