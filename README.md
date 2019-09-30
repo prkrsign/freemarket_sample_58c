@@ -26,7 +26,7 @@ Things you may want to cover:
 |first_name_in_katakana|string|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
-|birth_date|integer|null: false|
+|birth_day|integer|null: false|
 |phone_number|integer|null: false, unique: true|
 |address|bigint|foreign_key: true|
 
@@ -51,7 +51,7 @@ Things you may want to cover:
 |prefecture|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :prefecture, optional: true
+- belongs_to_active_hash :prefecture, optional: true
 - belongs_to :user, optional: true
 - has_many :goods
 - has_many :deals
@@ -71,7 +71,7 @@ Things you may want to cover:
 |delivery|bigint|null: false, foreign_key: true|
 |size|bigint|null: false, foreign_key: true|
 
-### Association (要確認)
+### Association (要確認: アクティブハッシュ、リレーション)
 
 - belongs_to_active_hash        :prefecture
 - belongs_to_active_hash        :brand
@@ -139,10 +139,11 @@ Things you may want to cover:
 - has_many :goods
 - has_ancestry
 
-## brandsテーブル
+<!-- brandsテーブルはアクティブハッシュを代わりに使用、確認用にテーブルはコメントアウトで残す -->
+<!-- ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|
+|brand_name|string| -->
 
 ### Association
  - has_many :goods
