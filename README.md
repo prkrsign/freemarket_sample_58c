@@ -19,26 +19,32 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |username|string|null: false, unique: true|
-|user_description|text
+|user_description|text|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_in_katakana|string|null: false|
 |first_name_in_katakana|string|null: false|
+|birth_year|integer|null: false|
+|brith_month|integer|null: false|
 |birth_date|integer|null: false|
 |phone_number|integer|null: false, unique: true|
-|credit_card|references|foreign_key: true|
-|address|references|foreign_key: true|
+|address|bigint|foreign_key: true|
 ### Association
 - has_one :credit_card
 - has_one :address
 - has_many :goods
 
 ## addressesテーブル
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |postalcode|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|null: false|
-|user|references|null: false, foreign_key: true|
+|user|bigint|null: false, foreign_key: true|
+|prefecture|bigint|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :prefecture
@@ -53,9 +59,13 @@ Things you may want to cover:
 |goods_name|string|null: false|
 |goods_description|text|null: false|
 |price|integer|null: false|
-|user|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
-|category|references|null: false, foreign_key: true|
+|prefecture|bigint|null: false, foreign_key: true|
+|condition|bigint|null: false, foreign_key: true|
+|brand|bigint|foreign_key: true|
+|user|bigint|null: false, foreign_key: true|
+|category|bigint|null: false, foreign_key: true|
+|delivery|bigint|null: false, foreign_key: true|
+|size|bigint|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :prefecture
@@ -64,15 +74,12 @@ Things you may want to cover:
 - belongs_to :user 
 - has_many :images
 
-### Association
-- has_many :users
-- has_many :goods
 
 ## imagesテーブル
 |Colum|Type|Options|
 |-----|----|------|
 |goods_picture|string|null: false|
-|good|references|null: false, foreign_key: true|
+|good|bigint|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :good
@@ -82,8 +89,8 @@ Things you may want to cover:
 |Colum|Type|Options|
 |-----|----|------|
 |deal|boolean||
-|user|references|null: false, foreign_key: true|
-|good|references|null: false, foreign_key: true|
+|user|bigint|null: false, foreign_key: true|
+|good|bigint|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -94,17 +101,17 @@ Things you may want to cover:
 |-----|----|------|
 |provider|string|null: false|
 |uid|string|null: false|
-|user|references|null: false, foreign_key: true|
+|user|bigint|null: false, foreign_key: true|
 
 ### Association
 - has_one :user
 
-## credit_cardsテーブル
+## cardsテーブル
 |Colum|Type|Options|
 |-----|----|------|
-|user|ireference|null: false, foreign_key: true|
-|customer|references|null: false, foreign_key: true|
-|card|references|null: false, foreign_key: true|
+|user|bigint|null: false, foreign_key: true|
+|customer|bigint|null: false, foreign_key: true|
+|card|bigint|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -128,6 +135,12 @@ Things you may want to cover:
 
 ### Association
  - has_many :goods
+
+## deliveries テーブル
+|Colum|Type|Options|
+|-----|----|------|
+|delivery_method||null: false|
+|ancestry||null: false|
 
 
 
