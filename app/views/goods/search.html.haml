@@ -1,6 +1,5 @@
--binding.pry
-
 - @goods.each do |good|
   = good.goods_name
   = good.price
-  = image_tag good.images.first.url
+  = good.goods_description
+  = image_tag good.images.first.goods_picture.url

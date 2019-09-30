@@ -36,8 +36,8 @@ class GoodsController < ApplicationController
   end
 
   def search
-    binding.pry
-    @goods = Good.where('goods_name LIKE(?)', "%#{params[:keyword]}%")
+    # goods_nameとgoods_descriptionカラムそれぞれに対して、keywordを比較して、あいまい検索に引っかかったものを@goodsとしてオブジェクト化しています。(神山)
+    @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
   end
 
 
@@ -113,4 +113,5 @@ class GoodsController < ApplicationController
       {images_attributes: [:goods_picture]}
     ).merge(user_id: current_user.id)
   end
+
 end
