@@ -1,32 +1,41 @@
-.bread_crumbs{
+.bread_crumbs {
   position: relative;
   margin: 0 auto;
   border-top: 1px solid #eee;
   background: #fff;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  color: #333;
+
   &__line{
     list-style: none;
     width: 1020px;
     margin: 0 auto;
-    padding: 16px 0;
-    &__mercari{
-      font-size: 14px;
-      text-decoration: none;
-      touch-action: manipulation;
-      color: #333;
-    }
-    &__category{
-      font-size: 14px;
-      text-decoration: none;
-      touch-action: manipulation;
-      color: #333; 
-    }
+    padding: 16px 0; 
+    color: #333;
   }
 }
 
-.fas.fa-chevron-right{
-  margin: 0 8px;
-  font-size: 9px;
-  color: #888;
+// 以下翻訳：> 一番最後の階層”以外”の文字に当たる修飾 9/28(YS)
+.breadcrumbs-list a {
+  color: #333;
+text-decoration: none;
+font-size: 14px;
 }
+// 以下翻訳：> 矢印に当たるCSS 9/28(YS)
+.breadcrumbs-list i {
+  color: #888;
+  font-size: 12px;
+  margin: 0 8px;
+} 
+
+// 以下翻訳：一番最後の階層にでる文字を太字に修飾 9/28(YS)
+.breadcrumbs-list span {
+  font-weight: bold;
+}
+
+
+// 全体に当てないといけないかも？残しておきたい(神山)
+// .fas.fa-chevron-right{
+//   margin: 0 8px;
+//   font-size: 9px;
+//   color: #888;
+// }
