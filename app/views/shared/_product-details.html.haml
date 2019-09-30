@@ -21,7 +21,7 @@
             %th.category 出品者
             %td
               = link_to "#",  class:"name" do
-                = @user.username 
+                = @good.user.username 
                 -# 名前userDB待ち（仮）
               .user-rating
                 .item-user-ratings
@@ -88,7 +88,7 @@
 
       .price-box
         %span.price-box__price
-          = number_to_currency(@good.price, unit: "￥", precision: 0)
+          = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
         %span.price-box__tax
           (税込)
         %span.price-box__fee

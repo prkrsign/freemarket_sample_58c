@@ -6,7 +6,7 @@ class GoodsController < ApplicationController
   # トップページの商品一覧表示
   def index
 
-    @goods_new_ladies = Good.recent.mujer.active
+    @goods_new_ladies = Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
     @goods_old_ladies = Good.recent.mujer.sorted
     @goods_old_men = Good.recent.hombre.sorted
@@ -35,8 +35,6 @@ class GoodsController < ApplicationController
   end
 
   def show
-    # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
-    @user = User.find(1)
   end
 
   # 以下全て、formatはjsonのみ

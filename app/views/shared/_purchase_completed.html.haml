@@ -28,7 +28,7 @@
     -# 金額
     .purchase-completed-wrapper__main-container__price
       .purchase-completed-wrapper__main-container__price__value
-        = "¥#{@good.price}"
+        = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
       .purchase-completed-wrapper__main-container__price__note
         送料込み
 

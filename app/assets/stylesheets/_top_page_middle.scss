@@ -110,7 +110,8 @@
           margin: 0 auto;
         }
       .fas.fa-chevron-right {
-          height: 10px;
+      font-size: 14px;
+      height: 10px;
       width: 10px;
       bottom: 0px;
       content: "";
@@ -119,6 +120,8 @@
       top: 0px;
       margin-top: 7px;
       box-sizing: border-box;
+      font-weight: 600;
+
         }
       }
         &__area {
