@@ -35,6 +35,11 @@ class GoodsController < ApplicationController
   def show
   end
 
+  def search
+    # binding.pry
+    @goods = Good.all
+  end
+
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -88,9 +93,6 @@ class GoodsController < ApplicationController
   end
 
   def notlogin
-  end
-
-  def search
   end
 
   private

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get 'goods/new'
-  get 'goods/search'
+
 
   resources :cards do
     collection do
@@ -35,14 +35,13 @@ Rails.application.routes.draw do
       get 'good_delete_popup'
     end
 
-    collection do      
+    collection do   
+      get 'search'   
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_children', defaults: { format: 'json' }
     end 
   end
-
-  
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
@@ -68,3 +67,5 @@ Rails.application.routes.draw do
   get 'mypage/logout', to: 'mypage#logout'
   
 end
+
+
