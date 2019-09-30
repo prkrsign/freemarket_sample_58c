@@ -42,12 +42,12 @@ def create
       redirect_to new_address_path, notice: "情報を登録しました。"
   else
       flash.now[:alert] = "必須項目をご記入ください。"
-      render '/signup/step1'
+      render step1_signup_index_path, method: :get
   end
 end
 
 
-private
+private 
   def user_params
     params.require(:user).permit(
       :username,

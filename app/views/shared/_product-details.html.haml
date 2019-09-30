@@ -96,10 +96,14 @@
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
 
       -# 今のユーザーIDと
-      - if current_user.id == @good.user.id 
-        = link_to '#' , class: "item-buy-btn" do
-          商品の編集
-      - else  
+      - if user_signed_in?
+        - if current_user.id == @good.user.id 
+          = link_to '#' , class: "item-buy-btn" do
+            商品の編集
+        - else 
+          = link_to purchase_path(@good) , class: "item-buy-btn" do
+            購入画面に進む
+      - else
         = link_to purchase_path(@good) , class: "item-buy-btn" do
           購入画面に進む
 
