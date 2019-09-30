@@ -71,11 +71,8 @@ class GoodsController < ApplicationController
 
   def create
     @good = Good.new(good_params)
-    # @good.save
-    binding.pry
 
     if @good.save
-      binding.pry
       params[:images]['goods_picture'].each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
