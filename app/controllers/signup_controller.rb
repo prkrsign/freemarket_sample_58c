@@ -1,4 +1,7 @@
 class SignupController < ApplicationController
+  prepend_before_action :user_params, only: [:create]
+  prepend_before_action :check_recaptcha, only: [:create]
+  
 
 def step1
     @user = User.new
@@ -17,7 +20,6 @@ def step2
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
-   
 end
 
 
@@ -37,16 +39,17 @@ def create
       birth_day: session[:birth_day],
       phone_number: user_params[:phone_number]
     )
-  if  @user.save!
+  if  @user.save
       session[:user_id] = @user.id
-      redirect_to new_address_path
+      redirect_to new_address_path, notice: "情報を登録しました。"
   else
-      render '/signup/step1'
+      flash.now[:alert] = "必須項目をご記入ください。"
+      render step1_signup_index_path, method: :get
   end
 end
 
 
-private
+private 
   def user_params
     params.require(:user).permit(
       :username,
@@ -63,7 +66,16 @@ private
       :phone_number   
     )
   end
-  
+
+  # ロボットにチェックが入っているか確認する
+  def check_recaptcha
+    @user = User.new(user_params)
+    if verify_recaptcha
+      return @user
+    else
+      render  step2_signup_index_path
+    end
+  end
 end
 
 

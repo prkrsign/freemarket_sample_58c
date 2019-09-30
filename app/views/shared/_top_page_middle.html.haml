@@ -2,7 +2,8 @@
   .middle
     .middle__main
       .middle__main__slide
-        = image_tag '/merucari_top1.png', alt: "slidepage", class: "middle__main__slide__area"
+        %img#mypic{height: "400", src:  "キャンプ用品.jpg", width: "100%"}/
+        -# = image_tag '/merucari_top1.png', alt: "slidepage", class: "middle__main__slide__area"
       .middle__main__category
         %h2.middle__main__category__text
           人気のカテゴリー
@@ -117,6 +118,7 @@
                 %i.fas.fa-chevron-right.middle__main__block__item__top__left__text-see-more__arrow-icon
           .block_area
             = render partial: "show_goods_all", collection: @goods_new_nike
+
 
   =link_to new_good_path, class: 'exhibit_btn' do
     .exhibit_btn__moji

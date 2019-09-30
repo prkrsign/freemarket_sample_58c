@@ -224,3 +224,33 @@
       }    
     }
   }
+  .exhibit_btn {
+    cursor: pointer;
+    bottom: 32px;
+    font-size: 22px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+    position: fixed;
+    text-align: center;
+    z-index: 2;
+    background-color: rgb(234, 53, 45);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+    text-decoration: none;
+    &__moji {
+      margin-top: 35px;
+      font-size: 22px;
+
+    }
+    .fas.fa-camera {
+      font-size: 54px;
+        width: 60px;
+        height: 54px;
+        margin-top: 30px;
+        max-height: 100%;
+        display: block;
+        margin: 5px auto 0px;
+    }
+  }
