@@ -28,11 +28,18 @@ Things you may want to cover:
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
 |phone_number|integer|null: false, unique: true|
+<!-- タイプと制約について確認 -->
+|reset_password_token|||
+|reset_password_sent|||
+|remember_created_at|||
+<!-- 必要ないかどうかログイン時調べる -->
 |address|bigint|foreign_key: true|
 
+
 ### Association
+<!-- adress必要かどうか要確認 -->
 - has_one :address
-- has_one :cards
+- has_one :card
 - has_many :sns_credentials, dependent: :destroy
 - has_many :goods
 
@@ -48,12 +55,18 @@ Things you may want to cover:
 |house_number|string|null: false|
 |building_name|string|null: false|
 |user|bigint|null: false, foreign_key: true|
+<!-- prefectureはactivehashであるから結びつきもう一度確認 -->
 |prefecture|bigint|null: false, foreign_key: true|
+<!-- house_number(番地)が電話番号として使用されていた。番地に使われていたblockを削除し、house_numberを復活、新たにphone_numberカラムをnull制約なしで追加 -->
+|phone_number|integer|
+
 
 ### Association
 - belongs_to_active_hash :prefecture, optional: true
 - belongs_to :user, optional: true
+<!-- 多分goodsを持たないので削除してもおk -->
 - has_many :goods
+<!-- dealsテーブルないから要確認 -->
 - has_many :deals
 
  
@@ -63,17 +76,22 @@ Things you may want to cover:
 |goods_name|string|null: false|
 |goods_description|text|null: false|
 |price|integer|null: false|
+<!-- アクティブハッシュだから要確認 -->
 |prefecture|bigint|null: false, foreign_key: true|
+<!-- 同上 -->
 |condition|bigint|null: false, foreign_key: true|
+<!-- 同上 -->
 |brand|bigint|foreign_key: true|
+<!-- 同上 -->
 |shipment|bigint|null: false, foreign_key: true|
+
 |user|bigint|null: false, foreign_key: true|
 |category|bigint|null: false, foreign_key: true|
 |delivery|bigint|null: false, foreign_key: true|
 |size|bigint|null: false, foreign_key: true|
 
 ### Association (要確認: アクティブハッシュ、リレーション)
-
+<!-- 「-」が入っていないところ要確認 -->
 - belongs_to_active_hash        :prefecture
 - belongs_to_active_hash        :brand
 - belongs_to                    :category
@@ -90,9 +108,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |goods_picture|string|null: false|
+<!-- goodsテーブルとの関係をはっきりさせる。現在1-多混同している -->
 |good|bigint|null: false, foreign_key: true|
 
 ### Association
+<!-- １対多が混同している -->
 - belongs_to :good, optional: true
 
 
@@ -118,9 +138,10 @@ Things you may want to cover:
 - belongs_to :user, optional: true 
 
 
-## cardsテーブル(要確認、customerカラムはどうなっているのか)
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
+<!-- ビューとカラムが全く対応していないから要確認 -->
 |user|bigint|null: false, foreign_key: true|
 |customer|bigint|null: false, foreign_key: true|
 |card|bigint|null: false, foreign_key: true|
