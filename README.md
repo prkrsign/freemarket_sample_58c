@@ -14,7 +14,7 @@ Things you may want to cover:
 * Database creation
 # Mercari DB設計
 ## usersテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -54,7 +54,7 @@ Things you may want to cover:
 
  
 ## goodsテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |goods_name|string|null: false|
 |goods_description|text|null: false|
@@ -76,7 +76,7 @@ Things you may want to cover:
 
 
 ## imagesテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |goods_picture|string|null: false|
 |good|bigint|null: false, foreign_key: true|
@@ -86,7 +86,7 @@ Things you may want to cover:
 
 
 ## dealsテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |deal|boolean||
 |user|bigint|null: false, foreign_key: true|
@@ -97,7 +97,7 @@ Things you may want to cover:
 
 
 ## sns_credentialsテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |provider|string|null: false|
 |uid|string|null: false|
@@ -107,7 +107,7 @@ Things you may want to cover:
 - has_one :user
 
 ## cardsテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |user|bigint|null: false, foreign_key: true|
 |customer|bigint|null: false, foreign_key: true|
@@ -118,7 +118,7 @@ Things you may want to cover:
 
 
 ## categoriesテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |category_name|string|null: false|
 |ancestry|string||
@@ -129,7 +129,7 @@ Things you may want to cover:
 - has_ancestry
 
 ## brandsテーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |brand_name|string|
 
@@ -137,7 +137,7 @@ Things you may want to cover:
  - has_many :goods
 
 ## deliveries テーブル
-|Colum|Type|Options|
+|Column|Type|Options|
 |-----|----|------|
 |delivery_method||null: false|
 |ancestry||null: false|
