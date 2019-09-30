@@ -100,3 +100,4 @@ gem 'payjp'
 gem 'gretel'
 gem 'swiper-rails'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'ransack', github: 'activerecord-hackery/ransack'
