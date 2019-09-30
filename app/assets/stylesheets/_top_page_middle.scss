@@ -106,16 +106,17 @@
             text-decoration: none;
             cursor: pointer;
             right: -85px;
+            &__arrow-icon {
+              height: 24px;
+              width: 10px;
+              bottom: 0px;
+              color: rgb(0, 149, 238);
+              position: relative;
+              margin-top: 7px;
+              box-sizing: border-box;
+            }
           }
-          .fas.fa-chevron-right {
-            height: 24px;
-            width: 10px;
-            bottom: 0px;
-            color: rgb(0, 149, 238);
-            position: relative;
-            margin-top: 7px;
-            box-sizing: border-box;
-          }
+
         }
         &__area {
           float:left;
