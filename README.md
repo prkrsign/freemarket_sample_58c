@@ -17,7 +17,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
-|password|string|null: false|
+|encrypted_password|string|null: false|
 |username|string|null: false, unique: true|
 |user_description|text|
 |family_name|string|null: false|
@@ -25,13 +25,15 @@ Things you may want to cover:
 |family_name_in_katakana|string|null: false|
 |first_name_in_katakana|string|null: false|
 |birth_year|integer|null: false|
-|brith_month|integer|null: false|
+|birth_month|integer|null: false|
 |birth_date|integer|null: false|
 |phone_number|integer|null: false, unique: true|
 |address|bigint|foreign_key: true|
+
 ### Association
-- has_one :credit_card
 - has_one :address
+- has_one :cards
+- has_many :sns_credentials, dependent: :destroy
 - has_many :goods
 
 ## addressesテーブル
@@ -49,8 +51,8 @@ Things you may want to cover:
 |prefecture|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :prefecture
-- belongs_to :user
+- belongs_to :prefecture, optional: true
+- belongs_to :user, optional: true
 - has_many :goods
 - has_many :deals
 
@@ -69,12 +71,18 @@ Things you may want to cover:
 |delivery|bigint|null: false, foreign_key: true|
 |size|bigint|null: false, foreign_key: true|
 
-### Association
-- belongs_to :prefecture
-- belongs_to :brand
-- belongs_to :category
-- belongs_to :user 
-- has_many :images
+### Association (要確認)
+
+- belongs_to_active_hash        :prefecture
+- belongs_to_active_hash        :brand
+- belongs_to                    :category
+    belongs_to                    :delivery
+    belongs_to_active_hash        :condition
+    belongs_to_active_hash        :shipment
+- has_many                      :images
+    belongs_to                    :delivery
+    accepts_nested_attributes_for :images
+- belongs_to                    :user
 
 
 ## imagesテーブル
@@ -84,10 +92,10 @@ Things you may want to cover:
 |good|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :good
+- belongs_to :good, optional: true
 
 
-## dealsテーブル
+## dealsテーブル　(確認できていない)
 |Column|Type|Options|
 |------|----|-------|
 |deal|boolean||
@@ -106,7 +114,8 @@ Things you may want to cover:
 |user|bigint|null: false, foreign_key: true|
 
 ### Association
-- has_one :user
+- belongs_to :user, optional: true 
+
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -143,6 +152,10 @@ Things you may want to cover:
 |------|----|-------|
 |delivery_method||null: false|
 |ancestry||null: false|
+
+### Associationテーブル
+- has_many :goods
+- has_ancestry
 
 
 
