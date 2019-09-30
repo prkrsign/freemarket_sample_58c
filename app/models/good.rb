@@ -11,7 +11,7 @@ class Good < ApplicationRecord
     has_many                      :images
     belongs_to                    :delivery
     accepts_nested_attributes_for :images
-    belongs_to                    :user
+    belongs_to                    :user a
 
 
     scope :active, -> { order(created_at: :DESC).limit(10) }
