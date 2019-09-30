@@ -59,11 +59,14 @@
                 font-family: inherit;
               }
               &__icon{
+                text-decoration: none;
+                border-style:none;
                 font-size: 18px;
                 cursor: pointer;
                 position: absolute;
                 top:  24px;
-                left: 1200px;
+                left: 1190px;
+                background-color: transparent;
               }
             }
           }

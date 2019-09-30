@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy], except: [:search]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
   
@@ -36,9 +36,10 @@ class GoodsController < ApplicationController
   end
 
   def search
-    # binding.pry
-    @goods = Good.all
+    # goods_nameとgoods_descriptionカラムそれぞれに対して、keywordを比較して、あいまい検索に引っかかったものを@goodsとしてオブジェクト化しています。(神山)
+    @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
   end
+
 
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
@@ -87,6 +88,7 @@ class GoodsController < ApplicationController
     
   end
 
+
   #before_actionのメソッド（該当するメソッドに共通する部分）
   def set_good
     @good = Good.find(params[:id])
@@ -111,4 +113,5 @@ class GoodsController < ApplicationController
       {images_attributes: [:goods_picture]}
     ).merge(user_id: current_user.id)
   end
+
 end
