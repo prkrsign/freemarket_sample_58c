@@ -17,9 +17,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
-|encrypted_password|string|null: false|
-|username|string|null: false, unique: true|
-|user_description|text|
+|encrypted_password|string|null: false, unique: true|
+|username|string|null: false|
+|user_description|text||
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_in_katakana|string|null: false|
@@ -39,10 +39,10 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
 |first_name|string|null: false|
-|family_name_kana|string|null: false|
+|family_name|string|null: false|
 |first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
 |postalcode|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
@@ -66,6 +66,7 @@ Things you may want to cover:
 |prefecture|bigint|null: false, foreign_key: true|
 |condition|bigint|null: false, foreign_key: true|
 |brand|bigint|foreign_key: true|
+|shipment|bigint|null: false, foreign_key: true|
 |user|bigint|null: false, foreign_key: true|
 |category|bigint|null: false, foreign_key: true|
 |delivery|bigint|null: false, foreign_key: true|
@@ -95,7 +96,7 @@ Things you may want to cover:
 - belongs_to :good, optional: true
 
 
-## dealsテーブル　(確認できていない)
+<!-- ## dealsテーブル　(確認できていないため一旦コメントアウト)
 |Column|Type|Options|
 |------|----|-------|
 |deal|boolean||
@@ -103,7 +104,7 @@ Things you may want to cover:
 |good|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :user -->
 
 
 ## sns_credentialsテーブル
@@ -117,7 +118,7 @@ Things you may want to cover:
 - belongs_to :user, optional: true 
 
 
-## cardsテーブル
+## cardsテーブル(要確認、customerカラムはどうなっているのか)
 |Column|Type|Options|
 |------|----|-------|
 |user|bigint|null: false, foreign_key: true|
@@ -126,6 +127,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belogns_to :customer
 
 
 ## categoriesテーブル
@@ -145,8 +147,8 @@ Things you may want to cover:
 |------|----|-------|
 |brand_name|string| -->
 
-### Association
- - has_many :goods
+<!-- ### Association
+ - has_many :goods -->
 
 ## deliveries テーブル
 |Column|Type|Options|
