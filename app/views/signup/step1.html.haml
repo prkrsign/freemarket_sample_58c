@@ -1,3 +1,5 @@
+= flash[:recaptcha_error]
+
 .login-header-wrapper
 
   -# ログインページ用ヘッダー
@@ -49,10 +51,6 @@
             月
             = f.collection_select :birth_day, BirthDay.all, :name, :name, {include_blank: '未選択'}, {class: 'contents__form__select'}
             日
-            //%p 年
-            //= f.text_field :birth_year, class: "contents__form__select", placeholder: "年", autofocus: "true"
-            //= f.text_field :birth_month, class: "contents__form__select", placeholder: "月", autofocus: "true"
-            //= f.text_field :birth_day, class: "contents__form__select", placeholder: "日", autofocus: "true"
           %p.form__info__text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       
         %div
@@ -61,6 +59,7 @@
             =link_to "#", class:"contents__message__main2__link" do
               利用規約
             に同意したものとみなします
+          
         = f.submit "次へ進む", class: "contents__btn"
 
         .contents__info

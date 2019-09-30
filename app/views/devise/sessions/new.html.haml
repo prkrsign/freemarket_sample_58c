@@ -1,3 +1,5 @@
+= flash[:recaptcha_error]
+
 .user-login-container
   .user-login-contents
     .user-login-header  
@@ -19,6 +21,7 @@
           = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn google' do
             %img.fab.fa-google{src: "https://img.icons8.com/color/20/000000/google-logo.png"}
             Googleでログイン
+
         .user-login-form
           .form-inner
           = form_for(@user, url: session_path(resource_name)) do |f|
@@ -26,23 +29,21 @@
               = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: 'user-login-input-text'
             .form-inner__mail
               = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class: 'user-login-input-text'
-            .form-inner__lobot
-              .login-captcha
-                .user-login-form-group
-                  .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                  = f.submit 'ログイン', class: 'login-page-red-btn'   
-                =link_to '#', class: 'login-page-password-forget' do 
-                  パスワードをお忘れの方
+
+            = f.submit 'ログイン', class: 'login-page-red-btn'  do
+              ログイン
+            =link_to '#', class: 'login-page-password-forget' do
+              パスワードをお忘れの方
 
     %footer.user-login-single-footer
       %nav.clearfix.user-login-single-footer__text-list
         %ul.clearfix.user-login-single-footer__text-list
           %li.user-login-single-footer__text-list__text
-            %a{href: "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+            プライバシーポリシー
           %li.user-login-single-footer__text-list__text
-            %a{href: "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+            メルカリ利用規約
           %li.user-login-single-footer__text-list__text
-            %a{href: "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+            特定商取引に関する表記
       %a.single-footer-logo{href: "https://www.mercari.com/jp/"}
         %img{alt: "mercari",height: "65",src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2482339763",width: "80"}
       %p

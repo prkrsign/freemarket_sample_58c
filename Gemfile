@@ -98,4 +98,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'payjp'
 gem 'gretel'
-
+gem "recaptcha", require: "recaptcha/rails"
