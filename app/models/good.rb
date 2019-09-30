@@ -1,24 +1,24 @@
+
 class Good < ApplicationRecord
     extend ActiveHash::Associations::ActiveRecordExtensions
 
     belongs_to_active_hash        :prefecture
     belongs_to_active_hash        :brand
     belongs_to                    :category
-
     belongs_to                    :delivery
     belongs_to_active_hash        :condition
     belongs_to_active_hash        :shipment
     has_many                      :images
     belongs_to                    :delivery
     accepts_nested_attributes_for :images
-    belongs_to                    :user
-
 
     scope :active, -> { order(created_at: :DESC).limit(10) }
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
     scope :recent, -> { includes(:images) }
-    scope :mujer, -> { where(category_id:[147..263]) }
-    scope :hombre, -> { where(category_id:[1..146]) }
+    # scope :mujer, -> { where(gender-mujer) }
+    # scope :hombre, -> { where(gender-hombre) }
+    scope :mujer, -> { where(brand_id:[147..263]) }
+    scope :hombre, -> { where(brand_id:[1..147]) }
     scope :adi, -> { where(brand_id:[5]) }
     scope :nk, -> { where(brand_id:[2]) }
     scope :ysl, -> { where(brand_id:[4]) }
@@ -26,4 +26,8 @@ class Good < ApplicationRecord
     accepts_nested_attributes_for :images
 end
 
+
+# class Category_gender_ids
+#     gender-mujer = category_id:[147..263]
+#     gender-hombre = category_id:[1..146]
 
