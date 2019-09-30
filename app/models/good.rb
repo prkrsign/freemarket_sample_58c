@@ -15,8 +15,6 @@ class Good < ApplicationRecord
     scope :active, -> { order(created_at: :DESC).limit(10) }
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
     scope :recent, -> { includes(:images) }
-    # scope :mujer, -> { where(gender-mujer) }
-    # scope :hombre, -> { where(gender-hombre) }
     scope :mujer, -> { where(brand_id:[147..263]) }
     scope :hombre, -> { where(brand_id:[1..147]) }
     scope :adi, -> { where(brand_id:[5]) }
@@ -25,9 +23,4 @@ class Good < ApplicationRecord
     scope :lv, -> { where(brand_id:[3]) }
     accepts_nested_attributes_for :images
 end
-
-
-# class Category_gender_ids
-#     gender-mujer = category_id:[147..263]
-#     gender-hombre = category_id:[1..146]
 
