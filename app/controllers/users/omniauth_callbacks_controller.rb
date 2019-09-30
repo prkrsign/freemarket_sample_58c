@@ -33,7 +33,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.sns_id"] = sns_id 
       #redirect_to だと更新してしまうのでrenderで。
       render template: step1_signup_index_path 
-      
     end
   end
 

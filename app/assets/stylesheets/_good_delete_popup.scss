@@ -1,49 +1,54 @@
 .goods_delete_popup__wrapper {
-  background: #eee;
+  position: absolute;
+  background: #fff;
   width: 700px;
-  position: relative;
   margin: 0 auto;
-  &__alert_box {
-    width: 700px;
-    height: 400px;
-    background: white;
-    position: relative;
-    padding: 10px;
-    &__head {
-      width: 700px;
-      height: 100px;
-      font-size: 30px;
+  top: 160px;
+  left: 400px;
+  &__alert_box{
+    background-color: #fff;
+    &__head{
+      color: #ea352d;
+      font-weight: 600;
+      font-size: 20px;
       text-align: center;
-      font-weight: bold;
-      &__caution-box {
-        width: 700px;
-        height: 80px;
-        font-size: 15px;
-        font-weight: normal;
-        margin: 30px;
-      }
+      margin: 30px auto;
     }
-    &__option {
-      width: 700px;
-      height: 300px;
-      &__cancel {
-        width: 349px;
-        height: 100px;
-        display: inline-block;
-        font-size: 50px;
-        &__cancel-text {
-        text-decoration: none;
-        }
-      }
-      &__delete {
-        width: 349px;
-        height: 100px;
-        background: red;
-        color: white;
-        display: inline-block;
-        font-size: 50px;
-      }
+  }
+  &__caution-box{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom:40px;
+    &__upper-info{
+      line-height: 20px;
+    }
+    &__lower-info{
+      line-height: 20px;
+    }
+  }
+  &__option{
+    border-top: 1px solid #ccc;
+    &__cancel{
+      box-sizing: border-box;
+      float: left;
+      width: 348px;
+      height: 80px;
+      border-right: 1px solid #ccc;
+      text-align: center;
+      padding-top: 30px;
+      text-decoration: none;
+      color: black;
+
+    }
+    &__delete{
+      box-sizing: border-box;
+      float: right;
+      width: 350px;
+      height: 80px;
+      text-align: center;
+      padding-top: 30px;
+      text-decoration: none;
+      color: #0099e8;
     }
   }
 }
-
