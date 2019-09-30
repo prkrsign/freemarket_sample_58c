@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :address
   has_many :sns_credentials, dependent: :destroy
   has_many :goods
+  has_one :cards
 
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :username,                 presence: true, length: { minimum:1, maximum:10 }

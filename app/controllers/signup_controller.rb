@@ -1,4 +1,7 @@
 class SignupController < ApplicationController
+  prepend_before_action :user_params, only: [:create]
+  prepend_before_action :check_recaptcha, only: [:create]
+  
 
 def step1
     @user = User.new
@@ -17,7 +20,6 @@ def step2
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
     session[:birth_day] = user_params[:birth_day]
-   
 end
 
 
@@ -64,7 +66,16 @@ private
       :phone_number   
     )
   end
-  
+
+  # ロボットにチェックが入っているか確認する
+  def check_recaptcha
+    @user = User.new(user_params)
+    if verify_recaptcha
+      return @user
+    else
+      render  step2_signup_index_path
+    end
+  end
 end
 
 

@@ -79,9 +79,9 @@ class GoodsController < ApplicationController
       params[:images]['goods_picture'].each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
-      redirect_to root_path, notice: "商品を登録しました。"
+      redirect_to root_path, notice: "商品を出品しました。"
     else
-      flash.now[:alert] = "必須項目をご記入ください。"
+      flash.now[:alert] = "必須項目を埋めてください。"
       render :new
     end
     
