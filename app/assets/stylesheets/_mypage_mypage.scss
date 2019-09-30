@@ -96,6 +96,16 @@
             text-align: center;
             color: #333;           
           }
+          &__text:hover {
+            position: absolute;
+            top: 24px;
+            right: 150px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;                   
+            text-align: center;
+            color: rgb(113, 109, 109);        
+          }
         }
         &__list-right {
           position: relative;
@@ -118,6 +128,18 @@
             text-decoration: none;                   
             text-align: center;
             color: #333;
+          }
+          &__text:hover {
+            position: absolute;
+            top: 24px;
+            right:120px;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;                   
+            text-align: center;
+            color: rgb(113, 109, 109);  
           }
         }
       }
@@ -151,9 +173,19 @@
             font-weight: 600;
             text-decoration: none;                   
             text-align: center;
-            color: #333;
-            
+            color: #333;       
           }
+          &__text:hover {
+            position: absolute;
+            top: 24px;
+            right:150px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;                   
+            text-align: center;
+            color: rgb(133, 109, 109);      
+          }
+          
         }
         &__list-right {
           border-top: 2px solid red;
@@ -177,6 +209,18 @@
             text-decoration: none;
             text-align: center;
             color: #333;
+          }
+          &__text:hover {
+            position: relative;
+            background-color: rgba(238, 238, 238, 0.664);
+            font-size: 16px;
+            font-weight: 600;
+            top: 24px;
+            height: 74px;
+            width: 350px;
+            text-decoration: none;
+            text-align: center;
+            color: rgb(133, 109, 109);
           }
         }
       }
@@ -242,8 +286,8 @@
     &__moji {
       margin-top: 35px;
       font-size: 22px;
-
     }
+
     .fas.fa-camera {
       font-size: 54px;
         width: 60px;
@@ -253,4 +297,13 @@
         display: block;
         margin: 5px auto 0px;
     }
+  }
+  .mypage_mypage__content__container__container-lists__list:hover {
+    position: relative;
+    display: flex;
+    display: block;
+    border-bottom: 1px solid #eee;
+    background-color: #eee;
+    height:83px;
+    width: 700px;
   }
