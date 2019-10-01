@@ -1,21 +1,28 @@
 = render 'shared/main_page_header'
-.top-page-middle-wrapper
-  .middle
-    .middle__main
-      .middle__main__category
-        %h2.middle__main__category__text
-          トランスフォーマーの検索結果(かり起き)
+.search-page-middle-wrapper
+  .middle-search-area
+    .search-conteiner
+      .search-right
+        .search-right__left-text
+          トランスフォーマー
+          .search-right__right-text
+            の検索結果
 
-      .middle__main__block
-        .middle__main__block__item
-          .middle__main__block__item__top
-                
-          .block_area
-            = render partial: "show_goods_all", collection: @goods
+      .search-middle__main__block
+        .search-middle__main__block__item
+          .search-middle__main__block__item__top
+            .block_area
+              = render partial: "show_goods_all", collection: @goods
 
 
 
+  =link_to new_good_path, class: 'exhibit_btn' do
+    .exhibit_btn__moji
+      出品
+    %i.fas.fa-camera
 
+= render 'shared/aside'
+= render 'shared/footer'
 
 
 
@@ -35,10 +42,4 @@
 -#       = render partial: "show_goods_all", collection: @goods
 
   
-  =link_to new_good_path, class: 'exhibit_btn' do
-    .exhibit_btn__moji
-      出品
-    %i.fas.fa-camera
-
--# = render 'shared/aside'
--# = render 'shared/footer'
+ 

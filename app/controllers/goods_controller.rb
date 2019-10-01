@@ -7,7 +7,7 @@ class GoodsController < ApplicationController
   def index
     @goods_new_ladies=Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
-    @goods_old_ladies = Good.recent.mujer.sorted
+    @goods_old_ladies=Good.recent.mujer.sorted
     @goods_old_men = Good.recent.hombre.sorted
     @goods_new_adidas = Good.recent.adi.active
     @goods_new_nike = Good.recent.nk.active
