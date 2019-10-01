@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy, :update], except: [:search]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
   
@@ -107,12 +107,18 @@ class GoodsController < ApplicationController
 
 
   def show
+
   end
 
   
   def search
-    # goods_nameとgoods_descriptionカラムそれぞれに対して、keywordを比較して、あいまい検索に引っかかったものを@goodsとしてオブジェクト化しています。(神山)
-    @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+    if params[:good].nil?
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%")
+      @keyword = params[:good][:keyword]
+    end
   end
 
 
