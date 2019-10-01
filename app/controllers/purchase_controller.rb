@@ -47,7 +47,6 @@ class PurchaseController < ApplicationController
     end
 
     def select
-      # binding.pry
       card = Card.where(user_id: current_user.id).first
       if card.blank?
         redirect_to controller: "cards", action: "new"
