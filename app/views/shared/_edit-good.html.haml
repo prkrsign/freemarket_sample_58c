@@ -57,7 +57,6 @@
             カテゴリー
             .form-require
               必須
-            -#= f.select :parent, @category_parent_array, {}, {class: "category", id: "parent_category", selected: @good.category.parent.parent.id}
             = f.select :parent, options_for_select(@category_parent_array.map{|c|[c, {}]}, @good.category.parent.parent.category_name), {}, {class: 'category', id: 'parent_categoryedit'}
             = f.select :child, options_for_select(@category_child_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.parent.id), {}, {class: 'category', id: 'child_category__edit'}
             = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.id), {}, {class: 'category', id: 'grandchild_category__edit' }
@@ -150,15 +149,7 @@
           変更する
         = link_to "http://localhost:3000/", class:'btn-default btn-gray' do
           もどる
-        
-
-
-
-
-
-
-
-
+          
 %footer.confirmation-footer
   %ul.confirmation-footer-container
     %li.confirmation-footer-container__list

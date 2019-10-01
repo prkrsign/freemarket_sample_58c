@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get 'goods/search'
   get 'tests/mypage', to: 'tests#mypage'  #レビュー用だよ
 
-  # resources :tests
-
   get 'goods/:id/edit', to: 'goods#edit'
   
   resources :cards do
