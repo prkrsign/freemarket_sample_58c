@@ -14,10 +14,8 @@ class Address < ApplicationRecord
                                           message: "はカナ文字を入力してください" }
   validates :postalcode,                  presence: true
   validates :city,                        presence: true
-  validates :building_name,               presence: true
   validates :house_number,                presence: true
   validates :user_id,                     presence: true
-  validates :phone_number,                       presence: true
   
 
   extend ActiveHash::Associations::ActiveRecordExtensions
