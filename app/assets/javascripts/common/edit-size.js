@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  // 編集ページが読み込まれたタイミングで、サイズのセレクトボックスと初期値を表示する処理。
   $(function(){
     var categoryNum = $('#child_category__edit').val();
     var x = parseInt(categoryNum);
@@ -82,7 +83,8 @@ $(document).on('turbolinks:load', function() {
                  </div>`;
     $('.contents-box__category-section__category-box__tag#size__edit2').append(size2Html);
   };
-
+  
+  // カテゴリーが服と靴以外だった場合は、空のデータを送るようにしました。表示はしたくないので、type='hidden'にしてあります。
   function appendSizebox30 (){
     var size3Html = '';
     size3Html = `

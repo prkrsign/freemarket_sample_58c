@@ -1,3 +1,4 @@
+= javascript_include_tag 'edit-image.js'
 -# ページのヘッダー部分
 %header.confirmation-header
   %h1
@@ -9,7 +10,10 @@
   .contents-box
     %section.contents-box__sell-container
       商品の情報を編集
-    = form_with model: @good, class: 'contents-box__form-list' do |f|
+    = form_with model: @good, class: 'contents-box__form-list', id: 'edit_good' do |f|
+      -#ちなみにform_forでもできました。↓
+      -#= form_for @good, html:{ class: 'contents-box__form-list', id: 'edit_good', method: 'PATCH', remote: true }  do |f|
+
       -# 画像アップロード部分
       %section.contents-box__form-list__upload-box
         .contents-box__form-list__upload-box__image-text
@@ -22,11 +26,10 @@
           .dropzone-container.clearfix
             .sell-uploads-drop
               #exhibit-images-preview
-                -#= image_tag @good.images.first.goods_picture.url, class: "photo-big"
             .dropzone-area
               = i.label :image, for: 'upload-image' do
                 .sell_upload__area
-                  = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
+                  = i.file_field :goods_picture, multiple: true, id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
 
       -# 商品名、商品説明入力部分
       %section.contents-box__descript-section
@@ -143,7 +146,7 @@
         
       %section.contents-box__sell-decision-container
         -# submitすることで、DBへデータが入り、トップページに繊維する流れ ys
-        = f.submit nil, class: 'btn btn-primary btn-red' , value: "変更する" do
+        = f.submit nil, class: 'btn btn-primary btn-red' , value: "変更する", id: 'submit' do
           変更する
         = link_to "http://localhost:3000/", class:'btn-default btn-gray' do
           もどる

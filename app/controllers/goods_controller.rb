@@ -31,20 +31,35 @@ class GoodsController < ApplicationController
     end
   end
 
+
   def edit
     @good = Good.find(params[:id])
-    #@image = Image.find(params[:id])
-    @user = User.find(1)
+
+    # ↓この変数をJavascriptファイル内で使う。(edit-image.js)
+    gon.good = @good
+    gon.images = @good.images
+
+    # @good.imagse.goods_pictureをバイナリデータにしてビューで表示できるようにする。
+    require 'base64'
+    
+    gon.images_binary_datas = []
+
+    @good.images.each do |image|
+      binary_data = File.read(image.goods_picture.file.file)
+      gon.images_binary_datas << Base64.strict_encode64(binary_data)
+    end
 
     @category_parent_array = ['---']
-    #データベースから、親カテゴリーのみを抽出し、配列化
+    #データベースから、親カテゴリーのみを抽出し、配列化。
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.category_name
     end
     
+    # 子カテゴリーと孫カテゴリーも取り出す。
     @category_child_array = @good.category.parent.parent.children
     @category_grandchild_array = @good.category.parent.children
 
+    # 『配送料の負担』と『配送の方法』もancestryで組んであるので、カテゴリーと同様に取り出す。
     @delivery_parent_array = ['---']
     Delivery.where(ancestry: nil).each do |parent|
       @delivery_parent_array << parent.delivery_method
@@ -52,16 +67,44 @@ class GoodsController < ApplicationController
     @delivery_child_array = @good.delivery.parent.children
   end
 
+
   def update
     @good = Good.find(params[:id])
-    if @good.user_id == current_user.id
-      @good.update(good_params)
-      #params[:images]['goods_picture'].each do |i|
-        #@image = @good.images.create!(goods_picture: i)
-      #end
+
+    # 登録済画像のidの配列を生成（編集前の画像のこと）
+    ids = @good.images.map{|image| image.id }
+    # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
+    exist_ids = registered_image_params[:ids].map(&:to_i)
+    # 登録済画像が残っていない場合(配列に０が格納されている)、配列を空にする
+    exist_ids.clear if exist_ids[0] == 0
+    
+    # 画像は必須。画像が1枚でもあればupdate開始。
+    if (exist_ids.length != 0 || new_image_params[:images][0] != " ") && @good.update(good_params)
+      #登録済画像のうち削除ボタンをおした画像を削除。
+      unless ids.length == exist_ids.length
+         #削除する画像のidの配列を生成。
+         delete_ids = ids - exist_ids
+         delete_ids.each do |id|
+          @good.images.find(id).destroy
+         end
+      end
+
+      #新規登録画像があればcreate
+      unless new_image_params[:images][0] == " "
+        params[:images]['goods_picture'].each do |i|
+          @image = @good.images.create!(goods_picture: i)
+        end
+        #以下のコードでも追加はできるが、goods_pictureに入る画像名が取得できなかったので上の記述に変更しました。
+        #new_image_params[:images].each do |image|
+          #@good.images.create(goods_picture: image, good_id: @good.id)
+        #end
+      end
+      redirect_to root_path
+    else
+      redirect_back
     end
-    redirect_to root_path
   end
+
 
   def show
     # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
@@ -69,6 +112,7 @@ class GoodsController < ApplicationController
     @user = User.find(1)
   end
 
+  
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -90,7 +134,6 @@ class GoodsController < ApplicationController
   def create
     @good = Good.new(good_params)
     @good.save
-
 
     if @good.save
       params[:images]['goods_picture'].each do |i|
@@ -131,6 +174,16 @@ class GoodsController < ApplicationController
       :price,
       {images_attributes: [:goods_picture, :_destroy, :id]}
     ).merge(user_id: 1)
+  end
+
+  # 編集が終わった段階で、編集前から存在し、且つ削除されずに残った画像のidが入る。
+  def registered_image_params
+    params.require(:registered_images_ids).permit({ids: []})
+  end
+
+  # こちらには編集時に新たに追加された画像が入る。追加画像はDBのidを持っていないので、idsではなくimagesになる。
+  def new_image_params
+    params.require(:new_images).permit({images: []})
   end
 
   def set_current_user
