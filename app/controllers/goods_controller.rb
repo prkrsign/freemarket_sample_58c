@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy], except: [:search]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy, :update], except: [:search]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
   
@@ -70,8 +70,7 @@ class GoodsController < ApplicationController
 
 
   def update
-    @good = Good.find(params[:id])
-
+    
     # 登録済画像のidの配列を生成（編集前の画像のこと）
     ids = @good.images.map{|image| image.id }
     # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
@@ -188,7 +187,7 @@ class GoodsController < ApplicationController
       :shipment_id,
       :price,
       {images_attributes: [:goods_picture, :_destroy, :id]}
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   # 編集が終わった段階で、編集前から存在し、且つ削除されずに残った画像のidが入る。
@@ -203,8 +202,6 @@ class GoodsController < ApplicationController
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
-      {images_attributes: [:goods_picture]}
-    ).merge(user_id: current_user.id)
   end
 
 end

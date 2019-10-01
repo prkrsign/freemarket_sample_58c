@@ -92,7 +92,6 @@
             配送料の負担
             .form-require
               必須
-            -#= f.select :delivery_id, @delivery_parent_array, {}, {class: "category", id: "parent_delivery"}
             = f.select :delivery, options_for_select(@delivery_parent_array.map{|c|[c, {}]}, @good.delivery.parent.delivery_method), {}, {class: 'category', id: 'parent_delivery__edit'}
           .contents-box__category-section__category-box__tag#async-select-box3
             配送の方法
@@ -149,7 +148,7 @@
           変更する
         = link_to "http://localhost:3000/", class:'btn-default btn-gray' do
           もどる
-          
+
 %footer.confirmation-footer
   %ul.confirmation-footer-container
     %li.confirmation-footer-container__list
