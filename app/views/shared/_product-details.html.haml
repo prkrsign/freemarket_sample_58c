@@ -97,7 +97,7 @@
       -# 今のユーザーIDと
       - if user_signed_in?
         - if current_user.id == @good.user.id 
-          = link_to edit_good_path, class: "item-buy-btn" do
+          = link_to edit_good_path, data: {"turbolinks": false}, class: "item-buy-btn" do
             商品の編集
         - else 
           = link_to purchase_path(@good) , class: "item-buy-btn" do
