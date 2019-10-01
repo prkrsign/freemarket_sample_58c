@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function(){
-  var dropzone = $('.dropzone-area-edit');
   var input_area = $(".sell_upload__area");
   var preview = $("#exhibit-images-preview");
 
