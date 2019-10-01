@@ -2,7 +2,7 @@
 -# ページのヘッダー部分
 %header.confirmation-header
   %h1
-    =link_to "＃", class: "confirmation-heade__link" do
+    =link_to root_path, class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
   
 -# メインコンテンツ
@@ -146,7 +146,7 @@
         -# submitすることで、DBへデータが入り、トップページに繊維する流れ ys
         = f.submit nil, class: 'btn btn-primary btn-red' , value: "変更する", id: 'submit' do
           変更する
-        = link_to "http://localhost:3000/", class:'btn-default btn-gray' do
+        = link_to root_path, class:'btn-default btn-gray' do
           もどる
 
 %footer.confirmation-footer

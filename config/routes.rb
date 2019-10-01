@@ -19,8 +19,18 @@ Rails.application.routes.draw do
   
   resources :purchase do  # 商品購入確認ページにて使用YS
 
+    member do
+      get 'select'
+      get 'done'
+      post 'delete', to: 'purchase#delete'
+    end
+
     collection do
       post 'pay/:id' => 'purchase#pay', as: 'pay'
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+      
     end
   end
 

@@ -21,12 +21,12 @@
         .contents__form__title
           %label パスワード
           %span.contents__form__require 必須
-          = f.text_field :password, autofocus: true, autocomplete: "password", placeholder:'7文字以上', class: "contents__form__input"
+          = f.password_field :password, autofocus: true, autocomplete: "off", placeholder:'7文字以上', class: "contents__form__input"
         .contents__form__title
           %label パスワード (確認)
           %span.contents__form__require 必須
-          = f.text_field :password, autofocus: true, autocomplete: "password_confirmation", placeholder:'7文字以上', class: "contents__form__input"
-        .contents__form__title
+          = f.passwortitld_field :password, autofocus: true, autocomplete: "password_confirmation", placeholder:'7文字以上', class: "contents__form__input"
+        .contents__form__e
           %h3.contents__message 本人確認
           %p.contents__message__main 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
         .contents__form__title

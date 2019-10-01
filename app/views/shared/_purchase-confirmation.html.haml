@@ -35,12 +35,8 @@
                   支払い金額
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
                   = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
-              -# payjp実装のためのJavaScript埋め込みの記述。ボタンも同時に生成(神山)
-              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_b9e130775ea650797ff7b649"}
-                購入する
-              -# =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
-              -# =f.submit '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'
-              
+              = form_tag(action: :pay, method: :post) do
+                %button.btn 購入する
     
     -# ユーザー情報、配送先
     %section.confirmation-main__container__buy-info
@@ -53,7 +49,7 @@
             = @good.user.address.city
           .confirmation-main__container__buy-info__container__address__user-name  
             = "#{@good.user.address.family_name + @good.user.address.first_name}"
-          =link_to '#', class: 'confirmation-main__container__buy-info__container__user-info-fix' do
+          =link_to  '#', class: 'confirmation-main__container__buy-info__container__user-info-fix' do
             変更する
             %i.fas.fa-chevron-right
 
