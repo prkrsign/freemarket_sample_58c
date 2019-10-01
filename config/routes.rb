@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     member do 
       get 'show_delete'
       get 'good_delete_popup'
-      get ':id/edit', to: 'goods#edit'
+      get 'edit'
     end
 
     collection do    
