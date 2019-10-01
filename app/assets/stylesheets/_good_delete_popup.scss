@@ -1,0 +1,54 @@
+.goods_delete_popup__wrapper {
+  position: absolute;
+  background: #fff;
+  width: 700px;
+  margin: 0 auto;
+  top: 160px;
+  left: 400px;
+  &__alert_box{
+    background-color: #fff;
+    &__head{
+      color: #ea352d;
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+      margin: 30px auto;
+    }
+  }
+  &__caution-box{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom:40px;
+    &__upper-info{
+      line-height: 20px;
+    }
+    &__lower-info{
+      line-height: 20px;
+    }
+  }
+  &__option{
+    border-top: 1px solid #ccc;
+    &__cancel{
+      box-sizing: border-box;
+      float: left;
+      width: 348px;
+      height: 80px;
+      border-right: 1px solid #ccc;
+      text-align: center;
+      padding-top: 30px;
+      text-decoration: none;
+      color: black;
+
+    }
+    &__delete{
+      box-sizing: border-box;
+      float: right;
+      width: 350px;
+      height: 80px;
+      text-align: center;
+      padding-top: 30px;
+      text-decoration: none;
+      color: #0099e8;
+    }
+  }
+}

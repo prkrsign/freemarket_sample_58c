@@ -21,7 +21,7 @@
             %th.category 出品者
             %td
               = link_to "#",  class:"name" do
-                = @user.username 
+                = @good.user.username 
                 -# 名前userDB待ち（仮）
               .user-rating
                 .item-user-ratings
@@ -88,18 +88,29 @@
 
       .price-box
         %span.price-box__price
-          = number_to_currency(@good.price, unit: "￥", precision: 0)
+          = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
         %span.price-box__tax
           (税込)
         %span.price-box__fee
           送料込み
         -# 以下翻訳：次の遷移先を(purchase_path(@good))グッズidを所得して遷移する。
 
-      = link_to purchase_path(@good) , class: "item-buy-btn" do
-        購入画面に進む
+      -# 今のユーザーIDと
+      - if user_signed_in?
+        - if current_user.id == @good.user.id 
+          = link_to '#' , class: "item-buy-btn" do
+            商品の編集
+        - else 
+          = link_to purchase_path(@good) , class: "item-buy-btn" do
+            購入画面に進む
+      - else
+        = link_to purchase_path(@good) , class: "item-buy-btn" do
+          購入画面に進む
+
       .item-description
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+
           
       .button-content
         .button-content__left

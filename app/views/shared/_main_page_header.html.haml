@@ -1,7 +1,6 @@
--# 〜〜〜〜〜ここからヘッダー（上段）エリア〜〜〜〜〜
 .main-page-header-wrapper
   .header
-    = form_with(class: 'header__main') do |f|
+    = form_with model: @goods, url: search_goods_path, method: :get, class: 'header__main', local: true  do |f|
       .header__upper
         -# メルカリロゴ部分
         .header__upper__left
@@ -11,8 +10,11 @@
         
         -# 検索ボックス部分
         %form.header__upper__right
-          =f.text_field nil, class: 'header__upper__right__in', url: "#", placeholder: "何かお探しですか？" 
-          %i.fas.fa-search.header__upper__right__icon
+          =f.text_field :keyword, class: 'header__upper__right__in', placeholder: "何かお探しですか？"
+          =button_tag type: 'submit', class: 'fas fa-search header__upper__right__icon' do
+            -# %i.fas.fa-search.header__upper__right__icon
+          -# =f.submit
+          
 
       -# カテゴリ、ブランドアイコン部分
       .header__under
@@ -27,15 +29,33 @@
               .header__under__left__tag-icon__text
                 ブランドから探す
 
-        -# 新規登録、ログイン部分。ユーザーログイン時のビューは未実装(神山)
-        .header__under__right
-          .header__under__right__register-button
-          - if user_signed_in? # このリンク仮置きだよ?
-            =link_to  '/tests/mypage', class: 'header__under__right__register-button__mypage' do
-              マイページ
-            -# =link_to destroy_user_session_path, method: :delete, class: 'header__under__right__register-button__mypage' do
-            -#   マイページ
-          - else
+          -# ユーザーがログインしている時。各種情報。リンクは仮置き。
+        - if user_signed_in?
+          .header__under__login-right
+            =link_to '#', class: 'header__under__login-right__like-box' do
+              .header__under__login-right__like-box__like-list
+                いいね！一覧
+              %i.far.fa-heart.header__under__login-right__like-box__icon
+
+            =link_to '#', class: 'header__under__login-right__info-box' do
+              .header__under__login-right__info-box__text
+                お知らせ
+              %i.far.fa-bell.header__under__login-right__info-box__icon
+            
+            =link_to '#', class: 'header__under__login-right__check-box' do
+              .header__under__login-right__check-box__text
+                やることリスト
+              %i.fas.fa-check.header__under__login-right__check-box__icon
+            
+            =link_to mypage_path, class: 'header__under__login-right__mypage-box' do
+              .header__under__login-right__mypage-box__text
+                マイページ
+              = image_tag '/mypage_link_icon.png', class: 'header__under__login-right__mypage-box__icon'
+
+          -# ユーザーがログインしていない時。新規登録、ログイン部分。
+        - else
+          .header__under__right
+            .header__under__right__register-button
             =link_to new_user_registration_path, class:"header__under__right__register-button__text" do
               新規会員登録
             =link_to user_session_path,  class:"header__under__right__login-button__text" do

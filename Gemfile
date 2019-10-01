@@ -98,4 +98,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'payjp'
 gem 'gon'
-
+gem 'gretel'
+gem 'swiper-rails'
+gem "recaptcha", require: "recaptcha/rails"
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'omniauth-rails_csrf_protection'

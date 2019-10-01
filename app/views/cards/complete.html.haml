@@ -1,21 +1,21 @@
 .login-header-wrapper
   = render 'shared/login-header5'
 
-.signup4-wrapper
-  .contents
-    .contents__head
+.signup5-wrapper
+  .signup5-wrapper__contents
+    .signup5-wrapper__contents__head
       会員登録完了
-    .contents__form
-      .contents__form__title1
+    .signup5-wrapper__contents__form
+      .signup5-wrapper__contents__form__title
         %p 
         ありがとうございます。
         %br
         会員登録が完了しました。
-      =link_to "/", class:"contents__btn" do
+      =link_to "/", class:"signup5-wrapper__contents__form__red-btn" do
         メルカリをはじめる
       
-      -# = f.button '次に進む', class:"contents__btn" 
-      -# ページのフッター部分
+
+  -# ページのフッター部分
   %footer.confirmation-footer
     %ul.confirmation-footer-container
       %li.confirmation-footer-container__list

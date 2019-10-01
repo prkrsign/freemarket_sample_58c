@@ -1,4 +1,12 @@
 =render 'shared/main_page_header'
+.bread_crumbs
+  .bread_crumbs__line
+    -# config/breadcrumbs.rbに定義したmypageを呼び出し
+    - breadcrumb :put_up_goods_on_sale
+    -# 下記を記述した箇所にパンくずリストが表示される。
+    = breadcrumbs separator: "#{content_tag(:i, '', class: 'fas fa-chevron-right')}", class: "breadcrumbs-list"
+
+
 
 %main.put_up_goods_on_sale.clearfix
   =render 'shared/profile-sidebar'
@@ -21,12 +29,8 @@
               売却済み
 
       .put_up_goods-lists
-        - (1..10).each do |i|
-          .put_up_goods-lists__list
-            = image_tag '/goods_sample_1.jpg', size: "", alt: "buy-item-image" , class: 'put_up_goods-lists__list__image'
-            .put_up_goods-lists__list__text
-              新品中禅寺湖
-              %i.fas.fa-chevron-right.put_up_goods-lists__list__text__icon
+        -# 出品中商品の画像、名前のなどの読み出し。部分テンプレートで繰り返し表記してます(神山)
+        = render partial: 'exhibit' , collection: @user.goods.to_a
 
     -# ペイジャーは余力あったら作る
     %ul.mypage-history.pager

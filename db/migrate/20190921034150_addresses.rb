@@ -10,6 +10,9 @@ class Addresses < ActiveRecord::Migration[5.2]
       t.string :house_number, null: false
       t.string :building_name, null: false
       t.bigint :user_id, null: false, foreign_key: true
+      t.bigint :prefecture_id, null: false, foreign_key: true
+      t.string :block, null: false
+      
     end
   end
 end

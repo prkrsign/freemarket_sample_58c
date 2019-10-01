@@ -1,7 +1,7 @@
 -# ページのヘッダー部分
 .confirmation-header
   %h1
-    =link_to "#", class: "confirmation-heade__link" do
+    =link_to root_path, class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
 
 -# メイン画面
@@ -24,7 +24,7 @@
         = form_with(url: pay_purchase_index_path, method: :post, class: 'confirmation-main__container__buy-content__inner__buy-form') do |f|
           .confirmation-main__container__buy-content__inner__buy-form__list
             %p.confirmation-main__container__buy-content__inner__buy-form__list__price
-              = number_to_currency(@good.price, unit: "￥", precision: 0)
+              = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
               %span.confirmation-main__container__buy-content__inner__buy-form__list__price__text
                 送料込み
             %ul.confirmation-main__container__buy-content__inner__buy-form__list__point
@@ -34,7 +34,7 @@
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__left-text
                   支払い金額
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
-                  = number_to_currency(@good.price, unit: "￥", precision: 0)
+                  = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
               -# payjp実装のためのJavaScript埋め込みの記述。ボタンも同時に生成(神山)
               %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_b9e130775ea650797ff7b649"}
                 購入する

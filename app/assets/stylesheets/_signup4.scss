@@ -1,7 +1,7 @@
 .signup4-wrapper{
-  .contents {
+  .signup4-wrapper__contents {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-    height: 100%;
+    height: 550px;
     width: 560px;
     margin: 0 auto;
     background-color: #fff;
@@ -14,50 +14,156 @@
       text-align: center;
       border-bottom: 1px solid whitesmoke;
     }
-    &__form{
-      &__signup4-title{
-        margin-top: 20px;
-        font-size: 12px;
-      }
-      display: block;
-      width: 300px;
-      margin: 0 auto;
-      padding: 30px 20px 60px;
-      font-size: 10px;
-      color: black;
-      line-height: 1.5;
-      &__time-select{
-        height: 35px;
-        width: 130px;
-        display: block;
-        margin: 0 auto;
-        border-radius: 5px;
-        margin-left: 10px;
-        padding: 10px 16px 8px;
-        border: 1px solid #ccc;
-        background: #fff;
-        font-size: 14px;
-      }
-      &__cardlist{
-        margin-top: 10px;
-        margin-left: 10px;
-        text-align: center;
-        .icon{
+    &__title{
+      margin: 30px 140px 20px;
+        &__main-contents{
+            font-weight: 600;
+            position: relative;
+            &__label{
+              font-weight: 600;
+            }
+            &__require{
+              position: absolute;
+              margin: 2px 0 0 8px;
+              padding: 3px 4px;
+              border-radius: 2px;
+              background-color: #ea352d;
+              color: #fff;
+              font-size: 10px;
+              text-decoration: none;
+              vertical-align: top;
+            }
+            &__card-list{
+              display: inline-block; 
+              margin-top: 10px;
+              text-align: center;
+              &__icon{
+                display: inline-block; 
+              }
+            }
+            &__input{
+              display: block;
+              margin: 10px auto 0;
+              border-radius: 5px;
+              height: 20px;
+              width: 250px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              background: #fff;
+              font-size: 14px;
+              font-weight: 200;
+            }
+        }
+        &__middle-contents{
+          margin-top: 20px;
+          margin-left: 5px;
+          font-weight: 600;
+          position: relative;
+          &__deadline{
+            height: 140px;
+            width: 200px;
+            &__text{
+              font-weight: 600;
+            }
+            &__require{
+              position: absolute;
+              top: 0;
+              left: 70px;
+              padding: 3px 4px;
+              border-radius: 2px;
+              background-color: #ea352d;
+              color: #fff;
+              font-size: 10px;
+              text-decoration: none;
+              vertical-align: top;
+              font-weight: 600;
+            }
+            &__list{
+              position: relative;
+              margin-top: 8px;
+              width: 200px;
+              &__month{
+                border-radius: 5px;
+                height: 40px;
+                width: 130px;
+                border: 1px solid #ccc;
+                background: #fff;
+                font-size: 14px;
+              }
+              &__month-text{
+                position: absolute;
+                top:    15px;
+                right:  -80px;
+              }
+              &__year{
+                border-radius: 5px;
+                height: 40px;
+                width: 130px;
+                padding: 10px 16px 8px;
+                border: 1px solid #ccc;
+                background: #fff;
+                font-size: 14px;
+                position: absolute;
+                top: 50px;
+              }
+              &__year-text{
+                position: absolute;
+                top:    70px;
+                right:  -80px;
+              }
+            }
+          }
+        }
+        &__low-contents{
+          font-weight: 600;
+          position: relative;
+          &__code{
+            margin-bottom: 10px;
+          }
+          &__require{
+            position: absolute;
+            top:  0;
+            left: 150px;
+            padding: 3px 4px;
+            border-radius: 2px;
+            background-color: #ea352d;
+            color: #fff;
+            font-size: 10px;
+            text-decoration: none;
+            vertical-align: top;
+            font-weight: 600;
+          }
+          &__input{
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+            height: 20px;
+            width: 250px;
+            padding: 10px 16px 8px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 14px;
+            font-weight: 200;
+          }
+        }   
+        &__info{
           display: inline-block;
+          text-align: right;
+          color: #0099e8;
+          font-size: 12px;
+          &__text{
+            display: inline-block;
+          }
+          &__red-btn{
+            background-color: #ea352d;
+            color: #fff;
+            margin: 15px auto 0;
+            display: block;
+            width: 290px;
+            line-height: 40px;
+            font-size: 12px;
+          }
         }
       }
     }
-    &__btn {
-      background-color: #ea352d;
-      color: #fff;
-      margin: 0 auto;
-      margin-top: 30px;
-      display: block;
-      width: 290px;
-      text-decoration: none;
-      text-align: center;
-      line-height: 40px;
-      font-size: 12px;
-    }
   }
-}
