@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       get 'show_delete'
       get 'good_delete_popup'
     end
-
+ 
     collection do    
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
@@ -40,8 +40,6 @@ Rails.application.routes.draw do
       get 'get_delivery_children', defaults: { format: 'json' }
     end 
   end
-
-  
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
@@ -66,3 +64,5 @@ Rails.application.routes.draw do
   get 'mypage/logout', to: 'mypage#logout'
   
 end
+
+
