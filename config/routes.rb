@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'goods/new'
-
   resources :cards do
     collection do
       get 'complete', to: 'cards#complete'
@@ -28,11 +26,13 @@ Rails.application.routes.draw do
 
 # 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
   resources :goods do
+    get 'new'
     member do 
       get 'show_delete'
       get 'good_delete_popup'
+      get 'edit'
     end
-
+ 
     collection do    
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
@@ -40,8 +40,6 @@ Rails.application.routes.draw do
       get 'get_delivery_children', defaults: { format: 'json' }
     end 
   end
-
-  
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
@@ -66,3 +64,5 @@ Rails.application.routes.draw do
   get 'mypage/logout', to: 'mypage#logout'
   
 end
+
+

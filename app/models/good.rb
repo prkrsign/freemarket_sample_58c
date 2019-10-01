@@ -10,7 +10,7 @@ class Good < ApplicationRecord
     belongs_to_active_hash        :shipment
     has_many                      :images
     belongs_to                    :delivery
-    accepts_nested_attributes_for :images
+    accepts_nested_attributes_for :images, allow_destroy: true
     belongs_to                    :user
 
     scope :active, -> { order(created_at: :DESC).limit(10) }
