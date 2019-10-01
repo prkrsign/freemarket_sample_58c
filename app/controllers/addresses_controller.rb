@@ -13,9 +13,11 @@ class AddressesController < ApplicationController
     new_address_params = address_params.merge(info)
     @address = Address.new(new_address_params)
     
-    if @address.save!      
-       redirect_to new_card_path
+    if @address.save
+       redirect_to new_card_path, notice: "情報を登録しました。"
+
     else
+       flash.now[:alert] = "必須項目をご記入ください。"
        render 'new'
     end
   end
@@ -35,7 +37,9 @@ class AddressesController < ApplicationController
       :postalcode,
       :city,
       :house_number,
-      :building_name
+      :building_name,
+      :block,
+      :prefecture_id
     )
   end
 end

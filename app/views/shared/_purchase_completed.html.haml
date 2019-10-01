@@ -1,7 +1,7 @@
 -# ページのヘッダー部分
 .confirmation-header
   %h1
-    =link_to "#", class: "confirmation-heade__link" do
+    =link_to root_path, class: "confirmation-heade__link" do
       = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
 
 -# 購入内容詳細
@@ -28,7 +28,7 @@
     -# 金額
     .purchase-completed-wrapper__main-container__price
       .purchase-completed-wrapper__main-container__price__value
-        = "¥#{@good.price}"
+        = number_to_currency(@good.price, unit: "￥", precision: 0, locale: 'en')
       .purchase-completed-wrapper__main-container__price__note
         送料込み
 

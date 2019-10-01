@@ -1,3 +1,7 @@
+-# recaptchaのエラーメッセージ(神山)
+.recaptcha-flash-message
+  = flash[:recaptcha_error]
+
 -# 他cssとの干渉をさけるため、全体をラップする
 .login-header-wrapper
 
@@ -15,12 +19,18 @@
             = f.label  "携帯電話の番号"
             = f.text_field :phone_number, class: "phone-number" , placeholder: '携帯電話の番号を入力'
           %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+
+          .lobot-chack-box
+            = recaptcha_tags
           -# %button SMSを送信する
           = f.submit 'SMSを送信する', class: 'step2-submit-red-btn'
+        
           %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .form-text
             %a 電話番号の確認が必要な理由
             %i.fas.fa-chevron-right
+        
+
       
     -# ページのフッター部分
   %footer.confirmation-footer

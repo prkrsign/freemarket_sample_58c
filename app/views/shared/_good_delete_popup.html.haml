@@ -1,0 +1,24 @@
+.user-login-container
+  .user-login-contents
+    .user-login-header  
+      = link_to root_path do
+        =image_tag '/merucari logo.svg', alt: "mercari",width: 185,height: 95
+
+  .goods_delete_popup__wrapper
+    .goods_delete_popup__wrapper__alert_box
+      .goods_delete_popup__wrapper__alert_box__head
+        %i.fas.fa-exclamation-triangle.goods_delete_popup__wrapper__alert_box__icon
+          確認
+        
+    .goods_delete_popup__wrapper__caution-box
+      .goods_delete_popup__wrapper__caution-box__upper-info 
+        本当に削除しますか？
+      .goods_delete_popup__wrapper__caution-box__lower-info 
+        削除すると二度と復活できません。
+        
+
+    .goods_delete_popup__wrapper__option
+      =link_to show_delete_good_path, class: "goods_delete_popup__wrapper__option__cancel" do
+        キャンセル 
+      =link_to good_path , method: :DELETE, class: "goods_delete_popup__wrapper__option__delete" do
+        削除する

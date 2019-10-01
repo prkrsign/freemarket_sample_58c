@@ -1,9 +1,11 @@
 class GoodsController < ApplicationController
-  before_action :set_current_user
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy], except: [:search]
+# 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
+  before_action :authenticate_user!, only: [:new]
+  
   # トップページの商品一覧表示
   def index
-
-    @goods_new_ladies = Good.recent.mujer.active
+    @goods_new_ladies=Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
     @goods_old_ladies = Good.recent.mujer.sorted
     @goods_old_men = Good.recent.hombre.sorted
@@ -11,7 +13,6 @@ class GoodsController < ApplicationController
     @goods_new_nike = Good.recent.nk.active
     @goods_new_ysl = Good.recent.ysl.active
     @goods_new_lv = Good.recent.lv.active
-
   end
   
   def new
@@ -107,12 +108,15 @@ class GoodsController < ApplicationController
 
 
   def show
-    # 以下翻訳：インスタンス変数を定義 グッズテーブル(Good)のID（:id）を所得してくる。9/23 YS
-    @good = Good.find(params[:id])
-    @user = User.find(1)
   end
 
   
+  def search
+    # goods_nameとgoods_descriptionカラムそれぞれに対して、keywordを比較して、あいまい検索に引っかかったものを@goodsとしてオブジェクト化しています。(神山)
+    @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+  end
+
+
   # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -130,6 +134,20 @@ class GoodsController < ApplicationController
     @delivery_children = Delivery.find_by(delivery_method: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #商品商品詳細ページ
+  def show_delete
+  end
+
+  #商品削除のポップアップページ
+  def good_delete_popup
+  end
+
+  #商品削除
+  def destroy
+    @good.destroy
+    redirect_to root_path
+  end
+
 
   def create
     @good = Good.new(good_params)
@@ -139,24 +157,21 @@ class GoodsController < ApplicationController
       params[:images]['goods_picture'].each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
-      redirect_to root_path
+      redirect_to root_path, notice: "商品を出品しました。"
     else
+      flash.now[:alert] = "必須項目を埋めてください。"
       render :new
     end
     
   end
 
 
-  def search
-    # if params[:m_cat_id]
-    #   @m_cat = Category.find(params[:m_cat_id]).children
-    # else
-    #   @s_cat = Category.find(params[:s_cat_id]).children
-    # end
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+  #before_actionのメソッド（該当するメソッドに共通する部分）
+  def set_good
+    @good = Good.find(params[:id])
+  end
+
+  def notlogin
   end
 
   private
@@ -188,6 +203,8 @@ class GoodsController < ApplicationController
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
+      {images_attributes: [:goods_picture]}
+    ).merge(user_id: current_user.id)
   end
 
 end
