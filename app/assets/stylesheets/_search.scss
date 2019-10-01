@@ -2,7 +2,7 @@
   width: 1020px;
   height:1200px;
   background-color: white;
-  margin: 40px auto 0;
+  margin: 40px 300px 0;
   .search-right {
     width: 700px;
     height:30px;
@@ -51,7 +51,6 @@
     margin: 0px auto;
     height: 100%;
 .search-middle__main__block {
-  padding: 42px 100px 100px;
   position: flex;
   min-height: 100%;
   color: rgb(51, 51, 51);
@@ -66,7 +65,7 @@
   &__item{
     display:  inline-block;
     width: 100%;
-    height: 550px;
+    height: 100%;
     background-color: white;
     box-sizing: border-box;
     margin: 0 auto;
