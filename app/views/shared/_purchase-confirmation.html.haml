@@ -36,8 +36,10 @@
                 .confirmation-main__container__buy-content__inner__buy-form__list__table__list__right-text
                   = number_to_currency(@good.price, unit: "￥", precision: 0)
               -# payjp実装のためのJavaScript埋め込みの記述。ボタンも同時に生成(神山)
-              =link_to  select_purchase_path(@good), class: 'btn' do
-                購入する
+              = form_tag(action: :pay, method: :post) do
+                %button.btn 購入する
+              -# =link_to  select_purchase_path(@good), class: 'btn' do
+              -#   購入する
               -# %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_b9e130775ea650797ff7b649"}
               -#   購入する
               -# =f.submit nil, value: '購入する', class: 'confirmation-main__container__buy-content__inner__buy-form__list btn btn-primary'

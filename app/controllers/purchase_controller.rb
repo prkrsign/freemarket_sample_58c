@@ -26,6 +26,12 @@ class PurchaseController < ApplicationController
     def done
     end
 
+    def delete
+      @good = Good.find_by(id: params[:id])
+      @good.destroy
+      redirect_to("/")
+    end
+
     def 
     def show
     end

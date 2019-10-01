@@ -16,7 +16,7 @@
     
     .purchase-completed-wrapper__main-container__result
       .purchase-completed-wrapper__main-container__result__text
-        = link_to "http://localhost:3000/", class:'btn-default btn-gray' do
+        = link_to delete_purchase_path, method: :post, class:'btn-default btn-gray' do
           メルカリ一覧へ
     
     -# 商品画像
