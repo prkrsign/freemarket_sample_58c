@@ -1,3 +1,4 @@
+
 class Good < ApplicationRecord
     extend ActiveHash::Associations::ActiveRecordExtensions
 
@@ -15,13 +16,12 @@ class Good < ApplicationRecord
     scope :active, -> { order(created_at: :DESC).limit(10) }
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
     scope :recent, -> { includes(:images) }
-    scope :mujer, -> { where(category_id:[147..263])}
-    scope :hombre, -> { where(category_id:[1..146]) }
+    scope :mujer, -> { where(category_id:[147..263]) }
+    scope :hombre, -> { where(category_id:[1..147]) }
     scope :adi, -> { where(brand_id:[5]) }
     scope :nk, -> { where(brand_id:[2]) }
-    scope :ysl, -> { where(brand_id:[6]) }
+    scope :ysl, -> { where(brand_id:[4]) }
     scope :lv, -> { where(brand_id:[3]) }
     accepts_nested_attributes_for :images
 end
-
 
