@@ -45,7 +45,7 @@
         = f.label '番地', class: 'signup3-wrapper__contents__form__title1__text'
         %span.signup3-wrapper__contents__form__title1__require 
           必須
-        = f.text_field :block, maxlength: '10', placeholder: '例）青山1-1-1', class: 'signup3-contents__form__input'
+        = f.text_field :house_number, maxlength: '10', placeholder: '例）青山1-1-1', class: 'signup3-contents__form__input'
 
       .signup3-wrapper__contents__form__title1
         = f.label '建物', class: 'signup3-wrapper__contents__form__title1__text'
@@ -57,7 +57,7 @@
         = f.label '電話', class: 'signup3-wrapper__contents__form__title1__text'
         %span.signup3-wrapper__contents__form__title1__require-gray 
           任意
-        = f.text_field :house_number, maxlength: '14', placeholder: '例）09012345678', class: 'signup3-contents__form__input'
+        = f.text_field :phone_number, maxlength: '14', placeholder: '例）09012345678', class: 'signup3-contents__form__input'
         = f.submit '次に進む', class: 'contents__btn'
   
   %footer.confirmation-footer

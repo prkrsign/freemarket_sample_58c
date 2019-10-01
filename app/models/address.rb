@@ -17,7 +17,7 @@ class Address < ApplicationRecord
   validates :building_name,               presence: true
   validates :house_number,                presence: true
   validates :user_id,                     presence: true
-  validates :block,                       presence: true
+  validates :phone_number,                       presence: true
   
 
   extend ActiveHash::Associations::ActiveRecordExtensions
