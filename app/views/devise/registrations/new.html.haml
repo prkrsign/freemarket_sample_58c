@@ -14,10 +14,10 @@
       =link_to "/signup/step1", class:"contents__btn contents__btn--1" do
         %i.far.fa-envelope
         メールアドレスで登録する
-      =link_to user_facebook_omniauth_authorize_path, class:"contents__btn contents__btn--2" do
+      =link_to user_facebook_omniauth_authorize_path, class:"contents__btn contents__btn--2", method: :post do
         %i.fab.fa-facebook-square
         Facebookで登録する
-      =link_to user_google_oauth2_omniauth_authorize_path, class:"contents__btn contents__btn--3" do
+      =link_to user_google_oauth2_omniauth_authorize_path, class:"contents__btn contents__btn--3", method: :post  do
         = image_tag '/signup-google-color-logo.png', size: "", alt: "google-color-logo" , class: 'googlelogo'
         Googleで登録する
         
