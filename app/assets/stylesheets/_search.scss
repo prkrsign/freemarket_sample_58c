@@ -28,7 +28,6 @@
   }
 
   .search-left {
-
     width: 280px;
     margin: 0 40px 0 0;
     height: 1000px;
@@ -50,36 +49,35 @@
     width: 100%;
     margin: 0px auto;
     height: 100%;
-.search-middle__main__block {
-  position: flex;
-  min-height: 100%;
-  color: rgb(51, 51, 51);
-  background-color: white;
-  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  font-size: 14px;
-  width: 100%;
-  height:615px;
-  box-sizing: border-box;
-  margin: 0 auto;
-
-  &__item{
-    display:  inline-block;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    box-sizing: border-box;
-    margin: 0 auto;
-
-    &__top {
-      display:  inline-block;
-      height:33px;
-      margin-bottom: 16px;
-      display: flex;
+    .search-middle__main__block {
+      position: flex;
+      min-height: 100%;
+      color: rgb(51, 51, 51);
+      background-color: white;
+      font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      font-size: 14px;
+      width: 100%;
+      height:615px;
       box-sizing: border-box;
+      margin: 0 auto;
 
+      &__item{
+        display:  inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+        &__top {
+          display:  inline-block;
+          height:33px;
+          margin-bottom: 16px;
+          display: flex;
+          box-sizing: border-box;
+        }
+      }
     }
   }
-}
-}
 }
 

@@ -7,15 +7,11 @@
           トランスフォーマー
           .search-right__right-text
             の検索結果
-
       .search-middle__main__block
         .search-middle__main__block__item
           .search-middle__main__block__item__top
             .block_area
               = render partial: "show_goods_all", collection: @goods
-
-
-
   =link_to new_good_path, class: 'exhibit_btn' do
     .exhibit_btn__moji
       出品
@@ -23,23 +19,3 @@
 
 = render 'shared/aside'
 = render 'shared/footer'
-
-
-
-
-
--# .search-conteiner
--#   .search-right
--#     .search-right__left-text
--#       インスタンス変数
--#     .search-right__right-text
--#       の検索結果
--#     .search-right__under-text
--#       1-132件の検表示
-
--#     .block_area
--#       -# - binding.pry
--#       = render partial: "show_goods_all", collection: @goods
-
-  
- 
