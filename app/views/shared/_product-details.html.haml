@@ -74,13 +74,14 @@
             %tr
               %th.category 発送元地域
               %td
-                = link_to @good.prefecture.name
+                = link_to "#",  class:"name" do
+                  = @good.prefecture.name
               
             %tr
               %th.category 発送日の目安
 
 
-              %td 
+              %td
                 = @good.shipment.name
 
 
