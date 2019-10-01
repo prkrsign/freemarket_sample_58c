@@ -8,11 +8,10 @@ class Addresses < ActiveRecord::Migration[5.2]
       t.string :postalcode, null: false
       t.string :city, null: false
       t.string :house_number, null: false
-      t.string :building_name, null: true 
+      t.string :building_name
       t.bigint :user_id, null: false, foreign_key: true
       t.bigint :prefecture_id, null: false, foreign_key: true
-      t.string :phone_number, null: true, unique: true
-      
+      t.string :phone_number, unique: true
     end
   end
 end
