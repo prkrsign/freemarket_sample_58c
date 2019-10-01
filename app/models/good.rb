@@ -17,7 +17,7 @@ class Good < ApplicationRecord
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
     scope :recent, -> { includes(:images) }
     scope :mujer, -> { where(category_id:[147..263]) }
-    scope :hombre, -> { where(category_id:[1..147]) }
+    scope :hombre, -> { where(category_id:[1..146]) }
     scope :adi, -> { where(brand_id:[5]) }
     scope :nk, -> { where(brand_id:[2]) }
     scope :ysl, -> { where(brand_id:[4]) }

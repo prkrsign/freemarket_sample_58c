@@ -9,12 +9,12 @@
             = image_tag '/merucari logo.svg', alt: 'Mercari', class: 'header__upper__left__img'
         
         -# 検索ボックス部分
-        %form.header__upper__right
-          =f.text_field :keyword, class: 'header__upper__right__in', placeholder: "何かお探しですか？"
-          =button_tag type: 'submit', class: 'fas fa-search header__upper__right__icon' do
-            -# %i.fas.fa-search.header__upper__right__icon
-            -# =f.submit
-          
+        .header__upper__right
+          %form.header__upper__right__box
+            =f.text_field(:keyword, class: 'header__upper__right__box__in', placeholder: "何かお探しですか？")
+            =f.button type: 'submit', class: 'header__upper__right__box__icon' do
+              %i.fas.fa-search
+            
 
       -# カテゴリ、ブランドアイコン部分
       .header__under
