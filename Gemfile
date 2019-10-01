@@ -53,6 +53,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'simplecov'
 end
 
 group :development do
@@ -102,4 +103,3 @@ gem 'swiper-rails'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'omniauth-rails_csrf_protection'
-gem 'simplecov'
