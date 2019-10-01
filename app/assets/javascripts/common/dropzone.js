@@ -1,12 +1,9 @@
 $(document).on('turbolinks:load', function(){
   var dropzone = $('.sell_upload__area');
-  var dropzone2 = $('.sell_upload__area');
-  var dropzone_box = $('.dropzone-box');
   var images = [];
   var inputs  =[];
   var input_area = $('.sell_upload__area');
   var preview = $('#exhibit-images-preview');
-  var preview2 = $('#exhibit-images-preview2');
 
   // ここから、file_fieldで選択されたファイルを読み込んでプレビュー画像を作る処理
   $(document).on('change', 'input[type= "file"].upload-image',function() {
@@ -26,36 +23,11 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-    // 消さないでください 谷田辺
-    //if(images.length >= 5) {
-      //dropzone2.css({
-        //'display': 'block'
-      //})
-      //dropzone.css({
-        //'display': 'none'
-      //})
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview.append(image);
       })
 
-      //消さないでください 谷田辺
-      //if(images.length == 9) {
-        //dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
-      //}
-     //else {
-        //$('#preview').empty();
-        //$.each(images, function(index, image) {
-          //image.attr('data-image', index);
-          //preview.append(image);
-        //})
-        //dropzone.css({
-          //'width': `calc(100% - (135px * ${images.length}))`
-        //})
-      //}
-      //if(images.length == 4) {
-        //dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
-      //}
     if(images.length == 5) {
       dropzone.css({
         'display': 'none'
@@ -92,28 +64,6 @@ $(document).on('turbolinks:load', function(){
       $('input[type= "file"].upload-image:first').after(input)
     })
 
-    //消さないでください 谷田辺
-    //if (images.length >= 5) {
-      //dropzone2.css({
-        //'display': 'block'
-      //})
-      //$.each(images, function(index, image) {
-        //image.attr('data-image', index);
-        //preview2.append(image);
-      //})
-      //dropzone2.css({
-        //'width': `calc(100% - (135px * ${images.length - 5}))`
-      //})
-      //if(images.length == 9) {
-        //dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
-      //}
-      //if(images.length == 8) {
-        //dropzone2.find('i').replaceWith('<p>ココをクリックしてください</p>')
-      //}
-    //} else {
-      //dropzone.css({
-        //'display': 'block'
-      //})
       $.each(images, function(index, image) {
         image.attr('data-image', index);
         preview.append(image);
@@ -121,7 +71,7 @@ $(document).on('turbolinks:load', function(){
       dropzone.css({
         'width': `calc(100% - (135px * ${images.length}))`
       })
-    //}
+
     if(images.length == 4) {
       dropzone.css({
         'display': 'block'
