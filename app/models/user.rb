@@ -32,7 +32,7 @@ class User < ApplicationRecord
                                        message: "はカナ文字を入力してください" }
   validates :birth_year,               presence: true
   validates :birth_month,              presence: true
-  validates :birth_day,                presence: true
+  validates :birth_date,                presence: true
 
   #        :recoverable, :rememberable, :validatable, :omniauthable,  omniauth_providers: %i[facebook google_oauth2]
   # has_many :sns_credentials, dependent: :destroy

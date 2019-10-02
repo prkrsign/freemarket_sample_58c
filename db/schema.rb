@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_115323) do
+ActiveRecord::Schema.define(version: 2019_10_02_014424) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
     t.string "family_name", null: false
-    t.string "first_name_kana", null: false
+    t.string "first_name", null: false
     t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.string "postalcode", null: false
     t.string "city", null: false
     t.string "house_number", null: false
-    t.string "building_name", null: false
+    t.string "building_name"
     t.bigint "user_id", null: false
     t.bigint "prefecture_id", null: false
-    t.string "block", null: false
+    t.string "phone_number"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_09_28_115323) do
     t.datetime "updated_at", null: false
     t.bigint "prefecture_id", null: false
     t.bigint "condition_id"
-    t.bigint "brand_id", null: false
+    t.integer "brand_id"
     t.bigint "shipment_id", null: false
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2019_09_28_115323) do
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider", null: false
     t.string "uid", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2019_09_28_115323) do
     t.string "first_name_in_katakana", null: false
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
+    t.integer "birth_date", null: false
     t.string "phone_number", null: false
     t.bigint "address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
