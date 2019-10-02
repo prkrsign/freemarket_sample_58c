@@ -43,9 +43,9 @@ Things you may want to cover:
 |card_id|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :user, optional: true
 <!-- customerは謎 -->
-- belongs_to :customer
+- belongs_to :customer, optional: true
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -94,14 +94,14 @@ Things you may want to cover:
 
 ### Association (要確認: アクティブハッシュ、リレーション)
 <!-- 「-」が入っていないところ要確認 -->
-- belongs_to_active_hash        :prefecture
-- belongs_to_active_hash        :brand
-- belongs_to_active_hash        :condition
-- belongs_to_active_hash        :shipment
-- belongs_to                    :category
-- belongs_to                    :delivery
-- belongs_to                    :delivery
-- belongs_to                    :user
+- belongs_to_active_hash        :prefecture, optional: true
+- belongs_to_active_hash        :brand, optional: true
+- belongs_to_active_hash        :condition, optional: true
+- belongs_to_active_hash        :shipment, optional: true
+- belongs_to                    :category, optional: true
+- belongs_to                    :delivery, optional: true
+- belongs_to                    :delivery, optional: true
+- belongs_to                    :user, optional: true
 - has_many                      :images
 
 <!-- 謎 -->
