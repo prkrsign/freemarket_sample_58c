@@ -88,7 +88,7 @@ class GoodsController < ApplicationController
 
       #新規登録画像があればcreate
       unless new_image_params[:images][0] == " "
-        params[:images]['goods_picture'].each do |i|
+        params[:images]['goods_picture'].reverse_each do |i|
           @image = @good.images.create!(goods_picture: i)
         end
         #以下のコードでも追加はできるが、goods_pictureに入る画像名が取得できなかったので上の記述に変更しました。
@@ -96,7 +96,7 @@ class GoodsController < ApplicationController
           #@good.images.create(goods_picture: image, good_id: @good.id)
         #end
       end
-      redirect_to root_path
+      redirect_to good_path
     else
       redirect_back
     end
@@ -110,10 +110,10 @@ class GoodsController < ApplicationController
   
   def search
     if params[:good].nil?
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:keyword]
     else
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:good][:keyword]
     end
   end
@@ -156,7 +156,7 @@ class GoodsController < ApplicationController
     @good.save
 
     if @good.save
-      params[:images]['goods_picture'].each do |i|
+      params[:images]['goods_picture'].reverse_each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
       redirect_to root_path, notice: "商品を出品しました。"
