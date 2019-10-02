@@ -131,7 +131,6 @@ Things you may want to cover:
 |phone_number|string|null: false, unique: true|
 
 ### Association
-- has_one :address
 - has_one :card
 - has_one :sns_credential
 - has_many :goods
