@@ -8,6 +8,7 @@ class CardsController < ApplicationController
   end
 
   def pay   #ここでは顧客のデータを照合するよ情報は保存せずに照合してtokenは保存しているんだ。さっきのidと一緒に
+    binding.pry
     Payjp.api_key = Rails.application.credentials.payjp[:secret]  #内緒の鍵です
     if params['payjp-token'].blank?  #空はだめ！やり直し
       redirect_to action: "new"
