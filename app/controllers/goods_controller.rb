@@ -49,10 +49,10 @@ class GoodsController < ApplicationController
                              access_key_id: Rails.application.credentials.aws[:access_key_id],
                              secret_access_key: Rails.application.credentials.aws[:secret_access_key],
                              )
-        @item.item_images.each do |image|
-          binary_data = client.get_object(bucket: 'freemarket-sample-58c', key: image.image_url.file.path).body.read
-          gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
-        end
+      @good.images.each do |image|
+        binary_data = client.get_object(bucket: 'freemarket-sample-58c', key: image.goods_picture.file.path).body.read
+        gon.images_binary_datas << Base64.strict_encode64(binary_data)
+      end
     else
       @good.images.each do |image|
         binary_data = File.read(image.goods_picture.file.file)
