@@ -38,22 +38,19 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
+<!-- 外部キーなのでbigint型にしてます. 丸山 -->
 |user_id|bigint|null: false, foreign_key: true|
-|customer_id|bigint|null: false, foreign_key: true|
-|card_id|bigint|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user, optional: true
-<!-- customerは謎 -->
-- belongs_to :customer, optional: true
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null: false|
-<!-- ancestryのオプション知らない -->
-|ancestry|string||
-
+|ancestry|string|null: false|
 
 ### Association
 - has_many :goods
@@ -63,8 +60,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |delivery_method|string|null: false|
-<!-- ancestryがあるのでカラムの書き方確認 -->
-|ancestry||null: false|
+|ancestry|string|null: false|
 
 ### Associationテーブル
 - has_many :goods
@@ -77,23 +73,16 @@ Things you may want to cover:
 |goods_name|string|null: false|
 |goods_description|text|null: false|
 |price|integer|null: false|
-<!-- アクティブハッシュだから要確認 -->
 |prefecture_id|bigint|null: false, foreign_key: true|
-<!-- 同上 -->
 |condition_id|bigint|null: false, foreign_key: true|
-<!-- 同上 -->
 |brand_id|bigint|null: true, foreign_key: true|
-<!-- 同上 -->
 |shipment_id|bigint|null: false, foreign_key: true|
-
 |user_id|bigint|null: false, foreign_key: true|
 |category_id|bigint|null: false, foreign_key: true|
 |delivery_id|bigint|null: false, foreign_key: true|
-<!-- sizeはancestry臭いので要確認 -->
 |size_id|bigint|null: false, foreign_key: true|
 
 ### Association (要確認: アクティブハッシュ、リレーション)
-<!-- 「-」が入っていないところ要確認 -->
 - belongs_to_active_hash        :prefecture, optional: true
 - belongs_to_active_hash        :brand, optional: true
 - belongs_to_active_hash        :condition, optional: true
@@ -103,9 +92,6 @@ Things you may want to cover:
 - belongs_to                    :delivery, optional: true
 - belongs_to                    :user, optional: true
 - has_many                      :images
-
-<!-- 謎 -->
-accepts_nested_attributes_for :images
 
 
 ## imagesテーブル
@@ -132,10 +118,8 @@ accepts_nested_attributes_for :images
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false, unique: true|
-<!-- unique: true変更 要確認-->
 |encrypted_password|string|null: false|
-<!-- unique trueかどうか確認 -->
-|username|string|null: false|
+|username|string|null: false, unique: true|
 |user_description|text|null: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
@@ -144,17 +128,17 @@ accepts_nested_attributes_for :images
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_date|integer|null: false|
-|phone_number|integer|null: false, unique: true|
+|phone_number|string|null: false, unique: true|
 
 ### Association
 - has_one :address
 - has_one :card
-- has_many :sns_credentials, dependent: :destroy
+- has_one :sns_credential
 - has_many :goods
 
 
-<!-- brandsテーブルはアクティブハッシュを代わりに使用、確認用としてREADME記述 -->
-## brandsテーブル
+<!-- 以下はac -->
+## brands
 |Column|Type|Options|
 |------|----|-------|
 |brand_name|string|
