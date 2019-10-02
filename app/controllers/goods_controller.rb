@@ -40,13 +40,26 @@ class GoodsController < ApplicationController
 
     # @good.imagse.goods_pictureをバイナリデータにしてビューで表示できるようにする。
     require 'base64'
+    require 'aws-sdk'
     
     gon.images_binary_datas = []
-
-    @good.images.each do |image|
-      binary_data = File.read(image.goods_picture.file.file)
-      gon.images_binary_datas << Base64.strict_encode64(binary_data)
+    if Rails.env.production?
+      client = Aws::S3::Client.new(
+                             region: 'ap-northeast-1',
+                             access_key_id: Rails.application.credentials.aws[:access_key_id],
+                             secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+                             )
+        @item.item_images.each do |image|
+          binary_data = client.get_object(bucket: 'freemarket-sample-58c', key: image.image_url.file.path).body.read
+          gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
+        end
+    else
+      @good.images.each do |image|
+        binary_data = File.read(image.goods_picture.file.file)
+        gon.images_binary_datas << Base64.strict_encode64(binary_data)
+      end
     end
+  
 
     @category_parent_array = ['---']
     #データベースから、親カテゴリーのみを抽出し、配列化。
