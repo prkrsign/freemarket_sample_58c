@@ -38,7 +38,6 @@ Rails.application.routes.draw do
   resources :goods do
     get 'new'
     member do 
-      get 'show_delete'
       get 'good_delete_popup'
       get 'edit'
     end

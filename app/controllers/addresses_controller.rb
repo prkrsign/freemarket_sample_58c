@@ -38,7 +38,7 @@ class AddressesController < ApplicationController
       :city,
       :house_number,
       :building_name,
-      :block,
+      :phone_number,
       :prefecture_id
     )
   end
