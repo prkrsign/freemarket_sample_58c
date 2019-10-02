@@ -96,7 +96,7 @@ class GoodsController < ApplicationController
           #@good.images.create(goods_picture: image, good_id: @good.id)
         #end
       end
-      redirect_to root_path
+      redirect_to good_path
     else
       redirect_back
     end
