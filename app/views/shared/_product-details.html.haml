@@ -117,10 +117,12 @@
         - else 
           = link_to purchase_path(@good) , class: "item-buy-btn" do
             購入画面に進む
+          .buy-item-description
+            %p.buy-item-description__inner
+              = @good.goods_description
       - else
         = link_to purchase_path(@good) , class: "item-buy-btn" do
           購入画面に進む
-
         .buy-item-description
           %p.buy-item-description__inner
             = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
