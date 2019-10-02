@@ -110,10 +110,10 @@ class GoodsController < ApplicationController
   
   def search
     if params[:good].nil?
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:keyword]
     else
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:good][:keyword]
     end
   end
