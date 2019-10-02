@@ -19,7 +19,7 @@ def step2
     session[:first_name_in_katakana] = user_params[:first_name_in_katakana]
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
-    session[:birth_day] = user_params[:birth_day]
+    session[:birth_date] = user_params[:birth_date]
 end
 
 
@@ -36,7 +36,7 @@ def create
       first_name_in_katakana: session[:first_name_in_katakana],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      birth_day: session[:birth_day],
+      birth_date: session[:birth_date],
       phone_number: user_params[:phone_number]
     )
   if  @user.save
@@ -62,7 +62,7 @@ private
       :first_name_in_katakana,
       :birth_year,
       :birth_month,
-      :birth_day,
+      :birth_date,
       :phone_number   
     )
   end
