@@ -33,13 +33,13 @@
         = render partial: 'exhibit' , collection: @user.goods.to_a
 
     -# ペイジャーは余力あったら作る
-    %ul.mypage-history.pager
-      %li.pager-prev.pager-cell 
-        =link_to "#" do
-          %i.icon-arrow-left 
-      %li.pager-next.pager-cell 
-        =link_to "#" do
-          %i.icon-arrow-right
+    -# %ul.mypage-history.pager
+    -#   %li.pager-prev.pager-cell 
+    -#     =link_to "#" do
+    -#       %i.icon-arrow-left 
+    -#   %li.pager-next.pager-cell 
+    -#     =link_to "#" do
+    -#       %i.icon-arrow-right
 
 = render 'shared/aside'
 = render 'shared/footer'           
