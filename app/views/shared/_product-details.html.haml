@@ -49,8 +49,11 @@
             %tr
               %th.category ブランド
               %td
-                = link_to "#",  class:"name" do
-                  = @good.brand.name
+                - if @good.brand.nil?
+                  = ' '
+                - else
+                  = link_to "#",  class:"name" do
+                    = @good.brand.name
 
             %tr
               %th.category 商品のサイズ
