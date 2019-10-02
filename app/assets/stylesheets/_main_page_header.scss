@@ -37,41 +37,51 @@
                 width: 134px;
               }
           }
-          &__right{
+          &__right {
             position: relative;
             width: 100%;
-              &__in{
-                background-color: rgb(245, 245, 245);
-                font-size: 16px;
-                height: 40px;
-                line-height: 1.4em;
-                position: relative;
-                width: 100%;
-                -webkit-appearance: none;
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgb(204, 204, 204);
-                border-image: initial;
-                border-radius: 4px;
-                outline: none;
-                padding: 0px 50px 0px 10px;
-                transition: all 0.3s ease-out 0s;
-                font-family: inherit;
-              }
-              &__icon{
-                text-decoration: none;
-                border-style:none;
-                font-size: 18px;
-                cursor: pointer;
-                position: absolute;
-                top:  24px;
-                left: 1190px;
-                background-color: transparent;
+            display: flex;
+
+
+            &__box {
+              position: relative;
+              width: 100%;
+            
+                &__in{
+                  background-color: rgb(245, 245, 245);
+                  font-size: 16px;
+                  height: 40px;
+                  line-height: 1.4em;
+                  position: relative;
+                  width: 100%;
+                  -webkit-appearance: none;
+                  border-width: 1px;
+                  border-style: solid;
+                  border-color: rgb(204, 204, 204);
+                  border-image: initial;
+                  border-radius: 4px;
+                  outline: none;
+                  padding: 0px 50px 0px 10px;
+                  transition: all 0.3s ease-out 0s;
+                  font-family: inherit;
+                
+                }
+                &__icon{
+                  text-decoration: none;
+                  border-style:none;
+                  font-size: 18px;
+                  cursor: pointer;
+                  position: absolute;
+                  top:  10px;
+                  right: 8px;
+                  background-color: transparent;
+                }
               }
             }
           }
         &__under{
-            margin: 0 200px;
+            width: 1020px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             &__left{
@@ -86,6 +96,11 @@
                     float: right;
                     color: black;
                   }
+                  &__text:hover{
+                    margin-left: 6px;
+                    float: right;
+                    color: rgb(0, 149, 238);
+                  }
                 }
               &__tag-icon{
                 color: red;
@@ -95,6 +110,11 @@
                   margin-left: 6px;
                   float: right;
                   color: black;
+                }
+                &__text:hover{
+                  margin-left: 6px;
+                  float: right;
+                  color: rgb(0, 149, 238);
                 }
               }
             }            
@@ -156,11 +176,24 @@
                   right: 415px;
                   color: rgb(51, 51, 51);
                 }
+                &__like-list:hover{
+                  float: right;
+                  position: absolute;
+                  top: 15px;
+                  right: 415px;
+                  color: rgb(0, 149, 238);
+                }
                 &__icon{
                   float: left;
                   margin-top: 15px;
                   font-size: 22px;
                   color: rgb(204, 204, 204);
+                }
+                &__icon:hover{
+                  float: left;
+                  margin-top: 15px;
+                  font-size: 22px;
+                  color: rgb(0, 149, 238);
                 }
               }
               &__info-box{
@@ -175,10 +208,20 @@
                   color: rgb(51, 51, 51);
                   margin-right: 32px;
                 }
+                &__text:hover{
+                  float: right;
+                  color: rgb(0, 149, 238);
+                  margin-right: 32px;
+                }
                 &__icon{
                   float: left;
                   font-size: 22px;
                   color: rgb(204, 204, 204);
+                }
+                &__icon:hover{
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(0, 149, 238);
                 }
               }
               &__check-box{
@@ -193,10 +236,20 @@
                   float: right;
                   color: rgb(51, 51, 51);
                 }
+                &__text:hover {
+                  margin-right: 3px;
+                  float: right;
+                  color: rgb(0, 149, 238);
+                }
                 &__icon{
                   float: left;
                   font-size: 22px;
                   color: rgb(204, 204, 204);
+                }
+                &__icon:hover {
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(0, 149, 238);
                 }
               }
               &__mypage-box{
@@ -213,6 +266,13 @@
                   float: right;
                   color: rgb(51, 51, 51);
                 }
+                &__text:hover{
+                  position: absolute;
+                  left: 40px;
+                  line-height: 35px;
+                  float: right;
+                  color: rgb(0, 149, 238);
+                }
                 &__icon{
                   border-radius: 25px;
                   height: 33px;
@@ -221,8 +281,17 @@
                   font-size: 22px;
                   color: rgb(204, 204, 204);
                 }
+                &__icon:hover {
+                  border-radius: 25px;
+                  height: 33px;
+                  width: 33px;
+                  float: left;
+                  font-size: 22px;
+                  color: rgb(0, 149, 238);
+                }
               }
             }
+            
           }
 }
 

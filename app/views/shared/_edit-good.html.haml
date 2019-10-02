@@ -1,3 +1,4 @@
+= javascript_include_tag 'edit-image.js'
 -# ページのヘッダー部分
 %header.confirmation-header
   %h1
@@ -8,8 +9,11 @@
 %main.main-contents
   .contents-box
     %section.contents-box__sell-container
-      商品の情報を入力
-    = form_with model: @good, class: 'contents-box__form-list' do |f|
+      商品の情報を編集
+    = form_with model: @good, class: 'contents-box__form-list', id: 'edit_good' do |f|
+      -#ちなみにform_forでもできました。↓
+      -#= form_for @good, html:{ class: 'contents-box__form-list', id: 'edit_good', method: 'PATCH', remote: true }  do |f|
+
       -# 画像アップロード部分
       %section.contents-box__form-list__upload-box
         .contents-box__form-list__upload-box__image-text
@@ -18,14 +22,14 @@
           必須
         .capture 
           最大10枚までアップロードできます
-        = f.fields_for :images, @images do |i|
+        = f.fields_for :images, @good.images.first do |i|
           .dropzone-container.clearfix
             .sell-uploads-drop
               #exhibit-images-preview
             .dropzone-area
               = i.label :image, for: 'upload-image' do
                 .sell_upload__area
-                  = i.file_field :goods_picture, multiple: true, name: 'images[goods_picture][]', id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
+                  = i.file_field :goods_picture, multiple: true, id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
 
       -# 商品名、商品説明入力部分
       %section.contents-box__descript-section
@@ -53,9 +57,16 @@
             カテゴリー
             .form-require
               必須
-            = f.select :parent, @category_parent_array, {}, {class: "category", id: "parent_category"}
-          .contents-box__category-section__category-box__tag#size
-            -#サイズ
+            = f.select :parent, options_for_select(@category_parent_array.map{|c|[c, {}]}, @good.category.parent.parent.category_name), {}, {class: 'category', id: 'parent_categoryedit'}
+            = f.select :child, options_for_select(@category_child_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.parent.id), {}, {class: 'category', id: 'child_category__edit'}
+            = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.id), {}, {class: 'category', id: 'grandchild_category__edit' }
+          = f.text_field :category, id: 'grand_child_result_id', type: 'hidden'
+          -# サイズ編集部分
+          = f.text_field :size, class:'contents-box__descript-section__name-form', type:'hidden'
+          .contents-box__category-section__category-box__tag#size__edit1
+          .contents-box__category-section__category-box__tag#size__edit2
+          .contents-box__category-section__category-box__tag#size__edit3
+
           -# プルダウンにしてるけど、本当はインクリメンタルサーチ
           .contents-box__category-section__category-box__tag
             ブランド
@@ -81,7 +92,12 @@
             配送料の負担
             .form-require
               必須
-            = f.select :delivery_id, @delivery_parent_array, {}, {class: "category", id: "parent_delivery"}
+            = f.select :delivery, options_for_select(@delivery_parent_array.map{|c|[c, {}]}, @good.delivery.parent.delivery_method), {}, {class: 'category', id: 'parent_delivery__edit'}
+          .contents-box__category-section__category-box__tag#async-select-box3
+            配送の方法
+            .form-require
+              必須
+            = f.select :delivery_id, options_for_select(@delivery_child_array.map{|c|[c[:delivery_method], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.delivery.id), {}, {class: 'category', id: 'child_delivery__edit'}
         .contents-box__category-section__category-box
           .contents-box__category-section__category-box__tag
             発送元の地域
@@ -127,15 +143,9 @@
               .contents-box__price-section__result-right.sales-profit -
         
       %section.contents-box__sell-decision-container
-        %p.contents-box__sell-decision-container__note
-          禁止されている出品、行為を必ずご確認ください。
-        %p.contents-box__sell-decision-container__note
-          またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-        %p.contents-box__sell-decision-container__note
-          また、出品をもちまして加盟店規約に同意したことになります。
         -# submitすることで、DBへデータが入り、トップページに繊維する流れ ys
-        = f.submit nil, class: 'btn btn-primary btn-red' , value: "出品する" do
-          出品する
+        = f.submit nil, class: 'btn btn-primary btn-red' , value: "変更する", id: 'submit' do
+          変更する
         = link_to root_path, class:'btn-default btn-gray' do
           もどる
 

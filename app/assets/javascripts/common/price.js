@@ -1,4 +1,6 @@
 $(document).on('turbolinks:load', function() {
+	// 編集時はすでに価格が入力されているため、ページロード時のタイミングで1度moneyCalc関数を実行する必要あり。
+	moneyCalc();
   // 価格に金額が入力されると、moneyCalc関数が発動する。
 	$(function() {
 		$(document).on('keyup', '#sell_center', function() {
