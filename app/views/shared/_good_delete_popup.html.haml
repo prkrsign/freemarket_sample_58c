@@ -18,7 +18,7 @@
         
 
     .goods_delete_popup__wrapper__option
-      =link_to show_delete_good_path, class: "goods_delete_popup__wrapper__option__cancel" do
+      =link_to good_path, class: "goods_delete_popup__wrapper__option__cancel" do
         キャンセル 
       =link_to good_path , method: :DELETE, class: "goods_delete_popup__wrapper__option__delete" do
         削除する
