@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_014424) do
     t.integer "birth_month", null: false
     t.integer "birth_date", null: false
     t.string "phone_number", null: false
-    t.bigint "address_id"
+    t.bigint "address_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
