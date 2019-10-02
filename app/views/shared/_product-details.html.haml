@@ -101,18 +101,38 @@
       -# 今のユーザーIDと
       - if user_signed_in?
         - if current_user.id == @good.user.id 
-          = link_to edit_good_path, data: {"turbolinks": false}, class: "item-buy-btn" do
-            商品の編集
+          .item-description
+            %p.item-description__inner
+              = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+          .good_option_box
+            = link_to edit_good_path, data: {"turbolinks": false}, class: "good_option_box__edit" do
+              .good_option_box__edit__text
+                商品の編集
+
+            .good_option_box__or
+              or
+
+            =link_to "#", class:'good_option_box__pause'   do
+              出品を一旦停止する
+
+            =link_to good_delete_popup_good_path, method: :GET, class: 'good_option_box__delete' do
+              商品を削除する
+
+          -# = link_to edit_good_path, data: {"turbolinks": false}, class: "item-buy-btn" do
+          -#   商品の編集
         - else 
           = link_to purchase_path(@good) , class: "item-buy-btn" do
             購入画面に進む
+            -# .item-description
+            -#   %p.item-description__inner
+            -#     = @good.goods_description
       - else
         = link_to purchase_path(@good) , class: "item-buy-btn" do
           購入画面に進む
 
-      .item-description
-        %p.item-description__inner
-          = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
+      -# .item-description
+      -#   %p.item-description__inner
+      -#     = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
 
           
       .button-content
