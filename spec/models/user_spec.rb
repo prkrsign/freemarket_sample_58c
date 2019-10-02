@@ -82,10 +82,70 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
     end
 
-    it "passwordとpasswordが7桁以下の場合、登録できない" do
+    it "passwordが7桁以下の場合、登録できない" do
       user = build(:user, password: 'aaabbb')
       user.valid?
-      expect(user.errors[:password]).to include("とPasswordの入力が一致しません")
+      expect(user.errors[:password]).to include("値は7文字以上で入力してください")
+    end
+
+    it "passwordが20桁以上の場合、登録できない" do
+      user = build(:user, password: 'aaabbbcccdddeeefffggg')
+      user.valid?
+      expect(user.errors[:password]).to include("値は20文字以内で入力してください")
+    end
+
+    it "passwordが20桁以上の場合、登録できない" do
+      user = build(:user, password: 'aaabbbcccdddeeefffggg')
+      user.valid?
+      expect(user.errors[:password]).to include("値は20文字以内で入力してください")
+    end
+
+    it "phone_numberがnilの場合、登録できない" do
+      user = build(:user, phone_number: '')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("値を入力してください")
+    end
+
+    it "phone_numberが数字でない場合、登録できない" do
+      user = build(:user, phone_number: 'aaabbbbcccc')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は数値で入力してください")
+    end
+
+    it "phone_numberのフォーマットに準拠していない場合、登録できない" do
+      user = build(:user, phone_number: '0a011112222')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberにハイフンを含む場合、登録できない" do
+      user = build(:user, phone_number: '090-1111-2222')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberが9桁以下の場合、登録できる" do
+      user = build(:user, phone_number: '000111222')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberが12桁以上の場合、登録できない" do
+      user = build(:user, phone_number: '000011112222')
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberが10桁の場合、登録できる" do
+      user = build(:user, phone_number: '0001112222')
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    it "phone_numberが11桁の場合、登録できる" do
+      user = build(:user, phone_number: '09011112222')
+      user.valid?
+      expect(user).to be_valid
     end
 
    end
