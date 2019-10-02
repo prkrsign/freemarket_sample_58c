@@ -13,31 +13,6 @@ Things you may want to cover:
 
 * Database creation
 # Mercari DB設計
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|email|string|null: false, unique: true|
-<!-- unique: true変更 要確認-->
-|encrypted_password|string|null: false|
-<!-- unique trueかどうか確認 -->
-|username|string|null: false|
-|user_description|text|null: true|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_in_katakana|string|null: false|
-|first_name_in_katakana|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_date|integer|null: false|
-|phone_number|integer|null: false, unique: true|
-
-### Association
-<!-- adress必要かどうか要確認 -->
-- has_one :address
-- has_one :card
-- has_many :sns_credentials, dependent: :destroy
-- has_many :goods
-
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -58,12 +33,44 @@ Things you may want to cover:
 ### Association
 - belongs_to_active_hash :prefecture, optional: true
 - belongs_to :user, optional: true
-<!-- 多分goodsを持たないので削除してもおk -->
-- has_many :goods
-<!-- dealsテーブルないから要確認 -->
-- has_many :deals
 
- 
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|bigint|null: false, foreign_key: true|
+|customer_id|bigint|null: false, foreign_key: true|
+|card_id|bigint|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+<!-- customerは謎 -->
+- belongs_to :customer
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_name|string|null: false|
+<!-- ancestryのオプション知らない -->
+|ancestry|string||
+
+
+### Association
+- has_many :goods
+- has_ancestry
+
+## deliveries テーブル
+|Column|Type|Options|
+|------|----|-------|
+|delivery_method|string|null: false|
+<!-- ancestryがあるのでカラムの書き方確認 -->
+|ancestry||null: false|
+
+### Associationテーブル
+- has_many :goods
+- has_ancestry
+
+
 ## goodsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -89,27 +96,26 @@ Things you may want to cover:
 <!-- 「-」が入っていないところ要確認 -->
 - belongs_to_active_hash        :prefecture
 - belongs_to_active_hash        :brand
+- belongs_to_active_hash        :condition
+- belongs_to_active_hash        :shipment
 - belongs_to                    :category
-    belongs_to                    :delivery
-    belongs_to_active_hash        :condition
-    belongs_to_active_hash        :shipment
-- has_many                      :images
-    belongs_to                    :delivery
-    accepts_nested_attributes_for :images
+- belongs_to                    :delivery
+- belongs_to                    :delivery
 - belongs_to                    :user
+- has_many                      :images
+
+<!-- 謎 -->
+accepts_nested_attributes_for :images
 
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |goods_picture|string|null: false|
-<!-- goodsテーブルとの関係をはっきりさせる。現在1-多混同している -->
 |good_id|bigint|null: false, foreign_key: true|
 
 ### Association
-<!-- １対多が混同している -->
 - belongs_to :good, optional: true
-
 
 ## sns_credentialsテーブル
 |Column|Type|Options|
@@ -119,33 +125,33 @@ Things you may want to cover:
 |user_id|bigint|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, optional: true 
+- belongs_to :user, optional: true
 
 
-## cardsテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|bigint|null: false, foreign_key: true|
-<!-- customer_idってそもそもなんだ -->
-|customer_id|bigint|null: false, foreign_key: true|
-|card_id|bigint|null: false, foreign_key: true|
+|email|string|null: false, unique: true|
+<!-- unique: true変更 要確認-->
+|encrypted_password|string|null: false|
+<!-- unique trueかどうか確認 -->
+|username|string|null: false|
+|user_description|text|null: true|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_in_katakana|string|null: false|
+|first_name_in_katakana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_date|integer|null: false|
+|phone_number|integer|null: false, unique: true|
 
 ### Association
-- belongs_to :user
-- belogns_to :customer
-
-
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null: false|
-<!-- ancestryのオプション知らない -->
-|ancestry|string||
-
-
-### Association
+- has_one :address
+- has_one :card
+- has_many :sns_credentials, dependent: :destroy
 - has_many :goods
-- has_ancestry
+
 
 <!-- brandsテーブルはアクティブハッシュを代わりに使用、確認用としてREADME記述 -->
 ## brandsテーブル
@@ -159,19 +165,6 @@ Things you may want to cover:
 
 ### Association
  - has_many :goods  
-
-## deliveries テーブル
-|Column|Type|Options|
-|------|----|-------|
-|delivery_method|string|null: false|
-<!-- ancestryがあるのでカラムの書き方確認 -->
-|ancestry||null: false|
-
-### Associationテーブル
-- has_many :goods
-- has_ancestry
-
-
 
 
 
