@@ -25,7 +25,6 @@ Things you may want to cover:
 |house_number|string|null: false|
 |building_name|string|null: true|
 |user_id|bigint|null: false, foreign_key: true|
-<!-- prefectureはactivehashであるから結びつきもう一度確認 -->
 |prefecture_id|bigint|null: false, foreign_key: true|
 |phone_number|string|null: true|
 
@@ -38,7 +37,7 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-<!-- 外部キーなのでbigint型にしてます. 丸山 -->
+<!-- "user_id" 外部キーなのでbigint型にしてます. 丸山 -->
 |user_id|bigint|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false, foreign_key: true|
@@ -54,6 +53,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :goods
+<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 ## deliveries テーブル
@@ -64,6 +64,7 @@ Things you may want to cover:
 
 ### Associationテーブル
 - has_many :goods
+<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 
@@ -82,7 +83,7 @@ Things you may want to cover:
 |delivery_id|bigint|null: false, foreign_key: true|
 |size_id|bigint|null: false, foreign_key: true|
 
-### Association (要確認: アクティブハッシュ、リレーション)
+### Association 
 - belongs_to_active_hash        :prefecture, optional: true
 - belongs_to_active_hash        :brand, optional: true
 - belongs_to_active_hash        :condition, optional: true
@@ -136,18 +137,24 @@ Things you may want to cover:
 - has_many :goods
 
 
-<!-- 以下はac -->
+<!-- 以下はactive_hash-->
 ## brands
-|Column|Type|Options|
-|------|----|-------|
-|brand_name|string|
-
-## conditionsテーブル
-## shipmentテーブル
-## 
-
 ### Association
- - has_many :goods  
+- has_many :goods, optional: true
+
+## conditions
+### Association
+- has_many :goods, optional: true
+
+## prefectures
+### Association
+- has_many :addresses, optional: true
+- has_many :goods, optional: true
+
+## shipment
+### Association
+- has_many :goods, optional: true
+
 
 
 
