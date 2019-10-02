@@ -14,10 +14,11 @@ Things you may want to cover:
 * Database creation
 # Mercari DB設計
 ## addressesテーブル
+<!-- ブラウザのgithubではテーブルが壊れて表示される場合アリ. 丸山 -->
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
-<!-- |first_name|string|null: false|
+|first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postalcode|integer|null: false|
@@ -26,7 +27,7 @@ Things you may want to cover:
 |building_name|string|null: true|
 |user_id|bigint|null: false, foreign_key: true|
 |prefecture_id|bigint|null: false, foreign_key: true|
-|phone_number|string|null: true| -->
+|phone_number|string|null: true|
 
 
 ### Association
