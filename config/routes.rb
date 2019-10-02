@@ -58,7 +58,7 @@ Rails.application.routes.draw do
                 }
   devise_scope :user do
     get "sign_in", :to => "users/sessions#new" 
-    get '/users/sign_out' => 'users/sessions#destroy'
+    post '/users/sign_out' => 'users/sessions#destroy'
   end
 
   root to: 'goods#index'
@@ -72,6 +72,9 @@ Rails.application.routes.draw do
   get 'mypage/make_sure_user_info', to: 'mypage#make_sure_user_info'
   get 'mypage/credit_register', to: 'mypage#credit_register'
   get 'mypage/logout', to: 'mypage#logout'
+  get 'mypage/signout', to: 'mypage#signout'
+
+  
   
 end
 

@@ -1,6 +1,9 @@
 class MypageController < ApplicationController
+    before_action :set_current_user
     def mypage
-        @user = User.find(current_user.id)
+        # binding.pry
+        # @user = @current_user
+        # @user = User.find(current_user.id)
     end
 
     def put_up_goods_on_sale
@@ -28,7 +31,17 @@ class MypageController < ApplicationController
     end
     
     def logout
+    
+    end
 
+    def signout
+        session.delete(:user_id)
+        @current_user = nil
+        redirect_to root_path
+    end
+
+    def set_current_user
+        @current_user = User.find_by(id: session[:user_id])
     end
 
 end
