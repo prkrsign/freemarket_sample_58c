@@ -39,8 +39,11 @@
             %tr
               %th.category ブランド
               %td
-                = link_to "#",  class:"name" do
-                  = @good.brand.name
+                - if @good.brand.nil?
+                  = ' '
+                - else 
+                  = link_to "#",  class:"name" do
+                    = @good.brand.name
 
             %tr
               %th.category 商品のサイズ
@@ -73,7 +76,7 @@
 
       .price-box
         %span.price-box__price
-          = number_to_currency(@good.price, unit: "￥", precision: 0)
+          = number_to_currency(@good.price, unit: "￥", precision: 0,locale: 'en')
         %span.price-box__tax
           (税込)
         %span.price-box__fee
@@ -84,7 +87,7 @@
         %p.item-description__inner
           = @good.goods_description   #グッズテーブルの商品詳細カラムより引数
       .good_option_box
-        =link_to "#", class:'good_option_box__edit' do
+        = link_to edit_good_path, data: {"turbolinks": false}, class: "good_option_box__edit" do
           .good_option_box__edit__text
             商品の編集
 

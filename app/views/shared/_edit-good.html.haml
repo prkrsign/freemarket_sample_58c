@@ -1,0 +1,167 @@
+= javascript_include_tag 'edit-image.js'
+-# ページのヘッダー部分
+%header.confirmation-header
+  %h1
+    =link_to root_path, class: "confirmation-heade__link" do
+      = image_tag '/confirmation-mercarilogo.svg', size: "", alt: "confirmation-mercarilogo" , class: 'confirmation-header__link__mercarilogo'
+  
+-# メインコンテンツ
+%main.main-contents
+  .contents-box
+    %section.contents-box__sell-container
+      商品の情報を編集
+    = form_with model: @good, class: 'contents-box__form-list', id: 'edit_good' do |f|
+      -#ちなみにform_forでもできました。↓
+      -#= form_for @good, html:{ class: 'contents-box__form-list', id: 'edit_good', method: 'PATCH', remote: true }  do |f|
+
+      -# 画像アップロード部分
+      %section.contents-box__form-list__upload-box
+        .contents-box__form-list__upload-box__image-text
+          出品画像
+        .form-require
+          必須
+        .capture 
+          最大10枚までアップロードできます
+        = f.fields_for :images, @good.images.first do |i|
+          .dropzone-container.clearfix
+            .sell-uploads-drop
+              #exhibit-images-preview
+            .dropzone-area
+              = i.label :image, for: 'upload-image' do
+                .sell_upload__area
+                  = i.file_field :goods_picture, multiple: true, id: 'upload-image', class: 'upload-image', 'data-image': 0, style: 'opacity: 0'
+
+      -# 商品名、商品説明入力部分
+      %section.contents-box__descript-section
+        .contents-box__descript-section__item-name
+          .contents-box__descript-section__item-name__text
+            商品名
+          .form-require
+            必須
+        = f.text_field :goods_name, class:'contents-box__descript-section__name-form',　placeholder: '商品名(必須40文字まで)'
+
+        .contents-box__descript-section__item-description
+          .contents-box__descript-section__item-description__text
+            商品の説明
+          .form-require
+            必須
+        = f.text_area :goods_description, class:'contents-box__descript-section__descript-form',placeholder: '商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点等)例)2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+
+      -# 商品の詳細、カテゴリ選択部分
+      %section.contents-box__category-section
+        %h3.contents-box__category-section__sub-head
+          商品の詳細
+        .contents-box__category-section__category-box
+          -# カテゴリ繰り替えし
+          .contents-box__category-section__category-box__tag#async-select-box
+            カテゴリー
+            .form-require
+              必須
+            = f.select :parent, options_for_select(@category_parent_array.map{|c|[c, {}]}, @good.category.parent.parent.category_name), {}, {class: 'category', id: 'parent_categoryedit'}
+            = f.select :child, options_for_select(@category_child_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.parent.id), {}, {class: 'category', id: 'child_category__edit'}
+            = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:category_name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.category.id), {}, {class: 'category', id: 'grandchild_category__edit' }
+          = f.text_field :category, id: 'grand_child_result_id', type: 'hidden'
+          -# サイズ編集部分
+          = f.text_field :size, class:'contents-box__descript-section__name-form', type:'hidden'
+          .contents-box__category-section__category-box__tag#size__edit1
+          .contents-box__category-section__category-box__tag#size__edit2
+          .contents-box__category-section__category-box__tag#size__edit3
+
+          -# プルダウンにしてるけど、本当はインクリメンタルサーチ
+          .contents-box__category-section__category-box__tag
+            ブランド
+            .form-any
+              任意
+            = f.collection_select :brand_id, Brand.all, :id, :name, {include_blank: '未選択'}, {class: 'category'}
+          -# 商品の状態プルダウン
+          .contents-box__category-section__category-box__tag
+            商品の状態
+            .form-require
+              必須
+            = f.collection_select :condition_id, Condition.all, :id, :name, {include_blank: '未選択'}, {class: 'category'}
+
+      -# 配送の設定
+      %section.contents-box__category-section#delivery
+        %h3.contents-box__category-section__sub-head
+          配送について
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag#async-select-box2
+            配送料の負担
+            .form-require
+              必須
+            = f.select :delivery, options_for_select(@delivery_parent_array.map{|c|[c, {}]}, @good.delivery.parent.delivery_method), {}, {class: 'category', id: 'parent_delivery__edit'}
+          .contents-box__category-section__category-box__tag#async-select-box3
+            配送の方法
+            .form-require
+              必須
+            = f.select :delivery_id, options_for_select(@delivery_child_array.map{|c|[c[:delivery_method], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @good.delivery.id), {}, {class: 'category', id: 'child_delivery__edit'}
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送元の地域
+            .form-require
+              必須
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '未選択'},{class: "category"}
+        .contents-box__category-section__category-box
+          .contents-box__category-section__category-box__tag
+            発送までの日数
+            .form-require
+              必須
+            = f.collection_select :shipment_id, Shipment.all, :id, :name, {include_blank: '未選択'},{class: "category"}
+      
+      -# 販売価格、手数料の表示 
+      %section.contents-box__category-section#exhibit-selling-price
+        %h3.contents-box__category-section__sub-head
+          販売価格(300~9,999,999)
+          =link_to "#", class: "contents-box__category-section__sub-head__icon" do
+            %i.fas.fa-question-circle
+            
+        .contents-box__price-section
+          .contents-box__price-section__price-box-left
+            .contents-box__price-section__price-box-left__text
+              価格
+            .form-require
+              必須
+          .contents-box__price-section__price-box-right
+            .contents-box__price-section__price-box-right__text
+              ¥
+            = f.text_field :price, id: 'sell_center', class:'contents-box__price-section__price-box-right__price-form', placeholder: '例)300'
+          .contents-box__price-section__border
+
+          .contents-box__price-section__fee-left
+            販売手数料(10%)
+          .contents-box__price-section__fee-right
+            .contents-box__price-section__fee-right.sales-commission -
+          .contents-box__price-section__border
+
+          .contents-box__price-section__result
+            .contents-box__price-section__result-left
+              販売利益
+            .contents-box__price-section__result-right
+              .contents-box__price-section__result-right.sales-profit -
+        
+      %section.contents-box__sell-decision-container
+        -# submitすることで、DBへデータが入り、トップページに繊維する流れ ys
+        = f.submit nil, class: 'btn btn-primary btn-red' , value: "変更する", id: 'submit' do
+          変更する
+        = link_to root_path, class:'btn-default btn-gray' do
+          もどる
+
+%footer.confirmation-footer
+  %ul.confirmation-footer-container
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        プライバシーポリシー
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        メルカリ利用規約
+    %li.confirmation-footer-container__list
+      =link_to '#', class: 'confirmation-footer-container__list__info' do
+        特定商取引に関する表記
+
+    = image_tag '/mercari-logo-gray.svg', size: "", alt: "mercari-logo-gray" , class: 'confirmation-footer-container__image'
+
+  .confirmation-footer-container__footer-text
+    ©︎2019 Mercari

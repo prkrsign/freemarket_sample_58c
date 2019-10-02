@@ -395,8 +395,6 @@ body{
 
 // ここからフッター
 .confirmation-footer{
-    // top: 2750px; 
-    // left: 650px;
     margin: 0 auto;
     height: 250px;
     padding: 40px 0;
@@ -475,4 +473,8 @@ body{
 .xxxxxbtn.edit{
     margin-left: 10px;
     color: deepskyblue;
+}
+
+#edit-images-preview {
+    display: flex;
 }

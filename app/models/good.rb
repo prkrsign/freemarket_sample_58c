@@ -10,14 +10,14 @@ class Good < ApplicationRecord
     belongs_to_active_hash        :shipment
     has_many                      :images
     belongs_to                    :delivery
-    accepts_nested_attributes_for :images
+    accepts_nested_attributes_for :images, allow_destroy: true
     belongs_to                    :user
 
     scope :active, -> { order(created_at: :DESC).limit(10) }
     scope :sorted, -> { order(created_at: :ASC).limit(10) }
     scope :recent, -> { includes(:images) }
-    scope :mujer, -> { where(brand_id:[147..263]) }
-    scope :hombre, -> { where(brand_id:[1..147]) }
+    scope :mujer, -> { where(category_id:[147..263]) }
+    scope :hombre, -> { where(category_id:[1..146]) }
     scope :adi, -> { where(brand_id:[5]) }
     scope :nk, -> { where(brand_id:[2]) }
     scope :ysl, -> { where(brand_id:[4]) }

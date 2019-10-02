@@ -1,6 +1,6 @@
 .main-page-header-wrapper
   .header
-    = form_with(class: 'header__main') do |f|
+    = form_with model: @goods, url: search_goods_path, method: :get, class: 'header__main', local: true  do |f|
       .header__upper
         -# メルカリロゴ部分
         .header__upper__left
@@ -9,9 +9,12 @@
             = image_tag '/merucari logo.svg', alt: 'Mercari', class: 'header__upper__left__img'
         
         -# 検索ボックス部分
-        %form.header__upper__right
-          =f.text_field nil, class: 'header__upper__right__in', url: "#", placeholder: "何かお探しですか？" 
-          %i.fas.fa-search.header__upper__right__icon
+        .header__upper__right
+          %form.header__upper__right__box
+            =f.text_field(:keyword, class: 'header__upper__right__box__in', placeholder: "何かお探しですか？")
+            =f.button :submit, class: 'header__upper__right__box__icon' do
+              %i.fas.fa-search
+            
 
       -# カテゴリ、ブランドアイコン部分
       .header__under

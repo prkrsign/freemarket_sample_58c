@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'goods/new'
-  get 'goods/search'
-
   resources :cards do
     collection do
       get 'complete', to: 'cards#complete'
@@ -22,27 +19,36 @@ Rails.application.routes.draw do
   
   resources :purchase do  # 商品購入確認ページにて使用YS
 
+    member do
+      get 'select'
+      get 'done'
+      post 'delete', to: 'purchase#delete'
+    end
+
     collection do
       post 'pay/:id' => 'purchase#pay', as: 'pay'
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+      
     end
   end
 
 # 注意！グッズコントローラの中に使うメソッド内に別のコントローラーを入れないように注意！カテゴリーが表示されなかったのにはresources :purchaseを入れたことが原因だった9/24 YS
   resources :goods do
-
+    get 'new'
     member do 
-      get 'show_delete'
       get 'good_delete_popup'
+      get 'edit'
     end
-
-    collection do      
+ 
+    collection do    
+      get 'search'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_children', defaults: { format: 'json' }
     end 
   end
-
-  
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
@@ -54,7 +60,6 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
 
-# 以下の構文いりますか？消していいかも確認願います。YS 9/29
   root to: 'goods#index'
   
   # マイページ用ルーティング
@@ -68,3 +73,5 @@ Rails.application.routes.draw do
   get 'mypage/logout', to: 'mypage#logout'
   
 end
+
+
