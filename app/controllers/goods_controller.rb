@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy, :edit, :update]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
   
@@ -34,8 +34,6 @@ class GoodsController < ApplicationController
 
 
   def edit
-    @good = Good.find(params[:id])
-
     # ↓この変数をJavascriptファイル内で使う。(edit-image.js)
     gon.good = @good
     gon.images = @good.images
@@ -70,7 +68,6 @@ class GoodsController < ApplicationController
 
 
   def update
-    
     # 登録済画像のidの配列を生成（編集前の画像のこと）
     ids = @good.images.map{|image| image.id }
     # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
@@ -122,13 +119,13 @@ class GoodsController < ApplicationController
   end
 
 
-  # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
