@@ -88,7 +88,7 @@ class GoodsController < ApplicationController
 
       #新規登録画像があればcreate
       unless new_image_params[:images][0] == " "
-        params[:images]['goods_picture'].each do |i|
+        params[:images]['goods_picture'].reverse_each do |i|
           @image = @good.images.create!(goods_picture: i)
         end
         #以下のコードでも追加はできるが、goods_pictureに入る画像名が取得できなかったので上の記述に変更しました。
@@ -156,7 +156,7 @@ class GoodsController < ApplicationController
     @good.save
 
     if @good.save
-      params[:images]['goods_picture'].each do |i|
+      params[:images]['goods_picture'].reverse_each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
       redirect_to root_path, notice: "商品を出品しました。"
