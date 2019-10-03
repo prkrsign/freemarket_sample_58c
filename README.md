@@ -52,7 +52,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :goods
-<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 ## deliveries テーブル
@@ -63,7 +62,6 @@ Things you may want to cover:
 
 ### Associationテーブル
 - has_many :goods
-<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 
@@ -136,7 +134,6 @@ Things you may want to cover:
 - has_many :goods
 
 
-<!-- 以下はactive_hash-->
 ## brands
 ### Association
 - has_many :goods, optional: true
