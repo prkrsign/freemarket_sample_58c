@@ -134,7 +134,6 @@ Things you may want to cover:
 - has_many :goods
 
 
-<!-- 以下はactive_hashの内容、モデルで管理-->
 ## brands
 ### Association
 - has_many :goods, optional: true

@@ -1,7 +1,6 @@
 class SignupController < ApplicationController
   prepend_before_action :user_params, only: [:create]
   prepend_before_action :check_recaptcha, only: [:create]
-  
 
 def step1
     @user = User.new
@@ -22,8 +21,6 @@ def step2
     session[:birth_date] = user_params[:birth_date]
 end
 
-
-
 def create
   @user = User.new(
       username: session[:username],
@@ -39,10 +36,12 @@ def create
       birth_date: session[:birth_date],
       phone_number: user_params[:phone_number]
     )
+
   if Date.valid_date?(@user.birth_year.to_i, @user.birth_month.to_i, @user.birth_date.to_i)
     if  @user.save
-        session[:user_id] = @user.id
-        redirect_to new_address_path, notice: "情報を登録しました。"
+      session[:id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to new_address_path, notice: "情報を登録しました。"
     else
         flash.now[:alert] = "情報の登録ができませんでした。"
         render step1_signup_index_path, method: :get
@@ -53,7 +52,6 @@ def create
     render  step1_signup_index_path, method: :get
   end
 end
-
 
 private 
   def user_params
