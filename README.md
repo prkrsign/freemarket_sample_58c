@@ -14,7 +14,6 @@ Things you may want to cover:
 * Database creation
 # Mercari DB設計
 ## addressesテーブル
-<!-- ブラウザのgithubではテーブルが壊れて表示される場合アリ. 丸山 -->
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
@@ -53,7 +52,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :goods
-<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 ## deliveries テーブル
@@ -64,7 +62,6 @@ Things you may want to cover:
 
 ### Associationテーブル
 - has_many :goods
-<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
 - has_ancestry
 
 
@@ -137,7 +134,7 @@ Things you may want to cover:
 - has_many :goods
 
 
-<!-- 以下はactive_hash-->
+<!-- 以下はactive_hashの内容、モデルで管理-->
 ## brands
 ### Association
 - has_many :goods, optional: true
