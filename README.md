@@ -13,122 +13,146 @@ Things you may want to cover:
 
 * Database creation
 # Mercari DB設計
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|postalcode|integer|null: false|
+|city|string|null: false|
+|house_number|string|null: false|
+|building_name|string|null: true|
+|user_id|bigint|null: false, foreign_key: true|
+|prefecture_id|bigint|null: false, foreign_key: true|
+|phone_number|string|null: true|
+
+
+### Association
+- belongs_to_active_hash :prefecture, optional: true
+- belongs_to :user, optional: true
+
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|bigint|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user, optional: true
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_name|string|null: false|
+|ancestry|string|null: false|
+
+### Association
+- has_many :goods
+<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
+- has_ancestry
+
+## deliveries テーブル
+|Column|Type|Options|
+|------|----|-------|
+|delivery_method|string|null: false|
+|ancestry|string|null: false|
+
+### Associationテーブル
+- has_many :goods
+<!-- has ancestryのassociationにおける記述方法不確かです. 丸山 -->
+- has_ancestry
+
+
+## goodsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|goods_name|string|null: false|
+|goods_description|text|null: false|
+|price|integer|null: false|
+|prefecture_id|bigint|null: false, foreign_key: true|
+|condition_id|bigint|null: false, foreign_key: true|
+|brand_id|bigint|null: true, foreign_key: true|
+|shipment_id|bigint|null: false, foreign_key: true|
+|user_id|bigint|null: false, foreign_key: true|
+|category_id|bigint|null: false, foreign_key: true|
+|delivery_id|bigint|null: false, foreign_key: true|
+|size_id|string|null: true|
+
+### Association 
+- belongs_to_active_hash        :prefecture, optional: true
+- belongs_to_active_hash        :brand, optional: true
+- belongs_to_active_hash        :condition, optional: true
+- belongs_to_active_hash        :shipment, optional: true
+- belongs_to                    :category, optional: true
+- belongs_to                    :delivery, optional: true
+- belongs_to                    :user, optional: true
+- has_many                      :images
+
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|goods_picture|string|null: false|
+|good_id|bigint|null: false, foreign_key: true|
+
+### Association
+- belongs_to :good, optional: true
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null: false|
+|uid|string|null: false|
+|user_id|bigint|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user, optional: true
+
+
 ## usersテーブル
-|Colum|Type|Options|
-|-----|----|------|
+|Column|Type|Options|
+|------|----|-------|
 |email|string|null: false, unique: true|
-|password|string|null: false|
-|username|string|null: false, unique: true|
-|user_description|text
+|encrypted_password|string|null: false|
+|username|string|null: false|
+|user_description|text|null: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_in_katakana|string|null: false|
 |first_name_in_katakana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
 |birth_date|integer|null: false|
-|phone_number|integer|null: false, unique: true|
-|credit_card|references|foreign_key: true|
-|address|references|foreign_key: true|
+|phone_number|string|null: false, unique: true|
+
 ### Association
-- has_one :credit_card
 - has_one :address
+- has_one :card
+- has_one :sns_credential
 - has_many :goods
 
-## addressesテーブル
-|postalcode|integer|null: false|
-|city|string|null: false|
-|house_number|string|null: false|
-|building_name|string|null: false|
-|user|references|null: false, foreign_key: true|
 
+<!-- 以下はactive_hash-->
+## brands
 ### Association
-- belongs_to :prefecture
-- belongs_to :user
-- has_many :goods
-- has_many :deals
+- has_many :goods, optional: true
 
- 
-## goodsテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|goods_name|string|null: false|
-|goods_description|text|null: false|
-|price|integer|null: false|
-|user|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
-|category|references|null: false, foreign_key: true|
-
+## conditions
 ### Association
-- belongs_to :prefecture
-- belongs_to :brand
-- belongs_to :category
-- belongs_to :user 
-- has_many :images
+- has_many :goods, optional: true
 
+## prefectures
 ### Association
-- has_many :users
-- has_many :goods
+- has_many :addresses, optional: true
+- has_many :goods, optional: true
 
-## imagesテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|goods_picture|string|null: false|
-|good|references|null: false, foreign_key: true|
-
+## shipment
 ### Association
-- belongs_to :good
-
-
-## dealsテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|deal|boolean||
-|user|references|null: false, foreign_key: true|
-|good|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
-## sns_credentialsテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|provider|string|null: false|
-|uid|string|null: false|
-|user|references|null: false, foreign_key: true|
-
-### Association
-- has_one :user
-
-## credit_cardsテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|user|ireference|null: false, foreign_key: true|
-|customer|references|null: false, foreign_key: true|
-|card|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
-## categoriesテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|category_name|string|null: false|
-|ancestry|string||
-
-
-### Association
-- has_many :goods
-- has_ancestry
-
-## brandsテーブル
-|Colum|Type|Options|
-|-----|----|------|
-|brand_name|string|
-
-### Association
- - has_many :goods
-
+- has_many :goods, optional: true
 
 
 
