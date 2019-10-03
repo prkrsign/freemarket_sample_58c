@@ -29,11 +29,10 @@ class User < ApplicationRecord
                                        with: /\A[\p{katakana}ー－]+\z/, 
                                        message: "はカナ文字を入力してください" },
                                        length: { minimum: 1, maximum: 15}
-                                       
+
   validates :birth_year,               presence: true
   validates :birth_month,              presence: true
-  validates :birth_date,                presence: true
-
+  validates :birth_date,               presence: true
 
 
   # SNSログイン機能。facebookかgoogleからユーザー情報を引っ張り出してreturnする。(神山)

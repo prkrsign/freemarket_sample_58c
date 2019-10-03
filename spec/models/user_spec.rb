@@ -271,5 +271,32 @@ RSpec.describe User, type: :model do
         end
       end
 
+      # 存在しない生年月日が選択された場合登録できないように、signup_controllerに記述しました(神山)
+      describe 'ユーザー新規登録(birth_year)' do
+        it "birth_yearがnilの場合、登録できない" do
+          user = build(:user, birth_year: nil)
+          user.valid?
+          expect(user.errors[:birth_year]).to include("値を入力してください")
+        end
+      end
+
+      # 存在しない生年月日が選択された場合登録できないように、signup_controllerに記述しました(神山)
+      describe 'ユーザー新規登録(birth_month)' do
+        it "birth_monthがnilの場合、登録できない" do
+          user = build(:user, birth_month: nil)
+          user.valid?
+          expect(user.errors[:birth_month]).to include("値を入力してください")
+        end        
+      end
+
+      # 存在しない生年月日が選択された場合登録できないように、signup_controllerに記述しました(神山)
+      describe 'ユーザー新規登録(birth_date)' do
+        it "birth_dateがnilの場合、登録できない" do
+          user = build(:user, birth_date: nil)
+          user.valid?
+          expect(user.errors[:birth_date]).to include("値を入力してください")
+        end
+      end
+
    end
 end
