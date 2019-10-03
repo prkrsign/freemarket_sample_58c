@@ -21,8 +21,6 @@ def step2
     session[:birth_date] = user_params[:birth_date]
 end
 
-
-
 def create
   @user = User.new(
       username: session[:username],
@@ -47,7 +45,6 @@ def create
       render step1_signup_index_path, method: :get
   end
 end
-
 
 private 
   def user_params

@@ -33,7 +33,6 @@ class MypageController < ApplicationController
     end
 
     def signout
-        # binding.pry
         session.delete(:user_id)
         @current_user = nil
         redirect_to root_path
