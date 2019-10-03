@@ -36,13 +36,20 @@ def create
       birth_date: session[:birth_date],
       phone_number: user_params[:phone_number]
     )
-  if  @user.save
+
+  if Date.valid_date?(@user.birth_year.to_i, @user.birth_month.to_i, @user.birth_date.to_i)
+    if  @user.save
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path, notice: "情報を登録しました。"
-  else
-      flash.now[:alert] = "必須項目をご記入ください。"
-      render step1_signup_index_path, method: :get
+    else
+        flash.now[:alert] = "情報の登録ができませんでした。"
+        render step1_signup_index_path, method: :get
+    end
+  
+  else 
+    flash.now[:alert] = "存在しない日付です。"
+    render  step1_signup_index_path, method: :get
   end
 end
 
