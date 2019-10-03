@@ -31,14 +31,11 @@ class PurchaseController < ApplicationController
     def done
     end
 
-
     def delete
       @good = Good.find_by(id: params[:id])
       @good.destroy
       redirect_to("/")
     end
-
-    
 
 # 以下テスト用ダミーです。近日けす予定多分大丈夫なはず。9/29 YS
     def show
