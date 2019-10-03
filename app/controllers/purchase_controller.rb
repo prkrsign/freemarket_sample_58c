@@ -29,6 +29,8 @@ class PurchaseController < ApplicationController
     end
 
     def done
+      # @prefecture = Address.find(1)
+      # @show = @prefecture.prefecture_id.prefectures
     end
 
 
