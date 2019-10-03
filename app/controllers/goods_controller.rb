@@ -2,11 +2,9 @@ class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy, :edit, :update]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
-  before_action :set_current_user
   
   # トップページの商品一覧表示
   def index
-    # binding.pry
     @goods_new_ladies=Good.recent.mujer.active
     @goods_new_men = Good.recent.hombre.active
     @goods_old_ladies=Good.recent.mujer.sorted

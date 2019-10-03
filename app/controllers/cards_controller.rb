@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-  before_action :set_current_user
   require "payjp"
 
   def new   #ここでユーザーid確認だよ。

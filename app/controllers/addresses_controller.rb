@@ -1,6 +1,5 @@
 class AddressesController < ApplicationController
   
-  before_action :set_current_user
   def new
     @address = Address.new
     

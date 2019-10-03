@@ -1,7 +1,6 @@
 class SignupController < ApplicationController
   prepend_before_action :user_params, only: [:create]
   prepend_before_action :check_recaptcha, only: [:create]
-  
 
 def step1
     @user = User.new
@@ -40,7 +39,8 @@ def create
       phone_number: user_params[:phone_number]
     )
   if  @user.save
-      session[:user_id] = @user.id
+      session[:id] = @user.id
+      sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_address_path, notice: "情報を登録しました。"
   else
       flash.now[:alert] = "必須項目をご記入ください。"
