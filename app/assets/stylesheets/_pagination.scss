@@ -1,0 +1,21 @@
+.search-result-pagination{
+    background-color: #fff;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    left: 620px;
+    color: #333333;
+    a:-webkit-any-link {
+        text-decoration: none;
+    }
+    &__page{
+        color: #333333;
+    }
+    &__next{
+        color: #333333;
+    }
+    &__last{
+        color: #333333;
+    }
+}
+

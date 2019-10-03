@@ -1,5 +1,5 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy]
+  before_action :set_good, only: [:show, :show_delete, :good_delete_popup, :destroy, :edit, :update]
 # 以下翻訳 ログインしてないのに出品(new)に行こうとするとログインページに遷移する。9/29 YS
   before_action :authenticate_user!, only: [:new]
   
@@ -34,21 +34,32 @@ class GoodsController < ApplicationController
 
 
   def edit
-    @good = Good.find(params[:id])
-
     # ↓この変数をJavascriptファイル内で使う。(edit-image.js)
     gon.good = @good
     gon.images = @good.images
 
     # @good.imagse.goods_pictureをバイナリデータにしてビューで表示できるようにする。
     require 'base64'
+    require 'aws-sdk'
     
     gon.images_binary_datas = []
-
-    @good.images.each do |image|
-      binary_data = File.read(image.goods_picture.file.file)
-      gon.images_binary_datas << Base64.strict_encode64(binary_data)
+    if Rails.env.production?
+      client = Aws::S3::Client.new(
+                             region: 'ap-northeast-1',
+                             access_key_id: Rails.application.credentials.aws[:access_key_id],
+                             secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+                             )
+      @good.images.each do |image|
+        binary_data = client.get_object(bucket: 'freemarket-sample-58c', key: image.goods_picture.file.path).body.read
+        gon.images_binary_datas << Base64.strict_encode64(binary_data)
+      end
+    else
+      @good.images.each do |image|
+        binary_data = File.read(image.goods_picture.file.file)
+        gon.images_binary_datas << Base64.strict_encode64(binary_data)
+      end
     end
+  
 
     @category_parent_array = ['---']
     #データベースから、親カテゴリーのみを抽出し、配列化。
@@ -70,7 +81,6 @@ class GoodsController < ApplicationController
 
 
   def update
-    
     # 登録済画像のidの配列を生成（編集前の画像のこと）
     ids = @good.images.map{|image| image.id }
     # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
@@ -91,7 +101,7 @@ class GoodsController < ApplicationController
 
       #新規登録画像があればcreate
       unless new_image_params[:images][0] == " "
-        params[:images]['goods_picture'].each do |i|
+        params[:images]['goods_picture'].reverse_each do |i|
           @image = @good.images.create!(goods_picture: i)
         end
         #以下のコードでも追加はできるが、goods_pictureに入る画像名が取得できなかったので上の記述に変更しました。
@@ -99,7 +109,7 @@ class GoodsController < ApplicationController
           #@good.images.create(goods_picture: image, good_id: @good.id)
         #end
       end
-      redirect_to root_path
+      redirect_to good_path
     else
       redirect_back
     end
@@ -113,22 +123,22 @@ class GoodsController < ApplicationController
   
   def search
     if params[:good].nil?
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:keyword]
     else
-      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%")
+      @goods = Good.where('goods_name LIKE(?) OR goods_description LIKE(?)', "%#{params[:good][:keyword]}%", "%#{params[:good][:keyword]}%").page(params[:page]).per(20)
       @keyword = params[:good][:keyword]
     end
   end
 
 
-  # 以下全て、formatはjsonのみ
   #親カテゴリーが選択された後に動くアクション
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(category_name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
+  #子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
@@ -159,7 +169,7 @@ class GoodsController < ApplicationController
     @good.save
 
     if @good.save
-      params[:images]['goods_picture'].each do |i|
+      params[:images]['goods_picture'].reverse_each do |i|
       @image = @good.images.create!(goods_picture: i)
       end
       redirect_to root_path, notice: "商品を出品しました。"

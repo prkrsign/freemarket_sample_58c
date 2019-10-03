@@ -35,13 +35,16 @@ class PurchaseController < ApplicationController
     def done
     end
 
-
     def delete
       @good = Good.find_by(id: params[:id])
       @good.destroy
       redirect_to("/")
     end
 
+    def show
+        @good = Good.find(params[:id])
+    end
+  
     def select
       card = Card.where(user_id: current_user.id).first
       if card.blank?
