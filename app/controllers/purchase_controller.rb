@@ -2,7 +2,6 @@ class PurchaseController < ApplicationController
 
     require 'payjp'
     before_action :set_good
-    # before_action :showbefore
     before_action :authenticate_user!, only: [:show]
 
 
@@ -20,7 +19,6 @@ class PurchaseController < ApplicationController
     def pay
       @good = Good.find(params[:id])
       if current_user.id == @good.user.id 
-        # flash.now[:alert] = "あなたが出品した商品のため購入できません。"
         redirect_to good_path, method: :get, alert: "あなたが出品した商品のため購入できません。"
       else
         card = Card.where(user_id: current_user.id).first
@@ -43,20 +41,6 @@ class PurchaseController < ApplicationController
       @good.destroy
       redirect_to("/")
     end
-
-    
-
-# 以下テスト用ダミーです。近日けす予定多分大丈夫なはず。9/29 YS
-
-
-    # def show
-    #   @good = Good.find(params[:id])
-    #   if current_user.id == @good.user.id 
-    #    redirect_to good_path , method: :get
-    #    else 
-    #    redirect_to good_path , method: :get
-    #    end
-    # end
 
     def select
       card = Card.where(user_id: current_user.id).first
