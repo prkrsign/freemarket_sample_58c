@@ -85,7 +85,7 @@ RSpec.describe User, type: :model do
     it "passwordとpasswordが7桁以下の場合、登録できない" do
       user = build(:user, password: 'aaabbb')
       user.valid?
-      expect(user.errors[:password]).to include("とPasswordの入力が一致しません")
+      expect(user.errors[:password]).to include("値は7文字以上で入力してください")
     end
 
    end

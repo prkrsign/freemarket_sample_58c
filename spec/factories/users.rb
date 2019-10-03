@@ -10,7 +10,7 @@ FactoryBot.define do
       first_name_in_katakana     {"タロウ"}
       birth_year                 {1990}
       birth_month                {1}
-      birth_day                  {1}
+      birth_date                 {1}
       phone_number               {"09011223456"}
   end
 end
