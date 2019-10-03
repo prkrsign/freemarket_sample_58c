@@ -38,7 +38,6 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-<!-- "user_id" 外部キーなのでbigint型にしてます. 丸山 -->
 |user_id|bigint|null: false, foreign_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false, foreign_key: true|
@@ -82,7 +81,7 @@ Things you may want to cover:
 |user_id|bigint|null: false, foreign_key: true|
 |category_id|bigint|null: false, foreign_key: true|
 |delivery_id|bigint|null: false, foreign_key: true|
-|size_id|bigint|null: false, foreign_key: true|
+|size_id|string|null: true|
 
 ### Association 
 - belongs_to_active_hash        :prefecture, optional: true
@@ -90,7 +89,6 @@ Things you may want to cover:
 - belongs_to_active_hash        :condition, optional: true
 - belongs_to_active_hash        :shipment, optional: true
 - belongs_to                    :category, optional: true
-- belongs_to                    :delivery, optional: true
 - belongs_to                    :delivery, optional: true
 - belongs_to                    :user, optional: true
 - has_many                      :images
@@ -121,7 +119,7 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
-|username|string|null: false, unique: true|
+|username|string|null: false|
 |user_description|text|null: true|
 |family_name|string|null: false|
 |first_name|string|null: false|
@@ -133,6 +131,7 @@ Things you may want to cover:
 |phone_number|string|null: false, unique: true|
 
 ### Association
+- has_one :address
 - has_one :card
 - has_one :sns_credential
 - has_many :goods
