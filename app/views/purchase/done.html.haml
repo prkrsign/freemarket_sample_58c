@@ -34,15 +34,17 @@
         送料込み
 
     -# 配送先情報
+    - shipping = current_user.address  # 現在のユーザーのアドレステーブル読み出しまでを変数化
     .purchase-completed-wrapper__main-container__address
       .purchase-completed-wrapper__main-container__address__title
         配送先
       .purchase-completed-wrapper__main-container__address__post-code
-        = "〒#{@good.user.address.postalcode}"
+        = "〒#{shipping.postalcode}"
       .purchase-completed-wrapper__main-container__address__city
-        = @good.user.address.city
+        = "#{shipping.prefecture.name + shipping.city + shipping.house_number + shipping.building_name}"
       .purchase-completed-wrapper__main-container__address__name
-        = "#{@good.user.address.family_name + @good.user.address.first_name}"
+        = "#{shipping.family_name + shipping.first_name}"
+        
 
 
 

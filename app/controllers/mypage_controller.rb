@@ -1,6 +1,7 @@
 class MypageController < ApplicationController
+    
     def mypage
-        @user = User.find(current_user.id)
+        
     end
 
     def put_up_goods_on_sale
@@ -28,7 +29,14 @@ class MypageController < ApplicationController
     end
     
     def logout
-
+    
     end
+
+    def signout
+        session.delete(:user_id)
+        @current_user = nil
+        redirect_to root_path
+    end
+
 
 end

@@ -11,29 +11,28 @@ class User < ApplicationRecord
   has_one :cards
 
   VALID_EMAIL_REGIX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
+  
   validates :username,                 presence: true, length: { minimum:1, maximum:10 }
-  validates :email,                    presence: true
-  validates :email,                    uniqueness: true
-  validates :email,                    format: { with: VALID_EMAIL_REGIX }
-  validates :password,                 presence: true
-  validates :password,                 length: { minimum: 7, maximum: 20}
-  validates :password,                 confirmation: true
-  # validates :password_confirmation,    presence: true
-  validates :phone_number,             presence: true
-  validates :family_name,              presence: true
-  validates :first_name,               presence: true
+  validates :email,                    presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGIX }
+  validates :password,                 presence: true, length: { minimum: 7, maximum: 20}, confirmation: true              
+  validates :phone_number,             presence: true, format: { with: VALID_PHONE_REGEX }, numericality: true          
+  validates :family_name,              presence: true, length: { minimum: 1, maximum: 10}
+  validates :first_name,               presence: true, length: { minimum: 1, maximum: 10}
+
   validates :family_name_in_katakana,  presence: true, format: { 
                                        with: /\A[\p{katakana}ー－]+\z/, 
-                                       message: "はカナ文字を入力してください" }
-  validates :first_name_in_katakana,       presence: true, format: { 
+                                       message: "はカナ文字を入力してください" },
+                                       length: { minimum: 1, maximum: 15}
+
+  validates :first_name_in_katakana,   presence: true, format: { 
                                        with: /\A[\p{katakana}ー－]+\z/, 
-                                       message: "はカナ文字を入力してください" }
+                                       message: "はカナ文字を入力してください" },
+                                       length: { minimum: 1, maximum: 15}
+
   validates :birth_year,               presence: true
   validates :birth_month,              presence: true
-  validates :birth_date,                presence: true
-
-  #        :recoverable, :rememberable, :validatable, :omniauthable,  omniauth_providers: %i[facebook google_oauth2]
-  # has_many :sns_credentials, dependent: :destroy
+  validates :birth_date,               presence: true
 
 
   # SNSログイン機能。facebookかgoogleからユーザー情報を引っ張り出してreturnする。(神山)
