@@ -25,9 +25,9 @@ class Good < ApplicationRecord
     accepts_nested_attributes_for :images
 
     validates :goods_name, presence: true, length: { maximum: 40 }
-    validates :description, presence: true, length: { maximum: 1000 }
+    validates :goods_description, presence: true, length: { maximum: 1000 }
     validates :category_id, presence: { message: "選択して下さい" }
-    validates :brand_id, presence: { message: "選択して下さい" }
+    validates :brand_id, presence: false
     validates :condition_id, presence: { message: "選択して下さい" }
     validates :delivery_id, presence: { message: "選択して下さい" }
     validates :prefecture_id, presence: { message: "選択して下さい" }
