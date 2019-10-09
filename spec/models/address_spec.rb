@@ -23,7 +23,22 @@ RSpec.describe Address, type: :model do
       address.valid?
       expect(address.errors[:family_name]).to include("値は10文字以内で入力してください")
     end
-end
+  end
+
+  describe 'アドレスを新規登録するとき(first_name)' do 
+    it "first_nameに値が入っていない場合、アカウントが登録できない" do
+      address = build(:address, first_name: nil )
+      address.valid?
+      expect(address.errors[:first_name]).to include("値を入力してください")
+    end
+
+    it "first_nameが11文字以上の場合、アカウントが登録できない" do
+      address = build(:address, first_name: 'メルメルメルメルメルメルメル')
+      address.valid?
+      expect(address.errors[:first_name]).to include("値は10文字以内で入力してください")
+    end
+  end
+
 
 
 end

@@ -5,7 +5,7 @@ class Address < ApplicationRecord
   has_many :deals
              
   validates :family_name,                 presence: true, length: { minimum:1, maximum:10 }
-  validates :first_name,                  presence: true
+  validates :first_name,                  presence: true, length: { minimum:1, maximum:10 }
   validates :family_name_kana,            presence: true, format: { 
                                           with: /\A[\p{katakana}ー－]+\z/, 
                                           message: "はカナ文字を入力してください" }
